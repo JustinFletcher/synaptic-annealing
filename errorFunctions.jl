@@ -8,25 +8,32 @@ function getDataClassErr(synapseMatrix, actFun, data, inputCols, outputCols)
     # Initialize error to 0.
     err = 0
 
-	numOutputs = length(outputCols)
+# 	numOutputs = length(outputCols)
 
-	outputPadding = zeros(1, size(synapseMatrix)[1]-numOutputs)
+# 	outputPadding = zeros(1, size(synapseMatrix)[1]-numOutputs)
 
     # For every observation in the data set.
     for sampleRow in 1:size(data)[1]
 
-        actualOutputRaw = propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun)
+#         actualOutputRaw = propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun)
 
-        actualOutput = actualOutputRaw.==maximum(actualOutputRaw)
+#         actualOutput = actualOutputRaw.==maximum(actualOutputRaw)
 
-		# Addd -1s here after size for all bias
-        err += transpose(data[sampleRow, outputCols])!=actualOutput[1:numOutputs,:]
+
+
+# 		# Addd -1s here after size for all bias
+#         err += transpose(data[sampleRow, outputCols])!=actualOutput[1:numOutputs,:]
+
+
+		err += indmax(propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun))!=indmax(data[sampleRow, outputCols])
 
 	end
 
     # Return the average error.
     return(err/size(data)[1])
 end
+
+indmax(rand(100))
 
 
 # temp = rand(1,20)
@@ -42,22 +49,24 @@ function getDataClassErrPar(synapseMatrix, actFun, data, inputCols, outputCols)
 
     # Initialize error to 0.
     err = 0
-	numOutputs = length(outputCols)
+# 	numOutputs = length(outputCols)
 
-	outputPadding = zeros(1, size(synapseMatrix)[1]-numOutputs)
+# 	outputPadding = zeros(1, size(synapseMatrix)[1]-numOutputs)
 
     # For every observation in the data set.
     err = @parallel (+) for sampleRow in 1:size(data)[1]
+
+		indmax(propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun))!=indmax(data[sampleRow, outputCols])
         #println("------------------------------")
         #sample = data[sampleRow, :]
         #println(sample)
 
-        actualOutputRaw = propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun)
+#         actualOutputRaw = propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun)
 
-        actualOutput = actualOutputRaw.==maximum(actualOutputRaw)
+#         actualOutput = actualOutputRaw.==maximum(actualOutputRaw)
 
-		# Addd -1s here after size for all bias
-        transpose(data[sampleRow, outputCols])!=actualOutput[1:numOutputs,:]
+# 		# Addd -1s here after size for all bias
+#         transpose(data[sampleRow, outputCols])!=actualOutput[1:numOutputs,:]
 
         # Format the data for the arithmatic.
         #correctOutput = int([sample[outputCols], transpose(zeros(1, size(synapseMatrix)[1]-length(sample[outputCols])))])

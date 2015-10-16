@@ -3,25 +3,10 @@
 @everywhere function propogateForward(inputPattern, synapseMatrix, actFun)
 
     # Initialize the propigation pattern to the input pattern. Pad the propPattern with zeros to size with weightMatrix.
-    propPattern = [1 [actFun(inputPattern) zeros(1, size(synapseMatrix)[1]-length(inputPattern)-1)]]
+    propPattern = [1 [inputPattern zeros(1, size(synapseMatrix)[1]-length(inputPattern)-1)]]
 
     # For each "layer" of connection weights, except the last one, which we just want to "read."
     for layerIndex in 1:size(synapseMatrix)[3]-1
-
-# 		propPatternT = repmat(transpose(propPattern), 1, size(synapseMatrix)[2])
-
-# 		synapticWeights = synapseMatrix[:,:,layerIndex]
-
-#      	@devec propPattern = tanh(sum((propPatternT .* synapticWeights), 1))
-# 		println(synapticWeights)
-# 		@devec postSynapseSignals = propPatternT .* synapticWeights
-# 		println(postSynapseSignals)
-
-# 		for col in 1:size(synapseMatrix)[2]
-
-# 		end
-
-# 		@devec integratedSignals = sum(postSynapseSignals, 1)
 
      	propPattern = tanh(sum((transpose(propPattern) .* synapseMatrix[:,:,layerIndex]), 1))
 
@@ -31,6 +16,45 @@
     return(transpose(propPattern))
 
 end
+
+
+
+# @everywhere function propogateForward(inputPattern, synapseMatrix, actFun)
+
+#     # Initialize the propigation pattern to the input pattern. Pad the propPattern with zeros to size with weightMatrix.
+#     propPattern = [1 [tanh(inputPattern) zeros(1, size(synapseMatrix)[1]-length(inputPattern)-1)]]
+
+
+# 	propPatternTemp = zeros(1,size(synapseMatrix)[2])
+
+# 	colSum = 0
+
+#     # For each "layer" of connection weights, except the last one, which we just want to "read."
+#     for layerIndex = 1:size(synapseMatrix)[3]-1
+
+
+# 		for col = 1:size(synapseMatrix)[2]
+
+# 			colSum = 0
+
+# 			colSum = @parallel (+) for row = 1:size(synapseMatrix)[1]
+
+# 				(propPattern[row]*synapseMatrix[row, col, layerIndex])
+
+# 			end
+
+# 			propPatternTemp[col] = tanh(colSum)
+# 		end
+
+# 		propPattern = propPatternTemp
+
+#     end
+
+#     # Return the final propigation pattern, which is the output.
+#     return(transpose(propPattern))
+
+# end
+
 
 
 # @everywhere function propogateForward(inputPattern, synapseMatrix, actFun)

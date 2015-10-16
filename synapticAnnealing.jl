@@ -7,7 +7,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 #     (trainData, valData, inputCols, outputCols) = dataTuple
 
     # Create a local copy of the synapse matrix.
-    synapseMatrix = synapseMatrixIn
+    synapseMatrix = copy(synapseMatrixIn)
 
     # Initialize the error.
     lastError = errorFunction(synapseMatrix, actFun, trainData, inputCols, outputCols)
@@ -81,6 +81,9 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         # Compute the resultant error.
         perturbedError = errorFunction(synapseMatrix, actFun, trainData, inputCols, outputCols)
 
+#         push!(trainingErrorVector,  perturbedError)
+
+
         # Computer the change in error.
         errorChange = perturbedError-lastError
 
@@ -146,9 +149,13 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 		end
 
         # Evaluate the convergence conditions.
-        converged = (stateTuple[7]>=cutoffEpochs)  || ((valErr<convCriterion)&&(trainErr<convCriterion)) || ((trainErr == 0.0 )&&(valErr == 0.0))
+        converged = (stateTuple[7]>=cutoffEpochs)  #|| ((valErr<convCriterion)&&(trainErr<convCriterion)) || ((trainErr == 0.0 )&&(valErr == 0.0))
 
     end
+
+# 	minValErrSynapseMatrix = synapseMatrix
+# 	validationErrorVector = trainingErrorVector
+
     # Construct and return the output tuple.
     outputTuple = Any[minValErrSynapseMatrix, validationErrorVector, trainingErrorVector, perturbationDistanceVector]
 
