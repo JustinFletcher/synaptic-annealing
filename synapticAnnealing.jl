@@ -59,9 +59,6 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         # Update the state of the annealing system.
         stateTuple = updateState(stateTuple)
 
-#         # Select a random element of the training data.
-#         trainSample = trainData[rand(1:end),:]
-
         # Compute the synapse perturbation matrix.
         synapsePerturbationTuple = perturbSynapses(synapseMatrix, stateTuple)
 
@@ -71,17 +68,11 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         # Append the perturbation distance to an output vector. For analysis.
         push!(perturbationDistanceVector, perturbationDistance)
 
-		# Adjust the perturbation to keep it within the activation range.
-# 		synapsePerturbation = synapsePerturbation + (1.-(synapseMatrix + synapsePerturbation)).*int((1-synapseMatrix + synapsePerturbation).<0)
-# 		synapsePerturbation = synapsePerturbation + (-1-(synapseMatrix + synapsePerturbation)).*int((-1-synapseMatrix + synapsePerturbation).>0)
-
         # Modify the synapse matrix using the perturbation matrix.
         synapseMatrix += synapsePerturbation
 
         # Compute the resultant error.
         perturbedError = errorFunction(synapseMatrix, actFun, trainData, inputCols, outputCols)
-
-#         push!(trainingErrorVector,  perturbedError)
 
 
         # Computer the change in error.
@@ -90,63 +81,25 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         # Parse the temperature from the state tuple and normalize. For readability.
         temperatureNorm = stateTuple[1]/initTemperature
 
-# 		println(temperatureNorm, "||", errorChange, "||", acceptanceProbability)
-#         # With probabability of acceptanceProbability, take the move.
-#         if (rand()<acceptanceProbability)
 
-#             # If the annealing move is not repealed, set the error.
-#             lastError = perturbedError
-#         else
-
-#             # Repeal the move.
-#             synapseMatrix -= synapsePerturbation
-#         end
-
-        # If the error has increased, then with probability=temperature, allow this move.
-#         if ((perturbedError>lastError) && !(perturbationDistance<=stateTuple[3]))
-
-# 			if (rand()>temperatureNorm)
-
-# 				# Repeal the move.
-# 				synapseMatrix -= synapsePerturbation
-
-# 			else
-
-# 				# If the annealing move is not repealed, set the error.
-# 				lastError = perturbedError
-
-# 			end
-
-#         else
-
-#             # If the annealing move is not repealed, set the error.
-#             lastError = perturbedError
-
-#         end
-
-		if (perturbedError<lastError)
-			lastError = perturbedError
-		# If the move was a quantum one.
-		elseif !(perturbationDistance<=stateTuple[3])
-			# Repeal the move.
-			synapseMatrix -= synapsePerturbation
-		elseif (rand()>temperatureNorm)
-			# Repeal the move.
-			synapseMatrix -= synapsePerturbation
-		else
-			# If the annealing move is not repealed, set the error.
-			lastError = perturbedError
-		end
+        if (perturbedError<lastError)
+          lastError = perturbedError
+        # If the move was a quantum one.
+        elseif !(perturbationDistance<=stateTuple[3])
+          # Repeal the move.
+          synapseMatrix -= synapsePerturbation
+        elseif (rand()>temperatureNorm)
+          # Repeal the move.
+          synapseMatrix -= synapsePerturbation
+        else
+          # If the annealing move is not repealed, set the error.
+          lastError = perturbedError
+        end
 
 
-
-#         # Add the most recent error to the error history.
-#         push!(errorStack, lastError)
-#         push!(onlineErrorVector, lastError)
-
-		if((trainErr == 0.0 )&&(valErr == 0.0))
-			println("Perfect Run")
-		end
+        if((trainErr == 0.0 )&&(valErr == 0.0))
+          println("Perfect Run")
+        end
 
         # Evaluate the convergence conditions.
         converged = (stateTuple[7]>=cutoffEpochs)  #|| ((valErr<convCriterion)&&(trainErr<convCriterion)) || ((trainErr == 0.0 )&&(valErr == 0.0))
@@ -162,4 +115,6 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
     return(outputTuple)
 
 end
+
+
 

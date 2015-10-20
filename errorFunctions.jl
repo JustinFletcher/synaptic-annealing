@@ -2,28 +2,11 @@
 
 function getDataClassErr(synapseMatrix, actFun, data, inputCols, outputCols)
 
-    # Get the number of samples.
-    #numSamples = size(data)[1]
-
     # Initialize error to 0.
     err = 0
 
-# 	numOutputs = length(outputCols)
-
-# 	outputPadding = zeros(1, size(synapseMatrix)[1]-numOutputs)
-
     # For every observation in the data set.
     for sampleRow in 1:size(data)[1]
-
-#         actualOutputRaw = propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun)
-
-#         actualOutput = actualOutputRaw.==maximum(actualOutputRaw)
-
-
-
-# 		# Addd -1s here after size for all bias
-#         err += transpose(data[sampleRow, outputCols])!=actualOutput[1:numOutputs,:]
-
 
 		err += indmax(propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun))!=indmax(data[sampleRow, outputCols])
 
@@ -33,7 +16,26 @@ function getDataClassErr(synapseMatrix, actFun, data, inputCols, outputCols)
     return(err/size(data)[1])
 end
 
-indmax(rand(100))
+
+
+
+function getDataClassErr_backprop(net, data, inputCols, outputCols)
+
+    # Initialize error to 0.
+    err = 0
+
+    # For every observation in the data set.
+    for sampleRow in 1:size(data)[1]
+# 		println(vec(data[sampleRow, inputCols]))
+		err += indmax(net_eval(net, vec(data[sampleRow, inputCols])))!=indmax(data[sampleRow, outputCols])
+
+	end
+
+    # Return the average error.
+    return(err/size(data)[1])
+end
+
+
 
 
 # temp = rand(1,20)

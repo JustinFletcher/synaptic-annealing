@@ -1,5 +1,5 @@
 
-function nFoldCrossValidateSynapticAnnealing(numFolds, synMatConfigVec, annealingFunction, convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, actFun, data, inputCols, outputCols)
+function nFoldCrossValidateSynapticAnnealing(numFolds, synMatConfigVec, annealingFunction, convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synMatIn, actFun, data, inputCols, outputCols)
 
 
     # Shuffle the data.
@@ -25,8 +25,13 @@ function nFoldCrossValidateSynapticAnnealing(numFolds, synMatConfigVec, annealin
         valData  = data[inFoldsVector[fold],:]
         trainData = data[outFoldsVector[fold],:]
 
-        # Initialize a new synapse matrix.
-        synapseMatrix = createSynapseMatrix(synMatConfigVec)
+
+		if (synMatIn == null)
+			# Initialize a new synapse matrix.
+			synapseMatrix = createSynapseMatrix(synMatConfigVec)
+		else
+			synapseMatrix = copy(synMatIn)
+		end
 
         # Anneal the synapse matrix.
         outTuple = annealingFunction(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synapseMatrix, actFun, trainData, valData, inputCols, outputCols)
@@ -58,7 +63,7 @@ end
 
 
 
-function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annealingFunction, convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, actFun, data, inputCols, outputCols)
+function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annealingFunction, convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synMatIn, actFun, data, inputCols, outputCols)
 
 
     # Shuffle the data.
@@ -79,7 +84,13 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
         trainData = data[outFoldsVector[fold],:]
 
         # Initialize a new synapse matrix.
-        synapseMatrix = createSynapseMatrix(synMatConfigVec)
+		if (synMatIn == null)
+			# Initialize a new synapse matrix.
+			synapseMatrix = createSynapseMatrix(synMatConfigVec)
+		else
+			synapseMatrix = copy(synMatIn)
+		end
+
 
         # Spawn an annealing task.
         ref = @spawn annealingFunction(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synapseMatrix, actFun, trainData, valData, inputCols, outputCols)

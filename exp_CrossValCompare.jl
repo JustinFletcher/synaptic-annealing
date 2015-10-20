@@ -3,8 +3,10 @@
 # Pkg.build("PyCall")
 # Pkg.add("PyPlot")
 # Pkg.add("StatsBase")
+# Pkg.add("BackpropNeuralNet")
 # Pkg.update()
 
+@everywhere using BackpropNeuralNet
 using PyPlot
 rmprocs(workers())
 addprocs(25)
@@ -36,6 +38,11 @@ addprocs(25)
 @everywhere include("buildFolds.jl")
 @everywhere include("nFoldCrossValidateSynapticAnnealing.jl")
 
+
+# Include cross val annealing libraries.
+@everywhere include("backpropTraining.jl")
+@everywhere include("nFoldCrossValidateBackprop.jl")
+
 ion()
 
 
@@ -49,6 +56,7 @@ irisDataClassed = normalizeData(irisDataClassed)
 irisDataClassed = shuffleData(irisDataClassed)
 
 
+###################################################################################################################################################
 
 # Pull the physics training data.
 tauThreeMuTrainData = readdlm(homedir()*"\\OneDrive\\afit\\CSCE823\\project\\tauThreeMuTrainData.dat", ',' , Any)
@@ -64,7 +72,6 @@ tauThreeMuTrainData = shuffleData(tauThreeMuTrainData)
 subsetSize = int(0.1*size(tauThreeMuTrainData)[1])
 tauThreeMuTrainData_subsetTrain = tauThreeMuTrainData[1:subsetSize, :]
 tauThreeMuTrainData_subsetTest = tauThreeMuTrainData[(subsetSize+1):end, :]
-
 
 
 ###################################################################################################################################################
@@ -102,17 +109,18 @@ lcvfDataClassed = shuffleData(lcvfDataClassed)
 ###################################################################################################################################################
 
 
-numFolds = 10
+numFolds = 25
 
-maxRuns = 2
+maxRuns = 1
 
 initTemp = 800
 
-# dataSet = irisDataClassed
 
-# dataInputDimensions = [1:4]
+dataSet = irisDataClassed
 
-# dataOutputDimensions = [5:7]
+dataInputDimensions = [1:4]
+
+dataOutputDimensions = [5:7]
 
 
 dataSet = lcvfDataClassed
@@ -121,10 +129,29 @@ dataInputDimensions = [1:194]
 
 dataOutputDimensions = [195:229]
 
+numHiddenLayers = 1
 
-matrixConfig = [length(dataInputDimensions)+1,length(dataInputDimensions),length(dataOutputDimensions)]
 
-tic()
+
+matrixConfig = [length(dataInputDimensions)+1, repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)]
+
+
+###################################################################################################################################################
+
+outTuple_bp = @time nFoldCrossValidateBackpropPar(numFolds, matrixConfig, synapticAnnealing,
+                                                          0.0, maxRuns, quantumAnisotropicSynapticPerturbation, updateState_oscillatory,
+                                                          getDataClassErr_backprop, getDataClassErr_backprop,
+                                                          initTemp, 1,
+                                                          tanh,
+                                                          dataSet, dataInputDimensions, dataOutputDimensions)
+
+putdata(outTuple_bp, "outTuple_bp")
+outTuple_bp = getdata("outTuple_bp")
+
+(meanValErrorVec_bp, meanTrainErrorVec_bp, meanPerturbDistanceVec_bp, minValErrorSynapseMatrix_bp) = outTuple_bp
+
+plotAnnealResults(meanTrainErrorVec_bp, meanValErrorVec_bp, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
+
 
 ###################################################################################################################################################
 
@@ -135,8 +162,8 @@ outTuple_aq = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfi
                                                           tanh,
                                                           dataSet, dataInputDimensions, dataOutputDimensions)
 
-putdata(outTuple_aq, "outTuple_aq")
-outTuple_aq = getdata("outTuple_aq")
+putdata(outTuple_aq, "outTuple_aq_lcvf10800")
+outTuple_aq = getdata("outTuple_aq_lcvf10800")
 
 (meanValErrorVec_aq, meanTrainErrorVec_aq, meanPerturbDistanceVec_aq, minValErrorSynapseMatrix_aq) = outTuple_aq
 
@@ -144,22 +171,21 @@ plotAnnealResults(meanTrainErrorVec_aq, meanValErrorVec_aq, "Training and Valida
 
 ###################################################################################################################################################
 
-outTuple_aq = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns, quantumSynapticPerturbation, updateState_q_only,
+outTuple_qo = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
+                                                          0.0, maxRuns, quantumSynapticChange, updateState_q_only,
                                                           getDataClassErr, getDataClassErr,
                                                           initTemp, 1,
                                                           tanh,
                                                           dataSet, dataInputDimensions, dataOutputDimensions)
 
-putdata(outTuple_aq, "outTuple_aq")
-outTuple_aq = getdata("outTuple_aq")
+putdata(outTuple_qo, "outTuple_qo_lcvf1000")
+outTuple_qo = getdata("outTuple_qo_lcvf1000")
 
-(meanValErrorVec_aq, meanTrainErrorVec_aq, meanPerturbDistanceVec_aq, minValErrorSynapseMatrix_aq) = outTuple_aq
+(meanValErrorVec_qo, meanTrainErrorVec_qo, meanPerturbDistanceVec_qo, minValErrorSynapseMatrix_qo) = outTuple_qo
 
-plotAnnealResults(meanTrainErrorVec_aq, meanValErrorVec_aq, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
+plotAnnealResults(meanTrainErrorVec_qo, meanValErrorVec_qo, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
 
 
-8751/60/60
 ###################################################################################################################################################
 
 
@@ -175,7 +201,7 @@ outTuple_q = getdata("outTuple_q")
 
 (meanValErrorVec_q, meanTrainErrorVec_q, meanPerturbDistanceVec_q, minValErrorSynapseMatrix_q) = outTuple_q
 
-# plotAnnealResults(meanTrainErrorVec_q, meanValErrorVec_q, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
+plotAnnealResults(meanTrainErrorVec_q, meanValErrorVec_q, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
 
 
 
@@ -205,9 +231,24 @@ plotAnnealResults(meanTrainErrorVec_f, meanValErrorVec_f, "Training and Validati
 
 
 
+###################################################################################################################################################
 
 
-Matrix_o) = outTuple_o
+outTuple_o = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
+                                                          0.0, maxRuns, omniDimSynapticChange, updateState,
+                                                          getDataClassErr, getDataClassErr,
+                                                          initTemp, 1,
+                                                          tanh,
+                                                          dataSet, dataInputDimensions, dataOutputDimensions)
+
+putdata(outTuple_o, "outTuple_o")
+outTuple_o = getdata("outTuple_o")
+
+(meanValErrorVec_o, meanTrainErrorVec_o, meanPerturbDistanceVec_o, minValErrorSynapseMatrix_o) = outTuple_o
+
+plotAnnealResults(meanTrainErrorVec_o, meanValErrorVec_o, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
+
+
 
 # plotAnnealResults(meanTrainErrorVec_o, meanValErrorVec_o, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
 
