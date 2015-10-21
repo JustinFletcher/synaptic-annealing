@@ -4,14 +4,17 @@
 # Pkg.add("PyPlot")
 # Pkg.add("StatsBase")
 # Pkg.add("BackpropNeuralNet")
+Pkg.build("BackpropNeuralNet")
 # Pkg.update()
 
-@everywhere using BackpropNeuralNet
 using PyPlot
 rmprocs(workers())
 addprocs(25)
 
-@everywhere using Devectorize
+# @everywhere using Devectorize
+
+@everywhere using BackpropNeuralNet
+
 @everywhere cd(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing")
 
 # Include utility libraries.
@@ -34,10 +37,14 @@ addprocs(25)
 @everywhere include("errorFunctions.jl")
 @everywhere include("getDataPredictions.jl")
 
+
+# Include native propigation annealing libraries.
+@everywhere include("synapticAnnealing_nativePropigation.jl")
+@everywhere include("nativeNetsToSynMats.jl")
+
 # Include cross val annealing libraries.
 @everywhere include("buildFolds.jl")
 @everywhere include("nFoldCrossValidateSynapticAnnealing.jl")
-
 
 # Include cross val annealing libraries.
 @everywhere include("backpropTraining.jl")
@@ -46,8 +53,32 @@ addprocs(25)
 ion()
 
 
+@everywhere function feedforward(network::NeuralNetwork, inputs::Vector{Float64})
+    for i in 1:length(inputs)
+        network.activation_nodes[1][i] = inputs[i]
+    end
+
+    for n in 1:length(network.weights)
+        for j in 1:network.structure[n+1]
+            s = dot(network.activation_nodes[n], network.weights[n][:, j])
+            network.activation_nodes[n+1][j] = network.propagation_function(s)
+        end
+    end
+end
+
+
+net = init_network([2, 3, 2])
+
+# To train the network use the form `train(network, input, output)`:
+train(net, [0.15, 0.7],[0.1, 0.9])
+
+# To evaluate an input use the form `net_eval(network, inputs)`
+feedforward(net, [0.15, 0.7])
+
+fill(NaN, 3)
+(net.weights)
+
 ###################################################################################################################################################
-# ---- Experiment Development Area ----
 
 # Construct the iris dataset
 irisData = readdlm(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\iris.dat", ',' , Any)
@@ -105,16 +136,7 @@ lcvfDataClassed = shuffleData(lcvfDataClassed)
 # plotAnnealResults(trainingErrorVector,validationErrorVector, "Training and Validation Classification Error of a Quantum Synaptic\n Annealing Neural Network using a Linear Temperature\n Schedule.")
 
 
-
 ###################################################################################################################################################
-
-
-numFolds = 25
-
-maxRuns = 1
-
-initTemp = 800
-
 
 dataSet = irisDataClassed
 
@@ -123,22 +145,34 @@ dataInputDimensions = [1:4]
 dataOutputDimensions = [5:7]
 
 
+
+
+###################################################################################################################################################
+
 dataSet = lcvfDataClassed
 
 dataInputDimensions = [1:194]
 
 dataOutputDimensions = [195:229]
 
+
+###################################################################################################################################################
+
+
+numFolds = 25
+
+maxRuns = 600
+
+initTemp = 50000
+
 numHiddenLayers = 1
-
-
 
 matrixConfig = [length(dataInputDimensions)+1, repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)]
 
 
-###################################################################################################################################################
 
-outTuple_bp = @time nFoldCrossValidateBackpropPar(numFolds, matrixConfig, synapticAnnealing,
+###################################################################################################################################################
+outTuple_bp = @time nFoldCrossValidateBackpropPar(numFolds, [length(dataInputDimensions), repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)], synapticAnnealing,
                                                           0.0, maxRuns, quantumAnisotropicSynapticPerturbation, updateState_oscillatory,
                                                           getDataClassErr_backprop, getDataClassErr_backprop,
                                                           initTemp, 1,
@@ -154,15 +188,26 @@ plotAnnealResults(meanTrainErrorVec_bp, meanValErrorVec_bp, "Training and Valida
 
 
 ###################################################################################################################################################
+# synMatIn = minValErrorSynapseMatrix_aq[1]
+
+
+
+# minValErrorSynapseMatrix_bp[1].weights
+
+# synMatIn[:,1:4,1] = minValErrorSynapseMatrix_bp[1].weights[1]
+# synMatIn[1:end-1,1:3,2] = minValErrorSynapseMatrix_bp[1].weights[2][1:end-1,:]
+
+synMatIn = null
+###################################################################################################################################################
 
 outTuple_aq = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
                                                           0.0, maxRuns, quantumAnisotropicSynapticPerturbation, updateState_oscillatory,
                                                           getDataClassErr, getDataClassErr,
                                                           initTemp, 1,
-                                                          tanh,
+                                                          synMatIn,tanh,
                                                           dataSet, dataInputDimensions, dataOutputDimensions)
 
-putdata(outTuple_aq, "outTuple_aq_lcvf10800")
+# putdata(outTuple_aq, "outTuple_aq_lcvf10800")
 outTuple_aq = getdata("outTuple_aq_lcvf10800")
 
 (meanValErrorVec_aq, meanTrainErrorVec_aq, meanPerturbDistanceVec_aq, minValErrorSynapseMatrix_aq) = outTuple_aq
@@ -175,7 +220,7 @@ outTuple_qo = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfi
                                                           0.0, maxRuns, quantumSynapticChange, updateState_q_only,
                                                           getDataClassErr, getDataClassErr,
                                                           initTemp, 1,
-                                                          tanh,
+                                                          synMatIn,tanh,
                                                           dataSet, dataInputDimensions, dataOutputDimensions)
 
 putdata(outTuple_qo, "outTuple_qo_lcvf1000")
@@ -193,7 +238,7 @@ outTuple_q = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig
                                                           0.0, maxRuns, quantumSynapticChange, updateState_oscillatory,
                                                           getDataClassErr, getDataClassErr,
                                                           initTemp, 1,
-                                                          tanh,
+                                                          synMatIn,tanh,
                                                           dataSet, dataInputDimensions, dataOutputDimensions)
 
 putdata(outTuple_q, "outTuple_q")
@@ -215,7 +260,7 @@ outTuple_f = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig
                                                          0.0, maxRuns, fixedStepSizeOmniDimSynapticChange, updateState,
                                                          getDataClassErr, getDataClassErr,
                                                          initTemp,1,
-                                                         tanh,
+                                                         synMatIn,tanh,
                                                          dataSet, dataInputDimensions, dataOutputDimensions)
 
 putdata(outTuple_f, "outTuple_f")
@@ -238,7 +283,7 @@ outTuple_o = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig
                                                           0.0, maxRuns, omniDimSynapticChange, updateState,
                                                           getDataClassErr, getDataClassErr,
                                                           initTemp, 1,
-                                                          tanh,
+                                                          synMatIn,tanh,
                                                           dataSet, dataInputDimensions, dataOutputDimensions)
 
 putdata(outTuple_o, "outTuple_o")
@@ -264,7 +309,7 @@ outTuple_s =nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synap
                                                    0.0, maxRuns, singleDimSynapticChange, updateState,
                                                    getDataClassErr, getDataClassErr,
                                                    initTemp, 1,
-                                                   tanh,
+                                                   synMatIn,tanh,
                                                    dataSet, dataInputDimensions, dataOutputDimensions)
 
 putdata(outTuple_q, "outTuple_s")
@@ -281,16 +326,42 @@ runTime/60/60
 
 runTime
 
+
+function minlimitvec(vector)
+
+
+	minlimitedvector = Any[]
+	minelement = Inf
+
+	for element = vector
+
+		if element < minelement
+			minelement = element
+		end
+
+		push!(minlimitedvector, minelement)
+
+	end
+
+	return(minlimitedvector)
+
+end
+
+
 # plot(meanTrainErrorVec_aq, label="Anisotropic Quantum Training Error", alpha=0.7)
-plot(meanValErrorVec_aq, label="Anisotropic Quantum Validation Error", alpha=0.7)
+plot(minlimitvec(meanValErrorVec_bp), label="Back Prop Validation Error", alpha=0.7)
+# plot(meanTrainErrorVec_aq, label="Anisotropic Quantum Training Error", alpha=0.7)
+plot(minlimitvec(meanValErrorVec_aq), label="Anisotropic Quantum Validation Error", alpha=0.7)
 # plot(meanTrainErrorVec_q, label="Quantum Training Error", alpha=0.7)
-plot(meanValErrorVec_q, label="Quantum Validation Error", alpha=0.7)
+plot(minlimitvec(meanValErrorVec_q), label="Quantum Validation Error", alpha=0.7)
+# plot(meanTrainErrorVec_q, label="Quantum Training Error", alpha=0.7)
+plot(minlimitvec(meanValErrorVec_qo), label="Quantum ONLY Validation Error", alpha=0.7)
 # plot(meanTrainErrorVec_o, label="Omnidimensional Training Error", alpha=0.7)
-plot(meanValErrorVec_o, label="Omnidimensional Validation Error", alpha=0.7)
+plot(minlimitvec(meanValErrorVec_o), label="Omnidimensional Validation Error", alpha=0.7)
 # plot(meanTrainErrorVec_f, label="Fixed-Step Training Error", alpha=0.7)
-plot(meanValErrorVec_f, label="Fixed-Step Validation Error", alpha=0.7)
+plot(minlimitvec(meanValErrorVec_f), label="Fixed-Step Validation Error", alpha=0.7)
 # plot(meanTrainErrorVec_s, label="Single-Step Training Error", alpha=0.7)
-plot(meanValErrorVec_s, label="Single-Step Validation Error", alpha=0.7)
+plot(minlimitvec(meanValErrorVec_s), label="Single-Step Validation Error", alpha=0.7)
 ylim(0, 1)
 
 xlabel("Training Epoch")

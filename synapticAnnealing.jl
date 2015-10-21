@@ -59,6 +59,10 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         # Update the state of the annealing system.
         stateTuple = updateState(stateTuple)
 
+
+# 		minValErrorSynapseMatrix_bp[1].weights[1]
+# 		minValErrorSynapseMatrix_bp[1].weights[2]
+
         # Compute the synapse perturbation matrix.
         synapsePerturbationTuple = perturbSynapses(synapseMatrix, stateTuple)
 
