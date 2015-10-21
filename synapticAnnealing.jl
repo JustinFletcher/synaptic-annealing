@@ -86,7 +86,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         temperatureNorm = stateTuple[1]/initTemperature
 
 
-        if (perturbedError<lastError)
+        if (perturbedError<=lastError)
           lastError = perturbedError
         # If the move was a quantum one.
         elseif !(perturbationDistance<=stateTuple[3])

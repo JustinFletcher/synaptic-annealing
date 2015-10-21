@@ -9,7 +9,7 @@ Pkg.build("BackpropNeuralNet")
 
 using PyPlot
 rmprocs(workers())
-addprocs(25)
+addprocs(2)
 
 # @everywhere using Devectorize
 
@@ -38,9 +38,9 @@ addprocs(25)
 @everywhere include("getDataPredictions.jl")
 
 # Include native propigation annealing libraries.
+@everywhere include("nativeNetsToSynMats.jl")
 @everywhere include("nFoldCrossValidateNativeProp.jl")
 @everywhere include("synapticAnnealing_nativePropigation.jl")
-@everywhere include("nativeNetsToSynMats.jl")
 
 # Include cross val annealing libraries.
 @everywhere include("buildFolds.jl")
@@ -51,7 +51,6 @@ addprocs(25)
 @everywhere include("nFoldCrossValidateBackprop.jl")
 
 ion()
-
 
 @everywhere function feedforward(network::NeuralNetwork, inputs::Vector{Float64})
     for i in 1:length(inputs)
@@ -149,20 +148,21 @@ dataOutputDimensions = [195:229]
 ###################################################################################################################################################
 
 
-numFolds = 25
+numFolds = 1
 
-maxRuns = 600
+maxRuns = 1000
 
-initTemp = 50000
+initTemp = 1000
 
 numHiddenLayers = 1
 
 matrixConfig = [length(dataInputDimensions)+1, repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)]
 
 
+matrixConfigNative = [length(dataInputDimensions), repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)]
 
 ###################################################################################################################################################
-outTuple_bp = @time nFoldCrossValidateBackpropPar(numFolds, [length(dataInputDimensions), repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)], synapticAnnealing,
+outTuple_bp = @time nFoldCrossValidateBackpropPar(numFolds, matrixConfigNative, synapticAnnealing,
                                                           0.0, maxRuns, quantumAnisotropicSynapticPerturbation, updateState_oscillatory,
                                                           getDataClassErr_backprop, getDataClassErr_backprop,
                                                           initTemp, 1,
@@ -246,19 +246,35 @@ plotAnnealResults(meanTrainErrorVec_q, meanValErrorVec_q, "Training and Validati
 
 
 
-outTuple_f = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
+outTuple_f_synMat = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
                                                          0.0, maxRuns, fixedStepSizeOmniDimSynapticChange, updateState,
                                                          getDataClassErr, getDataClassErr,
                                                          initTemp,1,
                                                          synMatIn,tanh,
                                                          dataSet, dataInputDimensions, dataOutputDimensions)
 
-putdata(outTuple_f, "outTuple_f")
-outTuple_f = getdata("outTuple_f")
+# putdata(outTuple_f, "outTuple_f")
+# outTuple_f = getdata("outTuple_f")
 
-(meanValErrorVec_f, meanTrainErrorVec_f, meanPerturbDistanceVec_f, minValErrorSynapseMatrix_f) = outTuple_f
+(meanValErrorVec_f_synMat, meanTrainErrorVec_f_synMat, meanPerturbDistanceVec_f_synMat, minValErrorSynapseMatrix_f_synMat) = outTuple_f_synMat
 
-plotAnnealResults(meanTrainErrorVec_f, meanValErrorVec_f, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
+plotAnnealResults(meanTrainErrorVec_f_synMat, meanValErrorVec_f_synMat, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
+
+
+
+outTuple_f_natProp = @time nFoldCrossValidateNativePropPar(numFolds, matrixConfigNative, synapticAnnealing_nativePropigation,
+                                                         0.0, maxRuns, fixedStepSizeOmniDimSynapticChange, updateState,
+                                                         getDataClassErr_nativeProp, getDataClassErr_nativeProp,
+                                                         initTemp,1,
+                                                         synMatIn,tanh,
+                                                         dataSet, dataInputDimensions, dataOutputDimensions)
+
+# putdata(outTuple_f, "outTuple_f")
+# outTuple_f = getdata("outTuple_f")
+
+(meanValErrorVec_f_natProp, meanTrainErrorVec_f_natProp, meanPerturbDistanceVec_f_natProp, minValErrorSynapseMatrix_f_natProp) = outTuple_f_natProp
+
+plotAnnealResults(meanTrainErrorVec_f_natProp, meanValErrorVec_f_natProp, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
 
 
 # plotAnnealResults(meanTrainErrorVec_f, meanPerturbDistanceVec_f./maximum(meanPerturbDistanceVec_f), "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")

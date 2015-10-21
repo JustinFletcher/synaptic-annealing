@@ -16,10 +16,6 @@ function getDataClassErr(synapseMatrix, actFun, data, inputCols, outputCols)
     return(err/size(data)[1])
 end
 
-feedforward(net, [0.15, 0.7])
-
-net.activation_nodes[end]
-
 
 function getDataClassErr_nativeProp(net, data, inputCols, outputCols)
 
@@ -29,9 +25,10 @@ function getDataClassErr_nativeProp(net, data, inputCols, outputCols)
     # For every observation in the data set.
     for sampleRow in 1:size(data)[1]
 
-		feedforward(net, data[sampleRow, inputCols])
+# 		feedforward(net, vec(data[sampleRow, inputCols]))
 
-		err += indmax(net.activation_nodes[end])!=indmax(data[sampleRow, outputCols])
+# 		err += indmax(net.activation_nodes[end])!=indmax(data[sampleRow, outputCols])
+		err += indmax(net_eval(net, vec(data[sampleRow, inputCols])))!=indmax(data[sampleRow, outputCols])
 
 	end
 

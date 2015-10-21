@@ -1,5 +1,5 @@
 
-function getNetworkSynapseMatrix(network)
+function getNetworkSynapseMatrix(net)
 
 	# Construct s matrix of zeros of the size needed.
 	synapseMatrix = zeros(maximum(net.structure)+1, maximum(net.structure)+1, length(net.structure)-1)
@@ -10,11 +10,9 @@ function getNetworkSynapseMatrix(network)
 	return(synapseMatrix)
 end
 
-function setNetworkSynapseMatrix(network, synMat)
+function setNetworkSynapseMatrix(net, synMat)
 
-	[network.weights[layerInd] = synMat[1:network.structure[layerInd]+1, 1:network.structure[layerInd+1], layerInd] for layerInd in 1:size(synMat)[3]]
+	[net.weights[layerInd] = synMat[1:net.structure[layerInd]+1, 1:net.structure[layerInd+1], layerInd] for layerInd in 1:size(synMat)[3]]
 
-	return(network)
+	return(net)
 end
-
-

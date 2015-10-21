@@ -1,7 +1,7 @@
 
 function synapticAnnealing_nativePropigation(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, netIn, actFun, trainData, valData, inputCols, outputCols)
 
-    println("New Synaptic Annealing Run")
+    println("New Synaptic Annealing with Native Prop Run")
 
 #     Parse the input data tuple into train and val tuples.
 #     (trainData, valData, inputCols, outputCols) = dataTuple
@@ -59,9 +59,6 @@ function synapticAnnealing_nativePropigation(convCriterion, cutoffEpochs, pertur
 
 		synapseMatrix = getNetworkSynapseMatrix(network)
 
-# 		network[1].weights[1]
-# 		network[1].weights[2]
-
         # Compute the synapse perturbation matrix.
         synapsePerturbationTuple = perturbSynapses(synapseMatrix, stateTuple)
 
@@ -75,7 +72,7 @@ function synapticAnnealing_nativePropigation(convCriterion, cutoffEpochs, pertur
         synapseMatrix += synapsePerturbation
 
         # Compute the resultant error.
-        perturbedError = errorFunction(setNetworkSynapseMatrix(synapseMatrix), trainData, inputCols, outputCols)
+        perturbedError = errorFunction(setNetworkSynapseMatrix(network, synapseMatrix), trainData, inputCols, outputCols)
 
 
         # Computer the change in error.
@@ -85,7 +82,7 @@ function synapticAnnealing_nativePropigation(convCriterion, cutoffEpochs, pertur
         temperatureNorm = stateTuple[1]/initTemperature
 
 
-        if (perturbedError<lastError)
+        if (perturbedError<=lastError)
           lastError = perturbedError
         # If the move was a quantum one.
         elseif !(perturbationDistance<=stateTuple[3])
@@ -99,8 +96,8 @@ function synapticAnnealing_nativePropigation(convCriterion, cutoffEpochs, pertur
           lastError = perturbedError
         end
 
-		network = setNetworkSynapseMatrix(synapseMatrix)
-
+		network = setNetworkSynapseMatrix(network, synapseMatrix)
+# 		println(network.weights[1][1,1])
 
         if((trainErr == 0.0 )&&(valErr == 0.0))
           println("Perfect Run")
