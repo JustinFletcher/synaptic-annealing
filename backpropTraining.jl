@@ -61,3 +61,26 @@ function backpropTraining(convCriterion, cutoffEpochs, perturbSynapses, updateSt
 
 end
 
+
+
+function groundWithBackProp(cutoffEpochs, net, trainData,inputCols, outputCols)
+
+    println("New Backprop Grounding")
+
+	numEpochs = 0
+
+    while (numEpochs<cutoffEpochs)
+
+		numEpochs += 1
+
+		for sampleRow in 1:size(trainData)[1]
+			train(net, vec(trainData[sampleRow, inputCols]), vec(trainData[sampleRow, outputCols]))
+		end
+
+    end
+
+
+    return(net)
+
+end
+

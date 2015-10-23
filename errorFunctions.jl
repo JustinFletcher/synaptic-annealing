@@ -138,3 +138,20 @@ function getDataRegErr(synapseMatrix, actFun, data, inputCols, outputCols)
     # Return the average error.
     return(err/size(data)[1])
 end
+
+function getDataRegErr_nativeProp(net, data, inputCols, outputCols)
+
+
+    err = 0
+
+    # For every observation in the data set.
+    for sampleRow in 1:size(data)[1]
+
+
+		err += sqrt(sum((net_eval(net, vec(data[sampleRow, inputCols]))-transpose(data[sampleRow, outputCols])).^2))^2
+
+    end
+
+    # Return the average error.
+    return(err/size(data)[1])
+end
