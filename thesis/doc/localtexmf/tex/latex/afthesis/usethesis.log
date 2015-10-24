@@ -1,0 +1,140 @@
+This is TeX, Version 3.14159 (MiKTeX 1.20c) (preloaded format=latex 2000.3.29)  11 MAY 2000 15:02
+**usethesis.tex
+(usethesis.tex
+LaTeX2e <1998/12/01> patch level 1
+Babel <v3.6x> and hyphenation patterns for american, french, german, ngerman, n
+ohyphenation, loaded.
+(afthesis.cls
+Document Class: afthesis 1996/12/14 v2.7 -- AFIT THESIS STYLE
+by Joel Young adapted from work by Mark Roth
+(C:\texmf\tex\latex\base\report.cls
+Document Class: report 1999/01/07 v1.4a Standard LaTeX document class
+(C:\texmf\tex\latex\base\size11.clo
+File: size11.clo 1999/01/07 v1.4a Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (caption2.sty
+Package: caption2 1995/10/09 v2.0 caption package (AS)
+
+Package: caption v2.0(BETA) <1995/10/09> (Harald Sommerfeldt)
+\realcaptionwidth=\skip43
+\captionbox=\box26
+\captionlabelsep=\dimen103
+\captionmargin=\dimen104
+\captionwidth=\dimen105
+\captionindent=\dimen106
+) (afthes11.sty)) (usethesis.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+
+
+Fly Leaf.
+[1
+
+
+]
+
+Disclaimer Page.
+[2]
+
+Title Page.
+[1]
+
+Approval Page.
+[2]
+
+Preface.
+[3
+
+]
+
+Table of Contents.
+(usethesis.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 1.
+)
+\tf@toc=\write3
+ [4
+
+]
+
+List of Figures.
+(usethesis.lof)
+\tf@lof=\write4
+ [5
+
+]
+
+List of Tables.
+(usethesis.lot)
+\tf@lot=\write5
+ [6
+
+]
+
+List of Symbols.
+(usethesis.los)
+\tf@los=\write6
+ [7
+
+]
+
+List of Abbreviations.
+(usethesis.loa)
+\tf@loa=\write7
+ [8
+
+]
+
+Abstract.
+[9
+
+]
+
+Chapter 1.
+[1
+
+]
+
+Chapter 2.
+[1
+
+]
+
+Appendix 1.
+No file usethesis.bbl.
+[1
+
+
+]
+
+Vita.
+[1
+
+] (usethesis.aux) )
+Output written on usethesis.dvi (15 pages, 9936 bytes).

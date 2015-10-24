@@ -1,0 +1,19 @@
+total 360
+-rw-rw-r--   1 ftpmaint server      1194 Jun  5 02:49 00Contents
+-rw-rw-r--   1 ftpmaint server        87 Mar 13  1998 2up.sty
+-rw-rw-r--   1 ftpmaint server     13143 Mar 13  1998 2up.tex
+-rw-rw-r--   1 ftpmaint server     27464 Jul 24  1998 fancybox.sty
+-rw-rw-r--   1 ftpmaint server      7047 Apr  1  1993 npsfont.sty
+-rw-rw-r--   1 ftpmaint server       152 Apr  1  1993 sem-a4.sty
+-rw-rw-r--   1 ftpmaint server      2075 Apr  1  1993 sem-page.sty
+-rw-rw-r--   1 ftpmaint server      1493 Apr  1  1993 semcolor.sty
+-rw-rw-r--   1 ftpmaint server      7526 May 17  1999 semhelv.sty
+-rw-rw-r--   1 ftpmaint server      9066 Mar 13  1998 seminar.bg2
+-rw-rw-r--   1 ftpmaint server      6075 Dec 31  1997 seminar.bug
+-rw-rw-r--   1 ftpmaint server     38551 Dec 31  1997 seminar.cls
+-rw-rw-r--   1 ftpmaint server     37129 Dec 31  1997 seminar.sty
+-rw-rw-r--   1 ftpmaint server      3998 Apr  1  1993 semlayer.sty
+-rw-rw-r--   1 ftpmaint server      4596 Aug 24  1994 semlcmss.sty
+-rw-rw-r--   1 ftpmaint server      2839 Apr  1  1993 semrot.sty
+-rw-rw-r--   1 ftpmaint server      6619 Apr  1  1993 slidesec.sty
+-rw-rw-r--   1 ftpmaint server      6205 Apr  1  1993 xcomment.sty

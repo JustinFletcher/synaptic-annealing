@@ -1,0 +1,18 @@
+%Filename: Uzws.fd
+%Created by: tex fontwtm
+%Created using fontinst v1.504
+
+%THIS FILE SHOULD BE PUT IN A TEX INPUTS DIRECTORY
+
+\ProvidesFile{Uzws.fd}
+   [1998/03/31 Fontinst v1.504 font definitions for U/zws.]
+
+\DeclareFontFamily{U}{zws}{}
+
+\DeclareFontShape{U}{zws}{m}{n}{
+   <-> zwsm
+}{}
+
+\DeclareFontShape{U}{zws}{l}{n}{<->ssub * zws/m/n}{}
+
+\endinput

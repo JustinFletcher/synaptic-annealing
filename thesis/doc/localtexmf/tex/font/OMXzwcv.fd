@@ -1,0 +1,23 @@
+%Filename: OMXzwcv.fd
+%Created by: tex fontwtm
+%Created using fontinst v1.504
+
+%THIS FILE SHOULD BE PUT IN A TEX INPUTS DIRECTORY
+
+\ProvidesFile{OMXzwcv.fd}
+   [1998/03/31 Fontinst v1.504 font definitions for OMX/zwcv.]
+
+\DeclareFontFamily{OMX}{zwcv}{}
+
+\DeclareFontShape{OMX}{zwcv}{m}{n}{
+   <-> zwcvm
+}{}
+
+\DeclareFontShape{OMX}{zwcv}{b}{n}{
+   <-> zwcvb
+}{}
+
+\DeclareFontShape{OMX}{zwcv}{l}{n}{<->ssub * zwcv/m/n}{}
+\DeclareFontShape{OMX}{zwcv}{bx}{n}{<->ssub * zwcv/b/n}{}
+
+\endinput

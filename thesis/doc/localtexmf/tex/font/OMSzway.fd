@@ -1,0 +1,23 @@
+%Filename: OMSzway.fd
+%Created by: tex fontwtm
+%Created using fontinst v1.504
+
+%THIS FILE SHOULD BE PUT IN A TEX INPUTS DIRECTORY
+
+\ProvidesFile{OMSzway.fd}
+   [1998/03/31 Fontinst v1.504 font definitions for OMS/zway.]
+
+\DeclareFontFamily{OMS}{zway}{}
+
+\DeclareFontShape{OMS}{zway}{m}{n}{
+   <-> zwaym
+}{}
+
+\DeclareFontShape{OMS}{zway}{b}{n}{
+   <-> zwayb
+}{}
+
+\DeclareFontShape{OMS}{zway}{l}{n}{<->ssub * zway/m/n}{}
+\DeclareFontShape{OMS}{zway}{bx}{n}{<->ssub * zway/b/n}{}
+
+\endinput

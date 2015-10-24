@@ -1,0 +1,23 @@
+%Filename: OMLzwcm.fd
+%Created by: tex fontwtm
+%Created using fontinst v1.504
+
+%THIS FILE SHOULD BE PUT IN A TEX INPUTS DIRECTORY
+
+\ProvidesFile{OMLzwcm.fd}
+   [1998/03/31 Fontinst v1.504 font definitions for OML/zwcm.]
+
+\DeclareFontFamily{OML}{zwcm}{\skewchar \font =127}
+
+\DeclareFontShape{OML}{zwcm}{m}{n}{
+   <-> zwcmm
+}{}
+
+\DeclareFontShape{OML}{zwcm}{b}{n}{
+   <-> zwcmb
+}{}
+
+\DeclareFontShape{OML}{zwcm}{l}{n}{<->ssub * zwcm/m/n}{}
+\DeclareFontShape{OML}{zwcm}{bx}{n}{<->ssub * zwcm/b/n}{}
+
+\endinput

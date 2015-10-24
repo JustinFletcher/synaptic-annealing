@@ -1,0 +1,224 @@
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  24 OCT 2015 19:37
+entering extended mode
+**usethesis.tex
+
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
+FIT LaTeX\usethesis.tex"
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
+FIT LaTeX\afthesis.cls"
+Document Class: afthesis 1996/12/14 v2.7 -- AFIT THESIS STYLE
+by Joel Young adapted from work by Mark Roth
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
+Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption2.sty"
+Package: caption2 2008/07/01 v2.2c Customising captions (AS)
+
+
+Package caption2 Warning: ****************************************************
+(caption2)                THIS PACKAGE IS OBSOLETE:
+(caption2)                This package attempts to provide an `caption2'
+(caption2)                package v2.0/2.1 author environment so that OLD
+(caption2)                documents can be successfully processed. It should
+(caption2)                NOT be used for NEW documents! New documents should
+(caption2)                use the regular `caption' package v3.x instead.
+(caption2)                ****************************************************
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\captionmargin=\dimen103
+\captionmargin@=\dimen104
+\captionwidth=\dimen105
+\caption@indent=\dimen106
+\caption@parindent=\dimen107
+\caption@hangindent=\dimen108
+)
+Package caption2 Info: Running in caption2 v2.0 compatibility mode on input lin
+e 209.
+\captionlinewidth=\dimen109
+\realcaptionwidth=\dimen110
+)
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
+FIT LaTeX\afthes11.sty"))
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
+FIT LaTeX\usethesis.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+
+
+Fly Leaf.
+[1
+
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+Disclaimer Page.
+[2]
+
+Title Page.
+[1]
+
+Approval Page.
+[2]
+
+Preface.
+[3
+
+]
+
+Table of Contents.
+
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
+FIT LaTeX\usethesis.toc"
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 1.
+ [4
+
+])
+\tf@toc=\write3
+ [5]
+
+List of Figures.
+
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
+FIT LaTeX\usethesis.lof")
+\tf@lof=\write4
+ [6
+
+]
+
+List of Tables.
+
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
+FIT LaTeX\usethesis.lot")
+\tf@lot=\write5
+ [7
+
+]
+
+List of Symbols.
+
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
+FIT LaTeX\usethesis.los")
+\tf@los=\write6
+ [8
+
+]
+
+List of Abbreviations.
+
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
+FIT LaTeX\usethesis.loa")
+\tf@loa=\write7
+ [9
+
+]
+
+Abstract.
+[10
+
+]
+
+Chapter 1.
+[1
+
+]
+
+Chapter 2.
+[1
+
+] [2] [3]
+
+Chapter 3.
+[1
+
+]
+
+Appendix 1.
+No file usethesis.bbl.
+[1
+
+
+]
+
+Vita.
+[1
+
+]
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
+FIT LaTeX\usethesis.aux") ) 
+Here is how much of TeX's memory you used:
+ 1099 strings out of 494053
+ 18370 string characters out of 3146188
+ 70331 words of memory out of 3000000
+ 4429 multiletter control sequences out of 15000+200000
+ 7538 words of font info for 27 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 43i,6n,40p,941b,176s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on usethesis.pdf (19 pages, 167872 bytes).
+PDF statistics:
+ 116 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

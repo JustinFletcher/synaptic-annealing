@@ -1,0 +1,23 @@
+%Filename: OT1zwar.fd
+%Created by: tex fontwtm
+%Created using fontinst v1.504
+
+%THIS FILE SHOULD BE PUT IN A TEX INPUTS DIRECTORY
+
+\ProvidesFile{OT1zwar.fd}
+   [1998/03/31 Fontinst v1.504 font definitions for OT1/zwar.]
+
+\DeclareFontFamily{OT1}{zwar}{}
+
+\DeclareFontShape{OT1}{zwar}{m}{n}{
+   <-> zwarm
+}{}
+
+\DeclareFontShape{OT1}{zwar}{b}{n}{
+   <-> zwarb
+}{}
+
+\DeclareFontShape{OT1}{zwar}{l}{n}{<->ssub * zwar/m/n}{}
+\DeclareFontShape{OT1}{zwar}{bx}{n}{<->ssub * zwar/b/n}{}
+
+\endinput

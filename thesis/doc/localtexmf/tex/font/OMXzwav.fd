@@ -1,0 +1,23 @@
+%Filename: OMXzwav.fd
+%Created by: tex fontwtm
+%Created using fontinst v1.504
+
+%THIS FILE SHOULD BE PUT IN A TEX INPUTS DIRECTORY
+
+\ProvidesFile{OMXzwav.fd}
+   [1998/03/31 Fontinst v1.504 font definitions for OMX/zwav.]
+
+\DeclareFontFamily{OMX}{zwav}{}
+
+\DeclareFontShape{OMX}{zwav}{m}{n}{
+   <-> zwavm
+}{}
+
+\DeclareFontShape{OMX}{zwav}{b}{n}{
+   <-> zwavb
+}{}
+
+\DeclareFontShape{OMX}{zwav}{l}{n}{<->ssub * zwav/m/n}{}
+\DeclareFontShape{OMX}{zwav}{bx}{n}{<->ssub * zwav/b/n}{}
+
+\endinput

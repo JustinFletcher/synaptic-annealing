@@ -1,0 +1,23 @@
+%Filename: OT1zwcr.fd
+%Created by: tex fontwtm
+%Created using fontinst v1.504
+
+%THIS FILE SHOULD BE PUT IN A TEX INPUTS DIRECTORY
+
+\ProvidesFile{OT1zwcr.fd}
+   [1998/03/31 Fontinst v1.504 font definitions for OT1/zwcr.]
+
+\DeclareFontFamily{OT1}{zwcr}{}
+
+\DeclareFontShape{OT1}{zwcr}{m}{n}{
+   <-> zwcrm
+}{}
+
+\DeclareFontShape{OT1}{zwcr}{b}{n}{
+   <-> zwcrb
+}{}
+
+\DeclareFontShape{OT1}{zwcr}{l}{n}{<->ssub * zwcr/m/n}{}
+\DeclareFontShape{OT1}{zwcr}{bx}{n}{<->ssub * zwcr/b/n}{}
+
+\endinput

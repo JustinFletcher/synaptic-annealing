@@ -1,0 +1,8 @@
+total 144
+-rw-rw-r--   1 ftpmaint server       468 Dec  6  1996 00Contents
+-rw-rw-r--   1 ftpmaint server      1780 Apr  4  1995 Makefile
+-rw-rw-r--   1 ftpmaint server     18638 Apr  4  1995 caption.dtx
+-rw-rw-r--   1 ftpmaint server       611 Apr  4  1995 caption.ins
+-rw-rw-r--   1 ftpmaint server     21568 Oct  9  1995 caption2.dtx
+-rw-rw-r--   1 ftpmaint server       618 Oct  9  1995 caption2.ins
+-rw-rw-r--   1 ftpmaint server     26005 Oct 14  1995 test2.tex

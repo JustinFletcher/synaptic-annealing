@@ -1,0 +1,78 @@
+PS-Resources-1.0
+FontFamily
+FontOutline
+.
+FontFamily
+=Math1 Mono,Math1Mono,Math1 Mono- Bold,Math1Mono-Bold,Math1,Math1,Math1- Bold,\
+Math1-Bold,Math2 Mono,Math2Mono,Math2 Mono- Bold,Math2Mono-Bold,Math2,Math2,Ma\
+th2- Bold,Math2-Bold,Math3 Mono,Math3Mono,Math3 Mono- Bold,Math3Mono-Bold,Math\
+3,Math3,Math3- Bold,Math3-Bold,Math4 Mono,Math4Mono,Math4 Mono- Bold,Math4Mono\
+-Bold,Math4,Math4,Math4- Bold,Math4-Bold,Math5 Mono,Math5Mono,Math5 Mono- Bold\
+,Math5Mono-Bold,Math5,Math5,Math5- Bold,Math5-Bold
+Bitstream Charter=Bold Italic,CharterBT-BoldItalic,Bold,CharterBT-Bold,Italic,\
+CharterBT-Italic,Normal,CharterBT-Roman
+Courier=Bold Italic,Courier-BoldItalic,Bold,Courier-Bold,Italic,Courier-Italic\
+,Regular,Courier
+Swiss 721=Bold Italic,Swiss721BT-BoldItalic,Bold,Swiss721BT-Bold,Italic,Swiss7\
+21BT-Italic,Normal,Swiss721BT-Roman
+Utopia=Bold Italic,Utopia-BoldItalic,Bold,Utopia-Bold,Italic,Utopia-Italic,Reg\
+ular,Utopia-Regular
+.
+FontOutline
+CharterBT-Bold=c0632bt_.pfa
+CharterBT-BoldItalic=c0633bt_.pfa
+CharterBT-Italic=c0649bt_.pfa
+CharterBT-Roman=c0648bt_.pfa
+Courier=cour.pfa
+Courier-Bold=courb.pfa
+Courier-BoldItalic=courbi.pfa
+Courier-Italic=couri.pfa
+Math1=Math1.pfa
+Math1=Math1.pfb
+Math1-Bold=Math1-Bold.pfa
+Math1-Bold=Math1-Bold.pfb
+Math1Mono=Math1Mono.pfa
+Math1Mono=Math1Mono.pfb
+Math1Mono-Bold=Math1Mono-Bold.pfa
+Math1Mono-Bold=Math1Mono-Bold.pfb
+Math2=Math2.pfa
+Math2=Math2.pfb
+Math2-Bold=Math2-Bold.pfa
+Math2-Bold=Math2-Bold.pfb
+Math2Mono=Math2Mono.pfa
+Math2Mono=Math2Mono.pfb
+Math2Mono-Bold=Math2Mono-Bold.pfa
+Math2Mono-Bold=Math2Mono-Bold.pfb
+Math3=Math3.pfa
+Math3=Math3.pfb
+Math3-Bold=Math3-Bold.pfa
+Math3-Bold=Math3-Bold.pfb
+Math3Mono=Math3Mono.pfa
+Math3Mono=Math3Mono.pfb
+Math3Mono-Bold=Math3Mono-Bold.pfa
+Math3Mono-Bold=Math3Mono-Bold.pfb
+Math4=Math4.pfa
+Math4=Math4.pfb
+Math4-Bold=Math4-Bold.pfa
+Math4-Bold=Math4-Bold.pfb
+Math4Mono=Math4Mono.pfa
+Math4Mono=Math4Mono.pfb
+Math4Mono-Bold=Math4Mono-Bold.pfa
+Math4Mono-Bold=Math4Mono-Bold.pfb
+Math5=Math5.pfa
+Math5=Math5.pfb
+Math5-Bold=Math5-Bold.pfa
+Math5-Bold=Math5-Bold.pfb
+Math5Mono=Math5Mono.pfa
+Math5Mono=Math5Mono.pfb
+Math5Mono-Bold=Math5Mono-Bold.pfa
+Math5Mono-Bold=Math5Mono-Bold.pfb
+Swiss721BT-Bold=Swiss721BT-Bold.pfa
+Swiss721BT-BoldItalic=Swiss721BT-BoldItalic.pfa
+Swiss721BT-Italic=Swiss721BT-Italic.pfa
+Swiss721BT-Roman=Swiss721BT-Roman.pfa
+Utopia-Bold=UTB_____.pfa
+Utopia-BoldItalic=UTBI____.pfa
+Utopia-Italic=UTI_____.pfa
+Utopia-Regular=UTRG____.pfa
+.
