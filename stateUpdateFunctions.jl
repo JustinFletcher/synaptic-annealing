@@ -60,9 +60,9 @@ end
     temperature = maximum([temperature-1, 0])
 
     # Set the strength of the tunneling field.
-	tunnelingField = (sin(((1/1000)*numEpochs)+3*rand())+1)/2
+	tunnelingField = (sin(((1/900)*numEpochs)+3*rand())+1)/2
 	temperature = initTemperature*(sin(((1/1000)*numEpochs)+3*rand())+1)/2
-	anisotropicField = 1-(sin(((1/1000)*numEpochs)+3*rand())+1)/2
+	anisotropicField = 1-(sin(((1/500)*numEpochs)+3*rand())+1)/2
 
 
     # Pack and return the state tuple.

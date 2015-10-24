@@ -4,7 +4,7 @@ function plotAnnealResults(meanTrainErrorVec, meanValErrorVec, titleStr)
     ylim(0, 1)
     xlabel("Training Epoch")
     ylabel("5-Fold Cross-Validated Mean Classification Error")
-    legend(loc=3)
+	legend(loc=1)
     title(titleStr)
     plt[:show]()
 end

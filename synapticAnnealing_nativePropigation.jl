@@ -115,7 +115,7 @@ function synapticAnnealing_nativePropigation(convCriterion, cutoffEpochs, pertur
         end
 
         # Evaluate the convergence conditions.
-        converged = (stateTuple[7]>=cutoffEpochs)  #|| ((valErr<convCriterion)&&(trainErr<convCriterion)) || ((trainErr == 0.0 )&&(valErr == 0.0))
+        converged = (stateTuple[7]>=cutoffEpochs) || ((trainErr == 0.0 )&&(valErr == 0.0))
 
     end
 
