@@ -18,37 +18,33 @@ addprocs(25)
 @everywhere cd(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing")
 
 # Include utility libraries.
-@everywhere include("getput.jl")
-@everywhere include("vectorListMean.jl")
-@everywhere include("vectorListToMatrix.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"getput.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"vectorListMean.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"vectorListToMatrix.jl")
 
 # Include data maniputlation libraries.
-@everywhere include("normalizeData.jl")
-@everywhere include("orthogonalizeDataClasses.jl")
-@everywhere include("shuffleData.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"normalizeData.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"orthogonalizeDataClasses.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"shuffleData.jl")
 
 # Include synaptic annealing libraries.
-@everywhere include("createSynapseMatrix.jl")
-@everywhere include("propogateForward.jl")
-@everywhere include("plotAnnealResults.jl")
-@everywhere include("annealingTraversalFunctions.jl")
-@everywhere include("stateUpdateFunctions.jl")
-@everywhere include("synapticAnnealing.jl")
-@everywhere include("errorFunctions.jl")
-@everywhere include("getDataPredictions.jl")
-
-# Include native propigation annealing libraries.
-@everywhere include("nFoldCrossValidateNativeProp.jl")
-@everywhere include("synapticAnnealing_nativePropigation.jl")
-@everywhere include("nativeNetsToSynMats.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"createSynapseMatrix.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"propogateForward.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"plotAnnealResults.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"annealingTraversalFunctions.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"stateUpdateFunctions.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"synapticAnnealing.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"errorFunctions.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"getDataPredictions.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"nativeNetsToSynMats.jl")
 
 # Include cross val annealing libraries.
-@everywhere include("buildFolds.jl")
-@everywhere include("nFoldCrossValidateSynapticAnnealing.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"buildFolds.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"nFoldCrossValidateSynapticAnnealing.jl")
 
 # Include cross val annealing libraries.
-@everywhere include("backpropTraining.jl")
-@everywhere include("nFoldCrossValidateBackprop.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"backpropTraining.jl")
+@everywhere include(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\src\\"*"nFoldCrossValidateBackprop.jl")
 
 ion()
 
@@ -56,7 +52,8 @@ ion()
 #########################################################################################################################
 
 # Construct the iris dataset
-irisData = readdlm(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\iris.dat", ',' , Any)
+
+irisData = readdlm(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\data\\iris.dat", ',' , Any)
 irisDataClassed = orthogonalizeDataClasses(irisData, [5])
 irisDataClassed = normalizeData(irisDataClassed)
 irisDataClassed = shuffleData(irisDataClassed)
@@ -65,7 +62,7 @@ irisDataClassed = shuffleData(irisDataClassed)
 ###################################################################################################################################################
 
 # Pull the physics training data.
-tauThreeMuTrainData = readdlm(homedir()*"\\OneDrive\\afit\\CSCE823\\project\\tauThreeMuTrainData.dat", ',' , Any)
+tauThreeMuTrainData = readdlm(homedir()*"\\OneDrive\\afit\\CSCE823\\project\\data\\tauThreeMuTrainData.dat", ',' , Any)
 # Clip the last two columns, and the first row.
 tauThreeMuTrainData = tauThreeMuTrainData[2:end, 1:end-2]
 # Clip the Second from the last column, and the first column
@@ -82,33 +79,10 @@ tauThreeMuTrainData_subsetTest = tauThreeMuTrainData[(subsetSize+1):end, :]
 
 ###################################################################################################################################################
 
-lcvfData = readdlm(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\lcvfData.csv", ',' , Any)
+lcvfData = readdlm(homedir()*"\\OneDrive\\afit\\rs\\synaptic-annealing\\data\\lcvfData.csv", ',' , Any)
 lcvfDataClassed = orthogonalizeDataClasses(lcvfData, [195])
 lcvfDataClassed = normalizeData(lcvfDataClassed)
 lcvfDataClassed = shuffleData(lcvfDataClassed)
-
-
-
-# ###################################################################################################################################################
-# # Partition the iris dataset.
-# irisDataTrain = irisDataClassed[1:100, :]
-# irisDataVal = irisDataClassed[101:125, :]
-# irisDataTest = irisDataClassed[126:end, :]
-
-# synapseMatrixIn = createSynapseMatrix([5,10,3])
-
-# outTuple = @time synapticAnnealing(0.0, 500, fixedStepSizeOmniDimSynapticChange, updateState,
-#                                    getDataClassErr, getDataClassErr,
-#                                    100, 1,
-#                                    synapseMatrixIn, tanh,
-#                                    irisDataTrain, irisDataVal,
-#                                    [1:4], [5:7])
-
-# (minValErrorSynapseMatrix, validationErrorVector, trainingErrorVector, perturbationDistanceVector) = outTuple
-
-# finalValError = validationErrorVector[end]
-
-# plotAnnealResults(trainingErrorVector,validationErrorVector, "Training and Validation Classification Error of a Quantum Synaptic\n Annealing Neural Network using a Linear Temperature\n Schedule.")
 
 
 ###################################################################################################################################################
@@ -118,8 +92,6 @@ dataSet = irisDataClassed
 dataInputDimensions = [1:4]
 
 dataOutputDimensions = [5:7]
-
-
 
 
 ###################################################################################################################################################
@@ -136,23 +108,26 @@ dataOutputDimensions = [195:229]
 
 numFolds = 25
 
-maxRuns = 600
+maxRuns = 100000
 
 initTemp = 50000
 
 numHiddenLayers = 1
 
-matrixConfig = [length(dataInputDimensions)+1, repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)]
-
+matrixConfig = [length(dataInputDimensions), repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)]
 
 
 ###################################################################################################################################################
-outTuple_bp = @time nFoldCrossValidateBackpropPar(numFolds, [length(dataInputDimensions), repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)], synapticAnnealing,
+
+dataSetBackProp = dataSet
+dataSetBackProp[:,dataOutputDimensions] =  (dataSet[:,dataOutputDimensions]+1)/2
+
+outTuple_bp = @time nFoldCrossValidateBackpropPar(numFolds, matrixConfig, synapticAnnealing,
                                                           0.0, maxRuns, quantumAnisotropicSynapticPerturbation, updateState_oscillatory,
-                                                          getDataClassErr_backprop, getDataClassErr_backprop,
+                                                          getDataClassErr, getDataClassErr,
                                                           initTemp, 1,
                                                           tanh,
-                                                          dataSet, dataInputDimensions, dataOutputDimensions)
+                                                          dataSetBackProp, dataInputDimensions, dataOutputDimensions)
 
 putdata(outTuple_bp, "outTuple_bp")
 outTuple_bp = getdata("outTuple_bp")
@@ -183,7 +158,7 @@ outTuple_aq = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfi
                                                           dataSet, dataInputDimensions, dataOutputDimensions)
 
 # putdata(outTuple_aq, "outTuple_aq_lcvf10800")
-outTuple_aq = getdata("outTuple_aq_lcvf10800")
+# outTuple_aq = getdata("outTuple_aq_lcvf10800")
 
 (meanValErrorVec_aq, meanTrainErrorVec_aq, meanPerturbDistanceVec_aq, minValErrorSynapseMatrix_aq) = outTuple_aq
 
@@ -198,8 +173,8 @@ outTuple_qo = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfi
                                                           synMatIn,tanh,
                                                           dataSet, dataInputDimensions, dataOutputDimensions)
 
-putdata(outTuple_qo, "outTuple_qo_lcvf1000")
-outTuple_qo = getdata("outTuple_qo_lcvf1000")
+# putdata(outTuple_qo, "outTuple_qo_lcvf1000")
+# outTuple_qo = getdata("outTuple_qo_lcvf1000")
 
 (meanValErrorVec_qo, meanTrainErrorVec_qo, meanPerturbDistanceVec_qo, minValErrorSynapseMatrix_qo) = outTuple_qo
 
@@ -211,7 +186,7 @@ plotAnnealResults(meanTrainErrorVec_qo, meanValErrorVec_qo, "Training and Valida
 
 outTuple_q = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
                                                           0.0, maxRuns, quantumSynapticChange, updateState_oscillatory,
-                                                          getDataClassErr, getDataClassErr,
+                                                          getDataRegErr, getDataClassErr,
                                                           initTemp, 1,
                                                           synMatIn,tanh,
                                                           dataSet, dataInputDimensions, dataOutputDimensions)

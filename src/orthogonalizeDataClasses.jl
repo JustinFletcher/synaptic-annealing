@@ -9,7 +9,7 @@ function orthogonalizeDataClasses(data,classCol)
     transformedData = transformedData[:, colVector]
     # Get each unique class value
     for class in getUniqueElements(data[:, classCol])
-        transformedData = [transformedData int(data[:, classCol] .== class)]
+        transformedData = [transformedData (2*int(data[:, classCol] .== class))-1]
     end
 
     return(float64(transformedData))

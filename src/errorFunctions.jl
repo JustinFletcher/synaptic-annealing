@@ -28,7 +28,7 @@ function getDataClassErr(net, data, inputCols, outputCols)
 # 		feedforward(net, vec(data[sampleRow, inputCols]))
 
 # 		err += indmax(net.activation_nodes[end])!=indmax(data[sampleRow, outputCols])
-		err += indmax(net_eval(net, vec(data[sampleRow, inputCols])))!=indmax(data[sampleRow, outputCols])
+		err += indmax(transpose(net_eval(net, vec(data[sampleRow, inputCols]))))!=indmax(data[sampleRow, outputCols])
 
 	end
 
@@ -145,12 +145,14 @@ function getDataRegErr(net, data, inputCols, outputCols)
 
     # For every observation in the data set.
     for sampleRow in 1:size(data)[1]
+# 		println(data[sampleRow, outputCols])
+# 		println(net_eval(net, vec(data[sampleRow, inputCols])))
 
-
-		err += sqrt(sum((net_eval(net, vec(data[sampleRow, inputCols]))-transpose(data[sampleRow, outputCols])).^2))^2
-
+# 		err += sqrt(sum((net_eval(net, vec(data[sampleRow, inputCols]))-transpose(data[sampleRow, outputCols])).^2))^2
+		err += (sqrt(sum((data[sampleRow, outputCols]-transpose(net_eval(net, vec(data[sampleRow, inputCols])))).^2)))^2
     end
-
+#     println(err)
     # Return the average error.
     return(err/size(data)[1])
 end
+
