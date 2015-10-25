@@ -1,4 +1,4 @@
-function nFoldCrossValidateNativePropPar(numFolds, synMatConfigVec, annealingFunction, convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synMatIn, actFun, data, inputCols, outputCols)
+function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annealingFunction, convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synMatIn, actFun, data, inputCols, outputCols)
 
 
     # Shuffle the data.

@@ -1,68 +1,3 @@
-
-function nFoldCrossValidateSynapticAnnealing(numFolds, synMatConfigVec, annealingFunction, convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synMatIn, actFun, data, inputCols, outputCols)
-
-
-    # Shuffle the data.
-    data = shuffleData(data)
-
-    # Build the folds, and shuffle the data.
-    inFoldsVector,  outFoldsVector = buildFolds(data, numFolds)
-
-    # Initialize the loop variables.
-    minValErrorSynapseMatrix = null
-    bestValError = Inf
-
-    trainErrorFoldList = Any[]
-    valErrorFoldList= Any[]
-    perturbationDistanceFoldList = Any[]
-    synapseMatrixFoldMatrix = zeros(maximum(synMatConfigVec), maximum(synMatConfigVec), length(synMatConfigVec), numFolds)
-    synapseMatrixFoldList = Any[]
-
-    # Iterate over each fold.
-    for fold in 1:numFolds
-
-        # Select the train and validation data from the folds.
-        valData  = data[inFoldsVector[fold],:]
-        trainData = data[outFoldsVector[fold],:]
-
-
-		if (synMatIn == null)
-			# Initialize a new synapse matrix.
-			synapseMatrix = createSynapseMatrix(synMatConfigVec)
-		else
-			synapseMatrix = copy(synMatIn)
-		end
-
-        # Anneal the synapse matrix.
-        outTuple = annealingFunction(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synapseMatrix, actFun, trainData, valData, inputCols, outputCols)
-
-        (minValErrSynapseMatrix, validationErrorVector, trainingErrorVector, perturbationDistanceVector) = outTuple
-
-        # Push the results onto the storage lists.
-        push!(trainErrorFoldList, trainingErrorVector)
-        push!(valErrorFoldList, validationErrorVector)
-        push!(perturbationDistanceFoldList, perturbationDistanceVector)
-        push!(synapseMatrixFoldList, minValErrSynapseMatrix)
-        synapseMatrixFoldMatrix[:,:,:,fold] = minValErrSynapseMatrix
-
-    end
-
-
-    # Compute the fold-mean validation error vector.
-    meanValErrorVec = vec(mean(vectorListToMatrix(valErrorFoldList), 1))
-
-    # Compute the fold-mean training error vector.
-    meanTrainErrorVec = vec(mean(vectorListToMatrix(trainErrorFoldList), 1))
-
-    # Compute the fold-mean perturbation distance vector.
-    meanPerturbationDistanceVec = vec(mean(vectorListToMatrix(perturbationDistanceFoldList), 1))
-
-    # Return the results as a tuple.
-    return(Any[meanValErrorVec, meanTrainErrorVec, meanPerturbationDistanceVec, synapseMatrixFoldList])
-end
-
-
-
 function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annealingFunction, convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synMatIn, actFun, data, inputCols, outputCols)
 
 
@@ -84,16 +19,12 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
         trainData = data[outFoldsVector[fold],:]
 
         # Initialize a new synapse matrix.
-		if (synMatIn == null)
-			# Initialize a new synapse matrix.
-			synapseMatrix = createSynapseMatrix(synMatConfigVec)
-		else
-			synapseMatrix = copy(synMatIn)
-		end
-
+        netIn = init_network(synMatConfigVec)
+		netIn.learning_rate = 1
+		netIn.propagation_function = tanh
 
         # Spawn an annealing task.
-        ref = @spawn annealingFunction(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synapseMatrix, actFun, trainData, valData, inputCols, outputCols)
+        ref = @spawn annealingFunction(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, netIn, actFun, trainData, valData, inputCols, outputCols)
 
         # Append the rederence to the remote task to the list.
         push!(refList, ref)
@@ -105,8 +36,6 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
     trainErrorFoldList = Any[]
     valErrorFoldList= Any[]
     perturbationDistanceFoldList = Any[]
-	# Insert a +1 here to convert to all bias
-    synapseMatrixFoldMatrix = zeros(maximum(synMatConfigVec), maximum(synMatConfigVec), length(synMatConfigVec), numFolds)
     synapseMatrixFoldList = Any[]
 
     # Iterate over each reference.
@@ -118,6 +47,7 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
 
         # Fetch and unpack the results from the remote job.
         outTuple = fetch(remoteReference)
+
         (minValErrSynapseMatrix, validationErrorVector, trainingErrorVector, perturbationDistanceVector) = outTuple
 
         # Push the results onto the storage lists.
@@ -125,7 +55,6 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
         push!(valErrorFoldList, validationErrorVector)
         push!(perturbationDistanceFoldList, perturbationDistanceVector)
         push!(synapseMatrixFoldList, minValErrSynapseMatrix)
-        synapseMatrixFoldMatrix[:,:,:,refNum] = minValErrSynapseMatrix
 
     end
 
@@ -136,7 +65,7 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
     meanTrainErrorVec = vec(mean(vectorListToMatrix(trainErrorFoldList), 1))
 
     # Compute the fold-mean perturbation distance vector.
-    meanPerturbationDistanceVec = vec(mean(vectorListToMatrix(perturbationDistanceFoldList), 1))
+    meanPerturbationDistanceVec = 0
 
     # Return the results as a tuple.
     return(Any[meanValErrorVec, meanTrainErrorVec, meanPerturbationDistanceVec, synapseMatrixFoldList])

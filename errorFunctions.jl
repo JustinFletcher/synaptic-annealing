@@ -1,23 +1,23 @@
 
 
-function getDataClassErr(synapseMatrix, actFun, data, inputCols, outputCols)
+# function getDataClassErr(synapseMatrix, actFun, data, inputCols, outputCols)
 
-    # Initialize error to 0.
-    err = 0
+#     # Initialize error to 0.
+#     err = 0
 
-    # For every observation in the data set.
-    for sampleRow in 1:size(data)[1]
+#     # For every observation in the data set.
+#     for sampleRow in 1:size(data)[1]
 
-		err += indmax(propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun))!=indmax(data[sampleRow, outputCols])
+# 		err += indmax(propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun))!=indmax(data[sampleRow, outputCols])
 
-	end
+# 	end
 
-    # Return the average error.
-    return(err/size(data)[1])
-end
+#     # Return the average error.
+#     return(err/size(data)[1])
+# end
 
 
-function getDataClassErr_nativeProp(net, data, inputCols, outputCols)
+function getDataClassErr(net, data, inputCols, outputCols)
 
     # Initialize error to 0.
     err = 0
@@ -75,8 +75,7 @@ function getDataClassErrPar(synapseMatrix, actFun, data, inputCols, outputCols)
 
     # For every observation in the data set.
     err = @parallel (+) for sampleRow in 1:size(data)[1]
-
-		indmax(propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun))!=indmax(data[sampleRow, outputCols])
+		indmax(net_eval(net, vec(data[sampleRow, inputCols])))!=indmax(data[sampleRow, outputCols])
         #println("------------------------------")
         #sample = data[sampleRow, :]
         #println(sample)
@@ -111,35 +110,35 @@ function getDataClassErrPar(synapseMatrix, actFun, data, inputCols, outputCols)
 end
 # To undo the changes for universal viasing, remove the 1s.
 
-function getDataRegErr(synapseMatrix, actFun, data, inputCols, outputCols)
+# function getDataRegErr(synapseMatrix, actFun, data, inputCols, outputCols)
 
 
-    # Get the number of samples.
-    #numSamples = size(data)[1]
+#     # Get the number of samples.
+#     #numSamples = size(data)[1]
 
-    err = 0
+#     err = 0
 
-    # For every observation in the data set.
-    for sampleRow in 1:size(data)[1]
+#     # For every observation in the data set.
+#     for sampleRow in 1:size(data)[1]
 
-        #sample = data[sampleRow, :]
+#         #sample = data[sampleRow, :]
 
-        # Format the data for the arithmatic.
-		# Addd -1s here after size for all bias
-        paddedData = transpose([data[sampleRow, outputCols] (zeros(1, size(synapseMatrix)[1]-length(data[sampleRow, outputCols])))])
+#         # Format the data for the arithmatic.
+# 		# Addd -1s here after size for all bias
+#         paddedData = transpose([data[sampleRow, outputCols] (zeros(1, size(synapseMatrix)[1]-length(data[sampleRow, outputCols])))])
 
-# 		println(paddedData)
-# 		println(propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun))
-        # Sum the differences between the correct output and the NN pattern. Take the abs() and accumulate.
-        err += sqrt(sum((paddedData-propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun)).^2))^2
+# # 		println(paddedData)
+# # 		println(propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun))
+#         # Sum the differences between the correct output and the NN pattern. Take the abs() and accumulate.
+#         err += sqrt(sum((paddedData-propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun)).^2))^2
 
-    end
+#     end
 
-    # Return the average error.
-    return(err/size(data)[1])
-end
+#     # Return the average error.
+#     return(err/size(data)[1])
+# end
 
-function getDataRegErr_nativeProp(net, data, inputCols, outputCols)
+function getDataRegErr(net, data, inputCols, outputCols)
 
 
     err = 0

@@ -146,7 +146,7 @@ initTemp = 2000
 
 numHiddenLayers = 1
 
-matrixConfig = [length(dataInputDimensions)+1, repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)]
+matrixConfig = [length(dataInputDimensions), repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)]
 
 matrixConfigNative = [length(dataInputDimensions), repmat([length(dataInputDimensions)], numHiddenLayers),length(dataOutputDimensions)]
 
@@ -181,7 +181,7 @@ synMatIn = null
 
 outTuple_aq_synMat = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
                                                           0.0, maxRuns, quantumAnisotropicSynapticPerturbation, updateState_oscillatory,
-                                                          getDataRegErr, getDataClassErr,
+                                                          getDataClassErr, getDataClassErr,
                                                           initTemp, 1,
                                                           synMatIn,tanh,
                                                           dataSet, dataInputDimensions, dataOutputDimensions)
@@ -194,19 +194,6 @@ outTuple_aq_synMat = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matr
 plotAnnealResults(meanTrainErrorVec_aq_synMat, meanValErrorVec_aq_synMat, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
 
 
-
-outTuple_aq_natProp = @time nFoldCrossValidateNativePropPar(numFolds, matrixConfigNative, synapticAnnealing_nativePropigation,
-                                                         0.0, maxRuns, quantumAnisotropicSynapticPerturbation, updateState_oscillatory,
-                                                         getDataClassErr_nativeProp, getDataClassErr_nativeProp,
-                                                         initTemp, 1,
-                                                         synMatIn,tanh,
-                                                         dataSet, dataInputDimensions, dataOutputDimensions)
-# putdata(outTuple_f, "outTuple_f")
-# outTuple_f = getdata("outTuple_f")
-
-(meanValErrorVec_aq_natProp, meanTrainErrorVec_aq_natProp, meanPerturbDistanceVec_aq_natProp, minValErrorSynapseMatrix_aq_natProp) = outTuple_aq_natProp
-
-plotAnnealResults(meanTrainErrorVec_aq_natProp, meanValErrorVec_aq_natProp, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
 
 
 ###################################################################################################################################################
