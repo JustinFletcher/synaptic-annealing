@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}Comparison with \LaTeX 's captions}{2}
+\contentsline {section}{\numberline {2}Predefined caption styles}{3}
+\contentsline {section}{\numberline {3}\cs {captionwidth}}{4}
+\contentsline {section}{\numberline {4}The option `nooneline'}{5}
+\contentsline {section}{\numberline {5}Twocolumn floats}{6}
+\contentsline {subsection}{\numberline {5.1}Blah}{6}
+\contentsline {section}{\numberline {6}User-defined captions styles}{8}
+\contentsline {section}{\numberline {7}The float package}{9}
+\contentsline {subsection}{\numberline {7.1}Without caption package}{9}
+\contentsline {subsection}{\numberline {7.2}With caption package}{10}
+\contentsline {subsection}{\numberline {7.3}\dots and with captionstyle `indent'}{11}
+\contentsline {subsection}{\numberline {7.4}Redefined caption styles}{12}
+\contentsline {subsection}{\numberline {7.5}The option `boxed'}{12}
+\contentsline {subsection}{\numberline {7.6}The option `ruled'}{13}
+\contentsline {subsection}{\numberline {7.7}User-defined float styles}{13}
+\contentsline {section}{\numberline {8}The longtable package}{14}
+\contentsline {subsection}{\numberline {8.1}Without caption package}{14}
+\contentsline {subsection}{\numberline {8.2}With caption package}{14}
+\contentsline {section}{\numberline {9}The subfigure package}{16}
+\contentsline {subsection}{\numberline {9.1}Without caption package}{16}
+\contentsline {subsection}{\numberline {9.2}With caption package}{17}
+\contentsline {subsection}{\numberline {9.3}\dots and with subcapstyle `hang'}{18}
+\contentsline {section}{\numberline {10}Reported errors}{19}

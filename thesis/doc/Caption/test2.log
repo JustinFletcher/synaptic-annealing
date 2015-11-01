@@ -1,0 +1,364 @@
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  26 OCT 2015 18:28
+entering extended mode
+**test2.tex
+
+(C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\Caption\test2.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count87
+\float@exts=\toks14
+\float@box=\box26
+\@float@everytoks=\toks15
+\@floatcapt=\box27
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\longtable.sty"
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip43
+\LTright=\skip44
+\LTpre=\skip45
+\LTpost=\skip46
+\LTchunksize=\count88
+\LTcapwidth=\dimen103
+\LT@head=\box28
+\LT@firsthead=\box29
+\LT@foot=\box30
+\LT@lastfoot=\box31
+\LT@cols=\count89
+\LT@rows=\count90
+\c@LT@tables=\count91
+\c@LT@chunks=\count92
+\LT@p@ftn=\toks16
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.sty"
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip47
+\subfigcapskip=\skip48
+\subfigcaptopadj=\dimen104
+\subfigbottomskip=\skip49
+\subfigcapmargin=\dimen105
+\subfiglabelskip=\skip50
+\c@subfigure=\count93
+\c@lofdepth=\count94
+\c@subtable=\count95
+\c@lotdepth=\count96
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfigure\subfigure.cfg")
+\subfig@top=\skip51
+\subfig@bottom=\skip52
+)
+(C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\Caption\caption2.
+sty
+Package: caption2 1995/10/09 v2.0 caption package (AS)
+
+Package: caption v2.0(BETA) <1995/10/09> (Harald Sommerfeldt)
+\realcaptionwidth=\skip53
+\captionbox=\box32
+\captionlabelsep=\dimen106
+\captionmargin=\dimen107
+\captionwidth=\dimen108
+\captionindent=\dimen109
+         packages detected: float longtable subfigure
+\subcapindent=\skip54
+ 
+)
+No file test2.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 90.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 90.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 90.
+No file test2.toc.
+\tf@toc=\write3
+[1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Section: Comparison with \LaTeX 's captions
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 99.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 99.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 104.
+[2
+
+]
+Section: Predefined caption styles
+\xyz=\skip55
+[3
+
+]
+Section: \cs {captionwidth}
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 145.
+[4
+
+]
+Section: The option `nooneline'
+[5
+
+]
+Section: Twocolumn floats
+Subsection: Blah
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--203
+ \OT1/cmr/bx/n/9 Figure 26. []\OT1/cmr/m/n/9 This is a 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--203
+ \OT1/cmr/m/n/9 twocol-umn cap-tion. 
+ []
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 203--203
+ \OT1/cmr/m/n/9 This is a twocol-umn 
+ []
+
+
+Underfull \hbox (badness 3039) in paragraph at lines 203--203
+ \OT1/cmr/m/n/9 cap-tion. This is a 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--203
+ \OT1/cmr/m/n/9 twocol-umn cap-tion. 
+ []
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 203--203
+ \OT1/cmr/m/n/9 This is a twocol-umn 
+ []
+
+
+Underfull \hbox (badness 3039) in paragraph at lines 203--203
+ \OT1/cmr/m/n/9 cap-tion. This is a 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--203
+ \OT1/cmr/m/n/9 twocol-umn cap-tion. 
+ []
+
+
+Underfull \hbox (badness 2495) in paragraph at lines 203--203
+ \OT1/cmr/m/n/9 This is a twocol-umn 
+ []
+
+[6
+
+
+] [7]
+Section: User-defined captions styles
+[8
+
+
+]
+Section: The float package
+\@float@every@Example=\toks17
+\c@Example=\count97
+\@float@every@Program=\toks18
+\c@Program=\count98
+\@float@every@table=\toks19
+Subsection: Without caption package
+
+Underfull \hbox (badness 10000) in paragraph at lines 405--405
+
+ []
+
+[9
+
+]
+Subsection: With caption package
+
+Underfull \hbox (badness 10000) in paragraph at lines 414--414
+
+ []
+
+[10
+
+]
+Subsection: \dots and with captionstyle `indent'
+
+Underfull \hbox (badness 10000) in paragraph at lines 421--421
+
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 421.
+[11
+
+]
+Subsection: Redefined caption styles
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
+
+ []
+
+Subsection: The option `boxed'
+Subsection: The option `ruled'
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--445
+
+ []
+
+[12
+
+]
+Subsection: User-defined float styles
+\@float@every@Fancyfl=\toks20
+\c@Fancyfl=\count99
+[13]
+Section: The longtable package
+Subsection: Without caption package
+Subsection: With caption package
+[14
+
+] [15]
+Section: The subfigure package
+subcapstyle: centerlast(should be `centerlast')
+Subsection: Without caption package
+
+Underfull \hbox (badness 1158) in paragraph at lines 639--639
+[]\OT1/cmr/bx/n/8 (b) \OT1/cmr/m/n/8 Sec-ond Fig-
+ []
+
+
+LaTeX Warning: Reference `3figs' on page 16 undefined on input line 639.
+
+
+LaTeX Warning: Reference `3figs-c' on page 16 undefined on input line 639.
+
+
+LaTeX Warning: Reference `fig:first' on page 16 undefined on input line 639.
+
+
+LaTeX Warning: Reference `fig:second' on page 16 undefined on input line 639.
+
+[16
+
+]
+Subsection: With caption package
+
+LaTeX Warning: Reference `3figx' on page 17 undefined on input line 647.
+
+
+LaTeX Warning: Reference `3figx-c' on page 17 undefined on input line 647.
+
+
+LaTeX Warning: Reference `fix:first' on page 17 undefined on input line 647.
+
+
+LaTeX Warning: Reference `fix:second' on page 17 undefined on input line 647.
+
+[17
+
+]
+Subsection: \dots and with subcapstyle `hang'
+
+LaTeX Warning: Reference `3figy' on page 18 undefined on input line 654.
+
+
+LaTeX Warning: Reference `3figy-c' on page 18 undefined on input line 654.
+
+
+LaTeX Warning: Reference `fiy:first' on page 18 undefined on input line 654.
+
+
+LaTeX Warning: Reference `fiy:second' on page 18 undefined on input line 654.
+
+[18
+
+]
+Section: Reported errors
+[19
+
+]
+(C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\Caption\test2.aux
+)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 819 strings out of 494053
+ 10310 string characters out of 3146188
+ 64052 words of memory out of 3000000
+ 4151 multiletter control sequences out of 15000+200000
+ 12321 words of font info for 44 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 25i,9n,26p,293b,278s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmitt10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmti8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmtt12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmtt9.pfb>
+Output written on test2.pdf (19 pages, 270811 bytes).
+PDF statistics:
+ 152 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

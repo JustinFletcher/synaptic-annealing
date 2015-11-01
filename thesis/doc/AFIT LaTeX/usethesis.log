@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  24 OCT 2015 19:37
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  1 NOV 2015 09:45
 entering extended mode
 **usethesis.tex
 
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
-FIT LaTeX\usethesis.tex"
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
+esis.tex"
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -16,8 +16,8 @@ romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
 
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
-FIT LaTeX\afthesis.cls"
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\afthe
+sis.cls"
 Document Class: afthesis 1996/12/14 v2.7 -- AFIT THESIS STYLE
 by Joel Young adapted from work by Mark Roth
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
@@ -70,22 +70,22 @@ e 209.
 \captionlinewidth=\dimen109
 \realcaptionwidth=\dimen110
 )
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
-FIT LaTeX\afthes11.sty"))
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
-FIT LaTeX\usethesis.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 214.
-LaTeX Font Info:    ... okay on input line 214.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 214.
-LaTeX Font Info:    ... okay on input line 214.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 214.
-LaTeX Font Info:    ... okay on input line 214.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 214.
-LaTeX Font Info:    ... okay on input line 214.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 214.
-LaTeX Font Info:    ... okay on input line 214.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 214.
-LaTeX Font Info:    ... okay on input line 214.
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\afthe
+s11.sty"))
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
+esis.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
+LaTeX Font Info:    ... okay on input line 184.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -112,8 +112,8 @@ Preface.
 
 Table of Contents.
 
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
-FIT LaTeX\usethesis.toc"
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
+esis.toc"
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -128,8 +128,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 List of Figures.
 
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
-FIT LaTeX\usethesis.lof")
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
+esis.lof")
 \tf@lof=\write4
  [6
 
@@ -137,8 +137,8 @@ FIT LaTeX\usethesis.lof")
 
 List of Tables.
 
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
-FIT LaTeX\usethesis.lot")
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
+esis.lot")
 \tf@lot=\write5
  [7
 
@@ -146,8 +146,8 @@ FIT LaTeX\usethesis.lot")
 
 List of Symbols.
 
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
-FIT LaTeX\usethesis.los")
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
+esis.los")
 \tf@los=\write6
  [8
 
@@ -155,8 +155,8 @@ FIT LaTeX\usethesis.los")
 
 List of Abbreviations.
 
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
-FIT LaTeX\usethesis.loa")
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
+esis.loa")
 \tf@loa=\write7
  [9
 
@@ -175,17 +175,45 @@ Chapter 1.
 Chapter 2.
 [1
 
-] [2] [3]
+] [2]
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 304.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 304.
+Missing character: There is no Ã in font cmr9!
+Missing character: There is no ¶ in font cmr9!
+ [3] [4]
 
 Chapter 3.
 [1
 
 ]
 
-Appendix 1.
-No file usethesis.bbl.
+Chapter 4.
 [1
 
+]
+
+Chapter 5.
+[1
+
+]
+
+Appendix 1.
+
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
+esis.bbl" [1
+
+
+]
+
+Bibliography.
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [1
 
 ]
 
@@ -193,32 +221,33 @@ Vita.
 [1
 
 ]
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\synaptic-annealing-thesis\A
-FIT LaTeX\usethesis.aux") ) 
+("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
+esis.aux") ) 
 Here is how much of TeX's memory you used:
- 1099 strings out of 494053
- 18370 string characters out of 3146188
+ 1109 strings out of 494053
+ 18308 string characters out of 3146188
  70331 words of memory out of 3000000
- 4429 multiletter control sequences out of 15000+200000
- 7538 words of font info for 27 fonts, out of 3000000 for 9000
+ 4434 multiletter control sequences out of 15000+200000
+ 8450 words of font info for 30 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 43i,6n,40p,941b,176s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on usethesis.pdf (19 pages, 167872 bytes).
+ 43i,8n,40p,1212b,176s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
+><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on usethesis.pdf (23 pages, 186766 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
+ 132 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

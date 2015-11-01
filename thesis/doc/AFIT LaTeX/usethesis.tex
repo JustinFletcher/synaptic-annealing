@@ -37,20 +37,10 @@
 %\documentclass[10pt]{afthesis}  %if you want 10pt instead of 11
 %\documentclass[12pt]{afthesis}  %if you want 12pt instead of 11
 
-% THESIS, REPORT, OR DISSERTATION ?
-%
-% If you are preparing a master's thesis, don't use \mastersreport or 
-% \dissertation.  If you are preparing a master's report instead of 
-% thesis, remove the `%' character in the beginning of next line:
-
-%\mastersreport  % print REPORT instead of THESIS on the title pages
-
-% If you are preparing a PhD dissertation, remove `%' from the 
-% following line:
 
 %\dissertation   % print DISSERTATION instead of THESIS on the title
 
-% NUMBER BY CHAPTER ?
+% Number by chapter ?
 %
 % You may specify the numbering in your thesis/dissertation to be 
 % chapter numbering instead of the default of sequential numbering.  
@@ -62,7 +52,7 @@
 
 \numberbychapter
 
-% PRINT SECTION NUMBERS ?
+% Print section numbers ?
 %
 % You may select not to have section (and subsection, etc.) numbers 
 % printed in the text and in the table of contents. In fact this is 
@@ -73,7 +63,7 @@
 
 %\nosectionnumbers
 
-% UNDERLINE OR ITALICS FOR EMPHASIS ?
+% Type of empasis ?
 %
 % You may select to have your emphasized text (like chapter and section
 % headings, book titles, foreign phrases, etc.) underlined instead of
@@ -87,7 +77,7 @@
 
 %\underlineoption
 
-% FLYLEAF FRAME ?
+% Flyleaf frame ?
 % 
 % You can select to have a 4in by 2in frame put around your flyleaf 
 % material.  This makes it look a little nicer if you don't have the 
@@ -97,7 +87,7 @@
 
 %\flyleafframe
 
-% LINE SPACING
+% Line spacing
 %
 % The default line spacing is to doublespace except in quotations, 
 % quotes, and the bibliography.  This approximates the spacing you 
@@ -114,7 +104,7 @@
 %
 %  THE ABOVE LINE SPACING INFORMATION IS NOT QUITE ACCURATE
 %
-% DATA OF AUTHOR AND THESIS: The following data will be used throughout
+% Data of author and thesis: The following data will be used throughout
 % your thesis when they are needed. Please replace the dots in the
 % commands by your own data. For some commands, the specified default
 % value will be assumed when the command is omitted.  For a two author
@@ -122,32 +112,12 @@
 % additional fields.  Remember you will need two vitas specified in
 % author order.  Authors should be specfied in alphabetical order.
 
-%\twoauthor  %uncomment if two authors
 \author{Justin Fletcher}
 
-%\authortwo{Second Author}  %uncomment for twoauthor option
-
-%
-% Replace `First Author' in the command by your name as it should 
-% appear on the title page. If your name is Ben Lee User, then the 
-% above command should be `\author{Ben Lee User}'.
-% Don't use B. L. USER, BEN L. USER, or even BEN LEE USER.
 
 \rank{First Lieutenant, USAF}
-%\ranktwo{...} %uncomment for twoauthor option
-% Replace the dots in the above command by your rank and 
-% service/agency, seperated by a comma, or just your service/agency. 
-% Don't abbreviate.  Use `\rank{Defense Nuclear Agency}' or
-% \rank{First Lieutenant, USAF} and not \rank{1LT, USAF}.  
-% If you don't have a rank or agency, just leave this command out.
 
-\title{Quantum Anisotropic Synaptic Annealing - Stochastic Anisotropic Quantum Annealing of Synaptic Weights}
-%
-% Replace the dots in the above command by your thesis title,
-% e.g., `\title{A TALE OF GNUS, GNATS AND\\ARMADILLOS}'.
-% Use capital letters. If the title consists of more than one line,
-% it should be in inverted pyramid form. You have to specify the
-% line breakings by \\ commands.
+\title{SIMULATED QUANTUM ANISOTROPIC ANNEALING APPLIED TO ARTIFICIAL NEURAL NETWORK WEIGHT SELECTION}
 
 %\flytitle{...}
 %
@@ -168,27 +138,27 @@
 	% statement for your thesis.  The default if commented out is 
 	% `Approved for public release; distribution unlimited'.
 
-\previousdegrees{BSCEC}
+\previousdegrees{B.S. CEC}
 %\previousdegreestwo{...} %uncomment for twoauthor option
 	%
 	% Replace the dots in the above command with the 
 	% abbreviated form of your previous degree(s), e.g., B.S. or B.A., M.S.
         % Leave this command out if you have no previous degrees.
 
-\degree{Master of Science}
+\degree{Master of Science in Computer Science}
 	%
 	% The degree sought as determined by your program. 
 	% For example, `\degree{Master of Science}', or
 	% `\degree{Master of Science in Electrical Engineering}'.
 	% The default value is `Doctor of Philosophy' for dissertation.
 
-%\graduationdate{June, 2016}
+\graduationdate{June, 2016}
 	%
 	% Replace the dots in the above command with the 
 	% graduation date, in the form as `\graduationdate{May, 1986}'.
 	% The default value is guessed according to the time of running LaTeX.
 
-\address{...\\...}
+\address{452 Orchard Drive\\Oakwood, Ohio 45419}
 %\addresstwo{...\\...} %uncomment for twoauthor option
 	%
 	% Replace the dots in the above command with your permanent address.
@@ -212,8 +182,7 @@
 	% The default value is 5 for dissertation. 
 
 \begin{document}
-%	
-% THE BODY OF YOUR THESIS STARTS HERE
+	
 % The following commands will automatically generate headings, adjust
 % vertical spacings, break pages, etc.
 % You should probably leave all of these prefatory pages commented out
@@ -237,29 +206,34 @@
 \end{preface}
 
 \tableofcontents	% Table of Contents will be automatically
-			% generated and placed here.
+					% generated and placed here.
 
 \listoffigures  	% List of Figures, List of Tables, and List of
 \listoftables		% Symbols will be placed here, if applicable.
-\listofsymbols          % DO NOT use these if you have no such lists.
+\listofsymbols      % Do not use these if you have no such lists.
 % To put symbols in the list use command \symbol[#1]{#2}
 % where #2 is the symbol and #1 is the definition to be put in the
 % list of symbols. The symbol is also automatically put in
 % your text.  Leave out [#1] if you don't want a definition.
 
 \listofabbreviations
+
+\abbreviation[Artificial Neural Network]{ANN}
 % similar to the list of symbols.  Use command \abbreviation[#1]{#2}
 % where #2 is the abbreviation and #1 is the definition to be put in the
 % list of abbreviations. The abbreviation is also automatically put in
 % your text.  Leave out [#1] if you don't want a definition.
 
 \begin{abstract}
-	Abstract goes here. 
+
+% DO: Write abstract.	
+
 \end{abstract}
 
 
 \chapter{Introduction}
 
+% DO: Write introduction.	
 % The first chapter. \chapter command is of the form \chapter[..]{..} or \chapter{..} where {chapter heading} and [entry in table of contents].
 
 % Do this after the thesis is written. I created an algorithm which simulates quantum tunneling through an error manifold. I applied this algorithm to the problem of selecting weight values for a neural network. It works well for small data sets, but is slower when dimensionality of the data set on which the network is trained is very large. 
@@ -267,67 +241,74 @@
 In chapter three the traversal a error manifold in the problem configuration space is discussed at length. Several traversal methodologies are proposed and evaluated. 
 
 
-% IMPORTANT: If your chapter heading consists of more than one lines, it will be automatically broken into separate lines. However, if you don't like the way LaTeX breaks the chapter heading into lines, use `\newheadline' command to break lines. NEVER USE \\ IN SECTIONAL (E.G., CHAPTER, SECTION, SUBSECTION) HEADINGS!!!!!!!!
+% Important: If your chapter heading consists of more than one lines, it will be automatically broken into separate lines. However, if you don't like the way LaTeX breaks the chapter heading into lines, use `\newheadline' command to break lines. NEVER USE \\ IN SECTIONAL (E.G., CHAPTER, SECTION, SUBSECTION) HEADINGS!!!!!!!!
 
 \chapter{Background} % This is Chapter 2.
 
 
 
-This chapter serves as an comprehensive review of the physical and computational concepts relevant to the topic of this thesis. Relevant work in simulated annealing will be summarized. Next, artificial neural networks and their application will be discussed. The chapter concludes with a very brief overview of the quantum mechanical concepts employed throughout the document. Finally, the notation and terminology conventions to be used throughout the rest of the document are presented.
+This chapter serves as an comprehensive review of the physical and computational concept material to the topic of this thesis. Relevant work in simulated annealing will be summarized. Next, artificial neural networks and their application will be discussed. The chapter concludes with a very brief overview of the quantum mechanical concepts employed throughout the document. Finally, the notation and terminology conventions to be used throughout the rest of the document are presented.
+
+\section{Artificial Neural Networks}
+
+Artificial Neural Networks (ANN) 
+
+\subsection{Back Propagation Training}
+
 
 \section{Related Works in Simulated Annealing}
 
-% Is extension or application of more correct here?
-
-Simulated annealing (SA) is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in (Kirkpatrick) as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, SA is an extension of the Metropolis-Hastings (Metropolis) algorithm which is used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Geoff (Geoff) and Cortana et al. (Cortana) extended simulated annealing to the continuous domain. The algorithm, as it will be used in this paper, is presented in [algo1]. 
+Simulated annealing (SA) is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in (Kirkpatrick) as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, simulated annealing is an extension of the Metropolis-Hastings (Metropolis) algorithm which is used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Geoff (Geoff) and Cortana et al. (Cortana) extended simulated annealing to the continuous domain. The basic simulated annealing algorithm, as it will be used in this paper, is presented in [algo1]. 
 
 [algo1]
-j
-% Traversing the free energy surface
 
-In the parlance of simulated annealing (Kirkpatric) a system at its maximum temperature is said to be "melted." In the melted state, most perturbations of the configuration of the system are accepted by the algorithm. Analogously, a system that has a temperature of zero, which indicates that the algorithm cannot move to any higher-error state, is said to be "frozen." Note that a frozen system may still be perturbed into a lower-energy state.
+The physical inspiration for simulated annealing. 
 
-When considering only the influence of classical thermal fluctuations in particle energy levels, the probability of a particle overcoming a barrier of height \begin{math} \Delta V \end{math} at a temperature \begin{math} T \end{math} is on the order of: \begin{equation} 
+Simulated annealing has been successfully applied to numerous domains.
+
+In the parlance of simulated annealing (Kirkpatrick) a system at its maximum temperature is said to be \textit{melted}. In the melted state, most perturbations of the configuration of the system are accepted by the algorithm. Analogously, a system that has a temperature of zero, which indicates that the algorithm cannot move to any higher-error state, is said to be \textit{frozen}. Note that a frozen system may still be perturbed into a lower-energy state.
+
+When considering only the influence of classical thermal fluctuations in particle energy levels, the probability of a particle traversing a barrier of height \begin{math} \Delta V \end{math} at a temperature \begin{math} T \end{math} is on the order of: \begin{equation} 
 \mathcal{P}_t = e^{-\frac{\Delta V}{T}} 
 \end{equation}
 
 % Be sure to include some discussion of thermal fluctuations and their importance. Find a nice source...
-% Need a protien folding dataset
 \subsection{Reheating}
+
+\subsection{Application of Simulated Annealing to ANN Synaptic Weight Selection}
 
 % Need sources for this... 
 
 \section{Related Works in Quantum Mechanics}
 
 
-The discipline of quantum mechanics is the study of the physical laws of nature at very small scales, at which quantum effects are not negligible. Several techniques described in this document are either inspired by, or are simple models of quantum mechanical processes. These concepts are very briefly reviewed in this section. 
+Quantum mechanics is the branch of physics concerned with the physical laws of nature at very small scales. There are many aspects of physical reality than are observable only at these scales. Several techniques described in this document are either inspired by, or are simple models of quantum mechanical processes. These concepts are very briefly reviewed in this section. 
 
 \subsection{Quantum Tunneling} 
 
 
-% Is this suffient? 
 
-One of the most interesting phenomena studied in the field of quantum mechanics is quantum tunneling. 
+One of the quantum phenomena for which there is no classical analog is potential barrier penetration, also known as quantum tunneling. This phenomenon arises from the probabilistic and wavelike behavior of particles in quantum physics. Tunneling plays a significant role in the behavior of bound and scattering quantum mechanical systems.
 
-A particle with energy \begin{math} E \end{math} incident upon a potential energy barrier of height \begin{math} \Delta V > E  \end{math} has a non-zero probability of tunneling through the barrier. Classically, this behavior is forbidden. The probability of tunneling, \begin{math} \mathcal{P}_t \end{math}, through a step barrier of height \begin{math} \Delta V  \end{math} goes as: 
+A particle with energy \begin{math} E \end{math} incident upon a potential energy barrier of height \begin{math} \Delta V > E  \end{math} has a non-zero probability of being found in, or past, the barrier. Classically, this behavior is forbidden. The probability of tunneling, \begin{math} \mathcal{P}_t \end{math}, through a step barrier of height \begin{math} \Delta V  \end{math} is described by: 
 \begin{equation}
 \mathcal{P}_t = e^{-\frac{w \sqrt{\Delta V}}{ \Gamma}} 
 \end{equation} where \begin{math} \Gamma \end{math} is the tunneling field strength [Ref: Multivariable Opt: QAC - Mukherjee]. Figure [1] depicts a one-dimensional example of quantum tunneling.
 
-
 [Figure 1] 
 
-It is instructive to contrast equation [1] and equation [2]; both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of traversing a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}.
+
 
 \subsection{Quantum Annealing}
 
-Quantum annealing is the use of quantum, rather than thermal, fluctuations to traverse the free energy landscape of a system. This is accomplished by introducing an additional Hamiltonian term that does not commute with the classical Hamiltonian. This non-commutation implies that [What does it mean?... The non-commutative causes the quantum effects...but how?].  The term is introduced to account for the presence of a tunneling field which controls the frequency with which quantum fluctuations occur in the system. This term, much like thermal energy in simulated annealing, is gradually reduced over the course of the simulation. [Par Source: Quantum annealing in a kinetically constrained system] The time dependent Schrodinger equation for such a system has the form: \begin{equation}
+Quantum annealing is the use of quantum, rather than thermal fluctuations to traverse the free energy landscape of a system. This is accomplished by introducing an additional Hamiltonian term that does not commute with the classical Hamiltonian. This non-commutation implies that [What does it mean?... The non-commutative causes the quantum effects...but how?].  The term is introduced to account for the presence of a tunneling field which controls the frequency with which quantum fluctuations occur in the system. In effect, this term controls the relative importance of quantum effects on the behavior of the modeled system. This term, much like thermal energy in simulated annealing, is gradually reduced over the course of the simulation. [Par Source: Quantum annealing in a kinetically constrained system] The time dependent Schrödinger equation \footnote{Note that the presence of the Schrödinger equation in section does not imply that quantum annealing requires the annealed system must be an approximation to a wavefunction. It merely serves as an exposition of the properties of physical system which is modeled.} for such a system has the form: \begin{equation}
 [\lambda(t)H' + H_0]\psi = i\hbar \frac{\partial \psi}{\partial t}
-\end{equation} [Eq from Mult Opt... Murherjee] where \begin{math} \lambda(t) \end{math} is the time-variance function of the tunneling field, \begin{math} H' \end{math} is the Hamiltonian term describing the tunneling field, and \begin{math} H_0 \end{math} is the classical Hamiltonian.
+\end{equation} [Eq from Mult Opt... Murherjee] where \begin{math} \lambda(t) \end{math} is the time-variance function of the tunneling field, \begin{math} H' \end{math} is the Hamiltonian term describing the tunneling field, and \begin{math} H_0 \end{math} is the classical Hamiltonian. 
 
-The fluctuations induced by the tunneling field are tunneling events, which transition the system from one configuration to a different, lower-energy configuration without assuming any of the higher energy configurations between the two. This mechanism enables a system to tunnel through barriers between energy valleys in order to escape local minima. 
+The fluctuations induced by the tunneling field are tunneling events, which transition the system from one configuration to a different, lower-energy configuration directly, without assuming any of the higher energy configurations between the two. Said differently, the quantum tunneling field enables the penetration of energy barriers. The addition of these quantum fluctuations also ensures that each possible state of the system can be reached (KCS Paper). 
 
-Strictly speaking, this document does not claim to describe a quantum annealing process as it is presented in the referenced literature. 
+% Strictly speaking, this document does not claim to describe a quantum annealing process as it is presented in the referenced literature. 
+
 % There is a great deal of academic writing describing QA in the language of physics, but very little writing describing the concept from an algorithmic perspective. For this reason, and because there are significant differences between the artificial simulation of quantum-inspired annealing and the physical phenomenon which is being approximated, a new terminology is proposed. In this document, a new more specific term is introduced in order to disambiguate.
 
 
@@ -336,25 +317,37 @@ Strictly speaking, this document does not claim to describe a quantum annealing 
 
 % In continuously oscliating annealing schedules, consistently good states will tend to attract the search. Bad states will be randomly visited. Partition the space of states into for each synapse into discrete bins. Track the number of times a bin is hit by the search for each synapse. Given enough time and suffiently small bins, the modes of each histogram will come to represent the global minima.
 
-\section{Related Works in Artificial Neural Networks}
-
 
 \section{Notation and Terminology Conventions}
 
-[Physics to Algorithmic translation table]
+There is a great deal of academic writing describing quantum annealing in the language of physics, but very little writing describing the concept from an algorithmic perspective. For this reason a new, more specific term is introduced in this document. Simulated quantum annealing (SQA) is the quantum mechanical counterpart of simulated thermal annealing. 
 
-Free Energy Surface - Error Manifold - Cost Function
-System Configuration -  
+% [Physics to Algorithmic translation table]
+% Free Energy Surface - Error Manifold - Cost Function
+% System Configuration -  
+
+
+
+
+
 
 \chapter{Methodology}
+
+\section{Simulated Quantum Annealing}
+
+It is instructive to contrast equations 2.1 and 2.2. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of approximately \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}. This relationship is depicted graphically in Fig. 2 which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Therefore, physical models which considers quantum effects are much more likely predict penetration of tall, thin energy barriers than those which only include classical thermal effects.
+
+
+[Figure 2] 
+
 
 \section{Traversing the Error Manifold}
 
 \subsection{Unidimensional Weight Perturbation}
 
-\subsection{Omnidimensional Weight Perturbation}
+\subsection{Omni-dimensional Weight Perturbation}
 
-\subsection{Constrained Step-Size Omnidimensional Weight Perturbation}
+\subsection{Constrained Step-Size Omni-dimensional Weight Perturbation}
 
 \subsection{Quantum Weight Perturbation}
 
@@ -371,6 +364,12 @@ It is shown in Proof [n] that this algorithm is certain to eventually find the m
 
 
 [After discussing the way in which the algorithm is implemented] ...The net effect of this design is to allow the algorithm to move from a local minima configuration, to a different, lower-error configuration, without requiring the evaluation of intervening, higher-error configurations. This means that the probability of "tunneling" to a state
+
+
+
+
+\chapter{Results}
+\chapter{Conclusion}
 
 
 \appendix		% Appendix begins here

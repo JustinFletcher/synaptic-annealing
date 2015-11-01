@@ -75,7 +75,6 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         # Compute the resultant error.
         perturbedError = errorFunction(setNetworkSynapseMatrix(network, synapseMatrix), trainData, inputCols, outputCols)
 
-
         # Computer the change in error.
         errorChange = perturbedError-lastError
 
@@ -86,7 +85,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         if (perturbedError<=lastError)
 			lastError = perturbedError
 		else
-			if ((rand()>temperatureNorm) || (!(perturbationDistance<=stateTuple[3])))
+			if( (rand()>=exp(-(perturbedError-lastError)/temperatureNorm)) || (!(perturbationDistance<=stateTuple[3])) )
 				# Repeal the move.
 				synapseMatrix -= synapsePerturbation
 			else
@@ -128,7 +127,6 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
     return(outputTuple)
 
 end
-
 
 
 
