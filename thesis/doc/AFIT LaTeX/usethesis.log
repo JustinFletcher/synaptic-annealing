@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  1 NOV 2015 09:45
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  2 NOV 2015 14:44
 entering extended mode
 **usethesis.tex
 
@@ -175,16 +175,22 @@ Chapter 1.
 Chapter 2.
 [1
 
-] [2]
+]
+Overfull \hbox (14.65807pt too wide) in paragraph at lines 298--299
+[]\OT1/cmr/m/n/10.95 ...This Boltz-mann ma-chine is also of his-tor-i-cal im-po
+r-tance, as it was the first successfully-
+ []
+
+[2] [3]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¶ in font cmr10!
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 304.
+(Font)              <9> on input line 349.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 304.
+(Font)              <5> on input line 349.
 Missing character: There is no Ã in font cmr9!
 Missing character: There is no ¶ in font cmr9!
- [3] [4]
+ [4] [5]
 
 Chapter 3.
 [1
@@ -226,11 +232,11 @@ esis.aux") )
 Here is how much of TeX's memory you used:
  1109 strings out of 494053
  18308 string characters out of 3146188
- 70331 words of memory out of 3000000
+ 69331 words of memory out of 3000000
  4434 multiletter control sequences out of 15000+200000
  8450 words of font info for 30 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 43i,8n,40p,1212b,176s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,8n,40p,1224b,176s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 mmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
 i6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.
@@ -245,9 +251,9 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86
 )/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/
 MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on usethesis.pdf (23 pages, 186766 bytes).
+Output written on usethesis.pdf (24 pages, 191446 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
+ 135 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
