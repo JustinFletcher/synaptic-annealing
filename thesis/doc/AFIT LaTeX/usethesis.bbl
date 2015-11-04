@@ -1,3 +1,41 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{haykin1999}
+Haykin, Simon.
+\newblock {\em Neural networks: a comprehensive foundation\/}.
+\newblock Upper Saddle River, N.J: Prentice Hall, 1999.
+
+\bibitem{hebb1967}
+Hebb, D.~O.
+\newblock {\em The organization of behavior; a neuropsychological theory, (by)
+  D.O. Hebb. Science Editions\/}.
+\newblock New York: John Wiley and Sons, 1967.
+
+\bibitem{kirkpatrick1983}
+Kirkpatrick, S., et~al.
+\newblock ``Optimization by simulated annealing,'' {\em SCIENCE\/}, {\em
+  220\/}(4598):671--680 (1983).
+
+\bibitem{mcculloch1988}
+McCulloch, Warren~S. and Walter Pitts.
+\newblock ``Neurocomputing: Foundations of Research.'' edited by James~A.
+  Anderson and Edward Rosenfeld, chapter A Logical Calculus of the Ideas
+  Immanent in Nervous Activity,  15--27, Cambridge, MA, USA: MIT Press, 1988.
+
+\bibitem{metropolis1953}
+{Metropolis}, N., et~al.
+\newblock ``{Equation of State Calculations by Fast Computing Machines},'' {\em
+  jcp/}, {\em 21\/}:1087--1092 (June 1953).
+
+\bibitem{piccinini2006}
+Piccinini, Gualtiero.
+\newblock ``Computational Explanation in Neuroscience,'' {\em Synthese\/}, {\em
+  153\/}(3):343--353 (2006).
+
+\bibitem{rochester1956}
+Rochester, N., et~al.
+\newblock ``Tests on a cell assembly theory of the action of the brain, using a
+  large digital computer,'' {\em Information Theory, IRE Transactions on\/},
+  {\em 2\/}(3):80--93 (September 1956).
 
 \end{thebibliography}

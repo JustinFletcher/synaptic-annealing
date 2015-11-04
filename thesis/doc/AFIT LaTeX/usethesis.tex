@@ -252,7 +252,7 @@ This chapter serves as a comprehensive review of the physical and computational 
 
 % Is there a better term than sequential computing machinery? Each word in this name encodes a significant concept related to the origins and structure of the models: neural is a reference to neurons, which are the fundamental information processing elements of the biological systems which inspired the model; network refers to network theory, a subfield of graph theory, which governs representation of relationships between neurons; and artificial, meaning an object of human origin, in contrast with biological neural networks which arise naturally.
 
-It has long been recognized (source maybe?) that the capacity of biological information processing systems to flexibly and quickly process large quantities of data greatly exceeds that of sequential computing machinery. This information processing capability arises from the complex, nonlinear, parallel nature of biological information processors (Source? Hayken?). The family of models designed to replicate this powerful information processing architecture are collectively called artificial neural networks (ANN). In the most general sense, artificial neural networks are parallel distributed information processors (Hayken, or 1) comprising many simple processing elements. Networks store information about experienced stimuli and can make that information available. In such a network, interneuron connection strengths are used to encode information, and are modified via a learning strategy. Artificial neural networks are characterized by three features: a network topology or architecture, an activation function, and a learning strategy. Each will be discussed in the following sections. I will also review the history of artificial neural networks, and the biological inspiration for the computational model.
+It has long been recognized (source maybe?) that the capacity of biological information processing systems to flexibly and quickly process large quantities of data greatly exceeds that of sequential computing machinery. This information processing capability arises from the complex, nonlinear, parallel nature of biological information processors (Source? Hayken?). The family of models designed to replicate this powerful information processing architecture are collectively called artificial neural networks. In the most general sense, artificial neural networks are parallel distributed information processors \cite{haykin1999} comprising many simple processing elements. Networks store information about experienced stimuli and can make that information available. In such a network, interneuron connection strengths are used to encode information, and are modified via a learning strategy. Artificial neural networks are characterized by three features: a network topology or architecture, an activation function, and a learning strategy. Each will be discussed in the following sections. I will also review the history of artificial neural networks, and the biological inspiration for the computational model.
 
 \subsection{Biological Inspiration}
 
@@ -261,17 +261,26 @@ Fig[an image of a neuron, mapped to a schematic of a neuron, mapped to a process
 Integration of magnitude-encoded, rather than frequency-encoded, signals. 
 Threshold functions relationship to the biological shape, size... Papers needed.
 
-Biological neural networks are many orders of magnitude slower than those based in ... It in not the size of the network or the number of interconnections alone which confer upon the human brain its remarkable efficiency (Faggin, 1991). The  
+Biological neural networks are many orders of magnitude slower than those based in ... It in not the size of the network or the number of interconnections alone which confer upon the human brain its remarkable efficiency (Faggin, 1991). Though size and connectivity are necessary, it is the structure, or topology of the network of interconnections that en
 
 
 \subsection{Historical Overview}
 
-The study of artificial neural networks, as they are used and defined today, began with a 1943 paper (McCulloch and Pitts, 1943) by McCulloch and Pitts. In this paper, McCulloch and Pitts united, for the first time, the neurophisiology and mathematics... Significantly, Muc P showed in this paper that a network consisying of .. could approcimate any funcation.,0
+The study of artificial neural networks began with a 1943 paper \cite{mcculloch1988} by McCulloch and Pitts. In this paper, McCulloch and Pitts united, for the first time, neurophysiology, mathematics, and computation in a model of neural activity. This landmark paper marked the beginning of not only the computational theory of neural networks but also the computational theory of mind, and eventually led to the notion of finite atomata \cite{piccinini2006}. In this paper McCulloch and Pitts introduced a very simple model of a neuron, which acted as a threshold-based propositional logic unit. Significantly, McCulloch and Pitts showed that a network of these neuron models, interconnected, could represent a proposition of arbitrarily-high complexity. These models, often called McCulloch-Pitts Neurons, allowed only limited, discrete input values which are summed and compared to a threshold value, and did not posses any learning mechanism. They did, however, account for inhibitory action. 
 
-Hebbian stuff with (Rochester, Holland, Haibt, and Duda, 1956)
+Though McCulloch and Pitts made mention of learning in their 1943 paper, thirteen years would pass before this concept was formalized into a mathematical and computational model. In 1956 Rochester, Holland, Haibt, and Duda \cite{rochester1956} presented the first attempt at using a physiologically-inspired learning rule to update the synaptic weights of a neural network. This model was based on the learning rule proposed in \textit{The Organization of Behavior} by Hebb \cite{hebb1967}.
 
+
+
+(Kurt Hornik (1991) "Approximation Capabilities of Multilayer Feedforward Networks", Neural Networks, 4(2), 251–257)
+
+Back propagation... 
+
+This, in turn, implies that neural networks can serve as universal function approximaters. (Cybenko)
 
 \subsection{Network Topology}
+
+Feed for
 
 \subsection{Activation Functions}
 
@@ -296,7 +305,7 @@ Fig[Error surface with backprop]
 
 (Ackley, Hinton, and Sejnowski 1985) 
 
-...This Boltzmann machine is also of historical importance, as it was the first successfully-implemented multilayered neural network. (Ref: Haykin Book)
+This Boltzmann machine is also of historical importance, as it was the first successfully-implemented multilayered neural network \cite{haykin1999}.
 
 
 \section{Related Works in Simulated Annealing}
@@ -305,14 +314,14 @@ Read (Haykin pg 556)
 
 Read (Haykin pg 560)
 
-Simulated annealing (SA) is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in by Kirkpatrick et al. in (Kirkpatrick) as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, simulated annealing is an extension of the Metropolis-Hastings (Metropolis) algorithm which can be used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Geoff (Geoff) and Cortana et al. (Cortana) extended simulated annealing to the continuous domain. The basic simulated annealing algorithm, as it will be used in this paper, is presented in [algo1]. 
+Simulated annealing (SA) is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in by Kirkpatrick et al. in \cite{kirkpatrick1983} as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, simulated annealing is an extension of the Metropolis-Hastings \cite{metropolis1953} algorithm which can be used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Geoff (Geoff) and Cortana et al. (Cortana) extended simulated annealing to the continuous domain. The basic simulated annealing algorithm is presented in [algo1]. 
 
 [algo1]
 
 The physical inspiration for simulated annealing. See (Haykin pg 546)
 
 
-In the parlance of simulated annealing (Kirkpatrick) a system at its maximum temperature is said to be \textit{melted}. In the melted state, most perturbations of the system configuration are accepted by the algorithm. Analogously, a system that has a temperature of zero, which indicates that the algorithm cannot move to any higher-error state, is said to be \textit{frozen}. Note that a frozen system may still be perturbed into a lower-energy state.
+In the parlance of simulated annealing \cite{kirkpatrick1983} a system at its maximum temperature is said to be \textit{melted}. In the melted state, most perturbations of the system configuration are accepted by the algorithm. Analogously, a system that has a temperature of zero, which indicates that the algorithm cannot move to any higher-error state, is said to be \textit{frozen}. Note that a frozen system may still be perturbed into a lower-energy state.
 
 When considering only the influence of classical thermal fluctuations in particle energy levels, the probability of a particle traversing a barrier of height \begin{math} \Delta V \end{math} at a temperature \begin{math} T \end{math} is on the order of: \begin{equation} 
 \mathcal{P}_t = e^{-\frac{\Delta V}{T}} 
@@ -450,7 +459,7 @@ time.
 % version .99a or higher.
 
 \bibliographystyle{thesnumb}
-\bibliography{mybib1,mybib2,...}
+\bibliography{synapticAnnealingBib}
 
 \begin{vita}
 	Insert your brief biographical sketch here. Your permanent
