@@ -1,9 +1,7 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  3 NOV 2015 23:53
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  5 NOV 2015 21:58
 entering extended mode
 **usethesis.tex
-
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
-esis.tex"
+("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.tex"
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -15,9 +13,7 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\afthe
-sis.cls"
+("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\afthesis.cls"
 Document Class: afthesis 1996/12/14 v2.7 -- AFIT THESIS STYLE
 by Joel Young adapted from work by Mark Roth
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
@@ -70,10 +66,8 @@ e 209.
 \captionlinewidth=\dimen109
 \realcaptionwidth=\dimen110
 )
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\afthe
-s11.sty"))
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
-esis.aux")
+("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\afthes11.sty"))
+("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
 LaTeX Font Info:    ... okay on input line 184.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
@@ -91,182 +85,22 @@ Package caption Info: End \AtBeginDocument code.
 
 
 Fly Leaf.
-[1
+! I can't write on file `usethesis.pdf'.
+Please type another file name for output
+! Emergency stop.
+<to be read again> 
+                   \endgroup \set@typeset@protect 
+l.191 \flyleaf
+                    			% Generates the flyleaf.
+*** (job aborted, file error in nonstop mode)
 
-
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-
-Disclaimer Page.
-[2]
-
-Title Page.
-[1]
-
-Approval Page.
-[2]
-
-Preface.
-[3
-
-]
-
-Table of Contents.
-
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
-esis.toc"
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 1.
- [4
-
-])
-\tf@toc=\write3
- [5]
-
-List of Figures.
-
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
-esis.lof")
-\tf@lof=\write4
- [6
-
-]
-
-List of Tables.
-
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
-esis.lot")
-\tf@lot=\write5
- [7
-
-]
-
-List of Symbols.
-
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
-esis.los")
-\tf@los=\write6
- [8
-
-]
-
-List of Abbreviations.
-
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
-esis.loa")
-\tf@loa=\write7
- [9
-
-]
-
-Abstract.
-[10
-
-]
-
-Chapter 1.
-[1
-
-]
-
-Chapter 2.
-[1
-
-]
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no “ in font cmr10!
- [2]
-Overfull \hbox (5.53305pt too wide) in paragraph at lines 308--309
-[]\OT1/cmr/m/n/10.95 This Boltz-mann ma-chine is also of his-tor-i-cal im-por-t
-ance, as it was the first successfully-
- []
-
-[3] [4]
-Missing character: There is no Ã in font cmr10!
-Missing character: There is no ¶ in font cmr10!
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 359.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 359.
-Missing character: There is no Ã in font cmr9!
-Missing character: There is no ¶ in font cmr9!
- [5] [6]
-
-Chapter 3.
-[1
-
-]
-
-Chapter 4.
-[1
-
-]
-
-Chapter 5.
-[1
-
-]
-
-Appendix 1.
-
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
-esis.bbl" [1
-
-
-]
-
-Bibliography.
-
-Underfull \hbox (badness 2837) in paragraph at lines 15--18
-[]\OT1/cmr/m/n/10.95 Kirkpatrick, S., et al.  ``Op-ti-miza-tion by sim-u-lated 
-an-neal-ing,'' \OT1/cmr/m/it/10.95 SCI-ENCE\OT1/cmr/m/n/10.95 ,
- []
-
-
-Underfull \hbox (badness 1584) in paragraph at lines 31--34
-[]\OT1/cmr/m/n/10.95 Piccinini, Gualtiero.  ``Com-pu-ta-tional Ex-pla-na-tion i
-n Neu-ro-science,'' \OT1/cmr/m/it/10.95 Syn-these\OT1/cmr/m/n/10.95 ,
- []
-
-) [1
-
-]
-
-Vita.
-[1
-
-]
-("C:\Users\serg\OneDrive\afit\rs\synaptic-annealing\thesis\doc\AFIT LaTeX\useth
-esis.aux") ) 
+ 
 Here is how much of TeX's memory you used:
- 1116 strings out of 494053
- 18408 string characters out of 3146188
- 69331 words of memory out of 3000000
- 4441 multiletter control sequences out of 15000+200000
- 8450 words of font info for 30 fonts, out of 3000000 for 9000
+ 1056 strings out of 494053
+ 16499 string characters out of 3146188
+ 66331 words of memory out of 3000000
+ 4416 multiletter control sequences out of 15000+200000
+ 3940 words of font info for 15 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 43i,8n,40p,1245b,176s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
-i6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Pr
-ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on usethesis.pdf (25 pages, 196451 bytes).
-PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 43i,4n,40p,237b,108s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
