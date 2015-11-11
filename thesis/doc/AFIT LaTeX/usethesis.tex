@@ -33,6 +33,7 @@
 % available in local bookstores. 
 
 \documentclass[11pt]{afthesis}
+\usepackage{amsmath}
 
 %\documentclass[10pt]{afthesis}  %if you want 10pt instead of 11
 %\documentclass[12pt]{afthesis}  %if you want 12pt instead of 11
@@ -126,353 +127,382 @@
 % if your flyleaf title has different line breaks 
 % (because it must fit in 4 inches)
 % than the way it appears on the title page and on the first page.
-        
+
 \designator{AFIT/GE/ENG/16-..}
-	%
-	% Replace the dots in the above command with the thesis or dissertation
-	% designator. For example, `AFIT/GCS/ENG/87-5'.
+%
+% Replace the dots in the above command with the thesis or dissertation
+% designator. For example, `AFIT/GCS/ENG/87-5'.
 
 %\distribution{...}
-	%
-	% Replace the dots in the above command with the distribution
-	% statement for your thesis.  The default if commented out is 
-	% `Approved for public release; distribution unlimited'.
+%
+% Replace the dots in the above command with the distribution
+% statement for your thesis.  The default if commented out is 
+% `Approved for public release; distribution unlimited'.
 
 \previousdegrees{B.S. CEC}
 %\previousdegreestwo{...} %uncomment for twoauthor option
-	%
-	% Replace the dots in the above command with the 
-	% abbreviated form of your previous degree(s), e.g., B.S. or B.A., M.S.
-        % Leave this command out if you have no previous degrees.
+%
+% Replace the dots in the above command with the 
+% abbreviated form of your previous degree(s), e.g., B.S. or B.A., M.S.
+% Leave this command out if you have no previous degrees.
 
 \degree{Master of Science in Computer Science}
-	%
-	% The degree sought as determined by your program. 
-	% For example, `\degree{Master of Science}', or
-	% `\degree{Master of Science in Electrical Engineering}'.
-	% The default value is `Doctor of Philosophy' for dissertation.
+%
+% The degree sought as determined by your program. 
+% For example, `\degree{Master of Science}', or
+% `\degree{Master of Science in Electrical Engineering}'.
+% The default value is `Doctor of Philosophy' for dissertation.
 
 \graduationdate{June, 2016}
-	%
-	% Replace the dots in the above command with the 
-	% graduation date, in the form as `\graduationdate{May, 1986}'.
-	% The default value is guessed according to the time of running LaTeX.
+%
+% Replace the dots in the above command with the 
+% graduation date, in the form as `\graduationdate{May, 1986}'.
+% The default value is guessed according to the time of running LaTeX.
 
 \address{452 Orchard Drive\\Oakwood, Ohio 45419}
 %\addresstwo{...\\...} %uncomment for twoauthor option
-	%
-	% Replace the dots in the above command with your permanent address.
-	% Use \\ to separate address lines.  This is used in the Vita.
-	% e.g., `\address{4533 Avenue A\\ Austin, Texas 78751}'.
+%
+% Replace the dots in the above command with your permanent address.
+% Use \\ to separate address lines.  This is used in the Vita.
+% e.g., `\address{4533 Avenue A\\ Austin, Texas 78751}'.
 
 \school{Electrical and Computer Engineering}
-	%
-	% Replace the dots in the above command with the name of your school.  
-	% For example, `\school{School of Engineering}'
+%
+% Replace the dots in the above command with the name of your school.  
+% For example, `\school{School of Engineering}'
 
 %**********for dissertations only, remove the % signs and add the data
 %\dean{...}
-	% Needed for disserations only.
-	% The name of your dean, e.g., `\dean{Robert A. Calico, Jr}
+% Needed for disserations only.
+% The name of your dean, e.g., `\dean{Robert A. Calico, Jr}
 
 \committee{Dr. Michael J. Mendenhall\\Thesis Advisor,
-	   Dr. Gilbert L. Peterson\\Committee Member,
-	   Capt. Charlton D. Lewis\\Committee Member}
-	% 
-	% The default value is 5 for dissertation. 
+	Dr. Gilbert L. Peterson\\Committee Member,
+	Capt. Charlton D. Lewis\\Committee Member}
+% 
+% The default value is 5 for dissertation. 
 
 \begin{document}
 	
-% The following commands will automatically generate headings, adjust
-% vertical spacings, break pages, etc.
-% You should probably leave all of these prefatory pages commented out
-% or in a \include file until your thesis is ready for final draft
-
-\flyleaf      			% Generates the flyleaf.
-
-\disclaimerpage                 % Produces the disclaimer page
-
-\titlepage			% Produces the title page.
-
-\approvalpage                   % Produces the approvalpage
-
-\begin{preface}
-	%
-	%Insert the text of your preface here. Your name will appear
-	%automatically. If this is an acknowledgments section instead of 
-        %preface, use \begin{acknowledgments} and \end{acknowledgments}
-	% instead.
-	%
-\end{preface}
-
-\tableofcontents	% Table of Contents will be automatically
-					% generated and placed here.
-
-\listoffigures  	% List of Figures, List of Tables, and List of
-\listoftables		% Symbols will be placed here, if applicable.
-\listofsymbols      % Do not use these if you have no such lists.
-% To put symbols in the list use command \symbol[#1]{#2}
-% where #2 is the symbol and #1 is the definition to be put in the
-% list of symbols. The symbol is also automatically put in
-% your text.  Leave out [#1] if you don't want a definition.
-
-\listofabbreviations
-
-\abbreviation[Artificial Neural Network]{ANN}
-% similar to the list of symbols.  Use command \abbreviation[#1]{#2}
-% where #2 is the abbreviation and #1 is the definition to be put in the
-% list of abbreviations. The abbreviation is also automatically put in
-% your text.  Leave out [#1] if you don't want a definition.
-
-\begin{abstract}
-% Lower-end page count: 131
-% Upper-end page count: 170
-% DO: Write abstract.	
-
-\end{abstract}
-
-
-\chapter{Introduction}
-
-% DO: Write introduction.	
-% The first chapter. \chapter command is of the form \chapter[..]{..} or \chapter{..} where {chapter heading} and [entry in table of contents].
-
-% Do this after the thesis is written. I created an algorithm which simulates quantum tunneling through an error manifold. I applied this algorithm to the problem of selecting weight values for a neural network. It works well for small data sets, but is slower when dimensionality of the data set on which the network is trained is very large. 
-
-In chapter three the traversal a error manifold in the problem configuration space is discussed at length. Several traversal methodologies are proposed and evaluated. 
-
-
-% Important: If your chapter heading consists of more than one lines, it will be automatically broken into separate lines. However, if you don't like the way LaTeX breaks the chapter heading into lines, use `\newheadline' command to break lines. NEVER USE \\ IN SECTIONAL (E.G., CHAPTER, SECTION, SUBSECTION) HEADINGS!!!!!!!!
-
-\chapter{Background} % This is Chapter 2.
-
-This chapter serves as a comprehensive review of the physical and computational concepts material to the topic of this thesis. A broad overview of artificial neural networks and the application and history thereof is presented. Next, simulated annealing is described, along with a summary of some related works and a description of the physical inspiration for the algorithm. The chapter concludes with a very brief overview of the quantum mechanics, with emphasis placed on those concepts which will be employed throughout this thesis document. Finally, the notation and terminology conventions adopted in this document are established.
-
-\section{Artificial Neural Networks}
-
-% Is there a better term than sequential computing machinery? Each word in this name encodes a significant concept related to the origins and structure of the models: neural is a reference to neurons, which are the fundamental information processing elements of the biological systems which inspired the model; network refers to network theory, a subfield of graph theory, which governs representation of relationships between neurons; and artificial, meaning an object of human origin, in contrast with biological neural networks which arise naturally.
-
-It has long been recognized (source maybe?) that the capacity of biological information processing systems to flexibly and quickly process large quantities of data greatly exceeds that of sequential computing machinery. This information processing capability arises from the complex, nonlinear, parallel nature of biological information processors (Source? Hayken?). The family of models designed to replicate this powerful information processing architecture are collectively called artificial neural networks. In the most general sense, artificial neural networks are parallel distributed information processors \cite{haykin1999} comprising many simple processing elements. Networks store information about experienced stimuli and can make that information available. In such a network, interneuron connection strengths are used to encode information, and are modified via a learning strategy. Artificial neural networks are characterized by three features: a network topology or architecture, an activation function, and a learning strategy. Each will be discussed in the following sections. I will also review the history of artificial neural networks, and the biological inspiration for the computational model.
-
-\subsection{Biological Inspiration}
-
-Fig[an image of a neuron, mapped to a schematic of a neuron, mapped to a processing element]
-
-Integration of magnitude-encoded, rather than frequency-encoded, signals. 
-Threshold functions relationship to the biological shape, size... Papers needed.
-
-Biological neural networks are many orders of magnitude slower than those based in ... It in not the size of the network or the number of interconnections alone which confer upon the human brain its remarkable efficiency (Faggin, 1991). Though size and connectivity are necessary, it is the structure, or topology of the network of interconnections that en
-
-
-\subsection{Historical Overview}
-
-The study of artificial neural networks began with a 1943 paper \cite{mcculloch1988} by McCulloch and Pitts. In this paper, McCulloch and Pitts united, for the first time, neurophysiology, mathematics, and computation in a model of neural activity. This landmark paper marked the beginning of not only the computational theory of neural networks but also the computational theory of mind, and eventually led to the notion of finite atomata \cite{piccinini2006}. In this paper McCulloch and Pitts introduced a very simple model of a neuron, which acted as a threshold-based propositional logic unit. Significantly, McCulloch and Pitts showed that a network of these neuron models, interconnected, could represent a proposition of arbitrarily-high complexity. These models, often called McCulloch-Pitts Neurons, allowed only limited, discrete input values which are summed and compared to a threshold value, and did not posses any learning mechanism. They did, however, account for inhibitory action. 
-
-% DO: This paragraph needs rework around the work effeciency.
-Though McCulloch and Pitts made mention of learning in their 1943 paper, thirteen years would pass before this concept was formalized into a mathematical and computational model. In 1956 Rochester, Holland, Haibt, and Duda \cite{rochester1956} presented the first attempt at using a physiologically-inspired learning rule to update the synaptic weights of a neural network. This model was based on the learning rule postulated in 1949 by Hebb \cite{hebb1967}. In his book \textit{The Organization of Behavior}, Hebb suggested that synaptic plasticity, that is the capacity of synaptic strengths to change, is driven by metabolic changes in the neuron near the synapse such that if two cells often fired simultaneously the efficiency with which they cause one another to fire will increase. This efficiency is now called a synaptic weight. Rochester et. al. showed that the addition of variable synaptic weights alone was not sufficient to produce a network capable of learning. It was also necessary that these weights be capable of assuming inhibitory values.
-
-
-
-(Kurt Hornik (1991) "Approximation Capabilities of Multilayer Feedforward Networks", Neural Networks, 4(2), 251–257)
-
-Back propagation... 
-
-This, in turn, implies that neural networks can serve as universal function approximaters. (Cybenko)
-
-\subsection{Network Topology}
-
-Feed forward
-recursive
-
-\subsection{Activation Functions}
-
-\subsection{Learning Strategies}
-
-General discussion.
-
-Reference (Mendel and McClaren, 1970) and (Haykin, pg 50)
-
-\subsubsection{Back Propagation Training}
-
-Discuss (Rumelhart, Hinton, Williams, 1986)
-
-Derive back prop. (Haykin, pg 161)
-
-Discuss the implication of local minima.
-
-Fig[Error surface with backprop]
-
-
-\subsubsection{Simulated Annealing}
-
-(Ackley, Hinton, and Sejnowski 1985) 
-
-This Boltzmann machine is also of historical importance, as it was the first successfully-implemented multilayered neural network \cite{haykin1999}.
-
-
-\section{Related Works in Simulated Annealing}
-
-Read (Haykin pg 556)
-
-Read (Haykin pg 560)
-
-Simulated annealing (SA) is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in by Kirkpatrick et al. in \cite{kirkpatrick1983} as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, simulated annealing is an extension of the Metropolis-Hastings \cite{metropolis1953} algorithm which can be used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Geoff (Geoff) and Cortana et al. (Cortana) extended simulated annealing to the continuous domain. The basic simulated annealing algorithm is presented in [algo1]. 
-
-[algo1]
-
-The physical inspiration for simulated annealing. See (Haykin pg 546)
-
-
-In the parlance of simulated annealing \cite{kirkpatrick1983} a system at its maximum temperature is said to be \textit{melted}. In the melted state, most perturbations of the system configuration are accepted by the algorithm. Analogously, a system that has a temperature of zero, which indicates that the algorithm cannot move to any higher-error state, is said to be \textit{frozen}. Note that a frozen system may still be perturbed into a lower-energy state.
-
-When considering only the influence of classical thermal fluctuations in particle energy levels, the probability of a particle traversing a barrier of height \begin{math} \Delta V \end{math} at a temperature \begin{math} T \end{math} is on the order of: \begin{equation} 
-\mathcal{P}_t = e^{-\frac{\Delta V}{T}} 
-\end{equation}
-
-% Be sure to include some discussion of thermal fluctuations and their importance. Find a nice source...
-\subsection{Reheating}
-
-\subsection{Application of Simulated Annealing to ANN Synaptic Weight Selection}
-
-% Need sources for this... 
-
-\section{Related Works in Quantum Mechanics}
-
-
-Quantum mechanics is the branch of physics concerned with the physical laws of nature at very small scales. Many aspects of physical reality are observable only at these scales. Several techniques described in this document are either inspired by, or are simple models of quantum mechanical processes. These concepts are very briefly reviewed in this section. 
-
-\subsection{Quantum Tunneling} 
-
-
-
-One of the quantum phenomena for which there is no classical analog is potential barrier penetration, also known as quantum tunneling. This phenomenon arises from the probabilistic and wavelike behavior of particles in quantum physics. Tunneling plays a significant role in the behavior of bound and scattering quantum mechanical systems.
-
-A particle with energy \begin{math} E \end{math} incident upon a potential energy barrier of height \begin{math} \Delta V > E  \end{math} has a non-zero probability of being found in, or past, the barrier. Classically, this behavior is forbidden. The probability of tunneling, \begin{math} \mathcal{P}_t \end{math}, through a step barrier of height \begin{math} \Delta V  \end{math} is described by: 
-\begin{equation}
-\mathcal{P}_t = e^{-\frac{w \sqrt{\Delta V}}{ \Gamma}} 
-\end{equation} where \begin{math} \Gamma \end{math} is the tunneling field strength [Ref: Multivariable Opt: QAC - Mukherjee]. Figure [1] depicts a one-dimensional example of quantum tunneling.
-
-[Figure 1] 
-
-
-
-\subsection{Quantum Annealing}
-
-Quantum annealing is the use of quantum, rather than thermal fluctuations to traverse the free energy landscape of a system. This is accomplished by introducing an additional Hamiltonian term that does not commute with the classical Hamiltonian. This non-commutation implies that [What does it mean?... The non-commutative causes the quantum effects...but how?].  The term is introduced to account for the presence of a tunneling field which controls the frequency with which quantum fluctuations occur in the system. In effect, this term controls the relative importance of quantum effects on the behavior of the modeled system. This term, much like thermal energy in simulated annealing, is gradually reduced over the course of the simulation. [Par Source: Quantum annealing in a kinetically constrained system] The time dependent Schrödinger equation \footnote{Note that the presence of the Schrödinger equation in section does not imply that quantum annealing requires the annealed system must be an approximation to a wavefunction. It merely serves as an exposition of the properties of physical system which is modeled.} for such a system has the form: \begin{equation}
-[\lambda(t)H' + H_0]\psi = i\hbar \frac{\partial \psi}{\partial t}
-\end{equation} [Eq from Mult Opt... Murherjee] where \begin{math} \lambda(t) \end{math} is the time-variance function of the tunneling field, \begin{math} H' \end{math} is the Hamiltonian term describing the tunneling field, and \begin{math} H_0 \end{math} is the classical Hamiltonian. 
-
-The fluctuations induced by the tunneling field are tunneling events, which transition the system from one configuration to a different, lower-energy configuration directly, without assuming any of the higher energy configurations between the two. Said differently, the quantum tunneling field enables the penetration of energy barriers. The addition of these quantum fluctuations also ensures that each possible state of the system can be reached (KCS Paper). 
-
-% Strictly speaking, this document does not claim to describe a quantum annealing process as it is presented in the referenced literature. 
-
-% There is a great deal of academic writing describing QA in the language of physics, but very little writing describing the concept from an algorithmic perspective. For this reason, and because there are significant differences between the artificial simulation of quantum-inspired annealing and the physical phenomenon which is being approximated, a new terminology is proposed. In this document, a new more specific term is introduced in order to disambiguate.
-
-
-
-% Simulated quantum annealing (SQA) is the quantum mechanical counterpart of simulated thermal annealing. Like simulated thermal annealing, simulated quantum annealing is a global search algorithm which seeks the global minimum of a cost function in a configuration space. 
-
-% In continuously oscliating annealing schedules, consistently good states will tend to attract the search. Bad states will be randomly visited. Partition the space of states into for each synapse into discrete bins. Track the number of times a bin is hit by the search for each synapse. Given enough time and suffiently small bins, the modes of each histogram will come to represent the global minima.
-
-
-\section{Notation and Terminology Conventions}
-
-There is a great deal of academic writing describing quantum annealing in the language of physics, but very little writing describing the concept from an algorithmic perspective. For this reason a new, more specific term is introduced in this document. Simulated quantum annealing (SQA) is the quantum mechanical counterpart of simulated thermal annealing. 
-
-% [Physics to Algorithmic translation table]
-% Free Energy Surface - Error Manifold - Cost Function
-% System Configuration -  
-
-The term neuron will be used in this document to describe the information processing elements of a neural network. This convention is selected both for conciseness and for the useful adjectival form, neural, which will be of great explanatory utility in the coming chapters.
-
-
-Read (Haykin pg 561) Table 11.1
-
-
-\chapter{Methodology}
-
-\section{Simulated Quantum Annealing}
-
-It is instructive to contrast equations 2.1 and 2.2. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of approximately \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}. This relationship is depicted graphically in Fig. 2 which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Therefore, physical models which considers quantum effects are much more likely predict penetration of tall, thin energy barriers than those which only include classical thermal effects.
-
-
-[Figure 2] 
-
-
-\section{Traversing the Error Manifold}
-
-\subsection{Unidimensional Weight Perturbation}
-
-\subsection{Omni-dimensional Weight Perturbation}
-
-\subsection{Constrained Step-Size Omni-dimensional Weight Perturbation}
-
-\subsection{Quantum Weight Perturbation}
-
-
-It is shown in Proof [n] that this algorithm is certain to eventually find the minimum possible
-
-%formal proof of the eventual optimality of the simulated quantum annealing algorithm
-
-\subsection{Stochastic-Anisotropic Quantum Weight Perturbation}
-
-
-
-\subsection{Quantum Annealing}
-
-
-[After discussing the way in which the algorithm is implemented] ...The net effect of this design is to allow the algorithm to move from a local minima configuration, to a different, lower-error configuration, without requiring the evaluation of intervening, higher-error configurations. This means that the probability of "tunneling" to a state
-
-
-
-
-\chapter{Results}
-
-Is my algorithm computationally efficient as in Haykin, pg 229?
-\chapter{Conclusion}
-
-
-\appendix		% Appendix begins here
-
-\chapter{First appendix title}
-
-\section{In an appendix} 
-
-This is appendix section A.1.
-
-Note: I highly recommend you create each chapter in a separate file
-including the \verb|\chapter| command and \verb|\include| the file.
-Then you can use \verb|\includeonly| to process selected chapters and
-you avoid having to latex/preview/print your entire document every
-time.
-
-%\begin{Bibliography}	     % CAUTION: the first B is capital B.
-%\bibitem[key] A listing ... % You can also use the `thebibliography'
-%\bibitem[key2] A another    % environment described in LaTeX manual.
-%\bibitem[key3]...	     % The usages of \bibitem and \cite{..} are
-%\end{Bibliography}          % explained in Section 4.3 of the LaTeX manual.
-
-% you can also use BibTeX instead of the above as I have done below. 
-% see the LaTeX manual and the
-% documentation available from /usr/TeX/doc.  There is an AFIT 
-% bibliography style called thesnumb.  It has some special types 
-% and fields.  See some sample entries and info in thesnumb.doc.  
-% Note: thisthesis bibliography style only works with bibtex 
-% version .99a or higher.
-
-\bibliographystyle{thesnumb}
-\bibliography{synapticAnnealingBib}
-
-\begin{vita}
-	Insert your brief biographical sketch here. Your permanent
-	address is generated automatically.
-\end{vita}
-
-%\begin{vita} %uncomment for twoauthor option
-%	The second vita.
-%	Insert the second authors brief biographical sketch here. 
-%\end{vita}
-
+	% The following commands will automatically generate headings, adjust
+	% vertical spacings, break pages, etc.
+	% You should probably leave all of these prefatory pages commented out
+	% or in a \include file until your thesis is ready for final draft
+	
+	\flyleaf      			% Generates the flyleaf.
+	
+	\disclaimerpage                 % Produces the disclaimer page
+	
+	\titlepage			% Produces the title page.
+	
+	\approvalpage                   % Produces the approvalpage
+	
+	\begin{preface}
+		%
+		%Insert the text of your preface here. Your name will appear
+		%automatically. If this is an acknowledgments section instead of 
+		%preface, use \begin{acknowledgments} and \end{acknowledgments}
+		% instead.
+		%
+	\end{preface}
+	
+	\tableofcontents	% Table of Contents will be automatically
+	% generated and placed here.
+	
+	\listoffigures  	% List of Figures, List of Tables, and List of
+	\listoftables		% Symbols will be placed here, if applicable.
+	\listofsymbols      % Do not use these if you have no such lists.
+	% To put symbols in the list use command \symbol[#1]{#2}
+	% where #2 is the symbol and #1 is the definition to be put in the
+	% list of symbols. The symbol is also automatically put in
+	% your text.  Leave out [#1] if you don't want a definition.
+	
+	\listofabbreviations
+	
+	\abbreviation[Artificial Neural Network]{ANN}
+	% similar to the list of symbols.  Use command \abbreviation[#1]{#2}
+	% where #2 is the abbreviation and #1 is the definition to be put in the
+	% list of abbreviations. The abbreviation is also automatically put in
+	% your text.  Leave out [#1] if you don't want a definition.
+	
+	\begin{abstract}
+		% Lower-end page count: 131
+		% Upper-end page count: 170
+		% DO: Write abstract.	
+		
+	\end{abstract}
+	
+	
+	\chapter{Introduction}
+	
+	% DO: Write introduction.	
+	% The first chapter. \chapter command is of the form \chapter[..]{..} or \chapter{..} where {chapter heading} and [entry in table of contents].
+	
+	% Do this after the thesis is written. I created an algorithm which simulates quantum tunneling through an error manifold. I applied this algorithm to the problem of selecting weight values for a neural network. It works well for small data sets, but is slower when dimensionality of the data set on which the network is trained is very large. 
+	
+	In chapter three the traversal a error manifold in the problem configuration space is discussed at length. Several traversal methodologies are proposed and evaluated. 
+	
+	
+	% Important: If your chapter heading consists of more than one lines, it will be automatically broken into separate lines. However, if you don't like the way LaTeX breaks the chapter heading into lines, use `\newheadline' command to break lines. NEVER USE \\ IN SECTIONAL (E.G., CHAPTER, SECTION, SUBSECTION) HEADINGS!!!!!!!!
+	
+	\chapter{Background} % This is Chapter 2.
+	
+	This chapter serves as a comprehensive review of the physical and computational concepts material to the topic of this thesis. A broad overview of artificial neural networks and the application and history thereof is presented. Next, simulated annealing is described, along with a summary of some related works and a description of the physical inspiration for the algorithm. The chapter concludes with a very brief overview of the quantum mechanics, with emphasis placed on those concepts which will be employed throughout this thesis document. Finally, the notation and terminology conventions adopted in this document are established.
+	
+	\section{Artificial Neural Networks}
+	
+	% Is there a better term than sequential computing machinery? Each word in this name encodes a significant concept related to the origins and structure of the models: neural is a reference to neurons, which are the fundamental information processing elements of the biological systems which inspired the model; network refers to network theory, a subfield of graph theory, which governs representation of relationships between neurons; and artificial, meaning an object of human origin, in contrast with biological neural networks which arise naturally.
+	
+	It has long been recognized (source maybe?) that the capacity of biological information processing systems to flexibly and quickly process large quantities of data greatly exceeds that of sequential computing machinery. This information processing capability arises from the complex, nonlinear, parallel nature of biological information processors (Source? Hayken?). The family of models designed to replicate this powerful information processing architecture are collectively called artificial neural networks. In the most general sense, artificial neural networks are parallel distributed information processors \cite{haykin1999} comprising many simple processing elements. Networks store information about experienced stimuli and can make that information available. In such a network, interneuron connection strengths are used to encode information, and are modified via a learning strategy. Artificial neural networks are characterized by three features: a network topology or architecture, an activation function, and a learning strategy. Each will be discussed in the following sections. I will also review the history of artificial neural networks, and the biological inspiration for the computational model.
+	
+	\subsection{Biological Inspiration}
+	
+	Fig[an image of a neuron, mapped to a schematic of a neuron, mapped to a processing element]
+	
+	Integration of magnitude-encoded, rather than frequency-encoded, signals. 
+	Threshold functions relationship to the biological shape, size... Papers needed.
+	
+	Biological neural networks are many orders of magnitude slower than those based in ... It in not the size of the network or the number of interconnections alone which confer upon the human brain its remarkable efficiency (Faggin, 1991). Though size and connectivity are necessary, it is the structure, or topology of the network of interconnections that en
+	
+	% What is the pgysical mechanism for depression?
+	
+	% Concentraion of nuerotransimitters in the extra-sybaptic flusid increases, raising the instantaneous membrane porentential, possibly vreaching the threshold causing a fire-and-reset, where the there is some pgysical limit on the rate at which the reset step can occur, thus causing the diminishing returns seen in Figure 2 of Neurocomputing, whence the fire causes either excitatory or depressive neurotransmitters to be released at the synaptic clefts formed at the end of the axon, thus propigatind the activation through the net.
+	
+	% What is changed in synaptic annealing is the effecientcy with which a partyiculat synaptic site is able to convert molecules in the surroundinf intercellulat inbitoment, which is to asay in the synaptic cleft, into a change in charge inside the cell.
+	
+	% See paper 23 in Neurocomputing for more information...
+	
+	\subsection{Historical Overview}
+	
+	The study of artificial neural networks began with a 1943 paper \cite{mcculloch1988} by McCulloch and Pitts. In this paper, McCulloch and Pitts united, for the first time, neurophysiology and formal logic in a model of neural activity. This landmark paper marked the beginning of not only the computational theory of neural networks but also the computational theory of mind, and eventually led to the notion of finite atomata \cite{piccinini2006}. In this paper McCulloch and Pitts introduced a very simple model of a neuron, which acted as a threshold-based propositional logic unit. Significantly, McCulloch and Pitts showed that a network of these neuron models, interconnected, could represent a proposition of arbitrarily-high complexity. Said differently, a network of these neurons can represent any logical proposition. These models, often called McCulloch-Pitts Neurons, allow only discrete input values which are summed and compared to a threshold value during a fixed time quantum, and do not posses any learning mechanism. Theses neurons are able to incorporate inhibitory action, but the action is absolute and inhibits the activation of the neuron without regard to any other considerations. These models are of theoretical significance, but cannot be applied to practical problems.
+	
+	% DO: This paragraph needs rework around the work effeciency.
+	Though McCulloch and Pitts made mention of learning in their 1943 paper, thirteen years would pass before this concept was formalized into a mathematical and computational model. In 1956 Rochester, Holland, Haibt, and Duda \cite{rochester1956} presented the first attempt at using a physiologically-inspired learning rule to update the synaptic weights of a neural network. This model was based on the correlation learning rule postulated in 1949 by Hebb\footnote{It should be mentioned that, while Hebb was the first to postulate the correlation learning rule as it relates to neurons and synaptic connection strength, the abstract rule was foreshadowed as early as 1890 by William James \cite{james1890principles} in Chapter XVI of \textit{Psychology (Briefer Course)}.}. In his book \textit{The Organization of Behavior}, Hebb suggested that synaptic plasticity, that is the capacity of synaptic strengths to change, is driven by metabolic and structural changes in the both neurons near the synaptic cleft \cite{hebb1967} such that if two cells often fired simultaneously the efficiency with which they cause one another to fire will increase. This efficiency is now called a synaptic weight. Rochester et. al. showed that the addition of variable synaptic weights alone was not sufficient to produce a network capable of learning. It was also necessary that these weights be capable of assuming inhibitory values.
+	
+	% DO: is this paragraph too detailed, or not detailed enough? 
+	% DO: Quick graphic of the perceptron.
+	The next major contribution to the field would come in 1958 with Rosenblatt's introduction of the perceptron \cite{rosenblatt1958perceptron}. The perceptron was the first \cite{anderson1988neurocomputing} well formed, computationally oriented neural network. Crucially, and unlike most preceding neural models, the model Rosenblatt presented in his  1958 paper was associative. That is, the model learned to associate stimuli with a response. This learning is accomplished by modifying the synaptic weights of the model such that the difference between an input pattern and the desired output pattern is minimized. The responsibility for the error, or difference between the correct and computed output patterns, is divided among the weights in proportion to their magnitude. Thus, large synaptic weights will be reduced more than small synaptic weights for a large, positive error. This weight update strategy is represented mathematically as: \begin{equation} 
+	w_i(t+1) = w_i(t) + \alpha(d_j - y_j)x_{j,i}
+	\end{equation} where \begin{math} w_i(t) \end{math} the synaptic weight for feature \begin{math} i \end{math} at discrete time \begin{math} t \end{math}, \begin{math} \alpha \end{math} is the tunable learning rate parameter, \begin{math} d_j \end{math} is the desired output, \begin{math} y_j \end{math} is the computed output, and \begin{math} x_j,i \end{math} is the input pattern. This method constitutes a from of reinforcement learning.
+	
+	
+	% DO: is corollary appropeiate here? 
+	Rosenblatt's perceptron was found to be successful at predicting the correct response class for stimuli only if the responses were correlated. It was not until Block's 1962 publication that the reason for this observed performance was elucidated. In this paper, Block presented two key findings: first, that simple perceptrons require linearly separable classes to achieve perfect classification and second, the perceptron convergence theorem \cite{block1962perceptron}. Linear separability is the ability of the response classifications to be separated by a hyperplane in the n-dimensional space of the input stimuli to which they correspond. The requirement of linear separability arises directly from the way in which the output of a perceptron response unit is calculated. The output of a perceptron response unit is given by:
+	\begin{equation} 
+	y_j = \begin{cases}
+	-1 &\sum_{i=1}^{n} w_{i,j}x_{i} \leq \Theta\\
+	+1 &\sum_{i=1}^{n} w_{i,j}x_{i} > \Theta
+	\end{cases}
+	\end{equation} where \begin{math} y_j \end{math} is the response value of response unit \begin{math} j \end{math}, \begin{math} w_{i,j} \end{math} is the synaptic weight of the connection between activation unit \begin{math} i \end{math} and response unit \begin{math} j \end{math}, \begin{math} x_{i} \end{math} is the activation value of activation unit \begin{math} i \end{math}, and \begin{math} \Theta \end{math} is the threshold value of the perceptron. Block's crucial observation was that the form of the summation in the response determining equation is isomorphic to a hyperplane in an \begin{math}n\end{math}-dimensional space. Thus, in order for the perceptron to achieve perfect classification a hyperplane must be able to separate them in the \begin{math}n\end{math}-dimensional input space. The corollary of this observation it the perceptron convergence theorem. The theorem proves that for some learning rules, if a perfect classification is possible it will be found by the perceptron. Specifically, the class of learning rules which were found effective were those which did not change synaptic weights when a correct classification occurs. While the condition does ensure convergence, it can often result in very slow convergence. Considerably faster guaranteed convergence can be achieved using a error gradient descent learning rule \cite{widrow1960asc}, as described by Widrow and Hoff. 
+	
+	Minsky breaks everything
+	
+	then multilayer stuff
+	This, in turn, implies that neural networks can serve as universal function approximaters. (Cybenko)
+	(Kurt Hornik (1991) "Approximation Capabilities of Multilayer Feedforward Networks", Neural Networks, 4(2), 251–257)
+	
+	then theres backprop
+	
+	
+	
+	
+	
+	\subsection{Network Topology}
+	
+	Feed forward
+	recursive
+	
+	\subsection{Activation Functions}
+	
+	\subsection{Learning Strategies}
+	
+	General discussion.
+	
+	Reference (Mendel and McClaren, 1970) and (Haykin, pg 50)
+	
+	\subsubsection{Back Propagation Training}
+	
+	Consider pandimonium by slefedger
+	
+	Discuss (Rumelhart, Hinton, Williams, 1986)
+	
+	Derive back prop. (Haykin, pg 161)
+	
+	Discuss the implication of local minima.
+	
+	Fig[Error surface with backprop]
+	
+	
+	\subsubsection{Simulated Annealing}
+	
+	(Ackley, Hinton, and Sejnowski 1985) 
+	
+	This Boltzmann machine is also of historical importance, as it was the first successfully-implemented multilayered neural network \cite{haykin1999}.
+	
+	
+	\section{Related Works in Simulated Annealing}
+	
+	Read (Haykin pg 556)
+	
+	Read (Haykin pg 560)
+	
+	Simulated annealing (SA) is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in by Kirkpatrick et al. in \cite{kirkpatrick1983} as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, simulated annealing is an extension of the Metropolis-Hastings \cite{metropolis1953} algorithm which can be used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Geoff (Geoff) and Cortana et al. (Cortana) extended simulated annealing to the continuous domain. The basic simulated annealing algorithm is presented in [algo1]. 
+	
+	[algo1]
+	
+	The physical inspiration for simulated annealing. See (Haykin pg 546)
+	
+	
+	In the parlance of simulated annealing \cite{kirkpatrick1983} a system at its maximum temperature is said to be \textit{melted}. In the melted state, most perturbations of the system configuration are accepted by the algorithm. Analogously, a system that has a temperature of zero, which indicates that the algorithm cannot move to any higher-error state, is said to be \textit{frozen}. Note that a frozen system may still be perturbed into a lower-energy state.
+	
+	When considering only the influence of classical thermal fluctuations in particle energy levels, the probability of a particle traversing a barrier of height \begin{math} \Delta V \end{math} at a temperature \begin{math} T \end{math} is on the order of: \begin{equation} 
+	\mathcal{P}_t = e^{-\frac{\Delta V}{T}} 
+	\end{equation}
+	
+	% Be sure to include some discussion of thermal fluctuations and their importance. Find a nice source...
+	\subsection{Reheating}
+	
+	\subsection{Application of Simulated Annealing to ANN Synaptic Weight Selection}
+	
+	% Need sources for this... 
+	
+	\section{Related Works in Quantum Mechanics}
+	
+	
+	Quantum mechanics is the branch of physics concerned with the physical laws of nature at very small scales. Many aspects of physical reality are observable only at these scales. Several techniques described in this document are either inspired by, or are simple models of quantum mechanical processes. These concepts are very briefly reviewed in this section. 
+	
+	\subsection{Quantum Tunneling} 
+	
+	
+	
+	One of the quantum phenomena for which there is no classical analog is potential barrier penetration, also known as quantum tunneling. This phenomenon arises from the probabilistic and wavelike behavior of particles in quantum physics. Tunneling plays a significant role in the behavior of bound and scattering quantum mechanical systems.
+	
+	A particle with energy \begin{math} E \end{math} incident upon a potential energy barrier of height \begin{math} \Delta V > E  \end{math} has a non-zero probability of being found in, or past, the barrier. Classically, this behavior is forbidden. The probability of tunneling, \begin{math} \mathcal{P}_t \end{math}, through a step barrier of height \begin{math} \Delta V  \end{math} is described by: 
+	\begin{equation}
+	\mathcal{P}_t = e^{-\frac{w \sqrt{\Delta V}}{ \Gamma}} 
+	\end{equation} where \begin{math} \Gamma \end{math} is the tunneling field strength [Ref: Multivariable Opt: QAC - Mukherjee]. Figure [1] depicts a one-dimensional example of quantum tunneling.
+	
+	[Figure 1] 
+	
+	
+	
+	\subsection{Quantum Annealing}
+	
+	Quantum annealing is the use of quantum, rather than thermal fluctuations to traverse the free energy landscape of a system. This is accomplished by introducing an additional Hamiltonian term that does not commute with the classical Hamiltonian. This non-commutation implies that [What does it mean?... The non-commutative causes the quantum effects...but how?].  The term is introduced to account for the presence of a tunneling field which controls the frequency with which quantum fluctuations occur in the system. In effect, this term controls the relative importance of quantum effects on the behavior of the modeled system. This term, much like thermal energy in simulated annealing, is gradually reduced over the course of the simulation. [Par Source: Quantum annealing in a kinetically constrained system] The time dependent Schrödinger equation \footnote{Note that the presence of the Schrödinger equation in section does not imply that quantum annealing requires the annealed system must be an approximation to a wavefunction. It merely serves as an exposition of the properties of physical system which is modeled.} for such a system has the form: \begin{equation}
+	[\lambda(t)H' + H_0]\psi = i\hbar \frac{\partial \psi}{\partial t}
+	\end{equation} [Eq from Mult Opt... Murherjee] where \begin{math} \lambda(t) \end{math} is the time-variance function of the tunneling field, \begin{math} H' \end{math} is the Hamiltonian term describing the tunneling field, and \begin{math} H_0 \end{math} is the classical Hamiltonian. 
+	
+	The fluctuations induced by the tunneling field are tunneling events, which transition the system from one configuration to a different, lower-energy configuration directly, without assuming any of the higher energy configurations between the two. Said differently, the quantum tunneling field enables the penetration of energy barriers. The addition of these quantum fluctuations also ensures that each possible state of the system can be reached (KCS Paper). 
+	
+	% Strictly speaking, this document does not claim to describe a quantum annealing process as it is presented in the referenced literature. 
+	
+	% There is a great deal of academic writing describing QA in the language of physics, but very little writing describing the concept from an algorithmic perspective. For this reason, and because there are significant differences between the artificial simulation of quantum-inspired annealing and the physical phenomenon which is being approximated, a new terminology is proposed. In this document, a new more specific term is introduced in order to disambiguate.
+	
+	
+	
+	% Simulated quantum annealing (SQA) is the quantum mechanical counterpart of simulated thermal annealing. Like simulated thermal annealing, simulated quantum annealing is a global search algorithm which seeks the global minimum of a cost function in a configuration space. 
+	
+	% In continuously oscliating annealing schedules, consistently good states will tend to attract the search. Bad states will be randomly visited. Partition the space of states into for each synapse into discrete bins. Track the number of times a bin is hit by the search for each synapse. Given enough time and suffiently small bins, the modes of each histogram will come to represent the global minima.
+	
+	
+	\section{Notation and Terminology Conventions}
+	
+	There is a great deal of academic writing describing quantum annealing in the language of physics, but very little writing describing the concept from an algorithmic perspective. For this reason a new, more specific term is introduced in this document. Simulated quantum annealing (SQA) is the quantum mechanical counterpart of simulated thermal annealing. 
+	
+	% [Physics to Algorithmic translation table]
+	% Free Energy Surface - Error Manifold - Cost Function
+	% System Configuration -  
+	
+	The term neuron will be used in this document to describe the information processing elements of a neural network. This convention is selected both for conciseness and for the useful adjectival form, neural, which will be of great explanatory utility in the coming chapters.
+	
+	
+	Read (Haykin pg 561) Table 11.1
+	
+	
+	\chapter{Methodology}
+	
+	\section{Simulated Quantum Annealing}
+	
+	It is instructive to contrast equations 2.1 and 2.2. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of approximately \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}. This relationship is depicted graphically in Fig. 2 which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Therefore, physical models which considers quantum effects are much more likely predict penetration of tall, thin energy barriers than those which only include classical thermal effects.
+	
+	
+	[Figure 2] 
+	
+	
+	\section{Traversing the Error Manifold}
+	
+	\subsection{Unidimensional Weight Perturbation}
+	
+	\subsection{Omni-dimensional Weight Perturbation}
+	
+	\subsection{Constrained Step-Size Omni-dimensional Weight Perturbation}
+	
+	\subsection{Quantum Weight Perturbation}
+	
+	
+	It is shown in Proof [n] that this algorithm is certain to eventually find the minimum possible
+	
+	%formal proof of the eventual optimality of the simulated quantum annealing algorithm
+	
+	\subsection{Stochastic-Anisotropic Quantum Weight Perturbation}
+	
+	
+	
+	\subsection{Quantum Annealing}
+	
+	
+	[After discussing the way in which the algorithm is implemented] ...The net effect of this design is to allow the algorithm to move from a local minima configuration, to a different, lower-error configuration, without requiring the evaluation of intervening, higher-error configurations. This means that the probability of "tunneling" to a state
+	
+	
+	
+	
+	\chapter{Results}
+	
+	Is my algorithm computationally efficient as in Haykin, pg 229?
+	\chapter{Conclusion}
+	
+	
+	\appendix		% Appendix begins here
+	
+	\chapter{First appendix title}
+	
+	\section{In an appendix} 
+	
+	This is appendix section A.1.
+	
+	Note: I highly recommend you create each chapter in a separate file
+	including the \verb|\chapter| command and \verb|\include| the file.
+	Then you can use \verb|\includeonly| to process selected chapters and
+	you avoid having to latex/preview/print your entire document every
+	time.
+	
+	%\begin{Bibliography}	     % CAUTION: the first B is capital B.
+	%\bibitem[key] A listing ... % You can also use the `thebibliography'
+	%\bibitem[key2] A another    % environment described in LaTeX manual.
+	%\bibitem[key3]...	     % The usages of \bibitem and \cite{..} are
+	%\end{Bibliography}          % explained in Section 4.3 of the LaTeX manual.
+	
+	% you can also use BibTeX instead of the above as I have done below. 
+	% see the LaTeX manual and the
+	% documentation available from /usr/TeX/doc.  There is an AFIT 
+	% bibliography style called thesnumb.  It has some special types 
+	% and fields.  See some sample entries and info in thesnumb.doc.  
+	% Note: thisthesis bibliography style only works with bibtex 
+	% version .99a or higher.
+	
+	\bibliographystyle{thesnumb}
+	\bibliography{synapticAnnealingBib}
+	
+	\begin{vita}
+		Insert your brief biographical sketch here. Your permanent
+		address is generated automatically.
+	\end{vita}
+	
+	%\begin{vita} %uncomment for twoauthor option
+	%	The second vita.
+	%	Insert the second authors brief biographical sketch here. 
+	%\end{vita}
+	
 \end{document}
 
 % Please mail your suggestions and complaints to jdyoung@afit.af.mil.

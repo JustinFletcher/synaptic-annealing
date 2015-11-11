@@ -1,5 +1,11 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: usethesis.aux
 The style file: thesnumb.bst
 Database file #1: synapticAnnealingBib.bib
+Warning--I didn't find a database entry for "james1890principles"
+Warning--I didn't find a database entry for "rosenblatt1958perceptron"
+Warning--I didn't find a database entry for "anderson1988neurocomputing"
+Warning--I didn't find a database entry for "block1962perceptron"
+Warning--I didn't find a database entry for "widrow1960asc"
 Warning--empty booktitle in mcculloch1988
-(There was 1 warning)
+Warning--empty journal in metropolis1953
+(There were 7 warnings)

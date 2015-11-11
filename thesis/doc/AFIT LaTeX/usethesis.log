@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  5 NOV 2015 21:58
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  11 NOV 2015 15:46
 entering extended mode
 **usethesis.tex
 ("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.tex"
@@ -67,40 +67,263 @@ e 209.
 \realcaptionwidth=\dimen110
 )
 ("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\afthes11.sty"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen111
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen112
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen113
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks16
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks17
+\eqnshift@=\dimen114
+\alignsep@=\dimen115
+\tagshift@=\dimen116
+\tagwidth@=\dimen117
+\totwidth@=\dimen118
+\lineht@=\dimen119
+\@envbody=\toks18
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
 ("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 184.
-LaTeX Font Info:    ... okay on input line 184.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 185.
+LaTeX Font Info:    ... okay on input line 185.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
 
 Fly Leaf.
-! I can't write on file `usethesis.pdf'.
-Please type another file name for output
-! Emergency stop.
-<to be read again> 
-                   \endgroup \set@typeset@protect 
-l.191 \flyleaf
-                    			% Generates the flyleaf.
-*** (job aborted, file error in nonstop mode)
+[1
 
- 
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+Disclaimer Page.
+[2]
+
+Title Page.
+[1]
+
+Approval Page.
+[2]
+
+Preface.
+[3
+
+]
+
+Table of Contents.
+("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.toc" [4
+
+])
+\tf@toc=\write3
+ [5]
+
+List of Figures.
+("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.lof")
+\tf@lof=\write4
+ [6
+
+]
+
+List of Tables.
+("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.lot")
+\tf@lot=\write5
+ [7
+
+]
+
+List of Symbols.
+("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.los")
+\tf@los=\write6
+ [8
+
+]
+
+List of Abbreviations.
+("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.loa")
+\tf@loa=\write7
+ [9
+
+]
+
+Abstract.
+[10
+
+]
+
+Chapter 1.
+[1
+
+]
+
+Chapter 2.
+[1
+
+]
+
+LaTeX Warning: Citation `james1890principles' on page 2-2 undefined on input li
+ne 280.
+
+[2]
+
+LaTeX Warning: Citation `rosenblatt1958perceptron' on page 2-3 undefined on inp
+ut line 284.
+
+
+LaTeX Warning: Citation `anderson1988neurocomputing' on page 2-3 undefined on i
+nput line 284.
+
+
+LaTeX Warning: Citation `block1962perceptron' on page 2-3 undefined on input li
+ne 290.
+
+[3]
+
+LaTeX Warning: Citation `widrow1960asc' on page 2-4 undefined on input line 296
+.
+
+Missing character: There is no â in font cmr10!
+Missing character: There is no € in font cmr10!
+Missing character: There is no “ in font cmr10!
+[4]
+Overfull \hbox (5.53305pt too wide) in paragraph at lines 340--341
+[]\OT1/cmr/m/n/10.95 This Boltz-mann ma-chine is also of his-tor-i-cal im-por-t
+ance, as it was the first successfully-
+ []
+
+[5] [6]
+Missing character: There is no Ã in font cmr10!
+Missing character: There is no ¶ in font cmr10!
+Missing character: There is no Ã in font cmr9!
+Missing character: There is no ¶ in font cmr9!
+ [7] [8]
+
+Chapter 3.
+[1
+
+]
+
+Chapter 4.
+[1
+
+]
+
+Chapter 5.
+[1
+
+]
+
+Appendix 1.
+("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.bbl" [1
+
+
+]
+
+Bibliography.
+
+Underfull \hbox (badness 2837) in paragraph at lines 15--18
+[]\OT1/cmr/m/n/10.95 Kirkpatrick, S., et al.  ``Op-ti-miza-tion by sim-u-lated 
+an-neal-ing,'' \OT1/cmr/m/it/10.95 SCI-ENCE\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 1584) in paragraph at lines 31--34
+[]\OT1/cmr/m/n/10.95 Piccinini, Gualtiero.  ``Com-pu-ta-tional Ex-pla-na-tion i
+n Neu-ro-science,'' \OT1/cmr/m/it/10.95 Syn-these\OT1/cmr/m/n/10.95 ,
+ []
+
+) [1
+
+]
+
+Vita.
+[1
+
+] ("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.aux")
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1056 strings out of 494053
- 16499 string characters out of 3146188
- 66331 words of memory out of 3000000
- 4416 multiletter control sequences out of 15000+200000
- 3940 words of font info for 15 fonts, out of 3000000 for 9000
+ 1721 strings out of 494053
+ 24601 string characters out of 3146188
+ 80639 words of memory out of 3000000
+ 5024 multiletter control sequences out of 15000+200000
+ 10537 words of font info for 38 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 43i,4n,40p,237b,108s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 43i,8n,40p,1457b,180s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmtt10.pfb>
+Output written on usethesis.pdf (27 pages, 244908 bytes).
+PDF statistics:
+ 161 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
