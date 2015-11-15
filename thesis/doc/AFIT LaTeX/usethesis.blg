@@ -1,11 +1,19 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: usethesis.aux
 The style file: thesnumb.bst
 Database file #1: synapticAnnealingBib.bib
-Warning--I didn't find a database entry for "james1890principles"
-Warning--I didn't find a database entry for "rosenblatt1958perceptron"
-Warning--I didn't find a database entry for "anderson1988neurocomputing"
-Warning--I didn't find a database entry for "block1962perceptron"
-Warning--I didn't find a database entry for "widrow1960asc"
+You're missing a field name---line 253 of file synapticAnnealingBib.bib
+ :  
+ :  {journal =  kyb},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+A bad cross reference---entry "rumelhart1986internal"
+refers to entry "Rum86", which doesn't exist
+Warning--I didn't find a database entry for "Rum86"
+Warning--empty booktitle in barto1983neuronlike
 Warning--empty booktitle in mcculloch1988
 Warning--empty journal in metropolis1953
-(There were 7 warnings)
+Warning--empty chapter and pages in rumelhart1986internal
+Warning--empty publisher in rumelhart1986internal
+Warning--empty journal in vonderMalsburg1973selforganization
+Warning--empty year in vonderMalsburg1973selforganization
+(There were 2 error messages)

@@ -1,4 +1,58 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{anderson1972interactive}
+Anderson, James~A.
+\newblock ``A Simple Neural Network Generating an Interactive Memory,'' {\em
+  Mathematical Biosciences\/}, {\em 14\/}:197--220 (1972).
+
+\bibitem{anderson1988neurocomputing}
+Anderson, James~A. and E.~Rosenfeld, editors.
+\newblock {\em Neurocomputing: {F}oundations of Research\/}.
+\newblock Cambridge, MA: MIT Press, 1988.
+
+\bibitem{barto1983neuronlike}
+Barto, Andrew~G., et~al.
+\newblock ``Artificial Neural Networks.'' edited by Joachim Diederich, chapter
+  Neuronlike Adaptive Elements That Can Solve Difficult Learning Control
+  Problems,  81--93, Piscataway, NJ, USA: IEEE Press, 1990.
+
+\bibitem{block1962perceptron}
+Block, H.~D.
+\newblock ``The Perceptron: {A} Model for Brain Functioning,'' {\em Reviews of
+  Modern Physics\/}, {\em 34\/}:123--135 (1962).
+
+\bibitem{brodie78limulus}
+Brodie, S.~E., et~al.
+\newblock ``The response of the {L}imulus retina to moving stimuli: a
+  prediction by {F}ourier synthesis,'' {\em J Gen Physiol\/}, {\em
+  72\/}(2):129--66 (August 1978).
+
+\bibitem{bryson1969optimalcontrol}
+Bryson, A.~E. and Y.~C. Ho.
+\newblock {\em Applied Optimal Control\/}.
+\newblock New York: Blaisdell, 1969.
+
+\bibitem{corana1987minimizingmultimodal}
+Corana, A., et~al.
+\newblock ``Minimizing Multimodal Functions of Continuous Variables with the
+  \&Ldquo;Simulated Annealing\&Rdquo; algorithmCorrigenda for This Article is
+  Available Here,'' {\em ACM Trans. Math. Softw.\/}, {\em 13\/}(3):262--280
+  (September 1987).
+
+\bibitem{cybenko1989approxsuperposition}
+Cybenko, G.
+\newblock ``Approximation by superpositions of a sigmoidal function,'' {\em
+  Mathematics of Control, Signals and Systems\/}, {\em 2\/}(4):303--314 (1989).
+
+\bibitem{das2005qakcs}
+{Das}, A., et~al.
+\newblock ``{Quantum annealing in a kinetically constrained system},'' {\em
+  pre}, {\em 72\/}(2):026701 (August 2005).
+
+\bibitem{goffe1994globaloptimization}
+Goffe, William~L., et~al.
+\newblock ``Global Optimization of Statistical Functions with Simulated
+  Annealing,'' {\em Journal of Econometrics\/}, {\em 60\/}:65--99 (1994).
 
 \bibitem{haykin1999}
 Haykin, Simon.
@@ -11,10 +65,39 @@ Hebb, D.~O.
   D.O. Hebb. Science Editions\/}.
 \newblock New York: John Wiley and Sons, 1967.
 
+\bibitem{hopfield1982neuralnetworks}
+Hopfield, J.~J.
+\newblock ``Neural networks and physical systems with emergent collective
+  computational abilities,'' {\em Proceedings of the National Academy of
+  Sciences of the United States of America\/}, {\em 79\/} (1982).
+
+\bibitem{james1890principles}
+James, W.
+\newblock {\em The Principles of Psychology\/}.
+\newblock Number v. 1 in American science series: Advanced course, H. Holt,
+  1890.
+
 \bibitem{kirkpatrick1983}
 Kirkpatrick, S., et~al.
 \newblock ``Optimization by simulated annealing,'' {\em SCIENCE\/}, {\em
   220\/}(4598):671--680 (1983).
+
+\bibitem{kohonen1972correlation}
+Kohonen, Teuvo.
+\newblock ``Correlation Matrix Memories,'' {\em IEEE Trans. Comput.\/}, {\em
+  21\/}(4):353--359 (April 1972).
+
+\bibitem{lecchinivisintini2007sacontinuousgaruntees}
+{Lecchini-Visintini}, A., et~al.
+\newblock ``{Simulated Annealing: Rigorous finite-time guarantees for
+  optimization on continuous domains},'' {\em ArXiv e-prints\/} (September
+  2007).
+
+\bibitem{lecun1985}
+Lecun, Y.
+\newblock ``Une proc\'{e}dure d'apprentissage pour r\'{e}seau \`{a} seuil
+  asym\'{e}trique,'' {\em Proceedings of Cognitiva 85, Paris\/},  599--604
+  (1985).
 
 \bibitem{mcculloch1988}
 McCulloch, Warren~S. and Walter Pitts.
@@ -27,6 +110,24 @@ McCulloch, Warren~S. and Walter Pitts.
 \newblock ``{Equation of State Calculations by Fast Computing Machines},'' {\em
   21\/}:1087--1092 (June 1953).
 
+\bibitem{minsky1969perceptrons}
+Minsky, M. and S.~Papert.
+\newblock {\em Perceptrons\/}.
+\newblock Cambridge, MA: MIT Press, 1969.
+
+\bibitem{mukherjee2015multivariatesearchqa}
+{Mukherjee}, S. and B.~K. {Chakrabarti}.
+\newblock ``{Multivariable optimization: Quantum annealing and computation},''
+  {\em European Physical Journal Special Topics\/}, {\em 224\/}:17 (February
+  2015).
+
+\bibitem{parker1985logic}
+Parker, D.~B.
+\newblock {\em Learning Logic\/}.
+\newblock Technical Report TR-47, Cambridge, MA: Center for Computational
+  Research in Economics and Management Science, Massachusetts Institute of
+  Technology, 1985.
+
 \bibitem{piccinini2006}
 Piccinini, Gualtiero.
 \newblock ``Computational Explanation in Neuroscience,'' {\em Synthese\/}, {\em
@@ -37,5 +138,34 @@ Rochester, N., et~al.
 \newblock ``Tests on a cell assembly theory of the action of the brain, using a
   large digital computer,'' {\em Information Theory, IRE Transactions on\/},
   {\em 2\/}(3):80--93 (September 1956).
+
+\bibitem{rosenblatt1958perceptron}
+Rosenblatt, F.
+\newblock ``The perceptron: A probabilistic model for information storage and
+  organization in the brain,'' {\em Psychological Review\/}, {\em
+  65\/}(6):386--408 (1958).
+
+\bibitem{rumelhart1986internal}
+Rumelhart, D.E., et~al.
+\newblock {\em Learning Internal Representations by Error Propagation\/}.
+\newblock 1986.
+
+\bibitem{vonderMalsburg1973selforganization}
+von~der Malsburg, Chr.
+\newblock ``Self-Organization of Orientation Sensitive Cells in the Striate
+  Cortex,''
+
+\bibitem{werbos1974beyondregression}
+Werbos, P.
+\newblock {\em Beyond Regression: New Tools for Prediction and Analysis in the
+  Behavioral Sciences\/}.
+\newblock PhD dissertation, Harvard University, 1974.
+
+\bibitem{widrow1960asc}
+Widrow, Bernard and Marcian~E. Hoff.
+\newblock ``Adaptive Switching Circuits.'' {\em 1960 IRE WESCON Convention
+  Record, Part 4\/}.
+\newblock  96--104.
+\newblock New York: Institute of Radio Engineers, 8 1960.
 
 \end{thebibliography}

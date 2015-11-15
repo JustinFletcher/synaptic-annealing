@@ -229,7 +229,7 @@
 		% Lower-end page count: 131
 		% Upper-end page count: 170
 		% DO: Write abstract.	
-		
+		Stub.
 	\end{abstract}
 	
 	
@@ -240,7 +240,10 @@
 	
 	% Do this after the thesis is written. I created an algorithm which simulates quantum tunneling through an error manifold. I applied this algorithm to the problem of selecting weight values for a neural network. It works well for small data sets, but is slower when dimensionality of the data set on which the network is trained is very large. 
 	
-	In chapter three the traversal a error manifold in the problem configuration space is discussed at length. Several traversal methodologies are proposed and evaluated. 
+	
+	Stub.
+	
+	% In chapter three the traversal a error manifold in the problem configuration space is discussed at length. Several traversal methodologies are proposed and evaluated. 
 	
 	
 	% Important: If your chapter heading consists of more than one lines, it will be automatically broken into separate lines. However, if you don't like the way LaTeX breaks the chapter heading into lines, use `\newheadline' command to break lines. NEVER USE \\ IN SECTIONAL (E.G., CHAPTER, SECTION, SUBSECTION) HEADINGS!!!!!!!!
@@ -251,11 +254,15 @@
 	
 	\section{Artificial Neural Networks}
 	
-	% Is there a better term than sequential computing machinery? Each word in this name encodes a significant concept related to the origins and structure of the models: neural is a reference to neurons, which are the fundamental information processing elements of the biological systems which inspired the model; network refers to network theory, a subfield of graph theory, which governs representation of relationships between neurons; and artificial, meaning an object of human origin, in contrast with biological neural networks which arise naturally.
+	% Is there a better term than sequential computing machinery? 
 	
-	It has long been recognized (source maybe?) that the capacity of biological information processing systems to flexibly and quickly process large quantities of data greatly exceeds that of sequential computing machinery. This information processing capability arises from the complex, nonlinear, parallel nature of biological information processors (Source? Hayken?). The family of models designed to replicate this powerful information processing architecture are collectively called artificial neural networks. In the most general sense, artificial neural networks are parallel distributed information processors \cite{haykin1999} comprising many simple processing elements. Networks store information about experienced stimuli and can make that information available. In such a network, interneuron connection strengths are used to encode information, and are modified via a learning strategy. Artificial neural networks are characterized by three features: a network topology or architecture, an activation function, and a learning strategy. Each will be discussed in the following sections. I will also review the history of artificial neural networks, and the biological inspiration for the computational model.
+	% Each word in this name encodes a significant concept related to the origins and structure of the models: neural is a reference to neurons, which are the fundamental information processing elements of the biological systems which inspired the model; network refers to network theory, a subfield of graph theory, which governs representation of relationships between neurons; and artificial, meaning an object of human origin, in contrast with biological neural networks which arise naturally.
+	
+	It has long been recognized that the capacity of biological information processing systems to flexibly and quickly process large quantities of data greatly exceeds that of sequential computing machinery. This information processing capability arises from the complex, nonlinear, parallel nature of biological information processor. The family of models designed to replicate this powerful information processing architecture are collectively called artificial neural networks. In the most general sense, artificial neural networks are parallel distributed information processors \cite{haykin1999} comprising many simple processing elements. Networks store information about experienced stimuli and can make that information available. In such a network, interneuron connection strengths are used to encode information, and are modified via a learning strategy. Artificial neural networks are characterized by three features: a network topology or architecture, an activation function, and a learning strategy. Each will be discussed in the following sections. I will also review the history of artificial neural networks, and the biological inspiration for the computational model.
 	
 	\subsection{Biological Inspiration}
+	
+	This is all one big stub.
 	
 	Fig[an image of a neuron, mapped to a schematic of a neuron, mapped to a processing element]
 	
@@ -264,23 +271,30 @@
 	
 	Biological neural networks are many orders of magnitude slower than those based in ... It in not the size of the network or the number of interconnections alone which confer upon the human brain its remarkable efficiency (Faggin, 1991). Though size and connectivity are necessary, it is the structure, or topology of the network of interconnections that en
 	
-	% What is the pgysical mechanism for depression?
+	% What is the physical mechanism for synaptic depression? Flooding of synaptic cleft with inhibitory neurotransmiters?
 	
-	% Concentraion of nuerotransimitters in the extra-sybaptic flusid increases, raising the instantaneous membrane porentential, possibly vreaching the threshold causing a fire-and-reset, where the there is some pgysical limit on the rate at which the reset step can occur, thus causing the diminishing returns seen in Figure 2 of Neurocomputing, whence the fire causes either excitatory or depressive neurotransmitters to be released at the synaptic clefts formed at the end of the axon, thus propigatind the activation through the net.
+	Activation timeline: The concentraion of nuerotransimitters in the extra-synaptic fluid increases, raising the instantaneous membrane porentential, possibly breaching the threshold potential causing a fire-and-reset, where the there is some physical limit on the rate at which the reset step can occur, thus causing the diminishing response seen in Figure 2 of Neurocomputing, whence the fire causes either excitatory or depressive neurotransmitters to be released at the synaptic clefts formed at the end of the axon, thus propigatind the activation through the net.
 	
-	% What is changed in synaptic annealing is the effecientcy with which a partyiculat synaptic site is able to convert molecules in the surroundinf intercellulat inbitoment, which is to asay in the synaptic cleft, into a change in charge inside the cell.
+	What is changed in synaptic modification is the effecientcy with which a particular postsynaptic site is able to convert neurotransmitters in the surrounding intercellular enviroment, which is to say in the synaptic cleft, into a change in charge inside the cell.
 	
-	% See paper 23 in Neurocomputing for more information...
+	Activation funciton: A nuerons activation function is just a phenomenon emerges from from the combination of its potential threshold and rest rate, both of which are physiaolical properties whcih can change after cell formation. (Instructing Perisomatic Inhibition by Direct Lineage Reprogramming of Neocortical Projection Neurons, 2015)
 	
 	\subsection{Historical Overview}
 	
+	
+	% Pre-1970
 	The study of artificial neural networks began with a 1943 paper \cite{mcculloch1988} by McCulloch and Pitts. In this paper, McCulloch and Pitts united, for the first time, neurophysiology and formal logic in a model of neural activity. This landmark paper marked the beginning of not only the computational theory of neural networks but also the computational theory of mind, and eventually led to the notion of finite atomata \cite{piccinini2006}. In this paper McCulloch and Pitts introduced a very simple model of a neuron, which acted as a threshold-based propositional logic unit. Significantly, McCulloch and Pitts showed that a network of these neuron models, interconnected, could represent a proposition of arbitrarily-high complexity. Said differently, a network of these neurons can represent any logical proposition. These models, often called McCulloch-Pitts Neurons, allow only discrete input values which are summed and compared to a threshold value during a fixed time quantum, and do not posses any learning mechanism. Theses neurons are able to incorporate inhibitory action, but the action is absolute and inhibits the activation of the neuron without regard to any other considerations. These models are of theoretical significance, but cannot be applied to practical problems.
+	
+	[Graphic Stub: Simple McChulloch-Pitts neuron.]
 	
 	% DO: This paragraph needs rework around the work effeciency.
 	Though McCulloch and Pitts made mention of learning in their 1943 paper, thirteen years would pass before this concept was formalized into a mathematical and computational model. In 1956 Rochester, Holland, Haibt, and Duda \cite{rochester1956} presented the first attempt at using a physiologically-inspired learning rule to update the synaptic weights of a neural network. This model was based on the correlation learning rule postulated in 1949 by Hebb\footnote{It should be mentioned that, while Hebb was the first to postulate the correlation learning rule as it relates to neurons and synaptic connection strength, the abstract rule was foreshadowed as early as 1890 by William James \cite{james1890principles} in Chapter XVI of \textit{Psychology (Briefer Course)}.}. In his book \textit{The Organization of Behavior}, Hebb suggested that synaptic plasticity, that is the capacity of synaptic strengths to change, is driven by metabolic and structural changes in the both neurons near the synaptic cleft \cite{hebb1967} such that if two cells often fired simultaneously the efficiency with which they cause one another to fire will increase. This efficiency is now called a synaptic weight. Rochester et. al. showed that the addition of variable synaptic weights alone was not sufficient to produce a network capable of learning. It was also necessary that these weights be capable of assuming inhibitory values.
 	
 	% DO: is this paragraph too detailed, or not detailed enough? 
 	% DO: Quick graphic of the perceptron.
+	
+	[Graphic Stub: simple perceptron teminology, figure.]
+	
 	The next major contribution to the field would come in 1958 with Rosenblatt's introduction of the perceptron \cite{rosenblatt1958perceptron}. The perceptron was the first \cite{anderson1988neurocomputing} well formed, computationally oriented neural network. Crucially, and unlike most preceding neural models, the model Rosenblatt presented in his  1958 paper was associative. That is, the model learned to associate stimuli with a response. This learning is accomplished by modifying the synaptic weights of the model such that the difference between an input pattern and the desired output pattern is minimized. The responsibility for the error, or difference between the correct and computed output patterns, is divided among the weights in proportion to their magnitude. Thus, large synaptic weights will be reduced more than small synaptic weights for a large, positive error. This weight update strategy is represented mathematically as: \begin{equation} 
 	w_i(t+1) = w_i(t) + \alpha(d_j - y_j)x_{j,i}
 	\end{equation} where \begin{math} w_i(t) \end{math} the synaptic weight for feature \begin{math} i \end{math} at discrete time \begin{math} t \end{math}, \begin{math} \alpha \end{math} is the tunable learning rate parameter, \begin{math} d_j \end{math} is the desired output, \begin{math} y_j \end{math} is the computed output, and \begin{math} x_j,i \end{math} is the input pattern. This method constitutes a from of reinforcement learning.
@@ -295,17 +309,67 @@
 	\end{cases}
 	\end{equation} where \begin{math} y_j \end{math} is the response value of response unit \begin{math} j \end{math}, \begin{math} w_{i,j} \end{math} is the synaptic weight of the connection between activation unit \begin{math} i \end{math} and response unit \begin{math} j \end{math}, \begin{math} x_{i} \end{math} is the activation value of activation unit \begin{math} i \end{math}, and \begin{math} \Theta \end{math} is the threshold value of the perceptron. Block's crucial observation was that the form of the summation in the response determining equation is isomorphic to a hyperplane in an \begin{math}n\end{math}-dimensional space. Thus, in order for the perceptron to achieve perfect classification a hyperplane must be able to separate them in the \begin{math}n\end{math}-dimensional input space. The corollary of this observation it the perceptron convergence theorem. The theorem proves that for some learning rules, if a perfect classification is possible it will be found by the perceptron. Specifically, the class of learning rules which were found effective were those which did not change synaptic weights when a correct classification occurs. While the condition does ensure convergence, it often causes very slow convergence, as the synaptic weights change much more slowly when only a small number of samples remain misclassified. Considerably faster guaranteed convergence can be achieved using a error gradient descent learning rule \cite{widrow1960asc}, as described by Widrow and Hoff. 
 	
-	The perceptron model and its extensions generated a great deal of excitement in the field of neural networks. Several 
+	% DO: This paragraph is a little light on details, but it's either all or none, so if more is needed, I can add it.
+	In 1969 Minksy and Papert published \textit{Perceptrons}, a book on mathematics and theory of computation. In this book Minsky and Papert mathematically and geometrically analysed the limitations inherent in the percerpton model of computation. The authors reasoned that the each response unit of Rosenblatt's perceptrons was actually computing logical predicates about the inputs it received, based on the observation that response units can either be active or inactive. This analytical framework allowed the authors to construct unprecedented geometric and logical arguments about the computational capabilities of a perceptron. They found that there were several classes of problems which were unsolvable by linear perceptrons \cite{minsky1969perceptrons}. In the final chapter of the \textit{Perceptrons} Minsky and Papert extended thier judgements regarding the ineffectiveness of single-layered perceptrons to all varients of perceptrons, including the multi-layered variety. This conjecture would turn out to be one of the most impactful of the entire book, as it likely resulted in a reduction of funding for neural network research \cite{anderson1988neurocomputing} which lasted for several years. Unfortunately, this judgement was false.
 	
-	In the final chapter of the \textit{Perceptrons} Minsky and Papert extended thier judgements regarding the ineffectiveness of single-layered perceptrons to all varients of perceptrons, including the multi-layered variety. This statement would turn out to be one of the most impactful of the entire book, as it likely resulted in a chilling of funding for neural network research which lasted for several years. Unfortunately, this judgement was false.
+	% 1970-1980
+	While it is true that the pace of develoment in the field of neural networks slowed considerably after the publication of \textit{Perceptrons}, there was still progress made during the 1970s. In 1972, both Anderson \cite{anderson1972interactive} and Kohonen \cite{kohonen1972correlation} published models of what would come to be known as linear associative neural networks, which are a generalization of Rosenblatt's perceptron. As with the perceptron, neurons in a linear associative neural network compute their output by summing the product of each input signal the synaptic weight associated with that input. Unlike the perceptron, the output of these networks is proportional to this sum, rather than a binary value computed by applying a threshold function to the sum. Though still unable to achieve perfect classification on many classes of problems, these networks were able to successfully associate input patterns with output patterns. 
 	
-	then multilayer stuff
+	% DO: Much more data can be added to this paragraph.
+	The decade also saw the advent of self-organized maps, which are a type of competitive learning neural network. Self-organization in neural networks was first demonstrated by van der Marlsburg in a paper \cite{vonderMalsburg1973selforganization} published in 1973. This paper analyzed the response of simulated cortical cells to a simulated visual stimulus. The paper is interesting both for the complexity of the neural model developed, and becuase it contained the first direct comparison between computrer simulation and physiological data \cite{anderson1988neurocomputing}. 
+	
+	% DO: I'm not exactly sure  how to handle this data. It seems to contradict the claim of the essenital nonlinear nature of neural nets.
+	Throughout the decade progress was also made in the understanding of the physiology of biological neural networks. Of particular interest are those papers describing the lateral retinal system of \textit{Limulus polyphemus}, the horseshoe crab. Choosen for the easy with which experiments may be conducted on its compound lateral eye, \textit{Limulus} features prominantly in the neurophysiological research. Several works were published on the \textit{Limulus}, perhaps the most signficant of which came near the end of the decade with the 1978 publication of a paper describing the dynamics of the retina of a \textit{Limulus} when exposed to moving stimuli. In this paper,  the \textit{Limulus} eye was analyzed as a linear system, and the results of this analysis were compared to the actual response of the system to input pattern. The agreement between the linear\footnote{Linear, in ths context of this system, means that the output of the system when presented with the sum of a set of inputs is equivalent to the sum of the outputs of the system when presented with each input individually.} model and the biological output signals was found to be in excellent agreement \cite{brodie78limulus}. This finding was interesting for the purposes of perceptron simulation, but was ultimately found not not to hold for larger collections of neurons. %(NEED SOURCE...)
+	% post-1980
+	
+	%"Likelyhood of escpae graph"
+	%"Relative likelyhood of escape graph"
+	%"Projection from color on the PES to an independent graph"
+	%"learn rate on PES with simulated annealing is just like downsampling the sapce and searching the downsampled space. Add stochat"
+	% Simultaneously anneal topology, weights, and activation functions. How do you define distance in this configuration space which includes both discretes and reals?
+	
+	Several events conspired to create a reinvigoration of neural network research in the early 1980s. Theoretical advances in the physiology of biological neural networks. processor manufacturing technology had advanced suffeciently to allow for much larger-scale simulations.  simulation capability...
+	
+	In 1982, John Hopfield published \textit{Neural networks and physical systems with emergent collective computational abilities}. This momentus work is regarded by many to be the beginning of the rennaisance of neural network research \cite{anderson1988neurocomputing}, and contains many novel insights. Hopfield begins the paper differently than past researchers. Rather than proposing a learning rule or network topology and then evaluating the results of this proposition, Hopfield begins by reimainging the purpose of a neural network. Hopfield suggests that the network be thought of as a means to develop locally stable points, or attractors, in a state space. The state space comprises the set of states which are the activation value of each neuron. Thus, learning should be the process of modifying the synaptic weights such that they cause the system to flow into local attarctors which represent the desired output. In such a model, a noisy or incomplete input would result in an activation pattern which resides on a gradient in the state space. The neural network would then change the activation pattern in such a way as to move the system down the gradient into the attractor state. Hopfield suggests that this process is a general physical description of the concept of content-addressable memory.
+	
+	% DO: Produce, in Julia, a 2d 2-minima plot.
+	[Graphic Stub: notional activation state space with letters and noisy letters as points.]
+	
+	Hopfield then proposes a network architecture to achieve this behavior \cite{hopfield1982neuralnetworks}. The chosen model is one which has binary neural output values and recurrent connections. Neural netwroks of this types are now called Hopfield networks. Like Rosenblatt's orgininal perceptron model, the neurons used in Hopfield's work had a non-linear, threshold activation funciton. The network topology was recurrent, with the restriction than no neuron could provide input to itself. Hopfield adopted a variation of Hebb's learning rule to update the synaptic weights.
+	
+	In Hopfield's network model, the connection strength between two neurons \begin{math}i\end{math} and  \begin{math}j\end{math} is denoted as \begin{math}T_{ij}\end{math}, and the activation status of a nueron \begin{math}i\end{math} is denoted as  \begin{math}V_i\end{math}. \begin{math}T\end{math} is therefore the connection matrix of the neural network, with each element representing an individual connection strength and zeros along the diagonal. It is from this organization of the connection strengths that one of the most impactful insights of this work originates. Hopfield recognized that, in the spceial case of the model in which \begin{math}T_{ij}=T_{ji}\end{math}, a quantity \begin{math}E\end{math} could be defined such that \begin{equation} 
+	E= -\frac{1}{2} \mathop{\sum\sum}\limits_{i \neq j} T_{ij} V_i V_j .
+	\end{equation} The change in this quantity as a result of a change in one of the activation values, \begin{math}V_i\end{math} in the following equation, is then represented as \begin{equation} 
+	\Delta E= -\Delta V_i  \sum\limits_{j \neq i} T_{ij} V_j .
+	\end{equation} From this equation, it is clear that any change in \begin{math}V_i\end{math}\footnote{An identical conclusion would be reached if \begin{math}V_j\end{math} was changed instead of  \begin{math}V_i\end{math}. It is merely a matter of convention.} will reduce the value  of \begin{math}E\end{math}. This decrease in \begin{math}E\end{math} must necessarily continue until some local minimum of the value of \begin{math}E\end{math} is reached. Here, Hopfield observed that "This case is isomorphic with an Ising model," referencing the statistical mechanical model of magnetic spins. In this isomorphism, the quantity \begin{math}E\end{math} maps to the energy of a physical system described by an Ising model. It is difficult to overstate the importance of this observation. It both provided a novel mechanism by which physical theory could be applied to neural networks, and legitimized the study of neural networks as a physical system, encouraging many physicist to join in the development of the theory.
+	
+	Hopfield constrcuted a model of the system described in the paper, and presented it with random input patterns\footnote{Hopfield calls these input patterns entities or \textit{Gestalts}.}. He found that the network can indeed recall a small number of patterns, on the order of appromately 15 percent of the network dimensionality, before the recall error becomes significant.
+	
+	In 1985, Ackley, Hinton, and Sejnowski, extended the neural network model proposed by Hopfield\footnote{Though a Hopfield network was used for the work done by Ackley, Hinton, and Sejnowski it is not necessary to use network with recurrent connections.}. Hopfield networks are deterministic with respect to energy; by definition any change in a Hopfield network always reduces the energy of the system or leaves it the same. This is a useful property if it is acceptable to find one of many local minima, or attractors. However, if a single, global minima in the state space is sought this model is likely to converge prematurely to a local attractor state. In order to surmount this limitation Ackley, Hinton, Sejnowski modified the Hopfield neural model to activate stochastically. The probability of state transition, \begin{math}p\end{math} is given by \begin{equation} \label{eq:boltzmannProb}
+	p= \frac{1}{1 + e^{- \Delta E  / T} }
+	\end{equation} where \begin{math} \Delta E \end{math} is the change in energy of the system resulting from a transition to a new state and \begin{math}T\end{math} is the artificial temperature of the system. Thus the realtive probaility, \begin{math}P_{\alpha}/P_{\beta}\end{math} of moving to either of two arbitrary global states, \begin{math}\alpha\end{math} and \begin{math}\beta\end{math}, goes as \begin{equation} \label{eq:boltzmannDist}
+	\frac{P_{\alpha}}{P_{\beta}} =  e^{- (E_{\alpha} - E_{\beta} ) / T} 
+	\end{equation} which is a form isomorphic to the Boltzmann distribution. Thus, a neural network with transition probabilities described by equation \ref{eq:boltzmannProb} is called a Boltzmann machine. The effect of probabilistic state transitions of this form is that state transitions from low energy states to higher energy states are possible, thereby allowing the system to escape local minima. 
+	
+	Inspection of equations \ref{eq:boltzmannProb} and \ref{eq:boltzmannDist} reveals that the probability of transistion is determined by both \begin{math}\Delta E\end{math} and \begin{math}T\end{math}. A large value of \begin{math}\Delta E\end{math}, which corespondes to a large increase in total energy, will decrease the probability of transition. Conversely, a large value of \begin{math}T\end{math} will increase the probability of transition for any arbritary value of \begin{math}\Delta E\end{math}. The systems artificial temperature therefore acts as a tuning mechanism for the exploration of the state space. A high temerature value will result greater exploration of the space state, but will result in less gradient descent and therfore may cause the system to depart the attractor basin of the global minimum. A low artifical temperature parameter may cause premeature convergence. Ackley, Hinton, and Sejnowski solved this tuning problem by recognizing a deep connection to another concept born of statistical mechanics: simulated annealing. Simulated annealing decreases the aritifical temperature of a system slowly over the course of a simulation, and as a result increases the likelihood that the final state of the system will be the ground state, which is to say the global minimum. This algortithm is discussed in detail in section \ref{eq:simulatedAnnealing}.
+	
+	% DO: Could use a better source here
+	With a proceedure for finding the global miniumum of a space state in place, the authors proceded to construct state spaces for which the global minimum was of interest. One way to construct such a state space is to include hidden units in the neural network. Hidden unit are neural units which are neither input nor output units. These hidden units allow the network to solve interesting problems that are out of reach of simple associative neural networks\cite{anderson1988neurocomputing}. However, like all neurons in any neural network, the connection weights of these neurons must be modified in order for the network to learn. It is not immeadiately clear how hidden unit synaptic weights can be modified to account for the performance of the network. This deficientcy is often called the cedit assignment problem\cite{barto1983neuronlike}. The application of simulated annealing in Boltzmann machines avoids the problem of assigning credit to hidden units, thereby eanbling thier inclusion in the model. This is historically significant because it was the first successfully-implemented multi-layered neural network \cite{haykin1999}.
+
+	The next major development in neural networks came in 1986 with the introduction of the back-propigation algorithm. Though the formalisms required invloved in this algorthim had been developed earlier \cite{bryson1969optimalcontrol} \cite{werbos1974beyondregression}, and the method was simultaneously discovered independently by two other groups \cite{parker1985logic} \cite{lecun1985}, it was Rumelhart, Hinton, and Williams that applied the algorithm to machine learning \cite{rumelhart1986internal}. Back-propigation can be thought of as a generalization of the gradient descent\footnote{The gradient descended here is the gradient of the error surface in the space of states of synaptic weights, not the gradient of the activation state surface, as with a Hopfield network.} algorithm presented Widrow and Hoff \cite{widrow1960asc}, which includes the errors associated with connection strength of hidden units, or internal representation units. A detailed discussion and derivation of the back-propigation algorthim is included in Section \ref{sec:backpropTraining}. Though back-propigation in multilayered perceptrons cannot be garuneteed to find an exactly correct solution, the algorthim is demonstrably cabable of solving difficult and interesting problems, thus disproving the specutionals of Minsky and Papret in \textit{Perceptrons}.
+	
+	% ...The utility of back propigation lies in its relative computational effeciency; though both back-propigation and simulated annealing can be used to select the synaptic weights for a neural network, back-propigation generally converges to a solution several orders of magnitude faster ()
+	
+	With the advent of Boltzmann machines and back-propigation, it became possible to analyse the properties and capabilities of multilayered neural networks. In 1989 Cybenko showed that a multilayer feedforward neural network with nonlinear activation function is in principle capable of approximating any continuous function  \cite{cybenko1989approxsuperposition}. This finding is striking because it implies that, given the correct learing rule and a sufficienlty large network, a multilayer neural network can learn a pattern of arbitrary complexity. 
+	
+	%then multilayer stuff
+	
+	%then theres backprop
 	
 	
-	This, in turn, implies that neural networks can serve as universal function approximaters. (Cybenko)
-	(Kurt Hornik (1991) "Approximation Capabilities of Multilayer Feedforward Networks", Neural Networks, 4(2), 251–257)
+	%This, in turn, implies that neural networks can serve as universal function approximaters. (Cybenko1989)
 	
-	then theres backprop
+	%(Kurt Hornik (1991) "Approximation Capabilities of Multilayer Feedforward Networks", Neural Networks, 4(2), 251–257)
 	
 	
 	
@@ -313,48 +377,59 @@
 	
 	\subsection{Network Topology}
 	
-	Feed forward
-	recursive
+	Stub.
 	
+	%The topology of a neural network describes the way in which the individual processing units are interconnected. There are only a few broad classes of topology, each of which has different properties. 
+%	Feed forward
+%	recursive
+%	recapitulated backprop here...
 	\subsection{Activation Functions}
+	
+	Stub.
+	% DO: Proof of the necessity of non-linearity.
+	% DO: Any work on variable activation functions?
 	
 	\subsection{Learning Strategies}
 	
-	General discussion.
+	Stub.
 	
-	Reference (Mendel and McClaren, 1970) and (Haykin, pg 50)
+	%General discussion.
 	
-	\subsubsection{Back Propagation Training}
-	
-	Consider pandimonium by slefedger
-	
-	Discuss (Rumelhart, Hinton, Williams, 1986)
-	
-	Derive back prop. (Haykin, pg 161)
-	
-	Discuss the implication of local minima.
-	
-	Fig[Error surface with backprop]
+	%Reference (Mendel and McClaren, 1970) and (Haykin, pg 50)
 	
 	
-	\subsubsection{Simulated Annealing}
+	\subsubsection{Back Propagation Training} \label{sec:backpropTraining}
+	Stub.
 	
-	(Ackley, Hinton, and Sejnowski 1985) 
+	% DO: Consider pandimonium by slefedger
 	
-	This Boltzmann machine is also of historical importance, as it was the first successfully-implemented multilayered neural network \cite{haykin1999}.
+	% DO: Discuss (Rumelhart, Hinton, Williams, 1986)
+	
+	% DO: Derive back prop. (Haykin, pg 161)
+	
+	% DO: Discuss the implication of local minima.
+	
+	% DO: Fig[Error surface with backprop]
 	
 	
-	\section{Related Works in Simulated Annealing}
+	\subsubsection{Simulated Annealing} 
+	Stub.
 	
-	Read (Haykin pg 556)
 	
-	Read (Haykin pg 560)
 	
-	Simulated annealing (SA) is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in by Kirkpatrick et al. in \cite{kirkpatrick1983} as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, simulated annealing is an extension of the Metropolis-Hastings \cite{metropolis1953} algorithm which can be used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Geoff (Geoff) and Cortana et al. (Cortana) extended simulated annealing to the continuous domain. The basic simulated annealing algorithm is presented in [algo1]. 
+	\section{Related Works in Simulated Annealing} \label{eq:simulatedAnnealing}
 	
-	[algo1]
+	% DO: Read (Haykin pg 556)
 	
-	The physical inspiration for simulated annealing. See (Haykin pg 546)
+	% DO: Read (Haykin pg 560)
+	
+	Simulated annealing is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in by Kirkpatrick et al. in \cite{kirkpatrick1983} as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, simulated annealing is an extension of the Metropolis-Hastings \cite{metropolis1953} algorithm which can be used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Goffe \cite{goffe1994globaloptimization}, Corana et al. \cite{corana1987minimizingmultimodal}, and Lecchini-Visintini et. al. \cite{lecchinivisintini2007sacontinuousgaruntees} extended simulated annealing to the continuous domain. The basic simulated annealing algorithm is presented in [Algorithm Stub: SA]. 
+	
+	[Algorithm Stub: SA]
+	
+	Stub: discuss the statistical mechanical formalism for SA.
+	
+	% The physical inspiration for simulated annealing. See (Haykin pg 546)
 	
 	
 	In the parlance of simulated annealing \cite{kirkpatrick1983} a system at its maximum temperature is said to be \textit{melted}. In the melted state, most perturbations of the system configuration are accepted by the algorithm. Analogously, a system that has a temperature of zero, which indicates that the algorithm cannot move to any higher-error state, is said to be \textit{frozen}. Note that a frozen system may still be perturbed into a lower-energy state.
@@ -365,10 +440,8 @@
 	
 	% Be sure to include some discussion of thermal fluctuations and their importance. Find a nice source...
 	\subsection{Reheating}
+	Stub.
 	
-	\subsection{Application of Simulated Annealing to ANN Synaptic Weight Selection}
-	
-	% Need sources for this... 
 	
 	\section{Related Works in Quantum Mechanics}
 	
@@ -378,31 +451,27 @@
 	\subsection{Quantum Tunneling} 
 	
 	
-	
 	One of the quantum phenomena for which there is no classical analog is potential barrier penetration, also known as quantum tunneling. This phenomenon arises from the probabilistic and wavelike behavior of particles in quantum physics. Tunneling plays a significant role in the behavior of bound and scattering quantum mechanical systems.
 	
 	A particle with energy \begin{math} E \end{math} incident upon a potential energy barrier of height \begin{math} \Delta V > E  \end{math} has a non-zero probability of being found in, or past, the barrier. Classically, this behavior is forbidden. The probability of tunneling, \begin{math} \mathcal{P}_t \end{math}, through a step barrier of height \begin{math} \Delta V  \end{math} is described by: 
 	\begin{equation}
 	\mathcal{P}_t = e^{-\frac{w \sqrt{\Delta V}}{ \Gamma}} 
-	\end{equation} where \begin{math} \Gamma \end{math} is the tunneling field strength [Ref: Multivariable Opt: QAC - Mukherjee]. Figure [1] depicts a one-dimensional example of quantum tunneling.
+	\end{equation} where \begin{math} \Gamma \end{math} is the tunneling field strength \cite{mukherjee2015multivariatesearchqa}. Figure [Graphic Stub: Quantum tunneling] depicts a one-dimensional example of quantum tunneling.
 	
-	[Figure 1] 
-	
+	[Graphic Stub: Quantum tunneling] 
 	
 	
 	\subsection{Quantum Annealing}
 	
-	Quantum annealing is the use of quantum, rather than thermal fluctuations to traverse the free energy landscape of a system. This is accomplished by introducing an additional Hamiltonian term that does not commute with the classical Hamiltonian. This non-commutation implies that [What does it mean?... The non-commutative causes the quantum effects...but how?].  The term is introduced to account for the presence of a tunneling field which controls the frequency with which quantum fluctuations occur in the system. In effect, this term controls the relative importance of quantum effects on the behavior of the modeled system. This term, much like thermal energy in simulated annealing, is gradually reduced over the course of the simulation. [Par Source: Quantum annealing in a kinetically constrained system] The time dependent Schrödinger equation \footnote{Note that the presence of the Schrödinger equation in section does not imply that quantum annealing requires the annealed system must be an approximation to a wavefunction. It merely serves as an exposition of the properties of physical system which is modeled.} for such a system has the form: \begin{equation}
+	Quantum annealing is the use of quantum, rather than thermal fluctuations to traverse the free energy landscape of a system. This is accomplished by introducing an additional Hamiltonian term that does not commute with the classical Hamiltonian. The term is introduced to account for the presence of a tunneling field which controls the frequency with which quantum fluctuations occur in the system. In effect, this term controls the relative importance of quantum effects on the behavior of the modeled system. This term, much like thermal energy in simulated annealing, is gradually reduced over the course of the simulation \cite{das2005qakcs}. The time dependent Schrödinger equation \footnote{Note that the presence of the Schrödinger equation in section does not imply that quantum annealing requires the annealed system must be an approximation to a wavefunction. It merely serves as an exposition of the properties of physical system which is modeled.} for such a system has the form \cite{mukherjee2015multivariatesearchqa}: \begin{equation}
 	[\lambda(t)H' + H_0]\psi = i\hbar \frac{\partial \psi}{\partial t}
-	\end{equation} [Eq from Mult Opt... Murherjee] where \begin{math} \lambda(t) \end{math} is the time-variance function of the tunneling field, \begin{math} H' \end{math} is the Hamiltonian term describing the tunneling field, and \begin{math} H_0 \end{math} is the classical Hamiltonian. 
+	\end{equation} where \begin{math} \lambda(t) \end{math} is the time-variance function of the tunneling field, \begin{math} H' \end{math} is the Hamiltonian term describing the tunneling field, and \begin{math} H_0 \end{math} is the classical Hamiltonian. 
 	
-	The fluctuations induced by the tunneling field are tunneling events, which transition the system from one configuration to a different, lower-energy configuration directly, without assuming any of the higher energy configurations between the two. Said differently, the quantum tunneling field enables the penetration of energy barriers. The addition of these quantum fluctuations also ensures that each possible state of the system can be reached (KCS Paper). 
+	The fluctuations induced by the tunneling field are tunneling events, which transition the system from one configuration to a different, lower-energy configuration directly, without assuming any of the higher energy configurations between the two. Said differently, the quantum tunneling field enables the penetration of energy barriers. The addition of these quantum fluctuations also ensures that each possible state of the system can be reached \cite{das2005qakcs}. 
 	
 	% Strictly speaking, this document does not claim to describe a quantum annealing process as it is presented in the referenced literature. 
 	
 	% There is a great deal of academic writing describing QA in the language of physics, but very little writing describing the concept from an algorithmic perspective. For this reason, and because there are significant differences between the artificial simulation of quantum-inspired annealing and the physical phenomenon which is being approximated, a new terminology is proposed. In this document, a new more specific term is introduced in order to disambiguate.
-	
-	
 	
 	% Simulated quantum annealing (SQA) is the quantum mechanical counterpart of simulated thermal annealing. Like simulated thermal annealing, simulated quantum annealing is a global search algorithm which seeks the global minimum of a cost function in a configuration space. 
 	
@@ -420,7 +489,7 @@
 	The term neuron will be used in this document to describe the information processing elements of a neural network. This convention is selected both for conciseness and for the useful adjectival form, neural, which will be of great explanatory utility in the coming chapters.
 	
 	
-	Read (Haykin pg 561) Table 11.1
+	%Read (Haykin pg 561) Table 11.1
 	
 	
 	\chapter{Methodology}
@@ -430,7 +499,7 @@
 	It is instructive to contrast equations 2.1 and 2.2. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of approximately \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}. This relationship is depicted graphically in Fig. 2 which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Therefore, physical models which considers quantum effects are much more likely predict penetration of tall, thin energy barriers than those which only include classical thermal effects.
 	
 	
-	[Figure 2] 
+	[Graphic Stub: QSA/SA advantage curve.] 
 	
 	
 	\section{Traversing the Error Manifold}
@@ -444,7 +513,7 @@
 	\subsection{Quantum Weight Perturbation}
 	
 	
-	It is shown in Proof [n] that this algorithm is certain to eventually find the minimum possible
+%	It is shown in Proof [n] that this algorithm is certain to eventually find the minimum possible
 	
 	%formal proof of the eventual optimality of the simulated quantum annealing algorithm
 	
@@ -455,14 +524,14 @@
 	\subsection{Quantum Annealing}
 	
 	
-	[After discussing the way in which the algorithm is implemented] ...The net effect of this design is to allow the algorithm to move from a local minima configuration, to a different, lower-error configuration, without requiring the evaluation of intervening, higher-error configurations. This means that the probability of "tunneling" to a state
+	%[After discussing the way in which the algorithm is implemented] ...The net effect of this design is to allow the algorithm to move from a local minima configuration, to a different, lower-error configuration, without requiring the evaluation of intervening, higher-error configurations. This means that the probability of "tunneling" to a state
 	
 	
 	
 	
 	\chapter{Results}
 	
-	Is my algorithm computationally efficient as in Haykin, pg 229?
+%	Is my algorithm computationally efficient as in Haykin, pg 229?
 	\chapter{Conclusion}
 	
 	
