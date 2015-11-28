@@ -1,5 +1,5 @@
 
-include("getUniqueElements.jl")
+include("$(pwd())//src//getUniqueElements.jl")
 
 function orthogonalizeDataClasses(data,classCol)
 

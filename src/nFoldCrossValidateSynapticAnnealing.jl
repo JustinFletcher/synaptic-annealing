@@ -1,11 +1,11 @@
-function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annealingFunction, convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synMatIn, actFun, data, inputCols, outputCols)
+function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annealingFunction, convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synMatIn, actFun, dataset)
 
 
     # Shuffle the data.
-    data = shuffleData(data)
+    # data = shuffleData(data)
 
     # Build the folds, and shuffle the data.
-    inFoldsVector,  outFoldsVector = buildFolds(data, numFolds)
+    inFoldsVector,  outFoldsVector = buildFolds(dataset.data, numFolds)
 
     # Initialize the loop variables.
     minValErrorSynapseMatrix = null
@@ -15,16 +15,16 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
     for fold in 1:numFolds
 
         # Select the train and validation data from the folds.
-        valData  = data[inFoldsVector[fold],:]
-        trainData = data[outFoldsVector[fold],:]
+        valData  = ExperimentDataset.Dataset(dataset.data[inFoldsVector[fold],:], dataset.inputCols, dataset.outputCols)
+        trainData = ExperimentDataset.Dataset(dataset.data[outFoldsVector[fold],:], dataset.inputCols, dataset.outputCols)
 
         # Initialize a new synapse matrix.
         netIn = init_network(synMatConfigVec)
 		netIn.learning_rate = 1
-		netIn.propagation_function = tanh
+		netIn.propagation_function = actFun
 
         # Spawn an annealing task.
-        ref = @spawn annealingFunction(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, netIn, actFun, trainData, valData, inputCols, outputCols)
+        ref = @spawn annealingFunction(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, netIn, actFun, trainData, valData)
 
         # Append the rederence to the remote task to the list.
         push!(refList, ref)

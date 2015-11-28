@@ -1,0 +1,42 @@
+
+module ExperimentDataset
+
+
+	export Dataset, shuffle
+
+	include("$(pwd())\\src\\"*"normalizeData.jl")
+	include("$(pwd())\\src\\"*"orthogonalizeDataClasses.jl")
+	include("$(pwd())\\src\\"*"shuffleData.jl")
+
+	type Dataset
+		data
+		inputCols
+		outputCols
+
+		function Dataset(datapath::String, inputCols, outputCols)
+
+			data = readdlm(datapath, ',' , Any)
+			data = orthogonalizeDataClasses(data, outputCols)
+			data = normalizeData(data)
+			data = shuffleData(data)
+
+
+
+			outputCols = [outputCols[1]:((outputCols[1]-1)+(size(data, 2)-length(inputCols)))]
+			new (data, inputCols, outputCols)
+		end
+
+		function Dataset(data, inputCols, outputCols)
+
+			outputCols = [outputCols[1]:((outputCols[1]-1)+(size(data, 2)-length(inputCols)))]
+			new (data, inputCols, outputCols)
+
+		end
+	end
+
+
+	function shuffle(dataset::Dataset)
+    	dataset.data = (dataset.data[randperm(size(dataset.data)[1]), :])
+	end
+
+end

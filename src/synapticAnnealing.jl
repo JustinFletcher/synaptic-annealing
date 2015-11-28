@@ -1,5 +1,5 @@
 
-function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, netIn, actFun, trainData, valData, inputCols, outputCols)
+function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, netIn, actFun, trainData, valData)
 
     println("New Synaptic Annealing")
 
@@ -28,7 +28,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
     learnRate = initLearnRate
     tunnelingField = 0
     epochsCool = 0
-    maxConfigDist = (abs(actFun(Inf))+abs(actFun(-Inf)))*sum(getNetworkSynapseMatrix(network).!=0)
+    maxConfigDist = sum(getNetworkSynapseMatrix(network).!=0) #(abs(actFun(Inf))+abs(actFun(-Inf)))*sum(getNetworkSynapseMatrix(network).!=0)
     numEpochs = 0
 	anisotropicField = 0
     stateTuple = [temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField]
@@ -36,24 +36,29 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 # 	network = groundNetwork(1000, network, errorFunction, perturbSynapses, stateTuple, trainData,inputCols, outputCols)
 # 	network = groundWithBackProp(500, network,trainData,inputCols, outputCols)
     # Initialize the error.
-    lastError = errorFunction(network, trainData, inputCols, outputCols)
+    lastError = errorFunction(network, trainData)
     # Initialize the loop control variables.
     converged = false
 
     while !converged
 
+		# Minibatch goes here.
+
         # Push the most recent error onto the error vector.
-        trainErr = reportErrorFunction(network, trainData, inputCols, outputCols)
+        trainErr = reportErrorFunction(network, trainData)
         push!(trainingErrorVector, trainErr)
 
         # Push the validation error set onto the vector.
-        valErr = reportErrorFunction(network, valData, inputCols, outputCols)
+        valErr = reportErrorFunction(network, valData)
         push!(validationErrorVector, valErr)
 
         # State capture: if this is the best net so far, save it to the disk.
         if valErr < minError
+			minError = valErr
             minValErrSynapseMatrix = network
         end
+
+
 
         # Update the state of the annealing system.
         stateTuple = updateState(stateTuple)
@@ -73,7 +78,12 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         synapseMatrix += synapsePerturbation
 
         # Compute the resultant error.
-        perturbedError = errorFunction(setNetworkSynapseMatrix(network, synapseMatrix), trainData, inputCols, outputCols)
+        perturbedError = errorFunction(setNetworkSynapseMatrix(network, synapseMatrix), trainData)
+
+#         # State capture: if this is the best net so far, save it to the disk.
+#         if perturbedError < minTrainError
+# 			minTrainError = perturbedError
+#         end
 
         # Computer the change in error.
         errorChange = perturbedError-lastError
@@ -81,15 +91,17 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         # Parse the temperature from the state tuple and normalize. For readability.
         temperatureNorm = stateTuple[1]/initTemperature
 
-
+		# If this is a downhill move, take it.
         if (perturbedError<=lastError)
 			lastError = perturbedError
+
+		# If this is not a downhill or neural move...
 		else
+			# Then with probability exp(-DeltaE/T), or if it's the result of a tunnelling event, reject the move.
 			if( (rand()>=exp(-(perturbedError-lastError)/temperatureNorm)) || (!(perturbationDistance<=stateTuple[3])) )
-				# Repeal the move.
 				synapseMatrix -= synapsePerturbation
+			# If the uphill move is not rejected, set the error.
 			else
-				# If the annealing move is not repealed, set the error.
 				lastError = perturbedError
 			end
 
@@ -107,10 +119,10 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 #         end
 
 		network = setNetworkSynapseMatrix(network, synapseMatrix)
-# 		println(network.weights[1][1,1])
 
+		# If this run is perfect, stop evaluating.
         if((trainErr == 0.0 )&&(valErr == 0.0))
-          println("Perfect Run")
+          println("Perfect Run | Epoch "*stateTuple[7])
         end
 
         # Evaluate the convergence conditions.
@@ -153,7 +165,6 @@ function groundNetwork(cutoffEpochs, network, errorFunction, perturbSynapses, st
 
         # Compute the resultant error.
         perturbedError = errorFunction(setNetworkSynapseMatrix(network, synapseMatrix), trainData, inputCols, outputCols)
-
 
 
         if (perturbedError<=lastError)

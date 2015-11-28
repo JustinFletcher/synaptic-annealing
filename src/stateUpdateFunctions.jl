@@ -24,7 +24,7 @@ end
 
 
 
-@everywhere function updateState_q(stateTupleIn)
+@everywhere function updateState_quantum_gradual(stateTupleIn)
 
     #  Unpack the input tuple. For readability.
     (temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField) = stateTupleIn
@@ -42,6 +42,8 @@ end
 	if (epochsCool>(3*initTemperature))
 		tunnelingField = 1
 	end
+
+	tunnelingField = temperature/initTemperature
 
     # Pack and return the state tuple.
     return([temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField])
@@ -78,7 +80,7 @@ end
 
 
 
-@everywhere function updateState_q_reheat(stateTupleIn)
+@everywhere function updateState_quantum_custom_reheat(stateTupleIn)
 
     #  Unpack the input tuple. For readability.
     (temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField) = stateTupleIn
@@ -116,7 +118,7 @@ end
 
 end
 
-@everywhere function updateState_q_only(stateTupleIn)
+@everywhere function updateState_quantum_only(stateTupleIn)
 
     #  Unpack the input tuple. For readability.
     (temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField) = stateTupleIn
