@@ -1,0 +1,156 @@
+\documentclass[10pt,journal,cspaper,compsoc]{IEEEtran}
+%\usepackage{cite}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{mdwmath}
+\usepackage{mdwtab}
+%\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{textcomp}
+\usepackage{epstopdf}
+%\usepackage{spconf}
+
+\begin{document}
+
+\title{Simulated Quantum Annealing of Feed-Forward Neural Network Synaptic Weights}
+
+\author{ 
+%	Adam~L.~Brooks,
+%	Andrew~P~Beisley,
+	Justin~R.~Fletcher,~\IEEEmembership{Student Member,~IEEE,}
+	Michael~J.~Mendenhall,~\IEEEmembership{Member,~IEEE}% <-this % stops a space
+\IEEEcompsocitemizethanks{\IEEEcompsocthanksitem J.F. and M.M. are with the Department
+of Electrical and Computer Engineering, Air Force Institute of Technology.\protect\\% <-this % stops a space
+\IEEEcompsocthanksitem The views expressed in this article are those of the authors and do not reflect the official policy or position 
+of the United States Air Force, Department of Defense, or the U.S. Government.}%
+}%
+
+\markboth{DRAFT -- IEEE Transactions On Pattern Analysis and Machine Intelligence -- DRAFT}{DRAFT--Fletcher and Mendenhall--DRAFT}
+
+\IEEEcompsoctitleabstractindextext{
+\begin{abstract}
+	
+In this paper we present a methodology for feed-forward neural network synaptic weight selection which employs a quantum-inspired variant of simulated annealing.
+
+The algorithm presented in this paper does not require any explicit temperature schedule tuning, and runs continuously.
+
+\end{abstract}
+
+\begin{keywords}
+simulated quantum annealing, neural networks. stochastic gradient descent.
+\end{keywords}}
+
+
+\maketitle
+
+\section{Introduction}\label{sec:introduction}
+
+
+
+.. the most common method of weight selection is back-propagation. Back propagation is a [direct] gradient descent method, which traverses the error surface along its maximum gradient path. The algorithm converges once a minimum located, because there is no longer a negative gradient for the algorithm to follow. While this method can be very successful, it often suffers from premature convergence. That is, the algorithm finds a local, rather than global, error surface minima.
+ 
+\section{Literature Review}
+\label{scn:lit_review}
+Simulated annealing was first applied to neural network weight selection 
+
+
+Though simulated annealing is effective at finding synaptic weight configurations which perform comparatively well \cite{}, the method has several significant shortcomings. Neural networks trained using simulated annealing are often converge slowly relative to other conventional methods of weight selection such as back-propagation \cite{}. Simulated annealing also requires the a priori specification of a temperature schedule, which must cool sufficiently slowly to ensure convergence to a global, rather than local, minimum. The amount of cooling time required is highly-problem dependent. These limitations motivated the study of alternative methods, which led to the work presented in this paper.
+
+
+Simulated annealing is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in by Kirkpatrick et. al. in \cite{kirkpatrick1983} as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, simulated annealing is an extension of the Metropolis-Hastings \cite{metropolis1953} algorithm which can be used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et. al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Goffe \cite{goffe1994globaloptimization}, Corana et al. \cite{corana1987minimizingmultimodal}, and Lecchini-Visintini et. al. \cite{lecchinivisintini2007sacontinuousgaruntees} extended simulated annealing to the continuous domain. 
+When considering only the influence of classical thermal fluctuations in particle energy levels, the probability of a particle traversing a barrier of height \begin{math} \Delta V \end{math} at a temperature \begin{math} T \end{math} is on the order of: \begin{equation} \label{eq:thermal_transistion_prob}
+\mathcal{P}_t = e^{-\frac{\Delta V}{T}}.
+\end{equation}
+This probability forms the basis for the Metropolis acceptance criterion
+
+\subsection{Paper Organization}
+\label{scn:paper_organization}
+Section \ref{scn:problem_formulation} contains a discussion of the quantum-inspired simulated annealing algorithm that will be used to select 
+
+\section{Problem Formulation and Overview}
+\label{scn:problem_formulation}
+
+In this paper we present a methodology for feed-forward neural network weight selection which employs a quantum-inspired variant of simulated annealing. In the following sections CSA and QSA are introduced and compared. CSA and QSA will then be applied to the pro
+
+As discussed in Section~\ref{scn:lit_review}, simulated annealing often converges to a local, rather than global minimum. One way to solve this problem is to create a mechanism by which the system can tunnel out of local minima to nearby, lower-cost configurations. This is analogous to the quantum mechanical phenomenon of tunneling.A particle with energy \begin{math} E \end{math} incident upon a potential energy barrier of height \begin{math} \Delta V > E  \end{math} has a non-zero probability of being found in, or past, the barrier. Classically, this behavior is forbidden. The probability of tunneling, \begin{math} \mathcal{P}_t \end{math}, through a step barrier of height \begin{math} \Delta V  \end{math} is described by: 
+\begin{equation} \label{eq:quantum_transition_prob}
+\mathcal{P}_t = e^{-\frac{w \sqrt{\Delta V}}{ \Gamma}} 
+\end{equation} where \begin{math} \Gamma \end{math} is the tunneling field strength \cite{mukherjee2015multivariatesearchqa}. Figure \ref{fig:quantum_tunneling} depicts a one-dimensional example of quantum tunneling.
+
+It is instructive to contrast Eq.~\ref{eq:thermal_transistion_prob} and Eq.~\ref{eq:quantum_transition_prob}. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height $\Delta V$ is increased by a factor of approximately $e^{\Delta V}$, for large values of $\Delta V$. This relationship is depicted graphically in Fig.~\ref{fig:quantum_advantage} which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Therefore, physical models which consider quantum effects are much more likely predict penetration of tall, thin energy barriers than those which only include classical thermal effects.
+
+
+\subsection{Classical and Quantum Simulated Annealing}
+\label{scn:classical_quantum_simulated_annealing}
+
+The formulation of QSA described in this paper arises from the construction of a neighborhood function which approximates the transition probabilities of a quantum system traversing a potential energy surface (PES). \footnote{This concept is nearly mathematically identical to the fast simulated annealing model described in \cite{}. However, the QSA algorithm presented in this paper was arrived at independently, though an attempt to incorporate quantum mechanical phenomena into neural network weight selection.}
+
+
+
+\subsection{Annealing Synaptic Weights}
+\label{scn:weight_selection}
+
+In order to apply the techniques of QSA and CSA, we most first formulate the problem of feed-forward neural network synaptic weight selection as a combinatorial optimization problem. Each synaptic weight in a feed-forward neural network may be encoded as a real-valued element in a 3-dimensional relation matrix, denoted as $\mathit{W}_{ijk}$. In this encoding scheme, for a given [layer] of the matrix, the row and column indexes indicate the pre-synaptic and post-synaptic neurons, respectively. The absence of a synaptic connection is indicated by a $0$. A nonexistent synapse can be caused by the absence of either the presynaptic or post-synaptic neuron, or by the absence of a connection between the neurons. This weight encoding scheme is depicted graphically in Fig.~\ref{fig:nettomatmapping}. The weight matrix, $\boldsymbol{\mathcal{W}}$, therefore encodes a configuration in the solution space of the problem, which corresponds to some cost value $\mathcal{C}(\boldsymbol{\mathcal{W}})$. We may now attempt to minimize $\mathcal{C}(\boldsymbol{\mathcal{W}})$ by perturbing $\boldsymbol{\mathcal{W}}$. With this framework in place, we can apply the techniques of CSA and QSA to the problem of weight selection.
+
+
+\subsection{Neighborhood Functions}
+\label{scn:neighborhood_methods}
+
+
+All variations of simulated annealing require the specification of a neighborhood function, which determines the way in which new states may be generated from the current state. 
+Let us define a generic neighborhood function, $\mathcal{N}$, which operates on $\boldsymbol{\mathcal{W}}$, thereby changing its value. In the following section we detail several possible realizations of $\mathcal{N}$, some of which constitute an approximation to system performing quantum tunneling.
+
+
+\subsubsection{Classical Neighborhood Functions}
+\label{scn:classical_neighborhood}
+
+We define \begin{math}\mathcal{N}_{c}\end{math} to be the classical neighborhood function, which is defined as \begin{align}\label{eq:classical_neighborhood}
+	\mathcal{N}_{c} (\boldsymbol{\mathcal{W}}) = \boldsymbol{\mathcal{W}} + \alpha\boldsymbol{\mathcal{R}_n} 
+\end{align}
+\noindent where $\boldsymbol{\mathcal{R}_n}$ is a random matrix with dimensionality equal to that of $\boldsymbol{\mathcal{W}}$ which has been normalized such that the elements of the matrix sum to $1$, and $\alpha$ is the learning rate. This neighborhood function will produce a weight matrix, $\boldsymbol{\mathcal{W}'}$, which will have an $L^2$ distance of exactly $\alpha$  from $\boldsymbol{\mathcal{W}}$ in the weight space.
+
+\subsubsection{Quantum Neighborhood Function}
+\label{scn:quantum_neighborhood}
+
+... Consider the hypothetical cost surface depicted in Fig.~\ref{fig:1dtunneling}. 
+
+
+\subsubsection{Anisotropic Quantum Neighborhood Function}
+\label{scn:anisotropic_quantum_neighborhood}
+In the course of developing this framework, it was noted that it is sometimes advantageous to move along an error surface in exactly one dimension, as show in Fig.~\ref{fig:anisotropic} This corresponds to modifying a single synaptic weight a single epoch. Though it is possible that this could occur by chance, the likelihood of a single-weight modification is inversely proportional to the number of weights in the network. In physical science a force acting preferentially in a subset of the total dimensionality of the degrees of freedom in which it could act is referred to as an anisotropy. This concept has been extended to the weight selection scheme presented in this paper in the form of a value, $a$, specifying the anisotropicity of a weight matrix perturbation. This value serves as a nonlinear transform on the perturbation matrix, thus concentrating the perturbation in a subset of the available degrees of freedom. Given as 
+
+By inspection, when $a$ is $0$, the perturbation will be unchanged and will be distributed evenly across all degrees of freedom, on average. Conversely, $a$ is $1$, all the perturbation will occur in a single dimension, thus changing only one synaptic weight.
+
+\subsection{Cost Functions}
+\label{scn:cost_functions}
+
+\section{Implementation Details}
+\label{scn:implementation_details}
+
+
+\section{Experiments and Results}
+\label{scn:experiments_results}
+
+
+
+
+
+\begin{IEEEbiography} {Justin R. Fletcher} %[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{figures/abel2.eps}}]
+received the B.S degree in Computer Engineering from Embry Riddle Aeronautical University in 2012 and is currently pursuing the M.S. degree in Computer Science from the Air Force Institute of Technology (AFIT). His research interests include neural networks, quantum mechanics, and stuff. [do this later]
+\end{IEEEbiography}
+
+
+\begin{IEEEbiography}{Michael J. Mendenhall} %[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{figures/mike1.eps}}]
+	received the B.S. degree in Computer Engineering from Oregon State University, Corvallis, OR in 1996, the M.S. degree in Computer Engineering 
+	from the Air Force Institute of Technology (AFIT), Wright-Patterson AFB, OH, in 2001, and the Ph.D. degree in Electrical Engineering from Rice 
+	University, Houston, TX, in 2006. Currently, he is an Assistant Professor of Electrical Engineering at AFIT. He recieved the Dr. Leslie M. Norton 
+	teaching award by the AFIT student association and an honorable mention for the John L. McLucas basic research award at the Air Force level, 
+	both in 2010.  His research interests are in hyperspectral signal/image processing, hyperspectral signature modeling, and computational intelligence.  
+\end{IEEEbiography}
+
+
+\end{document}

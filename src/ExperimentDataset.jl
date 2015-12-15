@@ -7,6 +7,7 @@ module ExperimentDataset
 	include("$(pwd())\\src\\"*"normalizeData.jl")
 	include("$(pwd())\\src\\"*"orthogonalizeDataClasses.jl")
 	include("$(pwd())\\src\\"*"shuffleData.jl")
+	include("$(pwd())\\src\\"*"removeDataMean.jl")
 
 	type Dataset
 		data
@@ -18,6 +19,7 @@ module ExperimentDataset
 			data = readdlm(datapath, ',' , Any)
 			data = orthogonalizeDataClasses(data, outputCols)
 			data = normalizeData(data)
+			data = removeDataMean(data, inputCols)
 			data = shuffleData(data)
 
 

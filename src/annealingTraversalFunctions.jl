@@ -1,43 +1,41 @@
 # ---- Annealing Training Functions ----
 
-function quantumAnisotropicSynapticPerturbation(synapseMatrix, stateTupleIn)
-
-    (temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField) = stateTupleIn
+function quantumAnisotropicSynapticPerturbation(synapseMatrix, state)
 
     # With probability of the value of the tunneling field, take a large, random step.
 #     stepSize =  learnRate*(1+(maxConfigDist*exp(-rand())*int(rand()<(tunnelingField))))
-    stepSize =  learnRate*(1+(maxConfigDist*rand()*int(rand()<(tunnelingField))))
+    stepSize =  state.learnRate*(1+(state.maxConfigDist*rand()*int(rand()<(state.normTunnelingField))))
 
     # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
     randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
 
-
 	normMat = randMat./sum(randMat)
 
+	anisotropicMat = normMat.^(1/(1-(0.9*state.anisotropicField)))
 
-	anisotropicMat = normMat.^(1/(1-(0.9*anisotropicField)))
 	anisotropicNormMat = anisotropicMat./sum(anisotropicMat)
 
-    perturbMat = stepSize.*(anisotropicNormMat).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+#     perturbMat = stepSize.*(anisotropicNormMat).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+
+	# The last mult term selects a random sign.
+    perturbMat = stepSize.*(anisotropicNormMat).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
 
     return(Any[perturbMat, stepSize])
 end
 
 
 
+function quantumSynapticChange(synapseMatrix, state)
 
-function quantumSynapticChange(synapseMatrix, stateTupleIn)
-
-    (temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField) = stateTupleIn
 
     # With probability of the value of the tunneling field, take a large, random step.
 #     stepSize =  learnRate*(1+(maxConfigDist*exp(-rand())*int(rand()<(tunnelingField))))
-    stepSize =  learnRate*(1+(maxConfigDist*rand()*int(rand()<(tunnelingField))))
+    stepSize =  state.learnRate*(1+(state.maxConfigDist*rand()*int(rand()<(state.normTunnelingField))))
 
     # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
     randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
-
-    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+    synapseChange = stepSize.*(randMat./(sum(randMat))).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+#    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
 
     return(Any[synapseChange, stepSize])
 end

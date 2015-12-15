@@ -1,5 +1,5 @@
 
-function updateState(stateTupleIn)
+@everywhere function updateState(stateTupleIn)
 
     #  Unpack the input tuple. For readability.
     (temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField) = stateTupleIn

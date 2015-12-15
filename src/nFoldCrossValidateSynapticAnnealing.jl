@@ -1,4 +1,7 @@
-function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annealingFunction, convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, synMatIn, actFun, dataset)
+function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annealingFunction, convCriterion,
+												cutoffEpochs, perturbSynapses, updateState, errorFunction,
+												reportErrorFunction, initTemperature, initLearnRate, synMatIn,
+												actFun, dataset, batchSize, reportFrequency)
 
 
     # Shuffle the data.
@@ -24,7 +27,10 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
 		netIn.propagation_function = actFun
 
         # Spawn an annealing task.
-        ref = @spawn annealingFunction(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, netIn, actFun, trainData, valData)
+        ref = @spawn annealingFunction(convCriterion, cutoffEpochs, perturbSynapses, updateState,
+									   errorFunction, reportErrorFunction, initTemperature, initLearnRate,
+									   netIn, actFun, trainData, valData,
+						   			   batchSize, reportFrequency)
 
         # Append the rederence to the remote task to the list.
         push!(refList, ref)
@@ -65,7 +71,7 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
     meanTrainErrorVec = vec(mean(vectorListToMatrix(trainErrorFoldList), 1))
 
     # Compute the fold-mean perturbation distance vector.
-    meanPerturbationDistanceVec = 0
+    meanPerturbationDistanceVec = vec(mean(vectorListToMatrix(perturbationDistanceFoldList), 1))
 
     # Return the results as a tuple.
     return(Any[meanValErrorVec, meanTrainErrorVec, meanPerturbationDistanceVec, synapseMatrixFoldList])

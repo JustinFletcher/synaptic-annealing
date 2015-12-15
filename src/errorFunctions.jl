@@ -1,50 +1,77 @@
 
 
-# function getDataClassErr(synapseMatrix, actFun, data, inputCols, outputCols)
-
-#     # Initialize error to 0.
-#     err = 0
-
-#     # For every observation in the data set.
-#     for sampleRow in 1:size(data)[1]
-
-# 		err += indmax(propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun))!=indmax(data[sampleRow, outputCols])
-
-# 	end
-
-#     # Return the average error.
-#     return(err/size(data)[1])
-# end
-
-
-function getDataClassErr(net, dataset)
+function getDataClassSTUNErr(net, dataset, state, batchSize)
 
     # Initialize error to 0.
     err = 0
 
     # For every observation in the data set.
-    for sampleRow in 1:size(dataset.data)[1]
+    for sampleRow in (1:size(dataset.data)[1])[(vec(1:size(dataset.data)[1])[randperm(length(1:size(dataset.data)[1]))[1:min(batchSize, length(1:size(dataset.data)[1]))]])]
 
-# 		feedforward(net, vec(data[sampleRow, inputCols]))
-
-# 		err += indmax(net.activation_nodes[end])!=indmax(data[sampleRow, outputCols])
 		err += indmax(transpose(net_eval(net, vec(dataset.data[sampleRow, dataset.inputCols]))))!=indmax(dataset.data[sampleRow, dataset.outputCols])
 
 	end
 
     # Return the average error.
-    return(err/size(dataset.data)[1])
+
+    return((1-exp(-0.0000001*(err-state.minTrainError))))
 end
 
 
-function getDataClassErr_backprop(net, dataset)
+function getDataClassErr(net, dataset, state, batchSize)
+
+    # Initialize error to 0.
+    err = 0
+
+	# Get random subsed of the row indexes of the dataset.
+# 	(size(dataset.data)[1])[randperm(length(size(dataset.data)[1]))[1:batchSize]]
+    # For every observation in the data set.
+# 	println("a")
+# 	(1:(size(dataset.data)[1]))[10, 20]
+# 	println("b")
+
+
+
+# 	println((1:(size(dataset.data)[1]))[randperm(length(1:(size(dataset.data)[1])))[1:batchSize]])
+# 	a = 1:size(dataset.data)[1]
+
+    for sampleRow in (1:size(dataset.data)[1])[(vec(1:size(dataset.data)[1])[randperm(length(1:size(dataset.data)[1]))[1:min(batchSize, length(1:size(dataset.data)[1]))]])]
+# 		println(sampleRow)
+		err += indmax(transpose(net_eval(net, vec(dataset.data[sampleRow, dataset.inputCols]))))!=indmax(dataset.data[sampleRow, dataset.outputCols])
+
+	end
+
+    # Return the average error.
+    return(err)
+end
+
+
+
+# function getDataClassErr(net, dataset, state, batchSize)
+
+#     # Initialize error to 0.
+#     err = 0
+
+#     # For every observation in the data set.
+#     for sampleRow in 1:size(dataset.data)[1]
+
+# 		err += indmax(transpose(net_eval(net, vec(dataset.data[sampleRow, dataset.inputCols]))))!=indmax(dataset.data[sampleRow, dataset.outputCols])
+
+# 	end
+
+#     # Return the average error.
+#     return(err/size(dataset.data)[1])
+# end
+
+
+function getDataClassErr_backprop(net, dataset, state, batchSize)
 
     # Initialize error to 0.
     err = 0
 
     # For every observation in the data set.
     for sampleRow in 1:size(dataset.data)[1]
-# 		println(vec(data[sampleRow, inputCols]))
+
 		err += indmax(net_eval(net, vec(dataset.data[sampleRow, dataset.inputCols])))!=indmax(dataset.data[sampleRow, dataset.outputCols])
 
 	end
@@ -56,103 +83,33 @@ end
 
 
 
-# temp = rand(1,20)
-# tic()
-# transpose(temp)
-# t1 = toq()
-# t1*150*3*1000000/60/60
-
-function getDataClassErrPar(synapseMatrix, actFun, dataset)
-
-    # Get the number of samples.
-    #numSamples = size(data)[1]
+function getDataClassErrPar(synapseMatrix, actFun, dataset, state)
 
     # Initialize error to 0.
     err = 0
-# 	numOutputs = length(outputCols)
-
-# 	outputPadding = zeros(1, size(synapseMatrix)[1]-numOutputs)
 
     # For every observation in the data set.
     err = @parallel (+) for sampleRow in 1:size(dataset.data)[1]
 		indmax(net_eval(net, vec(dataset.data[sampleRow, dataset.inputCols])))!=indmax(dataset.data[sampleRow, dataset.outputCols])
-        #println("------------------------------")
-        #sample = data[sampleRow, :]
-        #println(sample)
 
-#         actualOutputRaw = propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun)
-
-#         actualOutput = actualOutputRaw.==maximum(actualOutputRaw)
-
-# 		# Addd -1s here after size for all bias
-#         transpose(data[sampleRow, outputCols])!=actualOutput[1:numOutputs,:]
-
-        # Format the data for the arithmatic.
-        #correctOutput = int([sample[outputCols], transpose(zeros(1, size(synapseMatrix)[1]-length(sample[outputCols])))])
-
-#         #include("propogateForward.jl")
-#         #println("correctOutput ",correctOutput )
-#         actualOutputRaw = propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun)
-
-#         actualOutput = int(actualOutputRaw.==maximum(actualOutputRaw))
-#         #println("actualOutputRaw",actualOutputRaw)
-
-#           # println("output", output)
-#         #   println("output", int(output.==maximum(output)))
-# #         println(int(int(paddedData)==int(output.==maximum(output))))
-
-# 		# Addd -1s here after size for all bias
-#         int(int(transpose([data[sampleRow, outputCols] zeros(1, size(synapseMatrix)[1]-length(data[sampleRow, outputCols]))]))!=actualOutput)
     end
-
     # Return the average error.
     return(err/size(dataset.data)[1])
 end
-# To undo the changes for universal viasing, remove the 1s.
-
-# function getDataRegErr(synapseMatrix, actFun, data, inputCols, outputCols)
 
 
-#     # Get the number of samples.
-#     #numSamples = size(data)[1]
-
-#     err = 0
-
-#     # For every observation in the data set.
-#     for sampleRow in 1:size(data)[1]
-
-#         #sample = data[sampleRow, :]
-
-#         # Format the data for the arithmatic.
-# 		# Addd -1s here after size for all bias
-#         paddedData = transpose([data[sampleRow, outputCols] (zeros(1, size(synapseMatrix)[1]-length(data[sampleRow, outputCols])))])
-
-# # 		println(paddedData)
-# # 		println(propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun))
-#         # Sum the differences between the correct output and the NN pattern. Take the abs() and accumulate.
-#         err += sqrt(sum((paddedData-propogateForward(data[sampleRow, inputCols], synapseMatrix, actFun)).^2))^2
-
-#     end
-
-#     # Return the average error.
-#     return(err/size(data)[1])
-# end
-
-function getDataRegErr(net, dataset)
+function getDataRegErr(net, dataset, state, batchSize)
 
 
     err = 0
 
     # For every observation in the data set.
-    for sampleRow in 1:size(dataset.data)[1]
-# 		println(data[sampleRow, outputCols])
-# 		println(net_eval(net, vec(data[sampleRow, inputCols])))
+    for sampleRow in (1:size(dataset.data)[1])[(vec(1:size(dataset.data)[1])[randperm(length(1:size(dataset.data)[1]))[1:min(batchSize, length(1:size(dataset.data)[1]))]])]
 
-# 		err += sqrt(sum((net_eval(net, vec(data[sampleRow, inputCols]))-transpose(data[sampleRow, outputCols])).^2))^2
 		err += (sqrt(sum((dataset.data[sampleRow, dataset.outputCols]-transpose(net_eval(net, vec(dataset.data[sampleRow, dataset.inputCols])))).^2)))^2
     end
-#     println(err)
+
     # Return the average error.
-    return(err/size(dataset.data)[1])
+    return(err)
 end
 

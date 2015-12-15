@@ -1,5 +1,17 @@
 
-function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateState, errorFunction, reportErrorFunction, initTemperature, initLearnRate, netIn, actFun, trainData, valData)
+
+# @everywhere include("$(pwd())\\src\\"*"AnnealingState.jl")
+# state = AnnealingState.State(100,0,0,0)
+# state.temperature
+# temp = AnnealingState.updateState_classical_unit_cooling
+# temp(state)
+# state.temperature
+# state.normTemperature
+
+function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateState,
+						   errorFunction, reportErrorFunction, initTemperature, initLearnRate,
+						   netIn, actFun, trainData, valData,
+						   batchSize, reportFrequency)
 
     println("New Synaptic Annealing")
 
@@ -9,64 +21,53 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
     # Create a local copy of the synapse matrix.
     network = netIn
 
-
-    # Initiailize the minimum errors.
-    minError = Inf
-    trainErr = Inf
-    valErr = Inf
-
     # Initialize the error vectors.
     trainingErrorVector = Float64[]
     validationErrorVector = Float64[]
-    onlineErrorVector = Float64[]
     perturbationDistanceVector = Float64[]
-    errorStack = Float64[]
     minValErrSynapseMatrix = Any[]
 
-    # Initialize state variables.
-    temperature = initTemperature
-    learnRate = initLearnRate
-    tunnelingField = 0
-    epochsCool = 0
-    maxConfigDist = sum(getNetworkSynapseMatrix(network).!=0) #(abs(actFun(Inf))+abs(actFun(-Inf)))*sum(getNetworkSynapseMatrix(network).!=0)
-    numEpochs = 0
-	anisotropicField = 0
-    stateTuple = [temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField]
+	# Initialize the state.
+    maxConfigDist = 2*sum(getNetworkSynapseMatrix(network).!=0)
+	state = AnnealingState.State(initTemperature,initLearnRate,1,maxConfigDist)
 
-# 	network = groundNetwork(1000, network, errorFunction, perturbSynapses, stateTuple, trainData,inputCols, outputCols)
-# 	network = groundWithBackProp(500, network,trainData,inputCols, outputCols)
     # Initialize the error.
-    lastError = errorFunction(network, trainData)
-    # Initialize the loop control variables.
+    lastError = errorFunction(network, trainData, state, batchSize)
+
+    # Initialize the loop control variable.
     converged = false
 
     while !converged
 
-		# Minibatch goes here.
 
-        # Push the most recent error onto the error vector.
-        trainErr = reportErrorFunction(network, trainData)
-        push!(trainingErrorVector, trainErr)
 
-        # Push the validation error set onto the vector.
-        valErr = reportErrorFunction(network, valData)
-        push!(validationErrorVector, valErr)
+		if ((state.epochsComplete%reportFrequency)==0)
+
+			# Push the most recent error onto the error vector.
+			state.trainError = reportErrorFunction(network, trainData, state, size(trainData.data)[1])
+			push!(trainingErrorVector, state.trainError./size(trainData.data)[1])
+
+			# Push the validation error set onto the vector.
+			state.valError = reportErrorFunction(network, valData, state, size(valData.data)[1])
+			push!(validationErrorVector, state.valError./size(valData.data)[1])
+
+			println("T | V Error @" * string(state.epochsComplete)  * ": " * string(state.trainError./size(trainData.data)[1]) * " | " * string(state.valError./size(valData.data)[1]))
+		end
 
         # State capture: if this is the best net so far, save it to the disk.
-        if valErr < minError
-			minError = valErr
+        if state.valError < state.minValError
+			state.minValError = state.valError
             minValErrSynapseMatrix = network
         end
 
-
-
         # Update the state of the annealing system.
-        stateTuple = updateState(stateTuple)
+        updateState(state)
 
+		# Parse the synapse matrix from the network.
 		synapseMatrix = getNetworkSynapseMatrix(network)
 
         # Compute the synapse perturbation matrix.
-        synapsePerturbationTuple = perturbSynapses(synapseMatrix, stateTuple)
+        synapsePerturbationTuple = perturbSynapses(synapseMatrix, state)
 
         # Parse the perturbation tuple. For readability.
         (synapsePerturbation, perturbationDistance) = synapsePerturbationTuple
@@ -78,18 +79,12 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         synapseMatrix += synapsePerturbation
 
         # Compute the resultant error.
-        perturbedError = errorFunction(setNetworkSynapseMatrix(network, synapseMatrix), trainData)
+        perturbedError = errorFunction(setNetworkSynapseMatrix(network, synapseMatrix), trainData, state, batchSize)
 
-#         # State capture: if this is the best net so far, save it to the disk.
-#         if perturbedError < minTrainError
-# 			minTrainError = perturbedError
-#         end
 
         # Computer the change in error.
         errorChange = perturbedError-lastError
 
-        # Parse the temperature from the state tuple and normalize. For readability.
-        temperatureNorm = stateTuple[1]/initTemperature
 
 		# If this is a downhill move, take it.
         if (perturbedError<=lastError)
@@ -98,7 +93,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 		# If this is not a downhill or neural move...
 		else
 			# Then with probability exp(-DeltaE/T), or if it's the result of a tunnelling event, reject the move.
-			if( (rand()>=exp(-(perturbedError-lastError)/temperatureNorm)) || (!(perturbationDistance<=stateTuple[3])) )
+			if( (rand()>=exp(-(errorChange)/state.normTemperature)) || (perturbationDistance>state.learnRate) )
 				synapseMatrix -= synapsePerturbation
 			# If the uphill move is not rejected, set the error.
 			else
@@ -106,32 +101,29 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 			end
 
         end
-#         # If the move was a quantum one.
-#         elseif !(perturbationDistance<=stateTuple[3])
-#           # Repeal the move.
-#           synapseMatrix -= synapsePerturbation
-#         elseif (rand()<temperatureNorm)
-#           # Repeal the move.
-#           synapseMatrix -= synapsePerturbation
-#         else
-#           # If the annealing move is not repealed, set the error.
-#           lastError = perturbedError
-#         end
 
+		# State capture: if this is the best net so far, save it to the disk.
+        if perturbedError < state.minTrainError
+			state.minTrainError = perturbedError
+        end
+
+		# Reconstruct the network from the latet synapse matrix.
 		network = setNetworkSynapseMatrix(network, synapseMatrix)
 
-		# If this run is perfect, stop evaluating.
-        if((trainErr == 0.0 )&&(valErr == 0.0))
-          println("Perfect Run | Epoch "*stateTuple[7])
+		# If this run is perfect, tell the user.
+        if((state.trainError == 0.0 )&&(state.valError == 0.0))
+          println("Perfect Run | Epoch ")
         end
 
         # Evaluate the convergence conditions.
-        converged = (stateTuple[7]>=cutoffEpochs) || ((trainErr == 0.0 )&&(valErr == 0.0))
+        converged = (state.epochsComplete>cutoffEpochs) || ((state.trainError == 0.0 )&&(state.valError == 0.0))
 
     end
 
 # 	minValErrSynapseMatrix = synapseMatrix
 # 	validationErrorVector = trainingErrorVector
+
+	# Should probabily use a datframe here.
 
     # Construct and return the output tuple.
     outputTuple = Any[minValErrSynapseMatrix, validationErrorVector, trainingErrorVector, perturbationDistanceVector]

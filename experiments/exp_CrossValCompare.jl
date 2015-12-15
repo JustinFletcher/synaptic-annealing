@@ -1,17 +1,17 @@
-# Pkg.init()
-# Pkg.add("PyCall")
-# Pkg.build("PyCall")
-# Pkg.add("PyPlot")
+Pkg.init()
+Pkg.add("PyCall")
+Pkg.build("PyCall")
+Pkg.add("PyPlot")
+Pkg.build("PyPlot")
 # Pkg.add("StatsBase")
-# Pkg.add("BackpropNeuralNet")
-# Pkg.add("MNIST")
-Pkg.build("BackpropNeuralNet")
+Pkg.add("BackpropNeuralNet")
+Pkg.add("MNIST")
 Pkg.update()
 
+Pkg.build()
 
 
-
-@everywhere using PyPlot
+using PyPlot
 rmprocs(workers())
 addprocs(25)
 
@@ -22,14 +22,18 @@ addprocs(25)
 @everywhere cd("\\fletcher-thesis")
 
 pwd()
-# Include utility libraries.
 
+@everywhere include("$(pwd())\\src\\"*"ExperimentDataset.jl")
+@everywhere include("$(pwd())\\src\\"*"AnnealingState.jl")
+
+# Include utility libraries.
 @everywhere include("$(pwd())\\src\\"*"getput.jl")
 @everywhere include("$(pwd())\\src\\"*"vectorListMean.jl")
 @everywhere include("$(pwd())\\src\\"*"vectorListToMatrix.jl")
 
 # Include data maniputlation libraries.
 @everywhere include("$(pwd())\\src\\"*"normalizeData.jl")
+@everywhere include("$(pwd())\\src\\"*"removeDataMean.jl")
 @everywhere include("$(pwd())\\src\\"*"orthogonalizeDataClasses.jl")
 @everywhere include("$(pwd())\\src\\"*"shuffleData.jl")
 
@@ -38,7 +42,6 @@ pwd()
 @everywhere include("$(pwd())\\src\\"*"propogateForward.jl")
 @everywhere include("$(pwd())\\src\\"*"plotAnnealResults.jl")
 @everywhere include("$(pwd())\\src\\"*"annealingTraversalFunctions.jl")
-@everywhere include("$(pwd())\\src\\"*"stateUpdateFunctions.jl")
 @everywhere include("$(pwd())\\src\\"*"synapticAnnealing.jl")
 @everywhere include("$(pwd())\\src\\"*"errorFunctions.jl")
 @everywhere include("$(pwd())\\src\\"*"getDataPredictions.jl")
@@ -52,15 +55,7 @@ pwd()
 @everywhere include("$(pwd())\\src\\"*"backpropTraining.jl")
 @everywhere include("$(pwd())\\src\\"*"nFoldCrossValidateBackprop.jl")
 
-@everywhere include("$(pwd())\\src\\"*"ExperimentDataset.jl")
-
-@everywhere include("$(pwd())\\src\\"*"AnnealingState.jl")
-
-state = AnnealingState.State(0,0,0,1)
-
-
 ion()
-
 
 #########################################################################################################################
 
@@ -73,13 +68,14 @@ irisData = readdlm("$(pwd())\\data\\iris.dat", ',' , Any)
 irisDataClassed = orthogonalizeDataClasses(irisData, [5])
 irisDataClassed = normalizeData(irisDataClassed)
 irisDataClassed = shuffleData(irisDataClassed)
+irisDataClassed = removeDataMean(irisDataClassed,[1:4])
 
 irisDatapath = "$(pwd())\\data\\iris.dat"
 dataInputDimensions = [1:4]
 dataOutputDimensions = [5]
 
 irisDataset = ExperimentDataset.Dataset(irisDatapath, dataInputDimensions, dataOutputDimensions)
-
+irisDataset.data[:,irisDataset.outputCols] = (irisDataset.data[:,irisDataset.outputCols]+1)/2
 irisDataset = ExperimentDataset.Dataset(irisDataset.data, dataInputDimensions, dataOutputDimensions)
 
 
@@ -90,6 +86,12 @@ lcvfDataClassed = orthogonalizeDataClasses(lcvfData, [195])
 lcvfDataClassed = normalizeData(lcvfDataClassed)
 lcvfDataClassed = shuffleData(lcvfDataClassed)
 
+
+lcvfDatapath = "$(pwd())\\data\\lcvfData.csv"
+dataInputDimensions = [1:194]
+dataOutputDimensions = [195]
+
+lcvfDataset = ExperimentDataset.Dataset(lcvfDatapath, dataInputDimensions, dataOutputDimensions)
 
 ###################################################################################################################################################
 using MNIST
@@ -132,10 +134,9 @@ mnistDataset = ExperimentDataset.Dataset(mnistTrainData[1:150, :], dataInputDime
 
 dataSet = irisDataset
 
-
 ###################################################################################################################################################
 
-dataSet = lcvfDataClassed[1:100, :]
+dataSet = lcvfDataset
 
 ###################################################################################################################################################
 
@@ -143,22 +144,25 @@ dataSet = lcvfDataClassed[1:100, :]
 
 dataSet = mnistDataset
 
-
 ###################################################################################################################################################
-
-
 
 numFolds = 25
 
-maxRuns = 1000
+maxRuns = 2000
 
-initTemp = 800
+initTemp = 500
 
-numHiddenLayers = 1
+numHiddenLayers = 10
 
 matrixConfig = [length(dataSet.inputCols), repmat([length(dataSet.inputCols)], numHiddenLayers), length(dataSet.outputCols)]
 
-matrixConfig = [length(dataSet.inputCols), 50,  length(dataSet.outputCols)]
+matrixConfig = [length(dataSet.inputCols), 50, length(dataSet.outputCols)]
+
+synMatIn = null
+
+batchSize = 150
+
+reportFrequency = 500
 
 
 ###################################################################################################################################################
@@ -188,41 +192,48 @@ plotAnnealResults(meanTrainErrorVec_bp, meanValErrorVec_bp, "Training and Valida
 
 int((7*60*60)/(196.1/10000))
 
-int((8*60*60)/(26/1))
+int((8*60*60)/(7/1))
 # minValErrorSynapseMatrix_bp[1].weights
 
 # synMatIn[:,1:4,1] = minValErrorSynapseMatrix_bp[1].weights[1]
 # synMatIn[1:end-1,1:3,2] = minValErrorSynapseMatrix_bp[1].weights[2][1:end-1,:]
 
-synMatIn = null
+###################################################################################################################################################
+###################################################################################################################################################
+###################################################################################################################################################
 ###################################################################################################################################################
 
-function softmax(x)
+@everywhere function softmax(x)
 	return(log(1+exp(x)))
+end
+
+@everywhere function rectifier(x)
+	return(max(0,x))
 end
 
 
 outTuple_aq = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns, quantumAnisotropicSynapticPerturbation, updateState_oscillatory,
+                                                          0.0, maxRuns, quantumAnisotropicSynapticPerturbation, AnnealingState.updateState_oscillatory,
                                                           getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-               											  synMatIn, softmax,
-                                                          dataSet)
+                                                          initTemp, 0.001,
+               											  synMatIn, tanh,
+                                                          dataSet, batchSize, reportFrequency)
 
-# putdata(outTuple_aq, "outTuple_aq")
-outTuple_aq = getdata("outTuple_aq")
+# putdata(outTuple_aq, "outTuple_aq_stun")
+# outTuple_aq = getdata("outTuple_aq")
 
 (meanValErrorVec_aq, meanTrainErrorVec_aq, meanPerturbDistanceVec_aq, minValErrorSynapseMatrix_aq) = outTuple_aq
 
-plotAnnealResults(meanTrainErrorVec_aq, meanValErrorVec_aq, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
+meanPerturbDistanceVec_aq
 
+plotAnnealResults(meanTrainErrorVec_aq, meanValErrorVec_aq, reportFrequency, "Training and Validation Classification Error\n of a Synaptic Annealing Neural Network")
 
 
 ###################################################################################################################################################
 
 outTuple_qo = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns, quantumSynapticChange, updateState_quantum_only,
-                                                          getDataClassErr, getDataClassErr,
+                                                          0.0, maxRuns, quantumSynapticChange, AnnealingState.updateState_quantum_only,
+                                                          getDataClassSTUNErr, getDataClassErr,
                                                           initTemp, 1,
                                                           synMatIn,tanh,
                                                           dataSet)
@@ -243,7 +254,7 @@ outTuple_q = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig
                                                           getDataClassErr, getDataClassErr,
                                                           initTemp, 1,
                                                           synMatIn,tanh,
-                                                          dataSet, dataInputDimensions, dataOutputDimensions)
+                                                          dataSet)
 
 # putdata(outTuple_q, "outTuple_q")
 # outTuple_q = getdata("outTuple_q")
@@ -260,7 +271,7 @@ plotAnnealResults(meanTrainErrorVec_q, meanValErrorVec_q, "Training and Validati
 
 outTuple_f = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
                                                          0.0, maxRuns, fixedStepSizeOmniDimSynapticChange, updateState,
-                                                         getDataClassErr, getDataClassErr,
+                                                         getDataRegErr, getDataClassErr,
                                                          initTemp, 1*prod(matrixConfig),
                                                          synMatIn, tanh,
                                                          dataSet, dataInputDimensions, dataOutputDimensions)
@@ -286,7 +297,7 @@ outTuple_o = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig
                                                           getDataClassErr, getDataClassErr,
                                                           initTemp, 1,
                                                           synMatIn,tanh,
-                                                          dataSet, dataInputDimensions, dataOutputDimensions)
+                                                          dataSet)
 
 # putdata(outTuple_o, "outTuple_o")
 # outTuple_o = getdata("outTuple_o")

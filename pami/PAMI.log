@@ -1,0 +1,1054 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  14 DEC 2015 08:21
+entering extended mode
+**PAMI.tex
+(C:\mscs-thesis\pami\PAMI.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(C:\mscs-thesis\pami\IEEEtran.cls
+Document Class: IEEEtran 2012/12/27 V1.8 by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmptoksA=\toks14
+-- Using IEEE Computer Society mode.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 368.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ppl.fd"
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen104
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen105
+\CLASSINFOnormalsizeunitybaselineskip=\dimen106
+\IEEEnormaljot=\dimen107
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 726.
+\IEEEilabelindentA=\dimen108
+\IEEEilabelindentB=\dimen109
+\IEEEilabelindent=\dimen110
+\IEEEelabelindent=\dimen111
+\IEEEdlabelindent=\dimen112
+\IEEElabelindent=\dimen113
+\IEEEiednormlabelsep=\dimen114
+\IEEEiedmathlabelsep=\dimen115
+\IEEEiedtopsep=\skip41
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@IEEEsubequation=\count85
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count86
+\c@table=\count87
+\@IEEEeqnnumcols=\count88
+\@IEEEeqncolcnt=\count89
+\@IEEEsubeqnnumrollback=\count90
+\@IEEEtmpitemindent=\dimen116
+\c@IEEEbiography=\count91
+\@IEEEtranrubishbin=\box26
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen117
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen118
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen119
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks16
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks17
+\eqnshift@=\dimen120
+\alignsep@=\dimen121
+\tagshift@=\dimen122
+\tagwidth@=\dimen123
+\totwidth@=\dimen124
+\lineht@=\dimen125
+\@envbody=\toks18
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks20
+\thm@bodyfont=\toks21
+\thm@headfont=\toks22
+\thm@notefont=\toks23
+\thm@headpunct=\toks24
+\thm@preskip=\skip47
+\thm@postskip=\skip48
+\thm@headsep=\skip49
+\dth@everypar=\toks25
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks26
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count104
+))
+\Gin@req@height=\dimen126
+\Gin@req@width=\dimen127
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen128
+\extrarowheight=\dimen129
+\NC@list=\toks27
+\extratabsurround=\skip50
+\backup@length=\skip51
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mdwtools\mdwmath.sty"
+Package: mdwmath 1996/04/11 1.1 Nice mathematical things
+\sq@sqrt=\count105
+LaTeX Info: Redefining \sqrt on input line 84.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mdwtools\mdwtab.sty"
+Package: mdwtab 1998/04/28 1.9 Table typesetting with style
+\tab@state=\count106
+\tab@columns=\count107
+\tab@preamble=\toks28
+\tab@shortline=\toks29
+\extrarowheight=\dimen130
+\tabextrasep=\dimen131
+\arrayextrasep=\dimen132
+\smarraycolsep=\dimen133
+\smarrayextrasep=\dimen134
+\tab@width=\dimen135
+\col@sep=\dimen136
+\tab@endheight=\dimen137
+\tab@leftskip=\skip52
+\tab@rightskip=\skip53
+\fn@notes=\box29
+\fn@width=\dimen138
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+\epsfxsize=\dimen139
+\epsfysize=\dimen140
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 266.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
+Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+))
+
+LaTeX Warning: Unused global option(s):
+    [cspaper].
+
+(C:\mscs-thesis\pami\PAMI.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 17.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 17.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count108
+\scratchdimen=\dimen141
+\scratchbox=\box30
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen142
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks31
+)
+** ATTENTION: \IEEEcompsoctitleabstractindextext is deprecated (line 35). Use \
+IEEEtitleabstractindextext instead.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 55.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 55.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 55.
+LaTeX Font Info:    Try loading font information for U+msa on input line 55.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 55.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+** ATTENTION: \keywords is deprecated (line 55). Use \IEEEkeywords instead.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 55.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 55.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\upzd.fd"
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+** ATTENTION: \keywords is deprecated (line 55). Use \IEEEkeywords instead.
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 57.
+LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <12> not available
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 57.
+
+LaTeX Warning: Citation `Manolakis1' on page 1 undefined on input line 59.
+
+
+LaTeX Warning: Citation `Subramanian1' on page 1 undefined on input line 61.
+
+
+LaTeX Warning: Citation `Topping1' on page 1 undefined on input line 61.
+
+
+LaTeX Warning: Citation `Simard1' on page 1 undefined on input line 61.
+
+
+LaTeX Warning: Citation `Stevenson1' on page 1 undefined on input line 63.
+
+
+LaTeX Warning: Citation `Leonard1' on page 1 undefined on input line 63.
+
+
+LaTeX Warning: Citation `Simi1' on page 1 undefined on input line 64.
+
+
+LaTeX Warning: Citation `Pan1' on page 1 undefined on input line 66.
+
+
+LaTeX Warning: Citation `Yang1' on page 1 undefined on input line 66.
+
+
+LaTeX Warning: Citation `Sanchez1' on page 1 undefined on input line 66.
+
+
+LaTeX Warning: Citation `Daugman1' on page 1 undefined on input line 67.
+
+
+LaTeX Warning: Citation `Nunez8' on page 1 undefined on input line 71.
+
+
+LaTeX Warning: Citation `Vezhnevets1' on page 1 undefined on input line 80.
+
+
+LaTeX Warning: Citation `Brand1' on page 1 undefined on input line 81.
+
+
+LaTeX Warning: Citation `Brand1' on page 1 undefined on input line 84.
+
+
+LaTeX Warning: Citation `Vezhnevets1' on page 1 undefined on input line 85.
+
+
+LaTeX Warning: Citation `Peer1' on page 1 undefined on input line 85.
+
+
+LaTeX Warning: Citation `Fleck1' on page 1 undefined on input line 87.
+
+
+LaTeX Warning: Citation `Hsu1' on page 1 undefined on input line 87.
+
+
+LaTeX Warning: Citation `Brand1' on page 1 undefined on input line 90.
+
+
+LaTeX Warning: Citation `Vezhnevets1' on page 1 undefined on input line 94.
+
+
+LaTeX Warning: Citation `Gomez1' on page 1 undefined on input line 95.
+
+
+LaTeX Warning: Citation `Albiol1' on page 1 undefined on input line 97.
+
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+]
+
+LaTeX Warning: Citation `Brand1' on page 2 undefined on input line 101.
+
+
+LaTeX Warning: Citation `Pavlidis1' on page 2 undefined on input line 107.
+
+
+LaTeX Warning: Citation `Dowdall1' on page 2 undefined on input line 108.
+
+
+LaTeX Warning: Citation `Kilgore1' on page 2 undefined on input line 110.
+
+
+LaTeX Warning: Citation `Nunez7' on page 2 undefined on input line 113.
+
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 119.
+
+LaTeX Warning: Citation `Nunez8' on page 2 undefined on input line 121.
+
+
+LaTeX Warning: Citation `Nunez7' on page 2 undefined on input line 121.
+
+
+LaTeX Warning: Citation `Nunez8' on page 2 undefined on input line 126.
+
+
+LaTeX Warning: Citation `Matts1' on page 2 undefined on input line 127.
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 121--128
+\OT1/ppl/m/n/10 An en-gi-neer-ing model of hu-man skin re-flectance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--128
+\OT1/ppl/m/n/10 in-clude: blood vol-ume, oxy-genated hemoglobin,
+ []
+
+
+Underfull \hbox (badness 5345) in paragraph at lines 121--128
+\OT1/ppl/m/n/10 of Type I/II and Type III/VI skin with model
+ []
+
+
+Underfull \hbox (badness 3148) in paragraph at lines 121--128
+\OT1/ppl/m/n/10 Fitz-patrick scale where Type I/II/III/IV/V/VI are
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--128
+\OT1/ppl/m/n/10 al-ways/usually/sometimes/rarely/very rarely/never
+ []
+
+
+LaTeX Warning: Citation `Jacques1' on page 2 undefined on input line 139.
+
+
+LaTeX Warning: Citation `Anderson1' on page 2 undefined on input line 140.
+
+
+LaTeX Warning: Citation `Kollias1' on page 2 undefined on input line 140.
+
+
+LaTeX Warning: Citation `Anderson1' on page 2 undefined on input line 142.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--144
+ \OT1/phv/b/n/10 3.2 Re-flectance mea-sure-ments of false alarm
+ []
+
+
+LaTeX Warning: Citation `Angelopoulou2' on page 2 undefined on input line 146.
+
+
+LaTeX Warning: Citation `Storring3' on page 2 undefined on input line 147.
+
+
+LaTeX Warning: Citation `Jones1' on page 2 undefined on input line 147.
+
+
+LaTeX Warning: Citation `Abdel1' on page 2 undefined on input line 147.
+
+
+LaTeX Warning: Citation `Wang2' on page 2 undefined on input line 148.
+
+[2]
+
+! LaTeX Error: File `figures/' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.162 ...ine{\epsfig{figure=figures/,width=4.3cm}}
+                                                  
+I could not locate the file with any of these extensions:
+.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures/specstuff3.eps' not found on input line 169.
+
+Package epstopdf Info: Source file: <figures/specstuff3.eps>
+(epstopdf)             Output file: <figures/specstuff3-eps-converted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figures/specstuff3-eps-conv
+erted-to.pdf figures/specstuff3.eps>
+(epstopdf)             \includegraphics on input line 169.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures/specstuff3-eps-converted-to.pdf' not 
+found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.169 ...gure=figures/specstuff3.eps,width=4.3cm}}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 169.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+
+LaTeX Warning: Citation `Nunez8' on page 3 undefined on input line 203.
+
+
+LaTeX Warning: Citation `Jablonski1' on page 3 undefined on input line 234.
+
+[3]
+
+LaTeX Warning: Citation `Nunez8' on page 4 undefined on input line 261.
+
+
+LaTeX Warning: File `figures/surfsunskincombo.eps' not found on input line 268.
+
+
+Package epstopdf Info: Source file: <figures/surfsunskincombo.eps>
+(epstopdf)             Output file: <figures/surfsunskincombo-eps-converted-to.
+pdf>
+(epstopdf)             Command: <epstopdf --outfile=figures/surfsunskincombo-ep
+s-converted-to.pdf figures/surfsunskincombo.eps>
+(epstopdf)             \includegraphics on input line 268.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures/surfsunskincombo-eps-converted-to.pdf
+' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.268 ...igures/surfsunskincombo.eps,width=4.5cm}}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures/NIMIvalsxy2.ps' not found on input line 275.
+
+
+! LaTeX Error: Unknown graphics extension: .ps.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.275 ...gure=figures/NIMIvalsxy2.ps,width=4.5cm}}
+                                                  
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Citation `marschner99' on page 4 undefined on input line 302.
+
+[4]
+
+LaTeX Warning: File `figures/SCATTER_NDGRI_NDSI_NOISELESS.eps' not found on inp
+ut line 355.
+
+Package epstopdf Info: Source file: <figures/SCATTER_NDGRI_NDSI_NOISELESS.eps>
+(epstopdf)             Output file: <figures/SCATTER_NDGRI_NDSI_NOISELESS-eps-c
+onverted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figures/SCATTER_NDGRI_NDSI_
+NOISELESS-eps-converted-to.pdf figures/SCATTER_NDGRI_NDSI_NOISELESS.eps>
+(epstopdf)             \includegraphics on input line 355.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures/SCATTER_NDGRI_NDSI_NOISELESS-eps-conv
+erted-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.355 ...ER_NDGRI_NDSI_NOISELESS.eps,width=5.4cm}}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures/SCATTER_NDGRI_NDSI_NOISY.eps' not found on input l
+ine 362.
+
+Package epstopdf Info: Source file: <figures/SCATTER_NDGRI_NDSI_NOISY.eps>
+(epstopdf)             Output file: <figures/SCATTER_NDGRI_NDSI_NOISY-eps-conve
+rted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figures/SCATTER_NDGRI_NDSI_
+NOISY-eps-converted-to.pdf figures/SCATTER_NDGRI_NDSI_NOISY.eps>
+(epstopdf)             \includegraphics on input line 362.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures/SCATTER_NDGRI_NDSI_NOISY-eps-converte
+d-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.362 ...CATTER_NDGRI_NDSI_NOISY.eps,width=5.4cm}}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Citation `Brand1' on page 5 undefined on input line 378.
+
+
+LaTeX Warning: Citation `Storring3' on page 5 undefined on input line 386.
+
+
+LaTeX Warning: Citation `Vezhnevets1' on page 5 undefined on input line 403.
+
+
+LaTeX Warning: Citation `Vezhnevets1' on page 5 undefined on input line 415.
+
+
+LaTeX Warning: Citation `Albiol1' on page 5 undefined on input line 415.
+
+
+LaTeX Warning: Citation `Hsu1' on page 5 undefined on input line 416.
+
+
+LaTeX Warning: File `colorspaces.eps' not found on input line 424.
+
+Package epstopdf Info: Source file: <colorspaces.eps>
+(epstopdf)             Output file: <colorspaces-eps-converted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=colorspaces-eps-converted-t
+o.pdf colorspaces.eps>
+(epstopdf)             \includegraphics on input line 424.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `colorspaces-eps-converted-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.424 ...egraphics[width = 3.3in]{colorspaces.eps}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[5]
+Underfull \hbox (badness 1448) in paragraph at lines 442--444
+\OT1/ppl/m/n/10 Given an un-der-stand-ing of hu-man skin re-flectance
+ []
+
+
+LaTeX Warning: Citation `Nunez8' on page 6 undefined on input line 455.
+
+
+Package amsmath Warning: Foreign command \atop;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 472.
+
+
+LaTeX Warning: Citation `moon96' on page 6 undefined on input line 480.
+
+
+LaTeX Warning: Citation `USGS1' on page 6 undefined on input line 491.
+
+
+LaTeX Warning: Citation `USGS1' on page 6 undefined on input line 499.
+
+[6]
+
+LaTeX Warning: Citation `hastie01' on page 7 undefined on input line 505.
+
+
+LaTeX Warning: File `figures/RULES_NDGRI_ROC_LINEAR.eps' not found on input lin
+e 531.
+
+Package epstopdf Info: Source file: <figures/RULES_NDGRI_ROC_LINEAR.eps>
+(epstopdf)             Output file: <figures/RULES_NDGRI_ROC_LINEAR-eps-convert
+ed-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figures/RULES_NDGRI_ROC_LIN
+EAR-eps-converted-to.pdf figures/RULES_NDGRI_ROC_LINEAR.eps>
+(epstopdf)             \includegraphics on input line 531.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures/RULES_NDGRI_ROC_LINEAR-eps-converted-
+to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.531 .../RULES_NDGRI_ROC_LINEAR.eps,width=4.5cm}}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures/LR_NDGRI_ROC_LINEAR.eps' not found on input line 5
+38.
+
+Package epstopdf Info: Source file: <figures/LR_NDGRI_ROC_LINEAR.eps>
+(epstopdf)             Output file: <figures/LR_NDGRI_ROC_LINEAR-eps-converted-
+to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figures/LR_NDGRI_ROC_LINEAR
+-eps-converted-to.pdf figures/LR_NDGRI_ROC_LINEAR.eps>
+(epstopdf)             \includegraphics on input line 538.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures/LR_NDGRI_ROC_LINEAR-eps-converted-to.
+pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.538 ...res/LR_NDGRI_ROC_LINEAR.eps,width=4.5cm}}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 549.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsphv.fd"
+File: omsphv.fd 
+)
+LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 549.
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 574.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsppl.fd"
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 574.
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 585.
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 592.
+
+
+LaTeX Warning: Citation `Jengo1' on page 7 undefined on input line 593.
+
+[7]
+
+LaTeX Warning: File `figures/HST3_RULES_NDGRI_ROC_LINEAR.eps' not found on inpu
+t line 633.
+
+Package epstopdf Info: Source file: <figures/HST3_RULES_NDGRI_ROC_LINEAR.eps>
+(epstopdf)             Output file: <figures/HST3_RULES_NDGRI_ROC_LINEAR-eps-co
+nverted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figures/HST3_RULES_NDGRI_RO
+C_LINEAR-eps-converted-to.pdf figures/HST3_RULES_NDGRI_ROC_LINEAR.eps>
+(epstopdf)             \includegraphics on input line 633.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures/HST3_RULES_NDGRI_ROC_LINEAR-eps-conve
+rted-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.633 ..._RULES_NDGRI_ROC_LINEAR.eps,width=4.5cm}}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures/HST3_LR_NDGRI_ROC_LINEAR.eps' not found on input l
+ine 640.
+
+Package epstopdf Info: Source file: <figures/HST3_LR_NDGRI_ROC_LINEAR.eps>
+(epstopdf)             Output file: <figures/HST3_LR_NDGRI_ROC_LINEAR-eps-conve
+rted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figures/HST3_LR_NDGRI_ROC_L
+INEAR-eps-converted-to.pdf figures/HST3_LR_NDGRI_ROC_LINEAR.eps>
+(epstopdf)             \includegraphics on input line 640.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures/HST3_LR_NDGRI_ROC_LINEAR-eps-converte
+d-to.pdf' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.640 ...ST3_LR_NDGRI_ROC_LINEAR.eps,width=4.5cm}}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: File `figures/ROCall.eps' not found on input line 706.
+
+Package epstopdf Info: Source file: <figures/ROCall.eps>
+(epstopdf)             Output file: <figures/ROCall-eps-converted-to.pdf>
+(epstopdf)             Command: <epstopdf --outfile=figures/ROCall-eps-converte
+d-to.pdf figures/ROCall.eps>
+(epstopdf)             \includegraphics on input line 706.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures/ROCall-eps-converted-to.pdf' not foun
+d.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.706 ...aphics[width = 3.3in]{figures/ROCall.eps}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Citation `Matts1' on page 8 undefined on input line 744.
+
+[8]
+
+LaTeX Warning: File `figures/gdce1melall3am.eps' not found on input line 752.
+
+Package epstopdf Info: Source file: <figures/gdce1melall3am.eps>
+(epstopdf)             Output file: <figures/gdce1melall3am-eps-converted-to.pd
+f>
+(epstopdf)             Command: <epstopdf --outfile=figures/gdce1melall3am-eps-
+converted-to.pdf figures/gdce1melall3am.eps>
+(epstopdf)             \includegraphics on input line 752.
+Package epstopdf Info: Output file is already uptodate.
+
+! Package pdftex.def Error: File `figures/gdce1melall3am-eps-converted-to.pdf' 
+not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.752 ...[width=2.8in]{figures/gdce1melall3am.eps}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Warning: Citation `Nunez8' on page 9 undefined on input line 765.
+
+
+LaTeX Warning: Citation `Nunez8' on page 9 undefined on input line 781.
+
+[9]
+
+LaTeX Warning: Citation `Nunez8' on page 10 undefined on input line 816.
+
+No file PAMI.bbl.
+[10] [11
+
+] (C:\mscs-thesis\pami\PAMI.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4227 strings out of 493921
+ 61016 string characters out of 3144847
+ 124264 words of memory out of 3000000
+ 7401 multiletter control sequences out of 15000+200000
+ 53475 words of font info for 120 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 42i,18n,28p,713b,361s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ur
+w/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helveti
+c/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a
+.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvro8a.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplb8a.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb><C:/Program Files (x86)/M
+iKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on PAMI.pdf (11 pages, 293381 bytes).
+PDF statistics:
+ 123 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
