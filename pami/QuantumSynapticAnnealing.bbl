@@ -51,6 +51,13 @@ S.~{Mukherjee} and B.~K. {Chakrabarti}, ``{Multivariable optimization: Quantum
   annealing and computation},'' \emph{European Physical Journal Special
   Topics}, vol. 224, p.~17, Feb. 2015.
 
+\bibitem{szu1987fastsimulatedannealing}
+\BIBentryALTinterwordspacing
+H.~Szu and R.~Hartley, ``{Fast simulated annealing},'' \emph{Physics Letters
+  A}, vol. 122, no. 3-4, pp. 157--162, June 1987. [Online]. Available:
+  \url{http://dx.doi.org/10.1016/0375-9601(87)90796-1}
+\BIBentrySTDinterwordspacing
+
 \bibitem{tsallis1996generalizedsimulatedannealing}
 \BIBentryALTinterwordspacing
 C.~Tsallis and D.~A. Stariolo, ``Generalized simulated annealing,''
@@ -58,5 +65,8 @@ C.~Tsallis and D.~A. Stariolo, ``Generalized simulated annealing,''
   395--406, Nov. 1996. [Online]. Available:
   \url{http://www.sciencedirect.com/science/article/B6TVG-3YK5TC8-2H/1/d040f1408073d6a09dc185f38673e3dd}
 \BIBentrySTDinterwordspacing
+
+\bibitem{ingber1989veryfastsimulatedreannealing}
+A.~L. Ingber and L.~Ingber, ``Very fast simulated re-annealing,'' 1989.
 
 \end{thebibliography}

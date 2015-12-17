@@ -9,13 +9,14 @@ Pkg.add("MNIST")
 Pkg.update()
 
 Pkg.build()
+
 using PyPlot
 rmprocs(workers())
 addprocs(6)
 # @everywhere using Devectorize
 
 @everywhere using BackpropNeuralNet
-@everywhere cd("\\mscs-thesis")
+@everywhere cd("\\fletcher-thesis")
 
 pwd()
 
@@ -144,7 +145,7 @@ dataSet = mnistDataset
 
 numFolds = 6
 
-maxRuns = 1000
+maxRuns = 1000000
 
 initTemp = 500
 
@@ -156,7 +157,7 @@ matrixConfig = [length(dataSet.inputCols), 50, length(dataSet.outputCols)]
 
 synMatIn = null
 
-batchSize = 15
+batchSize = 150
 
 reportFrequency = 100
 
@@ -228,7 +229,7 @@ plotAnnealResults(meanTrainErrorVec_qua, meanValErrorVec_qua, reportFrequency, "
 outTuple_qva = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
                                                           0.0, maxRuns,  quantumVariablyAnisotropicSynapticPerturbation, AnnealingState.updateState_oscillatory,
                                                           getDataClassErr, getDataClassErr,
-                                                          initTemp, 1/10000,
+                                                          initTemp, 1,
                                                           synMatIn, tanh,
                                                           dataSet, batchSize, reportFrequency)
 

@@ -45,7 +45,7 @@ function csaSynapticChange(synapseMatrix, state)
 
     # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
     distMat = int(bool(synapseMatrix))
-    synapseChange = stepSize.*(distMat./(sum(distMat))).*sum(int(bool(synapseMatrix)))
+    synapseChange = stepSize.*(distMat./(sum(distMat))).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
 #    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
 
     return(Any[synapseChange, stepSize])

@@ -73,7 +73,7 @@ This probability forms the basis for the Metropolis acceptance criterion which i
 \mathcal{P}_t = e^{-\frac{\Delta V}{T}}.
 \end{equation}
 
-... In \cite{} Szu and Hartley introduced the method of fast simulated annealing (FSA), which incorporates occasional, long jumps through the configurtation space. This provision allows for the possiblity of escaping local minima, and reduces the total computational effort required to reach a global minimum. Later work by Tsallis and Stariolo \cite{}, generalized both CSA and FSA into a single framework: generalized simulated annealing (GSA).
+... In \cite{} Szu and Hartley introduced the method of fast simulated annealing (FSA), which incorporates occasional, long jumps through the configuration space. This provision allows for the possibility of escaping local minima, and reduces the total computational effort required to reach a global minimum. Later work by Tsallis and Stariolo \cite{}, generalized both CSA and FSA into a single framework: generalized simulated annealing (GSA).
 
 \subsection{Paper Organization}
 \label{scn:paper_organization}
@@ -84,7 +84,7 @@ Section \ref{scn:problem_formulation} contains a discussion of the quantum-inspi
 
 In this paper we present a methodology for feed-forward neural network weight selection which employs a quantum-annealing-inspired variant of simulated annealing. In the following sections CSA and simulated simulated annealing (QSA) are introduced and compared. 
 
-As discussed in Section~\ref{scn:lit_review}, simulated annealing converges to a global, rather than local, minimum only if it is given sufficient time to converge. The amound of time required is problem dependent, and is often unacceptably long. One way to solve this problem is to create a mechanism by which the system can tunnel out of local minima to nearby, lower-cost configurations, thus reducing the amount of time needed to garuntee convergence to the global minimum. This is analogous to the quantum mechanical phenomenon of tunneling. In a quantum tunneling event a particle with energy \begin{math} E \end{math} incident upon a potential energy barrier of height \begin{math} \Delta V > E  \end{math} has a non-zero probability of being found in, or past, the barrier. Classically, this behavior is forbidden. The probability of tunneling, \begin{math} \mathcal{P}_t \end{math}, through a step barrier of height \begin{math} \Delta V  \end{math} is described by: 
+As discussed in Section~\ref{scn:lit_review}, simulated annealing converges to a global, rather than local, minimum only if it is given sufficient time to converge. The amount of time required is problem dependent, and is often unacceptably long. One way to solve this problem is to create a mechanism by which the system can tunnel out of local minima to nearby, lower-cost configurations, thus reducing the amount of time needed to guarantee convergence to the global minimum. This is analogous to the quantum mechanical phenomenon of tunneling. In a quantum tunneling event a particle with energy \begin{math} E \end{math} incident upon a potential energy barrier of height \begin{math} \Delta V > E  \end{math} has a non-zero probability of being found in, or past, the barrier. Classically, this behavior is forbidden. The probability of tunneling, \begin{math} \mathcal{P}_t \end{math}, through a step barrier of height \begin{math} \Delta V  \end{math} is described by: 
 \begin{equation} \label{eq:quantum_transition_prob}
 \mathcal{P}_t = e^{-\frac{w \sqrt{\Delta V}}{ \Gamma}} 
 \end{equation}
@@ -104,56 +104,61 @@ The formulation of QSA described in this paper arises from the construction of a
 \subsection{Annealing Synaptic Weights}
 \label{scn:weight_selection}
 
-In order to apply the techniques of QSA and CSA, we must first formulate the problem of feed-forward neural network synaptic weight selection as a combinatorial optimization problem. Each synaptic weight in a feed-forward neural network may be encoded as a real-valued element in a 3-dimensional relation matrix, denoted as $\mathit{W}_{ijk}$. In this encoding scheme, for a given layer, $k$, of the matrix the row and column indexes indicate the pre-synaptic and post-synaptic neurons, respectively. The absence of a synaptic connection is indicated by a value of $0$ in the matrix element cooresponding to that synaptic connection. A nonexistent synapse can be caused by the absence of either the presynaptic or post-synaptic neuron, or by the absence of a connection between the neurons. This weight encoding scheme is depicted graphically in Fig.~\ref{fig:nettomatmapping}. The weight matrix, $\boldsymbol{\mathcal{W}}$, therefore encodes a configuration in the solution space of the problem, which in turn corresponds to some cost value $\mathcal{C}(\boldsymbol{\mathcal{W}})$. We may now attempt to minimize $\mathcal{C}(\boldsymbol{\mathcal{W}})$ by perturbing $\boldsymbol{\mathcal{W}}$. With this framework in place, we can apply the techniques of CSA and QSA to the problem of weight selection.
+In order to apply the techniques of QSA and CSA, we must first formulate the problem of feed-forward neural network synaptic weight selection as a combinatorial optimization problem. Each synaptic weight in a feed-forward neural network may be encoded as a real-valued element in a 3-dimensional relation matrix, denoted as $\mathit{W}_{ijk}$. In this encoding scheme, for a given layer, $k$, of the matrix the row and column indexes indicate the pre-synaptic and post-synaptic neurons, respectively. The absence of a synaptic connection is indicated by a value of $0$ in the matrix element corresponding to that synaptic connection. A nonexistent synapse can be caused by the absence of either the presynaptic or post-synaptic neuron, or by the absence of a connection between the neurons. This weight encoding scheme is depicted graphically in Fig.~\ref{fig:nettomatmapping}. The weight matrix, $\boldsymbol{\mathcal{W}}$, therefore encodes a configuration in the solution space of the problem, which in turn corresponds to some cost value $\mathcal{C}(\boldsymbol{\mathcal{W}})$. We may now attempt to minimize $\mathcal{C}(\boldsymbol{\mathcal{W}})$ by perturbing $\boldsymbol{\mathcal{W}}$. With this framework in place, we can apply the techniques of CSA and QSA to the problem of weight selection.
 
 
 \subsection{Neighborhood Functions}
 \label{scn:neighborhood_fuctions}
 
-All variations of simulated annealing require the specification of a neighborhood function, which determines the way in which new states may be generated from the current state. Let us define a generic neighborhood function, $\mathcal{N}$, which operates on $\boldsymbol{\mathcal{W}}$, thereby changing its value. In the following section we detail several possible realizations of $\mathcal{N}$, some of which constitute an approximation to system performing quantum tunneling under the influence of an annealable artificial temperature.
+All variations of simulated annealing require the specification of a neighborhood function, which determines the way in which new states may be generated from the current state. Let us define a generic  feed-forward neural network weight neighborhood function, $\mathcal{N}$, which operates on $\boldsymbol{\mathcal{W}}$, thereby changing its value. In the following section we detail several possible realizations of $\mathcal{N}$, some of which constitute an approximation to system performing quantum tunneling under the influence of an annealable artificial temperature.
 
 
 \subsubsection{Classical Neighborhood Functions}
 \label{scn:classical_neighborhood}
 
-We define \begin{math}\mathcal{N}_{c}\end{math} to be the classical neighborhood function, which is defined as \begin{align}\label{eq:classical_anisotropic_neighborhood}
-	\mathcal{N}_{c} (\boldsymbol{\mathcal{W}}) = \boldsymbol{\mathcal{W}} + \alpha\boldsymbol{\mathcal{A}} 
+We define \begin{math}\mathcal{N}_{c}\end{math} to be the classical neighborhood function for feed-forward neural network weights, which is defined as \begin{align}\label{eq:classical_anisotropic_neighborhood}
+	\mathcal{N}_{c} (\boldsymbol{\mathcal{W}}) = \boldsymbol{\mathcal{W}} + \alpha g_{G}(u) \boldsymbol{\mathcal{A}} 
 \end{align}
-\noindent where $\alpha$ is the learning rate and $\boldsymbol{\mathcal{A}}$ is a matrix with dimensionality equal to that of $\boldsymbol{\mathcal{W}}$. Each element of $\boldsymbol{\mathcal{A}}$ is generated from a distibution over the range $[-1,1]$.  $\boldsymbol{\mathcal{A}}$ is restricted such that for each element of $\boldsymbol{\mathcal{W}}$ that is zero the cooresponding element in $\boldsymbol{\mathcal{A}}$ is zero, and that $\boldsymbol{\mathcal{A}}$ must be normalized such that the magnitude of the matrix elements sum to $1$. These restrictions ensure two useful properties of the classical neighborhood function, that: 
+\noindent where $\alpha$ is the learning rate, $g_{G}(u)$ is a Gaussian generating function, $u$ is a uniform random variable over the range $U[0,1]$, and $\boldsymbol{\mathcal{A}}$ is a matrix with dimensionality equal to that of $\boldsymbol{\mathcal{W}}$. Each element of $\boldsymbol{\mathcal{A}}$ is generated from a distribution over the range $[-1,1]$.  $\boldsymbol{\mathcal{A}}$ is restricted such that for each element of $\boldsymbol{\mathcal{W}}$ that is zero the corresponding element in $\boldsymbol{\mathcal{A}}$ is zero, and that $\boldsymbol{\mathcal{A}}$ must be normalized such that the magnitude of the matrix elements sum to $1$. These restrictions ensure two useful properties of the classical neighborhood function, that: 
 
 \begin{enumerate}
-	\item $\mathcal{N}_{c} (\boldsymbol{\mathcal{W}})$ will produce a weight matrix, $\boldsymbol{\mathcal{W}'}$, which will have an $L^2$ distance of exactly $\alpha$ from the original matrix, $\boldsymbol{\mathcal{W}}$, in the weight space.
-	\item This traversal distance will be distributed anisotropically over the weights, with the anisotropicity determined by the distribution used to genererate $\boldsymbol{\mathcal{A}}$. (See Sec.~\ref{scn:anisotropicity} for more information.)
+	\item $\mathcal{N}_{c} (\boldsymbol{\mathcal{W}})$ will produce a weight matrix, $\boldsymbol{\mathcal{W}'}$, which will have an $L^2$ distance of exactly $\alpha g_{G}(u)$ from the original matrix, $\boldsymbol{\mathcal{W}}$, in the weight space.
+	\item This traversal distance will be distributed anisotropically over the weights, with the anisotropicity determined by the distribution used to generate $\boldsymbol{\mathcal{A}}$. (See Sec.~\ref{scn:anisotropicity} for more information.)
 \end{enumerate}
-These properties are useful in that they allow for strict control over the systems traversal of the cost surface.
+These properties are useful in that they allow for strict control over the systems traversal of the cost surface. 
 
-%An alternative, isotropic classical neightborhood function is given by  \begin{align}\label{eq:classical_isotropic_neighborhood}\mathcal{N}_{c,I} (\boldsymbol{\mathcal{W}}) = \boldsymbol{\mathcal{W}} + \alpha\boldsymbol{\mathcal{R}_n} \boldsymbol{1} \end{align}
+The neighborhood function given in Eq.~\ref{eq:classical_anisotropic_neighborhood} is an application of the canonical form of simulated annealing to the problem of selecting a weight configuration for a feed-forward neural network. The term classical is used here because the underlying simulated annealing model can be described entirely in terms of classical statistical mechanics. In the next section, a model which approximates quantum mechanical phenomena will be constructed.
 
-\subsubsection{Quantum Neighborhood Function}
+\subsubsection{Quantum Neighborhood Functions}
 \label{scn:quantum_neighborhood}
 
-The classical neighborhood function present in Sec.~\ref{scn:classical_neighborhood} is one of many which could be employed in CSA. In order to incorporate quantum tunneling into this model, we must have some mechanism which allows the neighborhood function to generate neighbor states which are "across" a cost surface barrier. Since it is impossible to know the cost funciton value of a configuration which has not yet been evaluated, we must construct a neighborhood function which is able to jump to these configurations. This mechanism is often called a trial jump. We define our quantum neightborhood function to be
+The classical neighborhood function present in Sec.~\ref{scn:classical_neighborhood} is one of many which could be employed in CSA. In order to incorporate quantum tunneling into this model, we must have some mechanism which allows the neighborhood function to generate neighbor states which are across a cost surface barrier. Since it is impossible to know the cost function value of a configuration which has not yet been evaluated, we must construct a neighborhood function which is able to jump to these configurations. This mechanism is often called a trial jump. We define our quantum neighborhood function for feed-forward neural network weights to be
 \begin{align}\label{eq:quantum_anisotropic_neighborhood}
-\mathcal{N}_{q} (\boldsymbol{\mathcal{W}}) = \boldsymbol{\mathcal{W}} + \alpha G_{\Gamma}(X) \boldsymbol{\mathcal{A}} 
+\mathcal{N}_{q} (\boldsymbol{\mathcal{W}}) = \boldsymbol{\mathcal{W}} + \alpha g_{\Gamma}(u) \boldsymbol{\mathcal{A}} 
 \end{align}
-\noindent where $\alpha$ and $\boldsymbol{\mathcal{A}}$ are defined as they are in Eq.~\ref{eq:classical_anisotropic_neighborhood}, $X$ is a uniform random variable over the range $[0,1]$, and $G_{\Gamma}(X)$ is a parameterized generation function used to produce a value from the visiting distribution. As in \cite{tsallis1996generalizedsimulatedannealing}, the visiting distribution is defined as the probability distribution function of the trial jump distance. 
+\noindent where $\alpha$, $u$, and $\boldsymbol{\mathcal{A}}$ are defined as they are in Eq.~\ref{eq:classical_anisotropic_neighborhood}, and $g_{\Gamma}(X)$ is a parameterized generation function used to produce a value from the visiting distribution. As in \cite{tsallis1996generalizedsimulatedannealing}, the visiting distribution is defined as the probability distribution function of the trial jump distance. 
 
-The visiting distribution used in this paper for quantum neighborhood functions is the exponential distibution, for which the generation function is given by
+The visiting distribution used in this paper for quantum neighborhood functions is the exponential distribution, for which the generation function is given by
 \begin{align}\label{eq:exp_generation_fcn}
-G_{\Gamma}(X) =  \frac{-\ln(X)}{\gamma}
+G_{\Gamma}(X) =  \frac{-\ln(u)}{\gamma}
 \end{align}
-\noindent where $\gamma$, the scale parameter for the distribution, is defined as $(1-\Gamma)$. The exponential distribution was selected for this effort so that as close an analogy as possible with quantum mechanical reality could be maintained. As indicated by  Eq.~\ref{eq:quantum_transition_prob} the probability of making a transition through an potential energy barrier decreases exponentially with the width of the barrier; this is analogous to the trial jump distance in the quantum neighborhood function.
+\noindent where $\gamma$, the scale parameter for the distribution, is defined as $(1-\Gamma)$. The exponential distribution was selected for this effort so that as close an analogy as possible with quantum mechanical reality could be maintained. As indicated by Eq.~\ref{eq:quantum_transition_prob} the probability of making a transition through an potential energy barrier decreases exponentially with the width of the barrier; this is analogous to the trial jump distance in the quantum neighborhood function. The introduced parameter $\Gamma$ denotes the strength of the tunneling field as in \cite{mukherjee2015multivariatesearchqa}, and thus controls the likelihood of a long trial jump. $\Gamma$ is supported on $[0,1)$. A large value of $\Gamma$ corresponds to frequent, long range quantum trial jumps. It is the stochastic control parameter $\Gamma$ value that connects the quantum neighborhood function to quantum annealing. Much like FSA \cite{szu1987fastsimulatedannealing}, this provides mostly local search with occasional global-scale searches. 
 
-The introduced parameter $\Gamma$ denotes the strength of the tunneling field as in \cite{mukherjee2015multivariatesearchqa}, and thus controls the likelihood of a long trial jump. $\Gamma$ is supported on $[0,1)$. A large value of $\Gamma$ corresponds to frequent, long range quantum trial jumps. It is the stochastic control parameter $\Gamma$ value that connects the quantum neightborhood function to qauntum annealing. Much like FSA \cite{szu1987fastsimulatedannealing}, this provides mostly local search with occasoinal global-scale searches. Unlike FSA and GSA, QSA includes an annealable stochastic control parameter specfically to control the behavior of the frequency of global serach instances.
+Several other visiting distributions may be used
 
 
-
-... Consider the hypothetical one-dimensional cost surface depicted in Fig.~\ref{fig:1dtunneling}. 
 
 
 \subsubsection{Anisotropicity}
 \label{scn:anisotropicity}
-In the course of developing this framework, it was noted that it is sometimes advantageous to move along an error surface in exactly one dimension, as show in Fig.~\ref{fig:anisotropic}. This corresponds to modifying a single synaptic weight in a training epoch. Though it is possible that this could occur by chance, the likelihood of a single-weight modification is inversely proportional to the number of weights in the network. In physical science a force acting preferentially in a subset of the total dimensionality of the degrees of freedom in which it could act is referred to as an anisotropy. This concept has been extended to the weight selection scheme presented in this paper in the form of a value, $a$, specifying the anisotropicity of a weight matrix perturbation. This value serves as a nonlinear transform on the perturbation matrix, thus concentrating the perturbation in a subset of the available degrees of freedom. Given as 
+In the course of developing this framework, it was noted that it is sometimes advantageous to move along an error surface in exactly one dimension, as show in Fig.~\ref{fig:anisotropic}. Such a modification of the configuration corresponds to modifying a single synaptic weight in a training epoch. Though it is possible that this could occur by chance, the likelihood of a single-weight modification is inversely proportional to the number of weights in the network. In physical science a force acting preferentially in a subset of the total dimensionality of the degrees of freedom in which it could act is referred to as an anisotropy. Thus, an anisotropicity matrix, A, which indicates how much of a given configuration change will be applied to each of the weights. 
+
+The restrictions described in Sec.~\ref{scn:classical_neighborhood} hold. In this section we turn our attention to the mechanism used to generate the distribution of values in A. 
+
+% Like a 3d gaussian through the matrix.
+
+
+This concept has been extended to the weight selection scheme presented in this paper in the form of a value, $a$, specifying the anisotropicity of a weight matrix perturbation. This value serves as a nonlinear transform on the perturbation matrix, thus concentrating the perturbation in a subset of the available degrees of freedom.
 
 By inspection, when $a$ is $0$, the perturbation will be unchanged and will be distributed evenly across all degrees of freedom, on average. Conversely, $a$ is $1$, all the perturbation will occur in a single dimension, thus changing only one synaptic weight.
 
@@ -163,6 +168,20 @@ By inspection, when $a$ is $0$, the perturbation will be unchanged and will be d
 
 \subsection{Annealing Schedules}
 \label{scn:annealing_schedules}
+
+\subsubsection{Classical}
+The canonical classical annealing schedule is given by  
+\begin{align}
+	T(t) = \frac{T_i}{\ln(t)}
+\end{align}
+
+\subsubsection{Reannealing}
+It is suggested in \cite{ingber1989veryfastsimulatedreannealing} that the temperature be rescaled approximately every hundred successful jumps... The canonical classical annealing schedule is given by  
+\begin{align}
+T(t) = \frac{T_i}{\ln(t)}
+\end{align}
+
+% I could have an awesome figure about the distribution of convergence time of simulated annealing in neural networks.
 
 \section{Implementation Details}
 \label{scn:implementation_details}
