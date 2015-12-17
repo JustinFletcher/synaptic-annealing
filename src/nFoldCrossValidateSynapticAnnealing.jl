@@ -23,8 +23,8 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
 
         # Initialize a new synapse matrix.
         netIn = init_network(synMatConfigVec)
-		netIn.learning_rate = 1
-		netIn.propagation_function = actFun
+		    netIn.learning_rate = 1
+		    netIn.propagation_function = actFun
 
         # Spawn an annealing task.
         ref = @spawn annealingFunction(convCriterion, cutoffEpochs, perturbSynapses, updateState,

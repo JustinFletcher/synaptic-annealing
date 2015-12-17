@@ -146,7 +146,7 @@ dataSet = mnistDataset
 
 ###################################################################################################################################################
 
-numFolds = 25
+numFolds = 6
 
 maxRuns = 2000
 
@@ -216,7 +216,7 @@ outTuple_aq = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfi
                                                           0.0, maxRuns, quantumAnisotropicSynapticPerturbation, AnnealingState.updateState_oscillatory,
                                                           getDataClassErr, getDataClassErr,
                                                           initTemp, 0.001,
-               											  synMatIn, tanh,
+               											                      synMatIn, tanh,
                                                           dataSet, batchSize, reportFrequency)
 
 # putdata(outTuple_aq, "outTuple_aq_stun")

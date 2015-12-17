@@ -1,5 +1,16 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: QuantumSynapticAnnealing.aux
-I found no \citation commands---while reading file QuantumSynapticAnnealing.aux
-I found no \bibdata command---while reading file QuantumSynapticAnnealing.aux
-I found no \bibstyle command---while reading file QuantumSynapticAnnealing.aux
-(There were 3 error messages)
+The style file: IEEEtran.bst
+Database file #1: synapticAnnealingBib.bib
+You're missing a field name---line 253 of file synapticAnnealingBib.bib
+ :  
+ :  {journal =  kyb},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "szu"
+-- IEEEtran.bst version 1.11 (2003/04/02) by Michael Shell.
+-- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in metropolis1953
+
+Done.
+(There was 1 error message)

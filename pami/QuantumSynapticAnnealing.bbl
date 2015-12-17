@@ -1,0 +1,62 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{kirkpatrick1983}
+S.~Kirkpatrick, C.~D. Gelatt, and M.~P. Vecchi, ``Optimization by simulated
+  annealing,'' \emph{SCIENCE}, vol. 220, no. 4598, pp. 671--680, 1983.
+
+\bibitem{metropolis1953}
+N.~{Metropolis}, A.~W. {Rosenbluth}, M.~N. {Rosenbluth}, A.~H. {Teller}, and
+  E.~{Teller}, ``{Equation of State Calculations by Fast Computing Machines},''
+  vol.~21, pp. 1087--1092, June 1953.
+
+\bibitem{goffe1994globaloptimization}
+W.~L. Goffe, G.~D. Ferrier, and J.~Rogers, ``Global optimization of statistical
+  functions with simulated annealing,'' \emph{Journal of Econometrics},
+  vol.~60, pp. 65--99, 1994.
+
+\bibitem{corana1987minimizingmultimodal}
+\BIBentryALTinterwordspacing
+A.~Corana, M.~Marchesi, C.~Martini, and S.~Ridella, ``Minimizing multimodal
+  functions of continuous variables with the \&ldquo;simulated
+  annealing\&rdquo; algorithmcorrigenda for this article is available here,''
+  \emph{ACM Trans. Math. Softw.}, vol.~13, no.~3, pp. 262--280, Sept. 1987.
+  [Online]. Available: \url{http://doi.acm.org/10.1145/29380.29864}
+\BIBentrySTDinterwordspacing
+
+\bibitem{lecchinivisintini2007sacontinuousgaruntees}
+A.~{Lecchini-Visintini}, J.~{Lygeros}, and J.~{Maciejowski}, ``{Simulated
+  Annealing: Rigorous finite-time guarantees for optimization on continuous
+  domains},'' \emph{ArXiv e-prints}, Sept. 2007.
+
+\bibitem{mukherjee2015multivariatesearchqa}
+S.~{Mukherjee} and B.~K. {Chakrabarti}, ``{Multivariable optimization: Quantum
+  annealing and computation},'' \emph{European Physical Journal Special
+  Topics}, vol. 224, p.~17, Feb. 2015.
+
+\bibitem{tsallis1996generalizedsimulatedannealing}
+\BIBentryALTinterwordspacing
+C.~Tsallis and D.~A. Stariolo, ``Generalized simulated annealing,''
+  \emph{Physica A: Statistical and Theoretical Physics}, vol. 233, no. 1-2, pp.
+  395--406, Nov. 1996. [Online]. Available:
+  \url{http://www.sciencedirect.com/science/article/B6TVG-3YK5TC8-2H/1/d040f1408073d6a09dc185f38673e3dd}
+\BIBentrySTDinterwordspacing
+
+\end{thebibliography}

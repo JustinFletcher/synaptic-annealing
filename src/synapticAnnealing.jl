@@ -63,8 +63,8 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         # Update the state of the annealing system.
         updateState(state)
 
-		# Parse the synapse matrix from the network.
-		synapseMatrix = getNetworkSynapseMatrix(network)
+        # Parse the synapse matrix from the network.
+        synapseMatrix = getNetworkSynapseMatrix(network)
 
         # Compute the synapse perturbation matrix.
         synapsePerturbationTuple = perturbSynapses(synapseMatrix, state)
@@ -86,31 +86,31 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         errorChange = perturbedError-lastError
 
 
-		# If this is a downhill move, take it.
+        # If this is a downhill move, take it.
         if (perturbedError<=lastError)
-			lastError = perturbedError
+          lastError = perturbedError
 
-		# If this is not a downhill or neural move...
-		else
-			# Then with probability exp(-DeltaE/T), or if it's the result of a tunnelling event, reject the move.
-			if( (rand()>=exp(-(errorChange)/state.normTemperature)) || (perturbationDistance>state.learnRate) )
-				synapseMatrix -= synapsePerturbation
-			# If the uphill move is not rejected, set the error.
-			else
-				lastError = perturbedError
-			end
+        # If this is not a downhill or neural move...
+        else
+          # Then with probability exp(-DeltaE/T), or if it's the result of a tunnelling event, reject the move.
+          if( (rand()>=exp(-(errorChange)/state.normTemperature)) || (perturbationDistance>state.learnRate) )
+            synapseMatrix -= synapsePerturbation
+          # If the uphill move is not rejected, set the error.
+          else
+            lastError = perturbedError
+          end
 
         end
 
-		# State capture: if this is the best net so far, save it to the disk.
+        # State capture: if this is the best net so far, save it to the disk.
         if perturbedError < state.minTrainError
-			state.minTrainError = perturbedError
+          state.minTrainError = perturbedError
         end
 
-		# Reconstruct the network from the latet synapse matrix.
-		network = setNetworkSynapseMatrix(network, synapseMatrix)
+        # Reconstruct the network from the latet synapse matrix.
+        network = setNetworkSynapseMatrix(network, synapseMatrix)
 
-		# If this run is perfect, tell the user.
+        # If this run is perfect, tell the user.
         if((state.trainError == 0.0 )&&(state.valError == 0.0))
           println("Perfect Run | Epoch ")
         end

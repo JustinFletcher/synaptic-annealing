@@ -1,5 +1,4 @@
 
-
 function getDataClassSTUNErr(net, dataset, state, batchSize)
 
     # Initialize error to 0.
@@ -106,7 +105,7 @@ function getDataRegErr(net, dataset, state, batchSize)
     # For every observation in the data set.
     for sampleRow in (1:size(dataset.data)[1])[(vec(1:size(dataset.data)[1])[randperm(length(1:size(dataset.data)[1]))[1:min(batchSize, length(1:size(dataset.data)[1]))]])]
 
-		err += (sqrt(sum((dataset.data[sampleRow, dataset.outputCols]-transpose(net_eval(net, vec(dataset.data[sampleRow, dataset.inputCols])))).^2)))^2
+		  err += (sqrt(sum((dataset.data[sampleRow, dataset.outputCols]-transpose(net_eval(net, vec(dataset.data[sampleRow, dataset.inputCols])))).^2))).^2
     end
 
     # Return the average error.
