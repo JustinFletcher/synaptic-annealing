@@ -67,11 +67,21 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
     # Compute the fold-mean validation error vector.
     meanValErrorVec = vec(mean(vectorListToMatrix(valErrorFoldList), 1))
 
+    # Compute the fold-mean validation error vector.
+    stdValErrorVec = vec(std(vectorListToMatrix(valErrorFoldList), 1))
+
     # Compute the fold-mean training error vector.
     meanTrainErrorVec = vec(mean(vectorListToMatrix(trainErrorFoldList), 1))
 
+    # Compute the fold-mean training error vector.
+    stdTrainErrorVec = vec(std(vectorListToMatrix(trainErrorFoldList), 1))
+
     # Compute the fold-mean perturbation distance vector.
-    meanPerturbationDistanceVec = vec(mean(vectorListToMatrix(perturbationDistanceFoldList), 1))
+    meanPerturbationDistanceVec = vec(mean(vectorListToMatrix(perturbationDistanceFoldList), 1)).*numFolds
+
+
+    # Return the results as a tuple.
+#     return(Any[meanValErrorVec, stdValErrorVec, meanTrainErrorVec, stdTrainErrorVec, meanPerturbationDistanceVec, synapseMatrixFoldList])
 
     # Return the results as a tuple.
     return(Any[meanValErrorVec, meanTrainErrorVec, meanPerturbationDistanceVec, synapseMatrixFoldList])

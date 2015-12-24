@@ -1,160 +1,249 @@
-# ---- Annealing Training Functions ----
+# -------------- Nieghborhood Functions
 
-function quantumVariablyAnisotropicSynapticPerturbation(synapseMatrix, state)
 
-    # With probability of the value of the tunneling field, take a large, random step.
-#     stepSize =  learnRate*(1+(maxConfigDist*exp(-rand())*int(rand()<(tunnelingField))))
-    stepSize =  state.learnRate*(1+(state.maxConfigDist*(-log(rand())/(1-state.normTunnelingField))*int(rand()<(state.normTunnelingField))))
 
-    # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
-    randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
 
-    normMat = randMat./sum(randMat)
 
-    anisotropicMat = normMat.^(1/(1-(0.9*state.anisotropicField)))
-
-    anisotropicNormMat = anisotropicMat./sum(anisotropicMat)
-
-#     perturbMat = stepSize.*(anisotropicNormMat).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-
-	# The last mult term selects a random sign.
-    perturbMat = stepSize.*(anisotropicNormMat).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-
-    return(Any[perturbMat, stepSize])
-end
-function quantumIsotropicSynapticChange(synapseMatrix, state)
-
+function gaussian_Isotropic_SynapticPerturbation(synapseMatrix, state)
 
     # With probability of the value of the tunneling field, take a large, random step.
 #     stepSize =  learnRate*(1+(maxConfigDist*exp(-rand())*int(rand()<(tunnelingField))))
-    stepSize =  state.learnRate*((state.maxConfigDist*(-log(rand())/(1-state.normTunnelingField))))
 
-    # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
-    distMat = int(bool(synapseMatrix))
-    synapseChange = stepSize.*(distMat./(sum(distMat))).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-#    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+    visitingDistibutionSample = randn().*sum(int(bool(synapseMatrix)))
 
-    return(Any[synapseChange, stepSize])
+
+    stepSize = state.learnRate.*visitingDistibutionSample
+
+    anisotropicityMatrix = ones(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+#     anisotropicityMatrix = anisotropicityMatrix.*sum(int(bool(synapseMatrix)))
+
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+#    synapsePerturbation = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+
+    return(Any[synapsePerturbation, stepSize])
 end
 
-function csaSynapticChange(synapseMatrix, state)
+
+function gaussian_uniformAnisotropic_SynapticPerturbation(synapseMatrix, state)
 
     # With probability of the value of the tunneling field, take a large, random step.
 #     stepSize =  learnRate*(1+(maxConfigDist*exp(-rand())*int(rand()<(tunnelingField))))
-    stepSize =  state.learnRate*randn()
 
-    # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
-    distMat = int(bool(synapseMatrix))
-    synapseChange = stepSize.*(distMat./(sum(distMat))).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-#    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+    visitingDistibutionSample = randn().*sum(int(bool(synapseMatrix)))
 
-    return(Any[synapseChange, stepSize])
+
+    stepSize = state.learnRate.*visitingDistibutionSample
+
+    anisotropicityMatrix = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+#     anisotropicityMatrix = anisotropicityMatrix.*sum(int(bool(synapseMatrix)))
+
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+#    synapsePerturbation = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+
+    return(Any[synapsePerturbation, stepSize])
 end
 
-function quantumUniformlyAnisotropicSynapticChange(synapseMatrix, state)
-
+function gaussian_variableAnisotropic_SynapticPerturbation(synapseMatrix, state)
 
     # With probability of the value of the tunneling field, take a large, random step.
 #     stepSize =  learnRate*(1+(maxConfigDist*exp(-rand())*int(rand()<(tunnelingField))))
-    stepSize =  state.learnRate*((state.maxConfigDist*(-log(rand())/(1-state.normTunnelingField))))
 
-    # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
-    randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
-    synapseChange = stepSize.*(randMat./(sum(randMat))).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-#    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+    visitingDistibutionSample = randn().*sum(int(bool(synapseMatrix)))
 
-    return(Any[synapseChange, stepSize])
+
+    stepSize = state.learnRate.*visitingDistibutionSample
+
+    anisotropicityMatrix = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix)))
+    anisotropicityMatrix = (anisotropicityMatrix.^(1/(1-(0.9*state.anisotropicField)))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+#    synapsePerturbation = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+
+    return(Any[synapsePerturbation, stepSize])
 end
 
-function localQuantumSynapticChange(synapseMatrix, state)
+# -------------- Exponential
 
 
-    # With probability of the value of the tunneling field, take a large, random step.
-#     stepSize =  learnRate*(1+(maxConfigDist*exp(-rand())*int(rand()<(tunnelingField))))
-    stepSize =  state.learnRate*((state.maxConfigDist*(-log(rand())/(1-state.normTunnelingField))))
 
-    -log(rand())/state.normTunnelingField
-    #couchy stepSize = (state.normTunnelingField.*tan(pi*(rand()-0.5)))
-    # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
-    randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
-    synapseChange = stepSize.*(randMat./(sum(randMat))).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-#    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+function exponential_Isotropic_SynapticPerturbation(synapseMatrix, state)
 
-    return(Any[synapseChange, stepSize])
+    visitingDistibutionSample = (-log(rand())/(0.1)).*sum(int(bool(synapseMatrix)))
+
+
+    stepSize = state.learnRate.*visitingDistibutionSample
+
+    anisotropicityMatrix = ones(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+    return(Any[synapsePerturbation, stepSize])
+end
+
+function exponential_UniformlyAnisotropic_SynapticPerturbation(synapseMatrix, state)
+
+
+    visitingDistibutionSample = (-log(rand())/(0.1)).*sum(int(bool(synapseMatrix)))
+
+
+    stepSize =  state.learnRate*visitingDistibutionSample
+
+    anisotropicityMatrix = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix =(anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+
+    return(Any[synapsePerturbation, stepSize])
+end
+
+function exponential_VariablyAnisotropic_SynapticPerturbation(synapseMatrix, state)
+
+
+    visitingDistibutionSample = (-log(rand())/(0.1)).*sum(int(bool(synapseMatrix)))
+
+    stepSize =  state.learnRate*visitingDistibutionSample
+
+    anisotropicityMatrix = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix)))
+    anisotropicityMatrix = (anisotropicityMatrix.^(1/(1-(0.9*state.anisotropicField)))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+
+
+
+    return(Any[synapsePerturbation, stepSize])
+
+end
+
+# -------------- Cauchy
+
+function cauchy_Isotropic_SynapticPerturbation(synapseMatrix, state)
+
+
+#     visitingDistibutionSample = minimum([state.maxConfigDist,abs((1/(1-(state.normTunnelingField)))*tan(pi*(rand()-0.5)))])
+#     visitingDistibutionSample = state.normTunnelingField * tan(pi*(rand()-0.5))
+
+    visitingDistibutionSample = 1*tan(pi*(rand()-0.5)).*sum(int(bool(synapseMatrix)))
+
+#     visitingDistibutionSample = minimum([(1/state.normTunnelingField)*tan(pi*(rand()-0.5))*sum(int(bool(synapseMatrix))), state.maxConfigDist])
+
+
+    stepSize = state.learnRate.*visitingDistibutionSample
+
+    anisotropicityMatrix = ones(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+    return(Any[synapsePerturbation, stepSize])
+end
+
+function cauchy_UniformlyAnisotropic_SynapticPerturbation(synapseMatrix, state)
+
+#     visitingDistibutionSample = minimum([state.maxConfigDist,1/state.normTunnelingField])*tan(pi*(rand()-0.5))
+#     visitingDistibutionSample = minimum([state.maxConfigDist,abs((1/(1-(state.normTunnelingField)))*tan(pi*(rand()-0.5)))])
+
+#     visitingDistibutionSample = minimum([(1/state.normTunnelingField)*tan(pi*(rand()-0.5))*sum(int(bool(synapseMatrix))), state.maxConfigDist])
+
+    visitingDistibutionSample = 1*tan(pi*(rand()-0.5)).*sum(int(bool(synapseMatrix)))
+    stepSize =  state.learnRate*visitingDistibutionSample
+
+    anisotropicityMatrix = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix =(anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+
+    return(Any[synapsePerturbation, stepSize])
 end
 
 
-function quantumUniformVariablyAnisotropicSynapticPerturbation(synapseMatrix, state)
+function cauchy_VariablyAnisotropic_SynapticPerturbation(synapseMatrix, state)
 
-    # With probability of the value of the tunneling field, take a large, random step.
-#     stepSize =  learnRate*(1+(maxConfigDist*exp(-rand())*int(rand()<(tunnelingField))))
-    stepSize =  state.learnRate*((state.maxConfigDist*(-log(rand())/(1-state.normTunnelingField))))
 
-    # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
-    randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
 
-    normMat = randMat./sum(randMat)
+#     visitingDistibutionSample = minimum([state.maxConfigDist,1/state.normTunnelingField])*tan(pi*(rand()-0.5))
 
-    anisotropicMat = normMat.^(1/(1-(0.9*state.anisotropicField)))
+#     visitingDistibutionSample = minimum([state.maxConfigDist,abs((1/(1-(state.normTunnelingField)))*tan(pi*(rand()-0.5)))]).*sum(int(bool(synapseMatrix)))
 
-    anisotropicNormMat = anisotropicMat./sum(anisotropicMat)
+    visitingDistibutionSample = 1*tan(pi*(rand()-0.5))*sum(int(bool(synapseMatrix)))
 
-#     perturbMat = stepSize.*(anisotropicNormMat).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+    stepSize =  state.learnRate*visitingDistibutionSample
 
-	# The last mult term selects a random sign.
-    perturbMat = stepSize.*(anisotropicNormMat).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+    anisotropicityMatrix = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix)))
+    anisotropicityMatrix = (anisotropicityMatrix.^(1/(1-(0.9*state.anisotropicField)))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
 
-    return(Any[perturbMat, stepSize])
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+
+
+
+    return(Any[synapsePerturbation, stepSize])
 end
 
-function quantumUniformIsotropicSynapticChange(synapseMatrix, state)
+
+# -------------- Uniform
 
 
-    # With probability of the value of the tunneling field, take a large, random step.
-#     stepSize =  learnRate*(1+(maxConfigDist*exp(-rand())*int(rand()<(tunnelingField))))
-    stepSize =  state.learnRate*(1+(state.maxConfigDist*(rand())*int(rand()<(state.normTunnelingField))))
 
-    # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
-    distMat = int(bool(synapseMatrix))
-    synapseChange = stepSize.*(distMat./(sum(distMat))).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-#    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
 
-    return(Any[synapseChange, stepSize])
+function uniform_Isotropic_SynapticPerturbation(synapseMatrix, state)
+
+
+    visitingDistibutionSample = ((state.maxConfigDist*(rand()))).*sum(int(bool(synapseMatrix)))
+
+
+    stepSize = state.learnRate.*visitingDistibutionSample
+
+    anisotropicityMatrix = ones(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+    return(Any[synapsePerturbation, stepSize])
+
 end
 
-function quantumUniformUniformlyAnisotropicSynapticChange(synapseMatrix, state)
 
+function uniform_UniformlyAnisotropic_SynapticPerturbation(synapseMatrix, state)
 
-    # With probability of the value of the tunneling field, take a large, random step.
-#     stepSize =  learnRate*(1+(maxConfigDist*exp(-rand())*int(rand()<(tunnelingField))))
-    stepSize =  state.learnRate*(1+(state.maxConfigDist*(rand())*int(rand()<(state.normTunnelingField))))
+    visitingDistibutionSample = ((state.maxConfigDist*(rand()))).*sum(int(bool(synapseMatrix)))
 
-    # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
-    randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
-    synapseChange = stepSize.*(randMat./(sum(randMat))).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-#    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+    stepSize =  state.learnRate*visitingDistibutionSample
 
-    return(Any[synapseChange, stepSize])
+    anisotropicityMatrix = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix =(anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+
+    return(Any[synapsePerturbation, stepSize])
 end
 
-function localQuantumSynapticChange(synapseMatrix, state)
+function uniform_VariablyAnisotropic_SynapticPerturbation(synapseMatrix, state)
 
 
-    # With probability of the value of the tunneling field, take a large, random step.
-#     stepSize =  learnRate*(1+(maxConfigDist*exp(-rand())*int(rand()<(tunnelingField))))
-    stepSize =  state.learnRate*(1+(state.maxConfigDist*(rand())*int(rand()<(state.normTunnelingField))))
 
-    -log(rand())/state.normTunnelingField
-    #couchy stepSize = (state.normTunnelingField.*tan(pi*(rand()-0.5)))
-    # Construct a rand matrix of equal size to synapseMatrix and mask it by existing nuerons.
-    randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
-    synapseChange = stepSize.*(randMat./(sum(randMat))).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-#    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+    visitingDistibutionSample = ((state.maxConfigDist*(rand()))).*sum(int(bool(synapseMatrix)))
 
-    return(Any[synapseChange, stepSize])
+
+    stepSize =  state.learnRate*visitingDistibutionSample
+
+    anisotropicityMatrix = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
+    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix)))
+    anisotropicityMatrix = (anisotropicityMatrix.^(1/(1-(0.9*state.anisotropicField)))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+
+    synapsePerturbation = stepSize.*anisotropicityMatrix
+
+
+
+    return(Any[synapsePerturbation, stepSize])
 end
 
-function gsaSynapticChange(synapseMatrix, state)
+
+
+# -------------- Placeholders
+
+function gsa_SynapticPerturbation(synapseMatrix, state)
 
 
     # With probability of the value of the tunneling field, take a large, random step.
@@ -165,55 +254,8 @@ function gsaSynapticChange(synapseMatrix, state)
     randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
 
 
-    synapseChange = stepSize.*(randMat./(sum(randMat))).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-#    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+    synapsePerturbation = stepSize.*(randMat./(sum(randMat))).*sum(int(bool(synapseMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+#    synapsePerturbation = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
 
-    return(Any[synapseChange, stepSize])
+    return(Any[synapsePerturbation, stepSize])
 end
-
-
-function fixedStepSizeOmniDimSynapticChange(synapseMatrix, stateTupleIn)
-
-    (temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField) = stateTupleIn
-
-#         randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
-#         synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
-    # Set the step size to the learn rate.
-    stepSize = learnRate
-
-    # Construct a matrix of values which will modify the weights of the synapses.
-    # Scalar Multiple .* Random Matrix Intersect Exists Synapse Which Adds To One .* Random Negator
-    randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
-
-    synapseChange = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
-
-    return(Any[synapseChange, stepSize])
-end
-
-function omniDimSynapticChange(synapseMatrix, stateTupleIn)
-
-    (temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField) = stateTupleIn
-
-    stepSize = learnRate
-
-    # Construct a matrix of values which will modify the weights of the synapses.
-    synapseChange = stepSize.*(2*(rand(size(synapseMatrix))-0.5)).*int(bool(synapseMatrix))
-
-    return(Any[synapseChange, stepSize])
-end
-
-function singleDimSynapticChange(synapseMatrix, stateTupleIn)
-
-    (temperature, initTemperature,  learnRate, tunnelingField, maxConfigDist, epochsCool, numEpochs, anisotropicField) = stateTupleIn
-
-    stepSize = learnRate
-
-    # Construct a matrix of values which will modify the weights of the synapses.
-    randMat = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
-
-    synapseChange = stepSize.*int(randMat.==(maximum(randMat))).*(2*(rand()-0.5))
-
-    return(Any[synapseChange, stepSize])
-end
-
-
