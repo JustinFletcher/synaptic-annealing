@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)http://www.stat.phys.titech.ac.jp/~nishimori/QA/q-annealing_e.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Quantum Annealing: Quantum computing for combinatorial optimization problems</title>
+<meta charset="UTF-8">
+<meta name="GENERATOR" content="JustSystems Homepage Builder Version 19.0.7.0 for Windows">
+<link rel="stylesheet" href="./Quantum Annealing_ Quantum computing for combinatorial optimization problems_files/simple.css" type="text/css">
+<style type="text/css"></style><script async="" src="./Quantum Annealing_ Quantum computing for combinatorial optimization problems_files/analytics.js"></script><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-18630278-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<style>
+<!--
+
+
+p.sansserif{
+  font-family:Arial,Helvetica,sans-serif;
+}
+body{
+  text-align: justify;
+}
+}
+-->
+</style>
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body><div id="StayFocusd-infobar" style="display: none; top: 0px;">
+    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
+    <span id="StayFocusd-infobar-msg"></span>
+    <span id="StayFocusd-infobar-links">
+        <a id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a id="StayFocusd-infobar-hide">hide once</a>
+    </span>
+</div>
+<p align="center" style="font-size : large;text-align : center;">Quantum Annealing by <a href="http://www.stat.phys.titech.ac.jp/~nishimori/index-e.html">Hidetoshi Nishimori</a></p>
+<p align="center" style="font-size : large;background-color : #FFE2B2;">Executive Summary</p>
+<div align="left">
+  <blockquote>
+  <table border="0">
+    <tbody>
+      <tr>
+        <td>
+        <ul>
+          <li>
+          <p>Quantum annealing is a quantum-mechanical paradigm to solve combinatorial
+          optimization problems and was proposed by <a href="http://www.stat.phys.titech.ac.jp/~nishimori/papers/98PRE5355.pdf">Kadowaki and Nishimori</a> in 1998.</p> 
+          </li><li>
+          <p>Many problems in machine learning and artificial intelligence can be formulated
+          as combinatorial optimization, and the development of efficient methods
+          to solve combinatorial optimization problems has enormous practical significance.</p> 
+          </li><li>
+          <p>A Canadian venture <a href="http://www.dwavesys.com/">D-Wave Systems</a> has developed a hardware to realize quantum annealing<sup>1)</sup>. <a href="https://plus.google.com/+QuantumAILab/posts">Google</a>, <a href="http://www.nas.nasa.gov/quantum/">NASA</a>, and Lockheed-Martin in collaboration with <a href="http://www.isi.edu/research_groups/quantum_computing/home">USC</a> are among their customers.　Los Alamos National Laboratory, <a href="http://www.lanl.gov/discover/news-release-archive/2015/November/11.12-computing-technology-capabilities.php">evaluating quantum annealing as a "game-changing idea"</a>, also introduces a D-Wave machine. </p>
+          </li><li>
+          <p>Researchers discussed, for some time, if the D-Wave machine operates quantum
+          mechanically. The argument has almost settled positively.</p> 
+          </li><li>
+          <p>Researchers are discussing if the D-Wave machine can solve optimization
+          problems more quickly than ordinary computers do. The answer depends on
+          the problem and criteria of speed. See <a href="https://scholar.google.co.jp/scholar?as_sdt=1,5&amp;q=%22quantum+annealing%22&amp;scisbd=1">here</a> for the list of recent scientific papers on this and other problems of
+          quantum annealing.</p> 
+          </li><li>
+          <p>Some people question whether the D-Wave machine can be called a quantum
+          computer. One of the reasons of confusion is the <a href="http://qz.com/194738/why-nobody-can-tell-whether-the-worlds-biggest-quantum-computer-is-a-quantum-computer/#footnote">ambiguity in the definition of quantum computer</a>. </p>
+          </li><li>
+          <p>Development of circuit-model quantum computers (quantum computers in the
+          conventional sense) lags far behind that of quantum-annealing machines.
+          </p>
+          </li><li>
+          <p>The speed of circuit-model quantum computers far exceeds that of usual
+          (classical) computers only for a limited number of problems, e.g., integer
+          factoring, quantum simulation, and data-base search. Although circuit-model
+          quantum computers are universal because they can process any computational
+          tasks, the speed does not exceed that of classical computers except for
+          the above-mentioned very special set of problems.</p> 
+          </li><li>
+          <p>See also my <a href="https://youtu.be/OQ91L96YWCk">Google TechTalk</a>.</p> 
+          </li><li>
+          <p>IARPA has started a program <a href="http://www.iarpa.gov/index.php/research-programs/qeo">QEO</a> (quantum enhanced optimization) to build a prototype quantum annealer
+          with high performance.</p>
+          <p><font size="-1">1) An executive of D-Wave Systems once told me, "It's your brainchild".</font></p> 
+        </li></ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <tbody>
+      <tr></tr>
+    </tbody>
+  </table>
+  </blockquote>
+</div>
+<p align="center" style="font-size : large;background-color : #FFE2B2;text-align : center;">Introduction</p>
+<div align="justify">
+  <blockquote>
+  <p>Quantum annealing is a computational paradigm to search for the minimum
+  of a cost function (multivariable function to be minimized) through a control
+  of quantum fluctuations. Quantum annealing is used mainly for combinatorial
+  optimization problems with discrete variables. Many practically important
+  problems can be formulated as combinatorial optimization, typically machine
+  learning for pattern recognition, natural language processing, medical
+  diagnosis, etc. Finding efficient methods to solve combinatorial optimization
+  problems is therefore very important, and this is one of the reasons why
+  quantum annealing attracts much attention.</p>
+  <p>To perform quantum annealing, one writes the cost function in terms of
+  the <a href="http://en.wikipedia.org/wiki/Ising_model">Ising model </a>of statistical mechanics. The Hamiltonian (energy function) of the Ising
+  model should be chosen such that its lowest-energy state (ground state)
+  represents the solution to the combinatorial optimization problem. A term
+  representing quantum-mechanical fluctuations is then added to the Hamiltonian
+  to induce quantum transitions between the states.</p>
+  <p>One first chooses a very large coefficient for the quantum term, which
+  leads to to a uniform probability of the existence of states over all states
+  as in the left panel (blue line) of the figure. This is a trivial state
+  and can be realized easily. Then one gradually decreases the value of the
+  coefficient of the quantum term. The state of the system follows the time-dependent
+  Schrödinger equation, the natural time evolution of a physical system.
+  The coefficient of the quantum term finally reaches zero, and only the
+  classical term of the Hamiltonian, the Ising model whose ground state is
+  to be identified, remains at the end of the process. It is then expected
+  that the probability has by far the largest value for the solution (the
+  right-most panel of the figure) to the combinatorial optimization problem
+  at the end of the annealing process.</p>
+  </blockquote>
+</div>
+<p align="center"><br>
+<img src="./Quantum Annealing_ Quantum computing for combinatorial optimization problems_files/probability_development_e.jpg" width="865" height="186" border="0"><br>
+</p>
+<blockquote>
+<blockquote>
+<p>Figure: The process starts from the state on the left-most figure with
+a uniform probability distribution over all classical states. The system
+follows the Schrödinger equation to reach the final state on the right,
+in which the probability focuses on the solution to the combinatorial optimization
+problem. The abscissa represents the classical state, and the ordinate
+is for the value of the cost function or the classical Ising Hamiltonian
+to be minimized (<b>black</b>) and the quantum-mechanical probability of states (<b><font color="#0000cc">blue</font></b>).</p>
+</blockquote>
+</blockquote>
+<p align="center" style="font-size : large;background-color : #FFE2B2;text-align : center;">Formulation</p>
+<blockquote>
+<p>The Hamiltonian of the Ising model with transverse field (transverse-field
+Ising model) is written as follows,</p>
+<img src="./Quantum Annealing_ Quantum computing for combinatorial optimization problems_files/eq1.jpg" width="240" height="37" border="0"><br>
+<p>where <i>σ</i> is the Pauli matrix. The first term on the right side is the (classical)
+Ising model. The second term, the transverse-field term, causes quantum
+fluctuations between classical states. The coefficient <i>Γ</i>(<i>t</i>) starts with a very large value and decreases toward zero at the end of
+the annealing process, following the natural time evolution of the Schrödinger
+equation.</p>
+<p><u><font size="+1">Historical note</font></u><br>
+This prescription of quantum annealing as widely used now was first proposed
+in 1998 [1], where the method was shown to be very effective for several
+combinatorial optimization problems. An experiment for a magnetic system
+soon followed [2] as well as large-scale numerical studies for complex
+systems [3]. Notice that Kadowaki had already done in his Thesis [4] something
+similar to [3]. Also, a continuous-space formulation, different from the
+Ising-model formulation for combinatorial optimization, had appeared in
+[5]. A paper published in 2001 [6] reformulated quantum annealing to use
+the following Hamiltonian, under which the system evolution terminates
+after a finite time <i>T</i> ,</p>
+<img src="./Quantum Annealing_ Quantum computing for combinatorial optimization problems_files/eq2.jpg" width="258" height="47" border="0">
+<p>It was proposed in [6] to use the term "quantum adiabatic evolution"
+because the system is supposed to follow the ground state adiabatically,
+in the sense of quantum mechanics, from the initial state to the final
+state. </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>[1] T. Kadowaki and H. Nishimori, <a href="http://pre.aps.org/abstract/PRE/v58/i5/p5355_1">Phys. Rev. E58 (1998) 5355</a>.<br>
+[2] J. Brooke, D. Bitko, T.F. Rosenbaum and G. Aeppli, <a href="http://www.sciencemag.org/content/284/5415/779.short">Science 284 (1999) 779</a>.<br>
+[3] G. E. Santoro, R. Martonak, E. Tosatti, and R. Car, <a href="http://www.sciencemag.org/content/295/5564/2427.short">Science 295 (2002) 2427</a>.<br>
+[4] T. Kadowaki, Thesis, Tokyo Institute of Technology (1998); <a href="http://arxiv.org/abs/quant-ph/0205020">arXiv:quant-ph/0205020</a><br>
+[5] A. B. Finnila, M. A. Gomez, C. Sebenik. C. Stenson, and J. D. Doll,
+<a href="http://www.sciencedirect.com/science/article/pii/0009261494001170">Chem. Phys. Lett. 219 (1994) 343</a>.<br>
+[6] E. Farhi, J. Goldstone, S. Gutmann, J. Lapan, A. Lundgren, and D. Preda,
+<a href="http://www.sciencemag.org/content/292/5516/472.short">Science 292 (2001) 472</a>.</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>Quantum annealing is sometimes understood as a "noisy version"
+of quantum adiabatic computation in the sense that the former allows for
+environmental noise in contrast to the latter. A careful scrutiny of the
+above-listed papers reveals that these two ideas are essentially the same,
+at least in their initially-proposed formulations. Nevertheless, they differ
+in several aspects including the strict imposition of adiabaticity in quantum
+adiabatic computation. Quantum annealing, in contrast, allows for a non-adiabatic
+time evolution with the expectation that the system reaches the target
+state with a non-vanishing probability even without the adiabatic condition.
+Notice that noise is not intrinsic in quantum annealing, although it is
+not excluded. Also, references [2,3,6] all cite [1] as their predecessors.
+The origin of current high activities in this field is attributed to [1].</p>
+</blockquote>
+<p align="center" style="font-size : large;background-color : #FFE2B2;text-align : center;">Strengths and Weaknesses</p>
+<blockquote>
+<p>Quantum annealing is a type of quantum computation because it uses quantum
+effects in the process to solve combinatorial optimization problems. Let
+us compare quantum annealing with a few related methods.</p>
+</blockquote>
+<ul>
+  <li>
+  <p>Simulated annealing</p>
+  <p>Simulated annealing is a generic method to solve optimization problems
+  using classical probability, or thermal effects in analogy with statistical
+  mechanics, and is used widely in practical applications. It has been shown
+  that quantum annealing, in theory, allows the system to approach the correct
+  solution more quickly than simulated annealing if we control the coefficient
+  of the transverse field <i>Γ</i>(<i>t</i>) as a function of time<i> t</i> in the same manner as the temperature <i>T</i>(<i>t</i>) in simulated time [7]. Quantum annealing can be simulated on a conventional
+  computer using quantum Monte Carlo simulations. Dedicated quantum devices
+  have the potential to perform quantum annealing much more efficiently and
+  are tested extensively.</p>
+  <blockquote>
+  <p>[7] S. Morita and H. Nishimori, "Mathematical foundation of quantum
+  annealing", <a href="http://scitation.aip.org/content/aip/journal/jmp/49/12/10.1063/1.2995837">.J. Math. Phys. 49 (2008) 125210.</a></p>
+  </blockquote>
+  </li><li>
+  <p>Circuit model</p>
+  <p>Many of the studies of quantum computation concern the circuit (gate) model,
+  in which one applies quantum gates one by one to the state of a system
+  toward the desired solution of the problem. A large number of research
+  papers have been published, but experiments have been seriously plagued
+  by decoherence, i.e., destruction of quantum states through interactions
+  with the environment. It seems still very long before a device of real-life
+  usefulness is built. Also, the application of the circuit-model quantum
+  computer is very limited: e.g., integer factoring, simulations of quantum
+  systems, and solving linear equations show essential speedup by circuit-model
+  quantum computation. For other problems, circuit-model quantum computers
+  are not fast.　In other words, a circuit-model quantum computer, if ever
+  realized, is an extremely special-purpose machine. </p>
+  <p>A realistic application of circuit model quantum computers is quantum simulation
+  of small-size molecules [8], the commercial value of which is not necessarily
+  clear at this moment. As for the number factoring and Shor's algorithm,
+  it is important to keep in mind that research efforts to jeopardize widely-used
+  RSA cryptography should take into account legal and moral aspects. Also,
+  methods to efficiently solve linear equations by circuit model quantum
+  computers may be applied to machine learning and related tasks [9,10].</p>
+  <blockquote>
+  <p>[8] B. Bauer et al, "Hybrid quantum-classical approach to correlated
+  materials", <a href="http://arxiv.org/abs/1510.03859">arXiv:1510.03859.</a><br>
+  [9] A. W. Harrow, A. Hassidim, and S. Lloyd, "Quantum algorithm for
+  linear systems of equations", <a href="http://link.aps.org/doi/10.1103/PhysRevLett.103.150502">Phys. Rev. Lett. <b>103</b>, 150502 (2009)</a>; Z. Li et al, "Experimental realization fo a quantum support vector
+  machine", <a href="http://link.aps.org/doi/10.1103/PhysRevLett.114.140504">Phys. Rev. Lett. <b>114</b>, 140504 (2015)</a><br>
+  [10] S. Aaronson, "Read the fine print", <a href="http://www.nature.com/doifinder/10.1038/nphys3272">Nature Physics, 11, 291 (2015).</a></p>
+  </blockquote>
+  <p>In contrast, a quantum annealing machine can be used for combinatorial
+  optimization, which has a wide range of practical applications. Also, integer-factoring
+  algorithms for quantum annealing have been developed [11], but there is
+  no guarantee that these algorithms are exponentially fast. It is known
+  that quantum annealing, in its quantum adiabatic formulation, is theoretically
+  equivalent to the gate model [12].</p>
+  <blockquote>
+  <p>[11] N. Xu <i>et al</i>, "Quantum Factorization of 143 on a Dipolar-Coupling Nuclear Magnetic
+  Resonance System", <a href="http://link.aps.org/doi/10.1103/PhysRevLett.108.130501">Phys. Rev. Lett. 108 (2012) 130501</a>; X. Peng <i>et al</i>, "Quantum Adiabatic Algorithm for Factorization and Its Experimental
+  Implementation", <a href="http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.101.220405">Phys. Rev. Lett. 101 (2008) 220405.</a> <br>
+  [12] D. Aharonov, W. van Dam, J. Kempe, Z. Landau, S. Lloyd, and O. Regev,
+  "Adiabatic Quantum Computation is Equivalent to Standard Quantum Computation",
+  <a href="http://epubs.siam.org/doi/abs/10.1137/S0097539705447323">SIAM J. Comp. 37 (2007) 166</a>.</p>
+  </blockquote>
+  <p>Quantum annealing is less prone to decoherence than the circuit model since
+  the former follows the inherently-stable ground state or low excited states.
+  It is also an advantage of quantum annealing that one does not have to
+  specify the time evolution explicitly: In quantum annealing, the system
+  evolves literally naturally following the Schrödinger equation. </p>
+  <table border="1" summary="Comparison of gate model and quantum annealing">
+    <tbody>
+      <tr>
+        <th>&nbsp;</th>
+        <th bgcolor="#ceceff" style="text-align : center;" align="center">
+        <p>Gate model&nbsp;</p>
+        </th>
+        <th bgcolor="#ceceff" style="text-align : center;" align="center">
+        <p>Quantum annealing</p>
+        </th>
+      </tr>
+      <tr>
+        <td bgcolor="#a2ffd0">
+        <p style="text-align : center;" align="center">Target</p>
+        </td>
+        <td>
+        <p>&nbsp;Universal computation</p>
+        </td>
+        <td>
+        <p>&nbsp;Combinatorial optimization</p>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#a2ffd0">
+        <p style="text-align : center;" align="center">Strengths</p>
+        </td>
+        <td>
+        <p>&nbsp;A few algorithms are proven to be exponentially faster than their
+        classical counterparts.</p>
+        </td>
+        <td>
+        <p>&nbsp;Many problems of practical importance, such as machine learning,
+        can be represented&nbsp;as combinatorial optimization. Resilient against
+        noise.</p>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#a2ffd0">
+        <p style="text-align : center;" align="center">Weaknesses</p>
+        </td>
+        <td>
+        <p>&nbsp;Very susceptible to decoherence, i.e. easily destroyed by noise.
+        Faster than conventional machines only for a few tasks.</p>
+        </td>
+        <td>
+        <p>&nbsp;Problems are yet to be found that can be solved exponentially more
+        efficiently than by classical methods and are of practical significance.</p>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#a2ffd0">
+        <p style="text-align : center;" align="center">Current Status of Implementation</p>
+        </td>
+        <td>
+        <p>&nbsp;About 10 qubits （ions, photons, quantum dots, superconductors,..）</p>
+        </td>
+        <td>
+        <p>&nbsp;More than 1,000 qubits（superconducting circuits）</p>
+        </td>
+      </tr>
+      <tr>
+        <td bgcolor="#a2ffd0">
+        <p style="text-align : center;" align="center">Prospects </p>
+        </td>
+        <td>
+        <p>&nbsp;Needs extremely many qubits, millions or more, if one implements
+        error corrections.　Will take decades to realize.</p>
+        </td>
+        <td>
+        <p>&nbsp;Will need tends of thousands of qubits. May be realized within a
+        decade.</p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>"Prospects" describes the scale of the system needed to supersede
+  classical computers for specific purposes as well as the time span before
+  such may be achieved.</p> 
+  </li><li>
+  <p>Classical (conventional) computer</p>
+  <p>The goal of quantum annealing is to solve optimization problems. Quantum
+  annealing machines are not to replace conventional computers that are useful
+  for any purposes (universal computation). This fact is shared by the circuit
+  model. One should not misunderstand that conventional computers will eventually
+  be replaced by ultra-fast quantum computers in our daily applications.<br>
+  <br>
+  As long as optimization problems are concerned, there exists some evidence
+  that quantum annealing outperforms simulated annealing carried out on classical
+  computers. It is nevertheless unclear whether or not there exist problems
+  of wide practical impact where quantum annealing achieves overwhelming
+  (exponential) speedup over conventional methods. Notice that there indeed
+  exist a <a href="http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.109.050501">problem</a> in which an exponential speedup by quantum annealing (not by adiabatic
+  quantum computation) is proved although this problem is of limited practical
+  usefulness.</p> 
+</li></ul>
+<ul>
+  <li>
+  <p>Computational complexity and related topics</p>
+  <ul>
+    <li>
+    <p>Quantum annealing needs an exponentially long time to find the exact solution
+    to the most difficult problems among all QUBO's (Ising models).</p> 
+    </li><li>
+    <p>Indeed, it is explicitly shown from the analysis of energy spectra that
+    quantum annealing spends an exponentially long time to solve several specific
+    problems </p>
+    </li><li>
+    <p>It has nevertheless been well known from a number of numerical and analytical
+    studies that quantum annealing improves the performance, if not exponentially,
+    of solving many combinatorial optimization problems in comparison with
+    classical simulated annealing. </p>
+    </li><li>
+    <p>It is not expected that quantum annealing would drastically speedup the
+    time to reach solutions to many problems for which only exponentially slow
+    classical algorithms are known. It is also incorrect, on the other hand,
+    that there would exist no such cases. Indeed this <a href="http://link.aps.org/doi/10.1103/PhysRevLett.109.050501">paper</a> shows that an exponential speedup is reached for the binary-tree problem.
+    A small downside of this result is that the problem is academic and it
+    is not clear how (and if) this result may have a social impact.</p> 
+    </li><li>
+    <p>One of the important advantages of quantum annealing over the circuit model
+    is that quantum annealing does not need an explicit construction of step-by-step
+    instructions (algorithm) to run the process.</p> 
+    </li><li>
+    <p>It is not necessary for quantum annealing to trace the instantaneous ground
+    state. <img src="./Quantum Annealing_ Quantum computing for combinatorial optimization problems_files/QA-AQC.jpg" width="229" height="126" border="0" align="right">Evaluation of computational complexity based on the energy-gap analysis
+    reveals only part of the possibilities of quantum annealing. Indeed, the
+    above-mentioned solution to the binary-tree problem does not follow the
+    instantaneous ground state. In other words, adiabatic quantum computation
+    (AQC) is a subset of quantum annealing (QA) but the converse is not true.
+    Also, quantum annealing may be understood to allow for interactions with
+    the environment including temperature effects.</p> 
+  </li></ul>
+</li></ul>
+<p align="center" style="font-size : large;background-color : #FFE2B2;text-align : center;">D-Wave machine and related topics</p>
+<blockquote>
+<p><a href="http://www.dwavesys.com/en/dw_homepage.html">D-Wave Systems Inc.</a> has developed a device that realizes quantum annealing at the hardware
+level and has installed a few of them at corporate users. The current version
+D-Wave 2X has more than 1,000 working qubits. <a href="https://scholar.google.co.jp/scholar?as_sdt=1,5&amp;q=%22quantum+annealing%22&amp;scisbd=1">Many scientific papers have appeared</a> in which researchers have checked the performance of the machine or have
+solved prototypes combinatorial optimization problems. Data in these papers
+seem to indicate that quantum annealing is indeed realized in the machine.
+Further developments are worth careful attention.</p>
+<p>IARPA is going to run a program <a href="http://www.iarpa.gov/index.php/research-programs/qeo">QEO (Quantum-Enhanced Optimization)</a>. The goal is to build a prototype quantum annealer of about 100 qubits
+with high-performance superconducting qubits and with more complex connectivity
+between qubits.</p>
+<br>
+<p style="text-align : center;" align="center"><img src="./Quantum Annealing_ Quantum computing for combinatorial optimization problems_files/image2.jpg" width="781" height="447" border="0"> <br>
+D-Wave Two at NASA Ames Research Center. Photo taken by the author.</p>
+<p align="center" style="font-size : large;background-color : #FFE2B2;text-align : center;">Further Readings</p>
+<blockquote>
+<p>Listed below are review articles on quantum annealing. I refer the reader
+to papers cited therein for original papers. Contributions from our group
+at Tokyo Institute of Technology are shown in my <a href="http://www.stat.phys.titech.ac.jp/nishimori/papers/papers.html">list of papers</a>.<br>
+</p>
+<blockquote>
+<p>A. Das and B. K. Chakrabarti, "Quantum annealing and analog quantum
+computation" <a href="http://link.aps.org/doi/10.1103/RevModPhys.80.1061">Rev. Mod. Phys. 80 (2008) 1061</a><br>
+G.E. Santoro and E. Tosatti, "Optimization using quantum mechanics:
+quantum annealing through adiabatic evolution" <a href="http://stacks.iop.org/0305-4470/39/i=36/a=R01?key=crossref.d0ed722ac357750292ccdda41c776f1b">J. Phys A 39 (2006) R393</a> <br>
+S. Suzuki, J. Inoue, and B. K. Chakrabarti, "Quantum Ising Phases
+and Transitions in Transverse Ising Models" <a href="http://blooming-ocean-1762.herokuapp.com/?url=http%3A//www.amazon.com/Quantum-Transitions-Transverse-Lecture-Physics/dp/364233038X/ref%3Dsr_1_1%3Fie%3DUTF8%26qid%3D1385267445%26sr%3D8-1%26keywords%3DQuantum+Ising+Phases+and+Transitions+in+Transverse+Ising+Models">Springer, 2012</a><br>
+A. Ghosh and S. Mukherjee, "Quantum annealing and computation: A brief
+documentary note" <a href="http://arxiv.org/abs/1310.1339">arXiv:1310.1339</a><br>
+I. Zintchenko, E. Brown and M. Troyer, "<a href="http://www.scottaaronson.com/troyer.pdf">Recent developments in quantum annealing</a>" December 7, 2015<br>
+</p>
+</blockquote>
+</blockquote>
+<hr>
+<p><a href="http://www.stat.phys.titech.ac.jp/~nishimori/index-e.html">Return to the top page</a></p>
+</blockquote>
+
+</body></html>

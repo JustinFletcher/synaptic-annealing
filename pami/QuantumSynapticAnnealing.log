@@ -1,19 +1,19 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  17 DEC 2015 11:39
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  21 DEC 2015 00:15
 entering extended mode
 **QuantumSynapticAnnealing.tex
-(C:\fletcher-thesis\pami\QuantumSynapticAnnealing.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+(C:\mscs-thesis\pami\QuantumSynapticAnnealing.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
-vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
-an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
-romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
-sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
-senglishmax, welsh, loaded.
-(C:\fletcher-thesis\pami\IEEEtran.cls
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(C:\mscs-thesis\pami\IEEEtran.cls
 Document Class: IEEEtran 2012/12/27 V1.8 by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -99,41 +99,41 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24> not available
 \@IEEEtmpitemindent=\dimen116
 \c@IEEEbiography=\count91
 \@IEEEtranrubishbin=\box26
-) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
-Package: amsmath 2000/07/18 v2.13 AMS math features
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
 \ex@=\dimen117
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen118
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count92
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count93
 \leftroot@=\count94
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count95
 \DOTSCASE@=\count96
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box27
 \strutbox@=\box28
 \big@size=\dimen119
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count97
 \c@MaxMatrixCols=\count98
 \dotsspace@=\muskip10
@@ -154,17 +154,17 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \multlinegap=\skip45
 \multlinetaggap=\skip46
 \mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\classes\amsthm.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks20
 \thm@bodyfont=\toks21
@@ -177,15 +177,43 @@ Package: amsthm 2004/08/06 v2.20
 \dth@everypar=\toks25
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
-Package: amssymb 2009/06/22 v3.00
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks26
 )
+\c@ALC@unique=\count104
+\c@ALC@line=\count105
+\c@ALC@rem=\count106
+\c@ALC@depth=\count107
+\ALC@tlm=\skip50
+\algorithmicindent=\skip51
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count108
+\float@exts=\toks27
+\float@box=\box29
+\@float@everytoks=\toks28
+\@floatcapt=\box30
+)
+\@float@every@algorithm=\toks29
+\c@algorithm=\count109
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
@@ -198,8 +226,15 @@ File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/01/28 v0.05d Graphics/color for pdfTeX
-\Gread@gobject=\count104
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count110
 ))
 \Gin@req@height=\dimen126
 \Gin@req@width=\dimen127
@@ -208,21 +243,21 @@ File: pdftex.def 2011/01/28 v0.05d Graphics/color for pdfTeX
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen128
 \extrarowheight=\dimen129
-\NC@list=\toks27
-\extratabsurround=\skip50
-\backup@length=\skip51
+\NC@list=\toks30
+\extratabsurround=\skip52
+\backup@length=\skip53
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mdwtools\mdwmath.sty"
 Package: mdwmath 1996/04/11 1.1 Nice mathematical things
-\sq@sqrt=\count105
+\sq@sqrt=\count111
 LaTeX Info: Redefining \sqrt on input line 84.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mdwtools\mdwtab.sty"
 Package: mdwtab 1998/04/28 1.9 Table typesetting with style
-\tab@state=\count106
-\tab@columns=\count107
-\tab@preamble=\toks28
-\tab@shortline=\toks29
+\tab@state=\count112
+\tab@columns=\count113
+\tab@preamble=\toks31
+\tab@shortline=\toks32
 \extrarowheight=\dimen130
 \tabextrasep=\dimen131
 \arrayextrasep=\dimen132
@@ -231,9 +266,9 @@ Package: mdwtab 1998/04/28 1.9 Table typesetting with style
 \tab@width=\dimen135
 \col@sep=\dimen136
 \tab@endheight=\dimen137
-\tab@leftskip=\skip52
-\tab@rightskip=\skip53
-\fn@notes=\box29
+\tab@leftskip=\skip54
+\tab@rightskip=\skip55
+\fn@notes=\box31
 \fn@width=\dimen138
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
@@ -291,22 +326,36 @@ Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
 Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
 Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
 Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
-Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
-Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
-Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
-Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
-Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
-Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
-Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
-Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
-Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
-Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
-Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
-Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
-Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
-Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
-Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
-Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
@@ -314,187 +363,626 @@ Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
-)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
-Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
-)
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2010/03/01 v1.9 Key value parser (HO)
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
-Package: etexcmds 2010/01/28 v1.3 Prefix for e-TeX command names (HO)
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2010/04/01 v0.9 Utility functions of pdfTeX for LuaTeX (HO)
-
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2010/04/26 v1.7 LaTeX kernel commands for general use (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
 )
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 436.
+(grfext)             \AppendGraphicsExtensions on input line 452.
 ))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\rotating\rotating.sty"
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+\c@r@tfl@t=\count114
+\rotFPtop=\skip56
+\rotFPbot=\skip57
+\rot@float@box=\box32
+\rot@mess@toks=\toks33
+)
 
 LaTeX Warning: Unused global option(s):
     [cspaper].
 
-(C:\fletcher-thesis\pami\QuantumSynapticAnnealing.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 17.
+(C:\mscs-thesis\pami\QuantumSynapticAnnealing.aux
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1a' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1c' multiply defined.
+
+
+LaTeX Warning: Label `block1d' multiply defined.
+
+
+LaTeX Warning: Label `block2a' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block2b' multiply defined.
+
+
+LaTeX Warning: Label `block3a' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block3b' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
+LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 21.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    ... okay on input line 21.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count108
+\scratchcounter=\count115
 \scratchdimen=\dimen141
-\scratchbox=\box30
-\nofMPsegments=\count109
-\nofMParguments=\count110
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count111
+\scratchbox=\box33
+\nofMPsegments=\count116
+\nofMParguments=\count117
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count118
 \MPscratchDim=\dimen142
-\MPnumerator=\count112
-\everyMPtoPDFconversion=\toks31
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
+\everyMPtoPDFconversion=\toks35
 )
-** ATTENTION: \IEEEcompsoctitleabstractindextext is deprecated (line 34). Use \
+** ATTENTION: \IEEEcompsoctitleabstractindextext is deprecated (line 36). Use \
 IEEEtitleabstractindextext instead.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 48.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 49.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 48.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 49.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 48.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 49.
 
-** ATTENTION: \keywords is deprecated (line 48). Use \IEEEkeywords instead.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 48.
-LaTeX Font Info:    Try loading font information for U+msa on input line 48.
+** ATTENTION: \keywords is deprecated (line 49). Use \IEEEkeywords instead.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 49.
+LaTeX Font Info:    Try loading font information for U+msa on input line 49.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 48.
+LaTeX Font Info:    Try loading font information for U+msb on input line 49.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+pzd on input line 48.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 49.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\upzd.fd"
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
-** ATTENTION: \keywords is deprecated (line 48). Use \IEEEkeywords instead.
+** ATTENTION: \keywords is deprecated (line 49). Use \IEEEkeywords instead.
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--48
+Underfull \hbox (badness 10000) in paragraph at lines 49--49
 
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 50.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 51.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <12> not available
-(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 50.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 78.
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 51.
 [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 87.
+Package epstopdf Info: Source file: <figures/concrete_matrix_rep_a.eps>
+(epstopdf)                    date: 2015-12-17 21:04:22
+(epstopdf)                    size: 148324 bytes
+(epstopdf)             Output file: <figures/concrete_matrix_rep_a-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2015-12-17 21:04:26
+(epstopdf)                    size: 52587 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/concrete_matrix_rep
+_a-eps-converted-to.pdf figures/concrete_matrix_rep_a.eps>
+(epstopdf)             \includegraphics on input line 94.
+Package epstopdf Info: Output file is already uptodate.
 
-LaTeX Warning: Reference `fig:quantum_tunneling' on page 2 undefined on input l
-ine 92.
+<figures/concrete_matrix_rep_a-eps-converted-to.pdf, id=12, 604.2575pt x 480.79
+625pt>
+File: figures/concrete_matrix_rep_a-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use figures/concrete_matrix_rep_a-eps-converted-to.pdf>
+Package pdftex.def Info: figures/concrete_matrix_rep_a-eps-converted-to.pdf use
+d on input line 94.
+(pdftex.def)             Requested size: 128.0374pt x 101.87256pt.
+Package epstopdf Info: Source file: <figures/concrete_matrix_rep_b.eps>
+(epstopdf)                    date: 2015-12-17 16:07:42
+(epstopdf)                    size: 129709 bytes
+(epstopdf)             Output file: <figures/concrete_matrix_rep_b-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2015-12-17 16:08:19
+(epstopdf)                    size: 53243 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/concrete_matrix_rep
+_b-eps-converted-to.pdf figures/concrete_matrix_rep_b.eps>
+(epstopdf)             \includegraphics on input line 101.
+Package epstopdf Info: Output file is already uptodate.
 
+<figures/concrete_matrix_rep_b-eps-converted-to.pdf, id=13, 583.17876pt x 365.3
+65pt>
+File: figures/concrete_matrix_rep_b-eps-converted-to.pdf Graphic file (type pdf
+)
+ <use figures/concrete_matrix_rep_b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/concrete_matrix_rep_b-eps-converted-to.pdf use
+d on input line 101.
+(pdftex.def)             Requested size: 128.0374pt x 80.21329pt.
+Package epstopdf Info: Source file: <figures/abstract_matrix_rep.eps>
+(epstopdf)                    date: 2015-12-17 16:28:39
+(epstopdf)                    size: 189798 bytes
+(epstopdf)             Output file: <figures/abstract_matrix_rep-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2015-12-17 17:53:21
+(epstopdf)                    size: 35080 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/abstract_matrix_rep
+-eps-converted-to.pdf figures/abstract_matrix_rep.eps>
+(epstopdf)             \includegraphics on input line 117.
+Package epstopdf Info: Output file is already uptodate.
 
-LaTeX Warning: Reference `fig:quantum_advantage' on page 2 undefined on input l
-ine 94.
-
-
-LaTeX Warning: Reference `fig:nettomatmapping' on page 2 undefined on input lin
-e 107.
-
+<figures/abstract_matrix_rep-eps-converted-to.pdf, id=14, 999.735pt x 507.8975p
+t>
+File: figures/abstract_matrix_rep-eps-converted-to.pdf Graphic file (type pdf)
+ <use figures/abstract_matrix_rep-eps-converted-to.pdf>
+Package pdftex.def Info: figures/abstract_matrix_rep-eps-converted-to.pdf used 
+on input line 117.
+(pdftex.def)             Requested size: 151.76744pt x 77.10356pt.
+ [2 <C:/mscs-thesis/pami/figures/concrete_matrix_rep_a-eps-converted-to.pdf> <C
+:/mscs-thesis/pami/figures/concrete_matrix_rep_b-eps-converted-to.pdf>]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <10> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 116.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 145.
+Package epstopdf Info: Source file: <figures/tunneling_ex.eps>
+(epstopdf)                    date: 2015-12-17 21:12:21
+(epstopdf)                    size: 109885 bytes
+(epstopdf)             Output file: <figures/tunneling_ex-eps-converted-to.pdf>
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+(epstopdf)                    date: 2015-12-17 21:47:30
+(epstopdf)                    size: 32004 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/tunneling_ex-eps-co
+nverted-to.pdf figures/tunneling_ex.eps>
+(epstopdf)             \includegraphics on input line 165.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/tunneling_ex-eps-converted-to.pdf, id=30, 836.12375pt x 777.90625pt>
+File: figures/tunneling_ex-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/tunneling_ex-eps-converted-to.pdf>
+Package pdftex.def Info: figures/tunneling_ex-eps-converted-to.pdf used on inpu
+t line 165.
+(pdftex.def)             Requested size: 151.76744pt x 141.1922pt.
+ [3 <C:/mscs-thesis/pami/figures/abstract_matrix_rep-eps-converted-to.pdf> <C:/
+mscs-thesis/pami/figures/tunneling_ex-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <figures/quantum_advantage_a.eps>
+(epstopdf)                    date: 2015-12-17 21:13:36
+(epstopdf)                    size: 143252 bytes
+(epstopdf)             Output file: <figures/quantum_advantage_a-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2015-12-17 21:16:33
+(epstopdf)                    size: 43103 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/quantum_advantage_a
+-eps-converted-to.pdf figures/quantum_advantage_a.eps>
+(epstopdf)             \includegraphics on input line 179.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/quantum_advantage_a-eps-converted-to.pdf, id=47, 932.48375pt x 863.225
+pt>
+File: figures/quantum_advantage_a-eps-converted-to.pdf Graphic file (type pdf)
+ <use figures/quantum_advantage_a-eps-converted-to.pdf>
+Package pdftex.def Info: figures/quantum_advantage_a-eps-converted-to.pdf used 
+on input line 179.
+(pdftex.def)             Requested size: 128.0374pt x 118.51927pt.
+Package epstopdf Info: Source file: <figures/quantum_advantage_b.eps>
+(epstopdf)                    date: 2015-12-17 21:14:27
+(epstopdf)                    size: 1179506 bytes
+(epstopdf)             Output file: <figures/quantum_advantage_b-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2015-12-17 21:16:35
+(epstopdf)                    size: 69135 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/quantum_advantage_b
+-eps-converted-to.pdf figures/quantum_advantage_b.eps>
+(epstopdf)             \includegraphics on input line 186.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/quantum_advantage_b-eps-converted-to.pdf, id=48, 1166.3575pt x 940.513
+75pt>
+File: figures/quantum_advantage_b-eps-converted-to.pdf Graphic file (type pdf)
+ <use figures/quantum_advantage_b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/quantum_advantage_b-eps-converted-to.pdf used 
+on input line 186.
+(pdftex.def)             Requested size: 128.0374pt x 103.24156pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 []\OT1/ppl/m/n/10 This traver-sal dis-tance will be dis-tributed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 \OT1/ppl/m/n/10 anisotrop-i-cally over the weights, with the
  []
 
 
-Underfull \hbox (badness 6348) in paragraph at lines 126--127
+Underfull \hbox (badness 6348) in paragraph at lines 210--211
 \OT1/ppl/m/n/10 anisotrop-ic-ity de-ter-mined by the dis-tri-bu-tion
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 126--127
-\OT1/ppl/m/n/10 used to gen-er-ate $[]$. (See Sec. 3.3.3[] for more
+Underfull \hbox (badness 1466) in paragraph at lines 210--211
+\OT1/ppl/m/n/10 used to gen-er-ate $[]$. (See Sec. 3.2.4[] for more
  []
 
-[2]
+[4 <C:/mscs-thesis/pami/figures/quantum_advantage_a-eps-converted-to.pdf> <C:/m
+scs-thesis/pami/figures/quantum_advantage_b-eps-converted-to.pdf>]
+Underfull \hbox (badness 2158) in paragraph at lines 251--252
+\OT1/ppl/m/n/10 limit. In this case the to-tal $\OML/cmm/m/it/10 L[]$ \OT1/ppl/
+m/n/10 dis-tance tra-versed
+ []
 
-LaTeX Warning: Reference `fig:anisotropic' on page 3 undefined on input line 15
-4.
+[5]
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 325.
 
-(C:\fletcher-thesis\pami\QuantumSynapticAnnealing.bbl [3]) [4
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsppl.fd"
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 325.
 
-]
-(C:\fletcher-thesis\pami\QuantumSynapticAnnealing.aux)
+<figures/classPerf/classPerf_g_i.png, id=64, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_g_i.png Graphic file (type png)
 
-LaTeX Warning: There were undefined references.
+<use figures/classPerf/classPerf_g_i.png>
+Package pdftex.def Info: figures/classPerf/classPerf_g_i.png used on input line
+ 352.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
+
+<figures/classPerf/classPerf_e_i.png, id=67, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_e_i.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_e_i.png>
+Package pdftex.def Info: figures/classPerf/classPerf_e_i.png used on input line
+ 353.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_c_i.png, id=69, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_c_i.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_c_i.png>
+Package pdftex.def Info: figures/classPerf/classPerf_c_i.png used on input line
+ 354.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_u_i.png, id=71, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_u_i.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_u_i.png>
+Package pdftex.def Info: figures/classPerf/classPerf_u_i.png used on input line
+ 355.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_g_ua.png, id=73, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_g_ua.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_g_ua.png>
+Package pdftex.def Info: figures/classPerf/classPerf_g_ua.png used on input lin
+e 359.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
+
+<figures/classPerf/classPerf_e_ua.png, id=75, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_e_ua.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_e_ua.png>
+Package pdftex.def Info: figures/classPerf/classPerf_e_ua.png used on input lin
+e 360.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_c_ua.png, id=77, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_c_ua.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_c_ua.png>
+Package pdftex.def Info: figures/classPerf/classPerf_c_ua.png used on input lin
+e 361.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_u_ua.png, id=79, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_u_ua.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_u_ua.png>
+Package pdftex.def Info: figures/classPerf/classPerf_u_ua.png used on input lin
+e 362.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_g_va.png, id=81, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_g_va.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_g_va.png>
+Package pdftex.def Info: figures/classPerf/classPerf_g_va.png used on input lin
+e 365.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
+
+<figures/classPerf/classPerf_e_va.png, id=83, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_e_va.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_e_va.png>
+Package pdftex.def Info: figures/classPerf/classPerf_e_va.png used on input lin
+e 366.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_c_va.png, id=85, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_c_va.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_c_va.png>
+Package pdftex.def Info: figures/classPerf/classPerf_c_va.png used on input lin
+e 367.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_u_va.png, id=87, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_u_va.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_u_va.png>
+Package pdftex.def Info: figures/classPerf/classPerf_u_va.png used on input lin
+e 368.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+ [6]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7 <C:/mscs-thesis/pami/figures/classPerf/classPerf_g_i.png> <C:/mscs-thesis/p
+ami/figures/classPerf/classPerf_e_i.png> <C:/mscs-thesis/pami/figures/classPerf
+/classPerf_c_i.png> <C:/mscs-thesis/pami/figures/classPerf/classPerf_u_i.png> <
+C:/mscs-thesis/pami/figures/classPerf/classPerf_g_ua.png> <C:/mscs-thesis/pami/
+figures/classPerf/classPerf_e_ua.png> <C:/mscs-thesis/pami/figures/classPerf/cl
+assPerf_c_ua.png> <C:/mscs-thesis/pami/figures/classPerf/classPerf_u_ua.png> <C
+:/mscs-thesis/pami/figures/classPerf/classPerf_g_va.png> <C:/mscs-thesis/pami/f
+igures/classPerf/classPerf_e_va.png> <C:/mscs-thesis/pami/figures/classPerf/cla
+ssPerf_c_va.png> <C:/mscs-thesis/pami/figures/classPerf/classPerf_u_va.png>]
+<figures/completeFrac/completeFrac_g_i.png, id=121, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_g_i.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_g_i.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_g_i.png used on inpu
+t line 406.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
+
+<figures/completeFrac/completeFrac_e_i.png, id=123, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_e_i.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_e_i.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_e_i.png used on inpu
+t line 407.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_c_i.png, id=125, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_c_i.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_c_i.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_c_i.png used on inpu
+t line 408.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_u_i.png, id=127, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_u_i.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_u_i.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_u_i.png used on inpu
+t line 409.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_g_ua.png, id=129, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_g_ua.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_g_ua.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_g_ua.png used on inp
+ut line 413.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
+
+<figures/completeFrac/completeFrac_e_ua.png, id=131, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_e_ua.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_e_ua.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_e_ua.png used on inp
+ut line 414.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_c_ua.png, id=133, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_c_ua.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_c_ua.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_c_ua.png used on inp
+ut line 415.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_u_ua.png, id=135, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_u_ua.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_u_ua.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_u_ua.png used on inp
+ut line 416.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_g_va.png, id=137, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_g_va.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_g_va.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_g_va.png used on inp
+ut line 419.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
+
+<figures/completeFrac/completeFrac_e_va.png, id=139, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_e_va.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_e_va.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_e_va.png used on inp
+ut line 420.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_c_va.png, id=141, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_c_va.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_c_va.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_c_va.png used on inp
+ut line 421.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_u_va.png, id=143, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_u_va.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_u_va.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_u_va.png used on inp
+ut line 422.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/gammaDists/gamma_g.png, id=145, 578.16pt x 431.4519pt>
+File: figures/gammaDists/gamma_g.png Graphic file (type png)
+
+<use figures/gammaDists/gamma_g.png>
+Package pdftex.def Info: figures/gammaDists/gamma_g.png used on input line 437.
+
+(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
+
+<figures/gammaDists/gamma_e.png, id=147, 578.16pt x 431.4519pt>
+File: figures/gammaDists/gamma_e.png Graphic file (type png)
+
+<use figures/gammaDists/gamma_e.png>
+Package pdftex.def Info: figures/gammaDists/gamma_e.png used on input line 443.
+
+(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
+
+<figures/gammaDists/gamma_u.png, id=149, 578.16pt x 431.4519pt>
+File: figures/gammaDists/gamma_u.png Graphic file (type png)
+
+<use figures/gammaDists/gamma_u.png>
+Package pdftex.def Info: figures/gammaDists/gamma_u.png used on input line 449.
+
+(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
+
+<figures/gammaDists/gamma_c.png, id=151, 578.16pt x 431.4519pt>
+File: figures/gammaDists/gamma_c.png Graphic file (type png)
+
+<use figures/gammaDists/gamma_c.png>
+Package pdftex.def Info: figures/gammaDists/gamma_c.png used on input line 455.
+
+(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
+
+(C:\mscs-thesis\pami\QuantumSynapticAnnealing.bbl [8 <C:/mscs-thesis/pami/figur
+es/gammaDists/gamma_g.png> <C:/mscs-thesis/pami/figures/gammaDists/gamma_e.png>
+] [9 <C:/mscs-thesis/pami/figures/completeFrac/completeFrac_g_i.png> <C:/mscs-t
+hesis/pami/figures/completeFrac/completeFrac_e_i.png> <C:/mscs-thesis/pami/figu
+res/completeFrac/completeFrac_c_i.png> <C:/mscs-thesis/pami/figures/completeFra
+c/completeFrac_u_i.png> <C:/mscs-thesis/pami/figures/completeFrac/completeFrac_
+g_ua.png> <C:/mscs-thesis/pami/figures/completeFrac/completeFrac_e_ua.png> <C:/
+mscs-thesis/pami/figures/completeFrac/completeFrac_c_ua.png> <C:/mscs-thesis/pa
+mi/figures/completeFrac/completeFrac_u_ua.png> <C:/mscs-thesis/pami/figures/com
+pleteFrac/completeFrac_g_va.png> <C:/mscs-thesis/pami/figures/completeFrac/comp
+leteFrac_e_va.png> <C:/mscs-thesis/pami/figures/completeFrac/completeFrac_c_va.
+png> <C:/mscs-thesis/pami/figures/completeFrac/completeFrac_u_va.png> <C:/mscs-
+thesis/pami/figures/gammaDists/gamma_u.png> <C:/mscs-thesis/pami/figures/gammaD
+ists/gamma_c.png>]
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+** WARNING: IEEEtran.bst: No hyphenation pattern has been
+** loaded for the language `English'. Using the pattern for
+** the default language instead.
+
+Underfull \hbox (badness 2726) in paragraph at lines 82--87
+\OT1/ppl/m/n/8 able: http://www.sciencedirect.com/science/article/B6TVG-
+ []
+
+) [10] (C:\mscs-thesis\pami\QuantumSynapticAnnealing.aux)
+
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3955 strings out of 494053
- 57737 string characters out of 3146188
- 114710 words of memory out of 3000000
- 7159 multiletter control sequences out of 15000+200000
- 53174 words of font info for 125 fonts, out of 3000000 for 9000
- 715 hyphenation exceptions out of 8191
- 41i,12n,28p,1357b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 4683 strings out of 493921
+ 72276 string characters out of 3144847
+ 129979 words of memory out of 3000000
+ 7823 multiletter control sequences out of 15000+200000
+ 55003 words of font info for 127 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 42i,15n,28p,1745b,473s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Program
  Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program File
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiK
@@ -503,15 +991,16 @@ X 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program Files (x86)/MiKTeX 2
 .9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/
 fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
-/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/u
-rw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/helve
-tic/uhvro8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/upl
-b8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on QuantumSynapticAnnealing.pdf (4 pages, 210496 bytes).
+/type1/public/amsfonts/symbols/msbm10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
+1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/he
+lvetic/uhvro8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/
+uplb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplr8a.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on QuantumSynapticAnnealing.pdf (10 pages, 1891003 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
+ 269 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 339 words of extra memory for PDF output out of 10000 (max. 10000000)
 

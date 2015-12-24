@@ -1,0 +1,8 @@
+p { font-family: 'Times New Roman','Arial', 'Tahoma', sans-serif }
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
+.bgclr1 {background-color:#ee8822;}
+.bgclr2 {background-color:#cccccc;}
+BODY { line-height: 125% }

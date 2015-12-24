@@ -6,10 +6,13 @@ You're missing a field name---line 253 of file synapticAnnealingBib.bib
  :  {journal =  kyb},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+A bad cross reference---entry "lee2007improvinggeneralizationcapabilitynnusingsa"
+refers to entry "conf/cec/2007", which doesn't exist
+Warning--I didn't find a database entry for "conf/cec/2007"
 -- IEEEtran.bst version 1.11 (2003/04/02) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty journal in metropolis1953
 
 Done.
-(There was 1 error message)
+(There were 2 error messages)

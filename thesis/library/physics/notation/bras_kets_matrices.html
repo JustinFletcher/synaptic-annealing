@@ -1,0 +1,1073 @@
+
+<!-- saved from url=(0051)http://www.mathpages.com/home/kmath638/kmath638.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="Generator" content="Microsoft Word 10 (filtered)">
+<title>Bras, Kets, and Matrices</title>
+
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+<style type="text/css"></style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+<body lang="EN-US" link="blue" vlink="purple"><div id="StayFocusd-infobar" style="display: none; top: 0px;">
+    <img src="chrome-extension://laankejkbhbdhmipfmgcngdelahlfoji/common/img/eye_19x19_red.png">
+    <span id="StayFocusd-infobar-msg"></span>
+    <span id="StayFocusd-infobar-links">
+        <a id="StayFocusd-infobar-never-show">hide forever</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a id="StayFocusd-infobar-hide">hide once</a>
+    </span>
+</div>
+
+<div class="Section1">
+
+<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" style="border-collapse:collapse">
+ <tbody><tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><b><span style="font-size:16.0pt">Bras, Kets, and Matrices</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">When quantum mechanics was originally developed (1925) the
+  simple rules of matrix arithmetic was not yet part of every technically
+  educated person’s basic knowledge. As a result, Heisenberg didn’t realize
+  that the (to him) mysterious non-commutative multiplication he had discovered
+  for his quantum mechanical variables was nothing other than matrix
+  multiplication. Likewise when Dirac developed his own distinctive approach to
+  quantum mechanics (see his book “The Principles of Quantum Mechanics”, first
+  published in 1930) he expressed the quantum mechanical equations in terms of
+  his own customized notation – which remains in widespread use today – rather
+  than availing himself of the terminology of matrix algebra. To some extent
+  this was (and is) justified by the convenience of Dirac’s notation, but
+  modern readers who are already acquainted with the elementary arithmetic of
+  matrices may find it easier to read Dirac (and the rest of the literature on
+  quantum mechanics) if they are aware of the correspondence between Dirac’s
+  notation and the standard language of matrices</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">The entities that Dirac called “kets” and “bras” are
+  simply column vectors and row vectors, respectively, and the linear operators
+  of Dirac are simply square matrices. Of course, the elements of these vectors
+  and matrices are generally complex numbers. For convenience we will express
+  ourselves in terms of vectors and matrices of size 3, but they may be of any
+  size, and in fact they are usually of infinite size (and can even be
+  generalized to continuous analogs). In summary, when Dirac refers to a “bra”,
+  which he denoted as &lt;A|, a “ket”, which he denoted as |B&gt;, and a
+  measurement operator <span style="font-family:Symbol">a</span>, we can
+  associate these with vectors and matrices as follows</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="509" height="75" src="./bras_kets_matrices_files/image001.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">The product of a bra and a ket, denoted by Dirac as
+  &lt;A||B&gt; or, more commonly by omitting one of the middle lines, as
+  &lt;A|B&gt;, is simply the ordinary (complex) number given by multiplying a
+  row vector and a column vector in the usual way, i.e.,</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="393" height="75" src="./bras_kets_matrices_files/image002.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Likewise the product of a bra times a linear operator
+  corresponds to the product of a row vector times a square matrix, which is
+  again a row vector (i.e., a “bra”) as follows</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="556" height="117" src="./bras_kets_matrices_files/image003.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">and the product of a linear operator times a ket
+  corresponds to the product of a square matrix times a column vector, yielding
+  another column vector (i.e., a ket) as follows</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="439" height="75" src="./bras_kets_matrices_files/image004.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Obviously we can form an ordinary (complex) number by
+  taking the compound product of a bra, a linear operator, and a ket, which
+  corresponds to forming the product of a row vector times a square matrix
+  times a column vector</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="355" height="75" src="./bras_kets_matrices_files/image005.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">We can also form the product of a ket times a bra, which
+  gives a linear operator (i.e., a square matrix), as shown below.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="417" height="75" src="./bras_kets_matrices_files/image006.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Dirac placed the bras and the kets into a one-to-one
+  correspondence with each other by defining, for any given ket |A&gt;, the bra
+  &lt;A|, which he called the conjugate imaginary. In the language of matrices
+  these two vectors are related to each other by simply taking the transpose
+  and then taking the complex conjugate of each element (i.e., negating the
+  sign of the imaginary component of each element). Thus the following two
+  vectors correspond to what Dirac called conjugate imaginaries of each other.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="371" height="77" src="./bras_kets_matrices_files/image007.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">where the overbar signifies complex conjugation. Dirac
+  chose not to call these two vectors the complex conjugates of each other
+  because they are entities of different types, and cannot be added together to
+  give a purely real entity. Nevertheless, like ordinary complex numbers, the
+  product of a bra and its (imaginary) conjugate ket is a purely real number,
+  given by the “dot product”</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="400" height="77" src="./bras_kets_matrices_files/image008.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">The conjugation of linear operators is formally the same,
+  i.e., we take the transpose of the matrix and then replace each element with
+  its complex conjugate. Thus the conjugate transpose of the operator <span style="font-family:Symbol">a</span> (defined above) corresponds to the matrix</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="159" height="75" src="./bras_kets_matrices_files/image009.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">This is called the <i>adjoint</i> of <span style="font-family:Symbol">a</span>, which we denote by an overbar. Recall
+  that the ordinary transpose operation satisfies the identity</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="108" height="32" src="./bras_kets_matrices_files/image010.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">for any two matrices <span style="font-family:Symbol">a</span>
+  and <span style="font-family:Symbol">b</span>. It’s easy to verify that the
+  conjugate transpose satisfies an identity of the same form, i.e., </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="83" height="29" src="./bras_kets_matrices_files/image011.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">The rule for forming the conjugate transpose of a product
+  by taking the conjugate transpose of each factor and reversing the order is
+  quite general. It applies to any number of factors, and the factors need not
+  be square, and may even be ordinary numbers (with the understanding that the
+  conjugate transpose of a complex number is simply its conjugate). For
+  example, given any four matrices <span style="font-family:Symbol">a</span>,<span style="font-family:Symbol">b</span>,<span style="font-family:Symbol">g</span>,<span style="font-family:Symbol">d</span> with suitable dimensions so that they can
+  be multiplied together in the indicated sequence, we have</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="100" height="25" src="./bras_kets_matrices_files/image012.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">This applies to the row and column vectors corresponding
+  to Dirac’s bras and kets, as well as to scalar (complex) numbers and square
+  matrices. One minor shortcoming of Dirac’s notation is that it provides no
+  symbolic way of denoting the conjugate transpose of a bra or ket. Dirac
+  reserved the overbar notation for what he called the conjugate complex,
+  whereas he referred to the conjugate transpose of bras and kets as conjugate
+  imaginaries. Thus the conjugate imaginary of &lt;A| is simply written as |A&gt;,
+  but there is no symbolic way of denoting ‘the conjugate imaginary of &lt;A|<span style="font-family:Symbol">a</span>’, for example, other than explicitly as <sub><img width="39" height="27" src="./bras_kets_matrices_files/image013.gif"></sub>.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">We might be tempted to define the “real part” of a matrix as
+  the matrix consisting of just the real parts of the individual elements, but
+  Dirac pointed out that it’s more natural (and useful) to carry over from
+  ordinary complex numbers the property that an entity is “real” if it equals
+  its “conjugate”. Our definition of “conjugation” for matrices involves taking
+  the transpose as well as conjugating the individual elements, so we need our generalized
+  definition of “real” to take this into account. To do this, we define a
+  matrix to be “real” if it equals its adjoint. Such matrices are also called <i>self-adjoint</i>.
+  Clearly the real elements of a self-adjoint matrix must be symmetrical, and
+  the imaginary parts of its elements must be anti-symmetrical. On the other
+  hand, the real components of the elements of a purely “imaginary” matrix must
+  be anti-symmetrical, and the imaginary components of its elements must be
+  symmetrical.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">It follows that any matrix can be expressed uniquely as a
+  sum of “real” and “imaginary” parts (in the sense of those terms just
+  described). Let <span style="font-family:Symbol">a</span><sub>mn</sub> and <span style="font-family:Symbol">a</span><sub>nm</sub> be symmetrically placed
+  elements of an arbitrary matrix <span style="font-family:Symbol">a</span>, with
+  the complex components</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="336" height="24" src="./bras_kets_matrices_files/image014.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Then we can express <span style="font-family:Symbol">a</span>
+  as the sum <span style="font-family:Symbol">a</span> = <span style="font-family:Symbol">r</span> + <span style="font-family:Symbol">h</span>
+  where <span style="font-family:Symbol">r</span> is a “real” matrix and <span style="font-family:Symbol">h</span> is an “imaginary” matrix, where the
+  components of <span style="font-family:Symbol">r</span> are</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="521" height="41" src="./bras_kets_matrices_files/image015.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">and the components of <span style="font-family:Symbol">h</span>
+  are</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="523" height="41" src="./bras_kets_matrices_files/image016.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">By defining “real” and “imaginary” matrices in this way,
+  we carry over the <i>additive</i> properties of complex numbers, but not the
+  multiplicative properties. In particular, for ordinary complex numbers, the
+  product of two reals is real, as is the product of two imaginaries, and the
+  product of a real and an imaginary is imaginary. In contrast, the product of
+  two real (i.e., self-adjoint) matrices is not necessarily real. To show this,
+  first note that for any two matrices <span style="font-family:Symbol">a</span>
+  and <span style="font-family:Symbol">b</span> we have</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="333" height="25" src="./bras_kets_matrices_files/image017.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Hence if <span style="font-family:Symbol">a</span> and <span style="font-family:Symbol">b</span> are self-adjoint we have</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="148" height="25" src="./bras_kets_matrices_files/image018.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Thus if <span style="font-family:Symbol">a</span> and <span style="font-family:Symbol">b</span> are self-adjoint then so is <span style="font-family:Symbol">ab</span> + <span style="font-family:Symbol">ba</span>.
+  Similarly, for any two matrices <span style="font-family:Symbol">a</span> and
+  <span style="font-family:Symbol">b</span> we have</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="396" height="31" src="./bras_kets_matrices_files/image019.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Hence if <span style="font-family:Symbol">a</span> and <span style="font-family:Symbol">b</span> are self-adjoint we have</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="184" height="29" src="./bras_kets_matrices_files/image020.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">This shows that if <span style="font-family:Symbol">a</span>
+  and <span style="font-family:Symbol">b</span> are self-adjoint then so is i(<span style="font-family:Symbol">ab</span> <span style="font-family:Symbol">-</span>
+  <span style="font-family:Symbol">ba)</span>. Also, notice that multiplication
+  of a matrix by i has the effect of swapping the real and imaginary roles of
+  the elementary components, changing the symmetrical to anti-symmetrical and
+  vice versa. It follows that the expression <span style="font-family:Symbol">ab</span>
+  – <span style="font-family:Symbol">ba</span> is purely imaginary (in Dirac’s
+  sense), because when multiplied by i the result is purely real (i.e.,
+  self-adjoint). Therefore, in general, the product of two self-adjoint
+  operators can be written in the form</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img width="183" height="41" src="./bras_kets_matrices_files/image021.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">where the first term on the right side is purely “real”,
+  and the second term is purely “imaginary” (in Dirac’s sense). Thus the
+  product of two real matrices <span style="font-family:Symbol">a</span> and <span style="font-family:Symbol">b</span> is purely real if and only if the
+  matrices commute, i.e., if and only if <span style="font-family:Symbol">ab</span>
+  = <span style="font-family:Symbol">ba</span>.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">At this point we can begin to see how the ideas introduced
+  so far are related to the physical theory of quantum mechanics. We’ve
+  associated a certain observable variable (such as momentum or position) with
+  a linear operator <span style="font-family:Symbol">a</span>. Now suppose for
+  the moment that we have diagonalized the operator, so the only non-zero
+  elements of the matrix are the eigenvalues, which we will denote by <span style="font-family:Symbol">l</span><sub>1</sub>, <span style="font-family:
+  Symbol">l</span><sub>2</sub>, <span style="font-family:Symbol">l</span><sub>3</sub>
+  along the diagonal. We require our measurement operators to be <a href="http://www.mathpages.com/home/kmath306/kmath306.htm">Hermitian</a>, which implies that their
+  eigenvalues are all purely real. In addition, we require that eigenvectors of
+  the operator must span the space, which is to say, it must be possible to
+  express any state vector as a linear combination of the eigenvectors. (This
+  requirement on “observables” may not be logically necessary, but it is one of
+  the postulates of quantum mechanics.)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Now, given a physical system whose state is represented by
+  the ket |A&gt;, and wish to measure (i.e., observe) the value of the variable
+  associated with the operator <span style="font-family:Symbol">a</span>.
+  Perhaps the most natural way of forming a real scalar value from the given
+  information is the product</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="360" height="120" src="./bras_kets_matrices_files/image022.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">If we normalize the state vector so that its magnitude is
+  1, the above expression is simply a weighted average of the eigenvalues. This
+  motivates us to normalize all state vectors, i.e., to stipulate that for any
+  state vector A we have</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="257" height="32" src="./bras_kets_matrices_files/image023.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Of course, since the components A<sub>j</sub> are
+  generally complex, there is still an arbitrary factor of unity in the state
+  vector. In other words, we can multiply a state vector by any complex number
+  of unit length. i.e., any number of the form e<sup>i</sup><sup><span style="font-family:Symbol">q</span></sup> for an arbitrary real angle <span style="font-family:Symbol">q</span>, without affecting the results. This is
+  called a phase factor.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">From the standpoint of the physical theory, we must now
+  decide how are we to interpret the real number denoted by &lt;A|<span style="font-family:Symbol">a</span>|A&gt;. It might be tempting to regard it
+  as the result of applying the measurement associated with <span style="font-family:Symbol">a</span> to a system in state A, but Dirac
+  asserted that this can’t be correct by pointing out that the number &lt;A|<span style="font-family:Symbol">ab</span>|A&gt; does not in general equal the
+  number &lt;A|<span style="font-family:Symbol">a</span>|A&gt;&lt;A|<span style="font-family:Symbol">b</span>|A&gt;. It isn’t entirely clear why this
+  inequality rules out the stated interpretation. (For example, one could just
+  as well argue that <span style="font-family:Symbol">a</span> and <span style="font-family:Symbol">b</span> cannot represent observables because <span style="font-family:Symbol">ab</span> does not in general equal <span style="font-family:Symbol">ba</span>.) But regardless of the justification,
+  Dirac chose to postulate that the number &lt;A|<span style="font-family:Symbol">a</span>|A&gt;
+  represents the <i>average</i> of the values given by measuring the observable
+  <span style="font-family:Symbol">a</span> on a system in the state A a large
+  number of times. This is a remarkable postulate, since it implicitly concedes
+  that a single measurement of a certain observable on a system in a specific
+  state need not yield a unique result. In order to lend some plausibility to
+  this postulate, Dirac notes that the bra-ket does possess the simple additive
+  property</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="272" height="27" src="./bras_kets_matrices_files/image024.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Since the average of a set of numbers is a purely additive
+  function, and since the bra-ket operation possesses this additivity, Dirac
+  argued that the stated postulate is justified. Again, he attributed the
+  non-uniqueness of individual measurements to the fact that the product of the
+  bra-kets of two operators does not in general equal the bra-ket of the
+  product of those two operators.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">There is, however, a special circumstance in which the bra-ket
+  operation does possess the multiplicative property, namely, in the case when both
+  <span style="font-family:Symbol">a</span> and <span style="font-family:Symbol">b</span>
+  are diagonal and A is an eigenvector of both of them. To see this, consider
+  the two diagonal matrices</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="408" height="75" src="./bras_kets_matrices_files/image025.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">The product of these two observables is</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="301" height="75" src="./bras_kets_matrices_files/image026.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Note also that in this special case the multiplication of
+  operators is commutative. Now, taking the state vector to be the normalized eigenvector
+  [0&nbsp; 1&nbsp; 0] for example, we get</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="323" height="27" src="./bras_kets_matrices_files/image027.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Therefore, following Dirac’s reasoning, we are justified
+  in treating the number &lt;A|<span style="font-family:Symbol">a</span>|A&gt; as
+  the unique result of measuring the observable <span style="font-family:Symbol">a</span>
+  for a system in state A <i>provided</i> that A is an eigenvector of <span style="font-family:Symbol">a</span>, in which case the result of the
+  measurement is the corresponding eigenvalue of <span style="font-family:Symbol">a</span>.
+  </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">From this it follows that quantum mechanics would entail
+  no fundamental indeterminacy if it were possible to simultaneously
+  diagonalize all the observables. In that case, all observables would commute,
+  and there would be no “Heisenberg uncertainty”. However, we find that it is
+  not possible to simultaneously diagonalize the operators corresponding to
+  every pair of observables. Specifically, if we characterize a physical system
+  in Hamiltonian terms by defining a set of configuration coordinates q<sub>1</sub>,
+  q<sub>2</sub>, … and the corresponding momenta p<sub>1</sub>, p<sub>2</sub>,
+  …, then we find the following commutation relations</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="292" height="97" src="./bras_kets_matrices_files/image028.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">These expressions represent the commutators of the
+  indicated variables, which are closely analogous to the Poisson brackets of
+  the canonical variables in classical physics. These commutators signify that
+  each configuration coordinate q<sub>j</sub> is incompatible with the
+  corresponding momentum p<sub>j</sub>. It follows that we can transform the
+  system so as to diagonalize one or the other, but not both. </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Shortly after Heisenberg created matrix mechanics, Schrödinger
+  arrived at his theory of wave mechanics, which he soon showed was
+  mathematically equivalent to matrix mechanics, despite their superficially
+  very different appearances. One reason that the two formulations appear so
+  different is that the equations of motion are expressed in two completely
+  different ways. In Heisenberg’s approach, the “state” vector of the system is
+  fixed, and the operators representing the dynamical variables evolve over
+  time. Thus the equations of motion are expressed in terms of the linear
+  operators representing the observables. In contrast, Schrödinger represented
+  the observables as fixed operators, and the state vector as varying over
+  time. Thus his equations of motion are expressed in terms of the state
+  variable (or equivalently the wave function). This dichotomy doesn’t arise in
+  classical physics, because there the dynamic variables define the state of
+  the system. In quantum mechanics, these two things (observables and states)
+  are two distinct things, and the outcome of an interaction depends only on
+  the relationship between the two. Hence we can hold either one constant and
+  allow the other to vary in such a way as to give the necessary relationship
+  between them.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">This is somewhat reminiscent of the situation in
+  pre-relativistic electrodynamics, when the interaction between a magnet and a
+  conductor in relative motion was given two formally very different accounts,
+  depending on which component was assumed to be moving. In the case of
+  electrodynamics a great simplification was achieved by adopting a new
+  formalism (special relativity) in which the empirically meaningless
+  distinction between absolute motion and absolute rest was eliminated, and
+  everything was expressed purely in terms of relative motion. The explicit
+  motivation for this was the desire to eliminate all asymmetries from the
+  formalism that were not inherent in the phenomena. In the case of quantum
+  mechanics, we have asymmetric accounts (namely the views of Heisenberg and Schrödinger)
+  of the very same phenomena, so it seems natural to suspect that there may be
+  a single more symmetrical formulation underlying these two accounts. </p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">The asymmetry in the existing formalisms seems to run
+  deeper than simply the choice of whether to take the states or the
+  observables as the dynamic element subject to the laws of motion. This
+  fundamentally entails an asymmetry between the observer and the observed,
+  whereas from a purely physical standpoint there is no objective way of
+  identifying one or the other of two interacting systems as the observer or
+  the observed. A more suitable formalism would treat the state of the system
+  being “observed” on an equal footing with the state of the system doing the
+  “observing”. Thus, rather than having a matrix representing the observable
+  and a vector representing the state of the system being observed, we might
+  imagine a formalism in which two systems are each represented by a matrix,
+  and the interaction of the two systems results in reciprocal changes in those
+  matrices. The change in each matrix would represent the absorption of some
+  information about the (prior) state of the other system. This would
+  correspond, on the one hand, to the reception of an eigenvalue by the
+  observing system, and on the other hand, to the “jump” of the observed system
+  to the corresponding eigenvector. But both of these effects would apply in
+  both directions, since the situation is physically symmetrical.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">In addition to it’s central role in quantum mechanics, the
+  bra-ket operation also plays an important role in the other great theory of
+  20th century physics, namely, general relativity. Suppose with each
+  incremental extent of space-time we associate a “state vector” <b>x</b> whose
+  components (for any given coordinate basis) are the differentials of the time
+  and space coordinates, denoted by super-scripts with x<sup>0</sup>
+  representing time. The bra and ket representatives of this state vector are</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="409" height="99" src="./bras_kets_matrices_files/image029.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">Now we define an “observable” g corresponding to the
+  metric tensor</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="181" height="99" src="./bras_kets_matrices_files/image030.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">According to the formalism of quantum mechanics, a
+  measurement of the “observable” g of this “state” would yield, on average,
+  the value</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="443" height="173" src="./bras_kets_matrices_files/image031.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">This is just the invariant line element, which is
+  customarily written (using Einstein’s summation convention) as</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><sub><img border="0" width="137" height="33" src="./bras_kets_matrices_files/image032.gif"></sub></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">However, unlike the case of quantum mechanics, the
+  elements of the vector x and operator g are purely real (at least in the
+  usual treatment of general relativity), so complex conjugation is simply the
+  identity operation. Also, based on the usual interpretation of quantum
+  mechanics, we would expect a measurement of g to always yield one of the
+  eigenvalues of g, leaving the state <b>x</b> in the corresponding eigenstate.
+  Applying this literally to the diagonal Minkowski metric of flat spacetime
+  (in geometric units so that c = 1), we would expect a measurement of g on x
+  to yield +1, -1, -1, or -1, with probabilities proportional to (dx<sup>0</sup>)<sup>2</sup>,
+  (dx<sup>1</sup>)<sup>2</sup>, (dx<sup>2</sup>)<sup>2</sup>, (dx<sup>3</sup>)<sup>2</sup>
+  respectively. It isn’t obvious how to interpret this in the context of
+  spacetime in general relativity, although the fact that the average of many
+  such measurements must yield the familiar squared spacetime interval (ds)<sup>2</sup>
+  suggests that the individual “measurements” are some kind of quantized
+  effects that collectively combine to produce what we perceive as spacetime
+  intervals.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal">&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width="590" valign="top" style="width:6.15in;padding:0in 5.4pt 0in 5.4pt">
+  <p class="MsoNormal"><a href="http://www.mathpages.com/home/index.htm">Return to MathPages Main Menu</a></p>
+  </td>
+ </tr>
+</tbody></table>
+
+<p class="MsoNormal">&nbsp;</p>
+
+</div>
+
+
+
+
+</body></html>

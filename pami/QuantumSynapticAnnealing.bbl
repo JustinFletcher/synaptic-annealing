@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \providecommand{\url}[1]{#1}
 \csname url@rmstyle\endcsname
 \providecommand{\newblock}{\relax}
@@ -17,6 +17,35 @@
 \language=\csname l@#1\endcsname
 \fi
 #2}}
+
+\bibitem{geman1984stochasticrelaxation}
+\BIBentryALTinterwordspacing
+S.~Geman and D.~Geman, ``Stochastic relaxation, gibbs distributions, and the
+  bayesian restoration of images,'' \emph{IEEE Trans. Pattern Anal. Mach.
+  Intell.}, vol.~6, no.~6, pp. 721--741, Nov. 1984. [Online]. Available:
+  \url{http://dx.doi.org/10.1109/TPAMI.1984.4767596}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ingber1989veryfastsimulatedreannealing}
+L.~Ingber, ``Very fast simulated re-annealing,'' 1989.
+
+\bibitem{lecchinivisintini2007sacontinuousgaruntees}
+A.~{Lecchini-Visintini}, J.~{Lygeros}, and J.~{Maciejowski}, ``{Simulated
+  Annealing: Rigorous finite-time guarantees for optimization on continuous
+  domains},'' \emph{ArXiv e-prints}, Sept. 2007.
+
+\bibitem{cybenko1989approxsuperposition}
+\BIBentryALTinterwordspacing
+G.~Cybenko, ``\BIBforeignlanguage{English}{Approximation by superpositions of a
+  sigmoidal function},'' \emph{\BIBforeignlanguage{English}{Mathematics of
+  Control, Signals and Systems}}, vol.~2, no.~4, pp. 303--314, 1989. [Online].
+  Available: \url{http://dx.doi.org/10.1007/BF02551274}
+\BIBentrySTDinterwordspacing
+
+\bibitem{laarhoven1987satheoryapplication}
+P.~J.~M. Laarhoven and E.~H.~L. Aarts, Eds., \emph{Simulated Annealing: Theory
+  and Applications}.\hskip 1em plus 0.5em minus 0.4em\relax Norwell, MA, USA:
+  Kluwer Academic Publishers, 1987.
 
 \bibitem{kirkpatrick1983}
 S.~Kirkpatrick, C.~D. Gelatt, and M.~P. Vecchi, ``Optimization by simulated
@@ -41,16 +70,6 @@ A.~Corana, M.~Marchesi, C.~Martini, and S.~Ridella, ``Minimizing multimodal
   [Online]. Available: \url{http://doi.acm.org/10.1145/29380.29864}
 \BIBentrySTDinterwordspacing
 
-\bibitem{lecchinivisintini2007sacontinuousgaruntees}
-A.~{Lecchini-Visintini}, J.~{Lygeros}, and J.~{Maciejowski}, ``{Simulated
-  Annealing: Rigorous finite-time guarantees for optimization on continuous
-  domains},'' \emph{ArXiv e-prints}, Sept. 2007.
-
-\bibitem{mukherjee2015multivariatesearchqa}
-S.~{Mukherjee} and B.~K. {Chakrabarti}, ``{Multivariable optimization: Quantum
-  annealing and computation},'' \emph{European Physical Journal Special
-  Topics}, vol. 224, p.~17, Feb. 2015.
-
 \bibitem{szu1987fastsimulatedannealing}
 \BIBentryALTinterwordspacing
 H.~Szu and R.~Hartley, ``{Fast simulated annealing},'' \emph{Physics Letters
@@ -66,7 +85,48 @@ C.~Tsallis and D.~A. Stariolo, ``Generalized simulated annealing,''
   \url{http://www.sciencedirect.com/science/article/B6TVG-3YK5TC8-2H/1/d040f1408073d6a09dc185f38673e3dd}
 \BIBentrySTDinterwordspacing
 
-\bibitem{ingber1989veryfastsimulatedreannealing}
-A.~L. Ingber and L.~Ingber, ``Very fast simulated re-annealing,'' 1989.
+\bibitem{engel1988teachingfeedforwardnueralnetsbysa}
+\BIBentryALTinterwordspacing
+J.~Engel, ``Teaching feed-forward neural networks by simulated annealing,''
+  \emph{Complex Syst.}, vol.~2, no.~6, pp. 641--648, Dec. 1988. [Online].
+  Available: \url{http://dl.acm.org/citation.cfm?id=65512.65514}
+\BIBentrySTDinterwordspacing
+
+\bibitem{lee2007improvinggeneralizationcapabilitynnusingsa}
+\BIBentryALTinterwordspacing
+Y.~Lee, J.-S. Lee, S.-Y. Lee, and C.~H. Park, ``Improving generalization
+  capability of neural networks based on simulated annealing.'' in \emph{IEEE
+  Congress on Evolutionary Computation}.\hskip 1em plus 0.5em minus 0.4em\relax
+  IEEE, 2007, pp. 3447--3453. [Online]. Available:
+  \url{http://dblp.uni-trier.de/db/conf/cec/cec2007.htm}
+\BIBentrySTDinterwordspacing
+
+\bibitem{sexton1999beyondbackpropusingsa}
+\BIBentryALTinterwordspacing
+R.~S. Sexton, R.~E. Dorsey, and J.~D. Johnson, ``Beyond back propagation: Using
+  simulated annealing for training neural networks,'' \emph{J. End User
+  Comput.}, vol.~11, no.~3, pp. 3--10, July 1999. [Online]. Available:
+  \url{http://dl.acm.org/citation.cfm?id=329748.329752}
+\BIBentrySTDinterwordspacing
+
+\bibitem{mukherjee2015multivariatesearchqa}
+S.~{Mukherjee} and B.~K. {Chakrabarti}, ``{Multivariable optimization: Quantum
+  annealing and computation},'' \emph{European Physical Journal Special
+  Topics}, vol. 224, p.~17, Feb. 2015.
+
+\bibitem{roland2002quatumsearch}
+\BIBentryALTinterwordspacing
+J.~Roland and N.~J. Cerf, ``Quantum search by local adiabatic evolution,''
+  \emph{Phys. Rev. A}, vol.~65, p. 042308, Mar 2002. [Online]. Available:
+  \url{http://link.aps.org/doi/10.1103/PhysRevA.65.042308}
+\BIBentrySTDinterwordspacing
+
+\bibitem{das2005qakcs}
+\BIBentryALTinterwordspacing
+A.~Das, B.~K. Chakrabarti, and R.~B. Stinchcombe, ``Quantum annealing in a
+  kinetically constrained system,'' \emph{Phys. Rev. E}, vol.~72, p. 026701,
+  Aug 2005. [Online]. Available:
+  \url{http://link.aps.org/doi/10.1103/PhysRevE.72.026701}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}

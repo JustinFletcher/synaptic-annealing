@@ -28,7 +28,7 @@
 \contentsline {subsection}{\numberline {3.2.3}Constrained Step-Size Omni-dimensional Weight Perturbation}{3-1}
 \contentsline {subsection}{\numberline {3.2.4}Quantum Weight Perturbation}{3-1}
 \contentsline {subsection}{\numberline {3.2.5}Stochastic-Anisotropic Quantum Weight Perturbation}{3-1}
-\contentsline {subsection}{\numberline {3.2.6}Quantum Annealing}{3-1}
+\contentsline {subsection}{\numberline {3.2.6}Quantum Annealing}{3-2}
 \contentsline {chapter}{\numberline {IV.}Results}{4-1}
 \contentsline {chapter}{\numberline {V.}Conclusion}{5-1}
 \contentsline {appendix}{\numberline {Appendix A.}First appendix title}{A-1}
