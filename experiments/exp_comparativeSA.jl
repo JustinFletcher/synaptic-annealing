@@ -11,11 +11,11 @@ Pkg.add("MNIST")
 using PyPlot
 
 rmprocs(workers())
-addprocs(25)
+addprocs(5)
 # @everywhere using Devectorize
 
 @everywhere using BackpropNeuralNet
-@everywhere cd("\\fletcher-thesis")
+@everywhere cd("\\mscs-thesis")
 
 pwd()
 
@@ -28,6 +28,7 @@ pwd()
 @everywhere include("$(pwd())\\src\\"*"vectorListToMatrix.jl")
 @everywhere include("$(pwd())\\src\\"*"plotLib.jl")
 @everywhere include("$(pwd())\\src\\"*"gammaStats.jl")
+@everywhere include("$(pwd())\\src\\"*"movingWindowAverage.jl")
 
 
 # Include data maniputlation libraries.
@@ -92,6 +93,23 @@ dataOutputDimensions = [195]
 lcvfDataset = ExperimentDataset.Dataset(lcvfDatapath, dataInputDimensions, dataOutputDimensions)
 
 ###################################################################################################################################################
+
+
+###################################################################################################################################################
+
+wineData = readdlm("$(pwd())\\data\\wine.dat", ',' , Any)
+wineDataClassed = orthogonalizeDataClasses(wineData, [195])
+wineDataClassed = normalizeData(wineDataClassed)
+wineDataClassed = shuffleData(wineDataClassed)
+
+
+wineDatapath = "$(pwd())\\data\\wine.dat"
+dataInputDimensions = [1:13]
+dataOutputDimensions = [14]
+
+wineDataset = ExperimentDataset.Dataset(wineDatapath, dataInputDimensions, dataOutputDimensions)
+
+###################################################################################################################################################
 using MNIST
 
 # Function to orthogonalize MNIST. Credit: github.com/yarlett
@@ -127,7 +145,6 @@ dataOutputDimensions = size(mnistTrainInput)[2]+1
 mnistDataset = ExperimentDataset.Dataset(mnistTrainData[1:150, :], dataInputDimensions, dataOutputDimensions)
 
 
-
 ###################################################################################################################################################
 
 dataSet = irisDataset
@@ -138,15 +155,17 @@ dataSet = lcvfDataset
 
 ###################################################################################################################################################
 
+dataSet = wineDataset
+
 ###################################################################################################################################################
 
 dataSet = mnistDataset
 
 ###################################################################################################################################################
 
-numFolds = 25
+numFolds = 5
 
-maxRuns = 500000
+maxRuns = 5000
 
 initTemp = 500
 
@@ -159,11 +178,55 @@ matrixConfig = [length(dataSet.inputCols), 50, length(dataSet.outputCols)]
 synMatIn = null
 
 batchSize = 150
+batchSize = size(dataSet.data)[1]
 
-reportFrequency = 1000
+reportFrequency = 10
 
 
 ###################################################################################################################################################
+
+
+function runSynapticAnnealingExperiment(expTitle, regenerate, saveData, loadData,
+                                        numFolds, matrixConfig, synapticAnnealing,
+                                        cutoffError, maxRuns, gaussian_Isotropic_SynapticPerturbation, stateUpdate,
+                                        getDataClassErr, getDataClassErr,
+                                        initTemp, initLearnRate,
+                                        synMatIn, tanh,
+                                        dataSet, batchSize, reportFrequency)
+
+  if (generate)
+      annealingOutput = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
+                                                                     cutoffError, maxRuns, gaussian_Isotropic_SynapticPerturbation, stateUpdate,
+                                                                     getDataClassErr, getDataClassErr,
+                                                                     initTemp, initLearnRate,
+                                                                     synMatIn, tanh,
+                                                                     dataSet, batchSize, reportFrequency)
+
+  end
+
+  if (saveData)
+
+      putdata(annealingOutput, expTitle)
+
+  end
+
+  if (loadData)
+
+      annealingOutput = getdata(expTitle)
+
+  end
+
+  (meanValErrorVec, meanTrainErrorVec, meanPerturbDistanceVec, minValErrorSynapseMatrix) = annealingOutput
+
+  plotCompleteRate(meanPerturbDistanceVec./numFolds, expTitle)
+
+  plotGammaDistPDFfromVector(meanPerturbDistanceVec, expTitle)
+
+  (toptExpVal, toptStd) = calcPerfectClassStats(meanPerturbDistanceVec)
+
+  plotAnnealResults(meanTrainErrorVec, meanValErrorVec, reportFrequency, expTitle)
+
+end
 
 
 outTuple_g_i = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
@@ -174,7 +237,7 @@ outTuple_g_i = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConf
                                                           dataSet, batchSize, reportFrequency)
 
 # putdata(outTuple_g_i, "outTuple_g_i")
-outTuple_g_i = getdata("outTuple_g_i")
+# outTuple_g_i = getdata("outTuple_g_i")
 
 (meanValErrorVec_g_i, meanTrainErrorVec_g_i, meanPerturbDistanceVec_g_i, minValErrorSynapseMatrix_g_i) = outTuple_g_i
 
@@ -182,7 +245,7 @@ plotCompleteRate(meanPerturbDistanceVec_g_i./numFolds, "Gaussian - Isotropic")
 
 plotGammaDistPDFfromVector(meanPerturbDistanceVec_g_i, "Gaussian - Isotropic")
 
-(toptExpVal_g_i, toptStd_g_i) = calcPerfectClassStats(meanPerturbDistanceVec_g_i, numFolds)
+(toptExpVal_g_i, toptStd_g_i) = calcPerfectClassStats(meanPerturbDistanceVec_g_i)
 
 plotAnnealResults(meanTrainErrorVec_g_i, meanValErrorVec_g_i, reportFrequency, "Gaussian - Isotropic")
 
@@ -206,11 +269,11 @@ plotCompleteRate(meanPerturbDistanceVec_g_ua./numFolds, "Gaussian - Uniform Anis
 
 plotGammaDistPDFfromVector(meanPerturbDistanceVec_g_ua, "Gaussian - Uniform Anisotropicity")
 
-(toptExpVal_g_ua, toptStd_g_ua) = calcPerfectClassStats(meanPerturbDistanceVec_g_ua, numFolds)
+(toptExpVal_g_ua, toptStd_g_ua) = calcPerfectClassStats(meanPerturbDistanceVec_g_ua)
 
 plotAnnealResults(meanTrainErrorVec_g_ua, meanValErrorVec_g_ua, reportFrequency, "Gaussian - Uniform Anisotropicity")
 
-
+plotCmaAnnealingResults(meanValErrorVec, 1, reportFrequency, "Gaussian - Uniform Anisotropicity - Test")
 
 ###################################################################################################################################################
 
@@ -516,8 +579,6 @@ end
 function gaussianPDF(x,mu,std)
   (1/(std*2*pi))exp(-((x.-mu).^2)./(2*(std^2)))
 end
-
-
 
 function calcPerfectClassStats(v)
   toptExpVal = (stepExpectationValue((v./maximum(v))))

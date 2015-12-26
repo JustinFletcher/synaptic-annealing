@@ -15,8 +15,6 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 
     println("New Synaptic Annealing")
 
-#     Parse the input data tuple into train and val tuples.
-#     (trainData, valData, inputCols, outputCols) = dataTuple
 
     # Create a local copy of the synapse matrix.
     network = netIn
@@ -27,7 +25,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
     perturbationDistanceVector = Float64[]
     minValErrSynapseMatrix = Any[]
 
-	# Initialize the state.
+	  # Initialize the state.
     maxConfigDist = 2*sum(getNetworkSynapseMatrix(network).!=0)
 	  state = AnnealingState.State(initTemperature,initLearnRate,1,maxConfigDist)
 
@@ -49,7 +47,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         state.valError = reportErrorFunction(network, valData, state, size(valData.data)[1])
         push!(validationErrorVector, state.valError./size(valData.data)[1])
 
-        println("T | V Error @" * string(state.epochsComplete)  * ": " * string(state.trainError./size(trainData.data)[1]) * " | " * string(state.valError./size(valData.data)[1]))
+        println("E @" * string(state.epochsComplete) * ": " * string(state.trainError./size(trainData.data)[1])  * " | " * string(state.valError./size(valData.data)[1]) )
       end
 
       # State capture: if this is the best net so far, save it to the disk.
@@ -110,7 +108,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 
       # If this run is perfect, tell the user.
       if((state.trainError == 0.0 )&&(state.valError == 0.0))
-        println("Perfect Run | Epoch ")
+        println("Perfect Run")
       end
 
       # Evaluate the convergence conditions.
@@ -118,10 +116,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 
     end
 
-# 	minValErrSynapseMatrix = synapseMatrix
-# 	validationErrorVector = trainingErrorVector
-
-	# Should probabily use a datframe here.
+    # TODO: Make this a data frame return.
 
     # Construct and return the output tuple.
     outputTuple = Any[minValErrSynapseMatrix, validationErrorVector, trainingErrorVector, perturbationDistanceVector]
@@ -130,43 +125,4 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 
 end
 
-
-
-function groundNetwork(cutoffEpochs, network, errorFunction, perturbSynapses, stateTuple, trainData,inputCols, outputCols)
-
-	numEpochs = 0
-
-    lastError = errorFunction(network, trainData, inputCols, outputCols)
-
-    while !(numEpochs>=cutoffEpochs)
-
-		numEpochs += 1
-
-		synapseMatrix = getNetworkSynapseMatrix(network)
-
-        # Compute the synapse perturbation matrix.
-        synapsePerturbationTuple = perturbSynapses(synapseMatrix, stateTuple)
-
-        # Parse the perturbation tuple. For readability.
-        (synapsePerturbation, perturbationDistance) = synapsePerturbationTuple
-
-        # Modify the synapse matrix using the perturbation matrix.
-        synapseMatrix += synapsePerturbation
-
-        # Compute the resultant error.
-        perturbedError = errorFunction(setNetworkSynapseMatrix(network, synapseMatrix), trainData, inputCols, outputCols)
-
-
-        if (perturbedError<=lastError)
-			lastError = perturbedError
-		else
-			synapseMatrix -= synapsePerturbation
-        end
-
-
-		network = setNetworkSynapseMatrix(network, synapseMatrix)
-
-    end
-	return(network)
-end
 

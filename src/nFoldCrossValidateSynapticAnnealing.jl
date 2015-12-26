@@ -54,6 +54,8 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
         # Fetch and unpack the results from the remote job.
         outTuple = fetch(remoteReference)
 
+        # TODO: Make to accept data frame returns.
+
         (minValErrSynapseMatrix, validationErrorVector, trainingErrorVector, perturbationDistanceVector) = outTuple
 
         # Push the results onto the storage lists.
@@ -63,6 +65,8 @@ function nFoldCrossValidateSynapticAnnealingPar(numFolds, synMatConfigVec, annea
         push!(synapseMatrixFoldList, minValErrSynapseMatrix)
 
     end
+
+
 
     # Compute the fold-mean validation error vector.
     meanValErrorVec = vec(mean(vectorListToMatrix(valErrorFoldList), 1))
