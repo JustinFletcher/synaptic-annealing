@@ -15,20 +15,21 @@
 \contentsline {subsubsection}{\numberline {2.1.5.1}Back Propagation Training}{2-11}
 \contentsline {subsubsection}{\numberline {2.1.5.2}Simulated Annealing}{2-11}
 \contentsline {section}{\numberline {2.2}Related Works in Simulated Annealing}{2-11}
-\contentsline {subsection}{\numberline {2.2.1}Reheating}{2-12}
-\contentsline {section}{\numberline {2.3}Related Works in Quantum Mechanics}{2-12}
-\contentsline {subsection}{\numberline {2.3.1}Quantum Tunneling}{2-12}
-\contentsline {subsection}{\numberline {2.3.2}Quantum Annealing}{2-12}
-\contentsline {section}{\numberline {2.4}Notation and Terminology Conventions}{2-13}
+\contentsline {subsection}{\numberline {2.2.1}Reheating}{2-13}
+\contentsline {section}{\numberline {2.3}Related Works in Quantum Mechanics}{2-13}
+\contentsline {subsection}{\numberline {2.3.1}Quantum Tunneling}{2-14}
+\contentsline {subsection}{\numberline {2.3.2}Quantum Annealing}{2-15}
+\contentsline {section}{\numberline {2.4}Notation and Terminology Conventions}{2-15}
 \contentsline {chapter}{\numberline {III.}Methodology}{3-1}
-\contentsline {section}{\numberline {3.1}Simulated Quantum Annealing}{3-1}
-\contentsline {section}{\numberline {3.2}Traversing the Error Manifold}{3-1}
-\contentsline {subsection}{\numberline {3.2.1}Unidimensional Weight Perturbation}{3-1}
-\contentsline {subsection}{\numberline {3.2.2}Omni-dimensional Weight Perturbation}{3-1}
-\contentsline {subsection}{\numberline {3.2.3}Constrained Step-Size Omni-dimensional Weight Perturbation}{3-1}
-\contentsline {subsection}{\numberline {3.2.4}Quantum Weight Perturbation}{3-1}
-\contentsline {subsection}{\numberline {3.2.5}Stochastic-Anisotropic Quantum Weight Perturbation}{3-1}
-\contentsline {subsection}{\numberline {3.2.6}Quantum Annealing}{3-2}
+\contentsline {section}{\numberline {3.1}Feed-Forward Neural Network Representation}{3-1}
+\contentsline {section}{\numberline {3.2}Simulated Quantum Annealing}{3-1}
+\contentsline {section}{\numberline {3.3}Neighborhood Functions: Traversing the Error Manifold}{3-1}
+\contentsline {subsection}{\numberline {3.3.1}Visiting Distributions}{3-1}
+\contentsline {subsection}{\numberline {3.3.2}Anisotropicity}{3-1}
+\contentsline {subsection}{\numberline {3.3.3}Constrained Step-Size Omni-dimensional Weight Perturbation}{3-1}
+\contentsline {subsection}{\numberline {3.3.4}Quantum Weight Perturbation}{3-1}
+\contentsline {subsection}{\numberline {3.3.5}Stochastic-Anisotropic Quantum Weight Perturbation}{3-2}
+\contentsline {subsection}{\numberline {3.3.6}Quantum Annealing}{3-2}
 \contentsline {chapter}{\numberline {IV.}Results}{4-1}
 \contentsline {chapter}{\numberline {V.}Conclusion}{5-1}
 \contentsline {appendix}{\numberline {Appendix A.}First appendix title}{A-1}

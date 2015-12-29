@@ -22,7 +22,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
     # Initialize the error vectors.
     trainingErrorVector = Float64[]
     validationErrorVector = Float64[]
-    perturbationDistanceVector = Float64[]
+    perfectClassificationVector = Float64[]
     minValErrSynapseMatrix = Any[]
 
 	  # Initialize the state.
@@ -69,7 +69,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
       (synapsePerturbation, perturbationDistance) = synapsePerturbationTuple
 
       # Append the perturbation distance to an output vector. For analysis.
-      push!(perturbationDistanceVector, int((state.trainError == 0.0 )&&(state.valError == 0.0)))
+      push!(perfectClassificationVector, int((state.trainError == 0.0 )&&(state.valError == 0.0)))
 
       # Modify the synapse matrix using the perturbation matrix.
       synapseMatrix += synapsePerturbation
@@ -119,7 +119,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
     # TODO: Make this a data frame return.
 
     # Construct and return the output tuple.
-    outputTuple = Any[minValErrSynapseMatrix, validationErrorVector, trainingErrorVector, perturbationDistanceVector]
+    outputTuple = Any[minValErrSynapseMatrix, validationErrorVector, trainingErrorVector, perfectClassificationVector]
 
     return(outputTuple)
 

@@ -204,6 +204,8 @@ function uniform_Isotropic_SynapticPerturbation(synapseMatrix, state)
 
 end
 
+mean(rand(1000000))
+
 
 function uniform_UniformlyAnisotropic_SynapticPerturbation(synapseMatrix, state)
 
@@ -239,6 +241,11 @@ function uniform_VariablyAnisotropic_SynapticPerturbation(synapseMatrix, state)
     return(Any[synapsePerturbation, stepSize])
 end
 
+
+sum(rand(100,100).^(1/(1-0.25))./(prod([100,100])/2.^(1/(1-0.25))))
+rand(100,100).^(1/(1-0.25))./(prod([100,100])/2.^(1/(1-0.25)))
+rand(100,100)
+sum(rand(100,100))
 
 
 # -------------- Placeholders

@@ -11,13 +11,43 @@ Pkg.add("MNIST")
 using PyPlot
 
 rmprocs(workers())
-addprocs(5)
+addprocs(25)
 # @everywhere using Devectorize
 
 @everywhere using BackpropNeuralNet
-@everywhere cd("\\mscs-thesis")
+@everywhere cd("\\fletcher-thesis")
 
 pwd()
+
+@everywhere fileList = ("$(pwd())\\src\\"*"ExperimentDataset.jl"),
+                        ("$(pwd())\\src\\"*"AnnealingState.jl"),
+                        ("$(pwd())\\src\\"*"getput.jl"),
+                        ("$(pwd())\\src\\"*"vectorListMean.jl"),
+                        ("$(pwd())\\src\\"*"vectorListToMatrix.jl"),
+                        ("$(pwd())\\src\\"*"plotLib.jl"),
+                        ("$(pwd())\\src\\"*"gammaStats.jl"),
+                        ("$(pwd())\\src\\"*"movingWindowAverage.jl"),
+                        ("$(pwd())\\src\\"*"normalizeData.jl"),
+                        ("$(pwd())\\src\\"*"removeDataMean.jl"),
+                        ("$(pwd())\\src\\"*"orthogonalizeDataClasses.jl"),
+                        ("$(pwd())\\src\\"*"shuffleData.jl"),
+                        ("$(pwd())\\src\\"*"createSynapseMatrix.jl"),
+                        ("$(pwd())\\src\\"*"propogateForward.jl"),
+                        ("$(pwd())\\src\\"*"annealingTraversalFunctions.jl"),
+                        ("$(pwd())\\src\\"*"synapticAnnealing.jl"),
+                        ("$(pwd())\\src\\"*"errorFunctions.jl"),
+                        ("$(pwd())\\src\\"*"getDataPredictions.jl"),
+                        ("$(pwd())\\src\\"*"nativeNetsToSynMats.jl"),
+                        ("$(pwd())\\src\\"*"buildFolds.jl"),
+                        ("$(pwd())\\src\\"*"nFoldCrossValidateSynapticAnnealing.jl"),
+                        ("$(pwd())\\src\\"*"backpropTraining.jl"),
+                        ("$(pwd())\\src\\"*"nFoldCrossValidateBackprop.jl")
+
+
+@everywhere include(fileList)
+
+
+
 
 @everywhere include("$(pwd())\\src\\"*"ExperimentDataset.jl")
 @everywhere include("$(pwd())\\src\\"*"AnnealingState.jl")
@@ -29,7 +59,6 @@ pwd()
 @everywhere include("$(pwd())\\src\\"*"plotLib.jl")
 @everywhere include("$(pwd())\\src\\"*"gammaStats.jl")
 @everywhere include("$(pwd())\\src\\"*"movingWindowAverage.jl")
-
 
 # Include data maniputlation libraries.
 @everywhere include("$(pwd())\\src\\"*"normalizeData.jl")
@@ -73,7 +102,7 @@ irisDatapath = "$(pwd())\\data\\iris.dat"
 dataInputDimensions = [1:4]
 dataOutputDimensions = [5]
 
-irisDataset = ExperimentDataset.Dataset(irisDatapath, dataInputDimensions, dataOutputDimensions)
+irisDataset = ExperimentDataset.Dataset(irisDatapath, dataInputDimensions, dataOutputDimensions, "Iris")
 irisDataset.data[:,irisDataset.outputCols] = (irisDataset.data[:,irisDataset.outputCols]+1)/2
 irisDataset = ExperimentDataset.Dataset(irisDataset.data, dataInputDimensions, dataOutputDimensions)
 
@@ -90,7 +119,7 @@ lcvfDatapath = "$(pwd())\\data\\lcvfData.csv"
 dataInputDimensions = [1:194]
 dataOutputDimensions = [195]
 
-lcvfDataset = ExperimentDataset.Dataset(lcvfDatapath, dataInputDimensions, dataOutputDimensions)
+lcvfDataset = ExperimentDataset.Dataset(lcvfDatapath, dataInputDimensions, dataOutputDimensions, "LCVF")
 
 ###################################################################################################################################################
 
@@ -107,7 +136,7 @@ wineDatapath = "$(pwd())\\data\\wine.dat"
 dataInputDimensions = [1:13]
 dataOutputDimensions = [14]
 
-wineDataset = ExperimentDataset.Dataset(wineDatapath, dataInputDimensions, dataOutputDimensions)
+wineDataset = ExperimentDataset.Dataset(wineDatapath, dataInputDimensions, dataOutputDimensions, "Wine")
 
 ###################################################################################################################################################
 using MNIST
@@ -142,7 +171,7 @@ mnistTrainData = [mnistTrainInput mnistTrainClassesAntisymmetric]
 dataInputDimensions = [1:size(mnistTrainInput)[2]]
 dataOutputDimensions = size(mnistTrainInput)[2]+1
 
-mnistDataset = ExperimentDataset.Dataset(mnistTrainData[1:150, :], dataInputDimensions, dataOutputDimensions)
+mnistDataset = ExperimentDataset.Dataset(mnistTrainData[1:150, :], dataInputDimensions, dataOutputDimensions, "MNIST")
 
 
 ###################################################################################################################################################
@@ -163,9 +192,13 @@ dataSet = mnistDataset
 
 ###################################################################################################################################################
 
-numFolds = 5
+dataSetList = Any[wineDataset, irisDataset]
+###################################################################################################################################################
 
-maxRuns = 5000
+
+numFolds = 25
+
+maxRuns = 1000
 
 initTemp = 500
 
@@ -178,63 +211,179 @@ matrixConfig = [length(dataSet.inputCols), 50, length(dataSet.outputCols)]
 synMatIn = null
 
 batchSize = 150
+
 batchSize = size(dataSet.data)[1]
 
 reportFrequency = 10
+
+generate = false
+saveData = true
+loadData = true
+view = true
+savePlots = true
 
 
 ###################################################################################################################################################
 
 
-function runSynapticAnnealingExperiment(expTitle, regenerate, saveData, loadData,
-                                        numFolds, matrixConfig, synapticAnnealing,
-                                        cutoffError, maxRuns, gaussian_Isotropic_SynapticPerturbation, stateUpdate,
-                                        getDataClassErr, getDataClassErr,
+function runSynapticAnnealingExperiment(expTitle, generate, saveData, loadData, view, savePlots, windowSize, xmax, ymax,
+                                        visitDistTag, anisotropicityTag, experimentTag,
+                                        numFolds, matrixConfig, annealingFunction,
+                                        cutoffError, maxRuns, neighborhoodFunction, stateUpdate,
+                                        trainErrorFunction, reportErrorFunction,
                                         initTemp, initLearnRate,
-                                        synMatIn, tanh,
+                                        synMatIn, actFun,
                                         dataSet, batchSize, reportFrequency)
 
-  if (generate)
-      annealingOutput = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                                     cutoffError, maxRuns, gaussian_Isotropic_SynapticPerturbation, stateUpdate,
-                                                                     getDataClassErr, getDataClassErr,
-                                                                     initTemp, initLearnRate,
-                                                                     synMatIn, tanh,
-                                                                     dataSet, batchSize, reportFrequency)
+    # TODO: Replace with an acculator.
+    annealingOutput = null
 
-  end
+    # Turn off interactive mode, if it's on, to tightly control plotting.
+    ioff()
 
-  if (saveData)
+    # Destroy any lingering figures that may interfer with result saving.
+    close("all")
 
-      putdata(annealingOutput, expTitle)
+    viewFig = figure("ViewFig")
+    validationErrorFig = figure("ValidationErrorFig")
+    completeRateFig = figure("CompleteRateFig")
 
-  end
+    colorList = ["blue","green","red","cyan"]
+    datasetNum = 0
 
-  if (loadData)
 
-      annealingOutput = getdata(expTitle)
+    for dataSet in dataSetList
 
-  end
+        datasetNum+=1
+        # TODO: need to parameterize by percentage.
+        # Set the batch size for this dataset.
+        batchSize = size(dataSet.data)[1]
 
-  (meanValErrorVec, meanTrainErrorVec, meanPerturbDistanceVec, minValErrorSynapseMatrix) = annealingOutput
+        # TODO: need to paramerize by hidden layer generation function.
+        # Create a matrix configuration for this dataset.
+        matrixConfig = [length(dataSet.inputCols), 50, length(dataSet.outputCols)]
 
-  plotCompleteRate(meanPerturbDistanceVec./numFolds, expTitle)
+        # If we've been asked to generate new data for this experiment.
+        if (generate)
 
-  plotGammaDistPDFfromVector(meanPerturbDistanceVec, expTitle)
+            annealingOutput = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, annealingFunction,
+                                                                           cutoffError, maxRuns, neighborhoodFunction, stateUpdate,
+                                                                           trainErrorFunction, reportErrorFunction,
+                                                                           initTemp, initLearnRate,
+                                                                           synMatIn, actFun,
+                                                                           dataSet, batchSize, reportFrequency)
 
-  (toptExpVal, toptStd) = calcPerfectClassStats(meanPerturbDistanceVec)
+        end
 
-  plotAnnealResults(meanTrainErrorVec, meanValErrorVec, reportFrequency, expTitle)
+        # If we've generated new data, and that data is
+        if (generate && saveData)
+            putdata(annealingOutput, expTitle*"_"*dataSet.name)
+        end
 
+        if (loadData)
+            annealingOutput = getdata(expTitle*"_"*dataSet.name)
+        end
+
+        # Unpack the annealing output.
+        (meanValErrorVec, stdValErrorVec, meanTrainErrorVec, stdTrainErrorVec, meanPerturbDistanceVec, minValErrorSynapseMatrix) = annealingOutput
+
+        # Calculate the stats.
+        (toptExpVal, toptStd) = calcPerfectClassStats(meanPerturbDistanceVec)
+
+
+        # If we're viewing, display the plots.
+        if (view)
+
+            figure("ViewFig")
+            subplot(2,2,1)
+            plotCompleteRate(meanPerturbDistanceVec./numFolds, expTitle, dataSet.name, xmax, ymax)
+            subplot(2,2,2)
+            plotCentralMovingAverageValError(meanValErrorVec, stdValErrorVec,  windowSize, reportFrequency, expTitle, dataSet.name, xmax, ymax, colorList[datasetNum])
+            subplot(2,2,3)
+            plotAnnealResults(meanTrainErrorVec, meanValErrorVec, reportFrequency, expTitle, dataSet.name, xmax, ymax)
+            subplot(2,2,4)
+            plotGammaDistPDFfromVector(meanPerturbDistanceVec, expTitle, xmax)
+
+        end
+
+        if (savePlots)
+
+            # Check if the desired director exists, if it doesn't, make it.
+            if(!isdir("$(pwd())\\plots\\"*experimentTag))
+                mkdir("$(pwd())\\plots\\"*experimentTag)
+            end
+
+            figure("ValidationErrorFig")
+            plotCentralMovingAverageValError(meanValErrorVec, stdValErrorVec, windowSize, reportFrequency, expTitle, dataSet.name, xmax, ymax, colorList[datasetNum])
+
+              # Check if the desired director exists, if it doesn't, make it.
+            if(!isdir("$(pwd())\\plots\\"*experimentTag*"\\"*"classPerf\\"))
+                mkdir("$(pwd())\\plots\\"*experimentTag*"\\"*"classPerf\\")
+            end
+            valErrorSavePath = "$(pwd())\\plots\\"*experimentTag*"\\"*"classPerf\\"*"classPerf_"*visitDistTag*"_"*anisotropicityTag*".png"
+            savefig(valErrorSavePath)
+
+            figure("CompleteRateFig")
+            plotCompleteRate(meanPerturbDistanceVec./numFolds, expTitle, dataSet.name, xmax, ymax)
+
+            # Check if the desired director exists, if it doesn't, make it.
+            if(!isdir("$(pwd())\\plots\\"*experimentTag*"\\"*"completeFrac\\"))
+                mkdir("$(pwd())\\plots\\"*experimentTag*"\\"*"completeFrac\\")
+            end
+            valErrorSavePath = "$(pwd())\\plots\\"*experimentTag*"\\"*"completeFrac\\"*"completeFrac_"*visitDistTag*"_"*anisotropicityTag*".png"
+            savefig(valErrorSavePath)
+        end
+
+    end
+
+
+    # Close the saving-only figures.
+    close("ValidationErrorFig")
+    close("CompleteRateFig")
+
+    # Turn interactive mode back on, as this is our default state.
+    ion()
+
+    # Show the remaining figures.
+    show()
+
+    return(annealingOutput)
 end
 
 
-outTuple_g_i = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns, gaussian_Isotropic_SynapticPerturbation, AnnealingState.updateState_csa,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn, tanh,
-                                                          dataSet, batchSize, reportFrequency)
+
+###################################################################################################################################################
+
+# experimentList = Any[]
+
+# for experiment in experimentList
+
+#   cutoffError = 0.0
+#   (expTitle, visitDistTag, anisotropicityTag, experimentTag, annealingFunction) =
+#   experimentResults = runSynapticAnnealingExperiment(expTitle, generate, saveData, loadData, view, savePlots, windowSize, xmax, ymax,
+#                                                      visitDistTag, anisotropicityTag, experimentTag,
+#                                                      numFolds, matrixConfig, annealingFunction,
+#                                                      cutoffError, maxRuns, neighborhoodFunction, stateUpdate,
+#                                                      trainErrorFunction, reportErrorFunction,
+#                                                      initTemp, initLearnRate,
+#                                                      synMatIn, actFun,
+#                                                      dataSet, batchSize, reportFrequency)
+
+# end
+
+
+# ###################################################################################################################################################
+
+
+
+outTuple_g_i  = @time runSynapticAnnealingExperiment("Gaussian - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "GaussianVisit", "IsotropicAnisotropicity", "comparitive_simulated_annealing",
+                                                     numFolds, matrixConfig, synapticAnnealing,
+                                                     0.0, maxRuns, gaussian_Isotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+                                                     getDataClassErr, getDataClassErr,
+                                                     initTemp, 1,
+                                                     synMatIn, tanh,
+                                                     dataSet, batchSize, reportFrequency)
 
 # putdata(outTuple_g_i, "outTuple_g_i")
 # outTuple_g_i = getdata("outTuple_g_i")
@@ -253,39 +402,60 @@ plotAnnealResults(meanTrainErrorVec_g_i, meanValErrorVec_g_i, reportFrequency, "
 ###################################################################################################################################################
 
 
-outTuple_g_ua = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns, gaussian_uniformAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn, tanh,
-                                                          dataSet, batchSize, reportFrequency)
+
+outTuple_g_ua = @time runSynapticAnnealingExperiment("Gaussian - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 5, maxRuns, 1,
+                                                     "GaussianVisit", "UniformAnisotropicity", "comparitive_simulated_annealing",
+                                                     numFolds, matrixConfig, synapticAnnealing,
+                                                     0.0, maxRuns, gaussian_uniformAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+                                                     getDataClassErr, getDataClassErr,
+                                                     initTemp, 1,
+                                                     synMatIn, tanh,
+                                                     dataSetList, batchSize, reportFrequency)
 
 # putdata(outTuple_g_ua, "outTuple_g_ua")
-outTuple_g_ua = getdata("outTuple_g_ua")
+# outTuple_g_ua = getdata("outTuple_g_ua")
 
 (meanValErrorVec_g_ua, meanTrainErrorVec_g_ua, meanPerturbDistanceVec_g_ua, minValErrorSynapseMatrix_g_ua) = outTuple_g_ua
 
-plotCompleteRate(meanPerturbDistanceVec_g_ua./numFolds, "Gaussian - Uniform Anisotropicity")
-
-plotGammaDistPDFfromVector(meanPerturbDistanceVec_g_ua, "Gaussian - Uniform Anisotropicity")
+(meanValErrorVec, stdValErrorVec, meanTrainErrorVec, stdTrainErrorVec, meanPerturbDistanceVec, minValErrorSynapseMatrix) = outTuple_g_ua
 
 (toptExpVal_g_ua, toptStd_g_ua) = calcPerfectClassStats(meanPerturbDistanceVec_g_ua)
 
+
+subplot(2,2,1)
+
 plotAnnealResults(meanTrainErrorVec_g_ua, meanValErrorVec_g_ua, reportFrequency, "Gaussian - Uniform Anisotropicity")
 
-plotCmaAnnealingResults(meanValErrorVec, 1, reportFrequency, "Gaussian - Uniform Anisotropicity - Test")
+subplot(2,2,2)
+
+plotCmaAnnealingResults(meanValErrorVec_g_ua, 9, reportFrequency, "Gaussian - Uniform Anisotropicity")
+
+subplot(2,2,3)
+
+plotCompleteRate(meanPerturbDistanceVec_g_ua./numFolds, "Gaussian - Uniform Anisotropicity")
+
+subplot(2,2,4)
+
+plotGammaDistPDFfromVector(meanPerturbDistanceVec_g_ua, "Gaussian - Uniform Anisotropicity")
+
+
+
+
 
 ###################################################################################################################################################
 
-outTuple_g_va = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns, gaussian_variableAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa_anisotropicity,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn, tanh,
-                                                          dataSet, batchSize, reportFrequency)
+outTuple_g_va  = @time runSynapticAnnealingExperiment("Gaussian - Variable Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                      "GaussianVisit", "VariableAnisotropicity", "comparitive_simulated_annealing",
+                                                      numFolds, matrixConfig, synapticAnnealing,
+                                                      0.0, maxRuns, gaussian_variableAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa_anisotropicity,
+                                                      getDataClassErr, getDataClassErr,
+                                                      initTemp, 1,
+                                                      synMatIn, tanh,
+                                                      dataSet, batchSize, reportFrequency)
 
 # putdata(outTuple_g_va, "outTuple_g_va")
-outTuple_g_va = getdata("outTuple_g_va")
+# outTuple_g_va = getdata("outTuple_g_va")
+
 (meanValErrorVec_g_va, meanTrainErrorVec_g_va, meanPerturbDistanceVec_g_va, minValErrorSynapseMatrix_g_va) = outTuple_g_va
 
 plotCompleteRate(meanPerturbDistanceVec_g_va./numFolds, "Gaussian - Variable Anisotropicity")
@@ -293,7 +463,6 @@ plotCompleteRate(meanPerturbDistanceVec_g_va./numFolds, "Gaussian - Variable Ani
 plotGammaDistPDFfromVector(meanPerturbDistanceVec_g_va, "Gaussian - Variable Anisotropicity")
 
 (toptExpVal_g_va, toptStd_g_va) = calcPerfectClassStats(meanPerturbDistanceVec_g_va, numFolds)
-
 
 plotAnnealResults(meanTrainErrorVec_g_va, meanValErrorVec_g_va, reportFrequency, "Gaussian - Variable Anisotropicity")
 
@@ -306,12 +475,14 @@ plotAnnealResults(meanTrainErrorVec_g_va, meanValErrorVec_g_va, reportFrequency,
 ###################################################################################################################################################
 
 
-outTuple_e_i = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns, exponential_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn, tanh,
-                                                          dataSet, batchSize, reportFrequency)
+outTuple_e_i = @time runSynapticAnnealingExperiment("Exponential - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                    "ExponentialVisit", "IsotropicAnisotropicity", "comparitive_simulated_annealing",
+                                                    numFolds, matrixConfig, synapticAnnealing,
+                                                    0.0, maxRuns, exponential_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+                                                    getDataClassErr, getDataClassErr,
+                                                    initTemp, 1,
+                                                    synMatIn, tanh,
+                                                    dataSet, batchSize, reportFrequency)
 
 putdata(outTuple_e_i, "outTuple_e_i")
 # outTuple_e_i = getdata("outTuple_e_i")
@@ -335,12 +506,14 @@ plotAnnealResults(meanTrainErrorVec_e_i, meanValErrorVec_e_i, reportFrequency, "
 ###################################################################################################################################################
 
 
-outTuple_e_uo = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns,  exponential_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn,tanh,
-                                                          dataSet, batchSize, reportFrequency)
+outTuple_e_uo = @time runSynapticAnnealingExperiment("Exponential - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "ExponentialVisit", "UniformAnisotropicity", "comparitive_simulated_annealing",
+                                                     (numFolds, matrixConfig, synapticAnnealing,
+                                                      0.0, maxRuns,  exponential_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+                                                      getDataClassErr, getDataClassErr,
+                                                      initTemp, 1,
+                                                      synMatIn,tanh,
+                                                      dataSet, batchSize, reportFrequency)
 
 putdata(outTuple_e_uo, "outTuple_e_uo")
 # outTuple_e_uo = getdata("outTuple_e_uo")
@@ -363,12 +536,14 @@ plotAnnealResults(meanTrainErrorVec_e_uo, meanValErrorVec_e_uo, reportFrequency,
 ###################################################################################################################################################
 
 
-outTuple_e_va = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns,  exponential_VariablyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa_anisotropicity,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn, tanh,
-                                                          dataSet, batchSize, reportFrequency)
+outTuple_e_va = @time runSynapticAnnealingExperiment("Exponential - Variable Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "ExponentialVisit", "VariableAnisotropicity", "comparitive_simulated_annealing",
+                                                     numFolds, matrixConfig, synapticAnnealing,
+                                                     0.0, maxRuns,  exponential_VariablyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa_anisotropicity,
+                                                     getDataClassErr, getDataClassErr,
+                                                     initTemp, 1,
+                                                     synMatIn, tanh,
+                                                     dataSet, batchSize, reportFrequency)
 
 putdata(outTuple_e_va, "outTuple_e_va")
 # outTuple_e_va = getdata("outTuple_e_va")
@@ -394,12 +569,14 @@ plotAnnealResults(meanTrainErrorVec_e_va, meanValErrorVec_e_va, reportFrequency,
 ###################################################################################################################################################
 
 
-outTuple_u_i = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns, uniform_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn, tanh,
-                                                          dataSet, batchSize, reportFrequency)
+outTuple_u_i = @time runSynapticAnnealingExperiment("Uniform - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                    "UniformVisit", "IsotropicAnisotropicity", "comparitive_simulated_annealing",
+                                                    numFolds, matrixConfig, synapticAnnealing,
+                                                    0.0, maxRuns, uniform_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+                                                    getDataClassErr, getDataClassErr,
+                                                    initTemp, 1,
+                                                    synMatIn, tanh,
+                                                    dataSet, batchSize, reportFrequency)
 
 putdata(outTuple_u_i, "outTuple_u_i")
 # outTuple_u_i = getdata("outTuple_u_i")
@@ -423,12 +600,14 @@ plotAnnealResults(meanTrainErrorVec_u_i, meanValErrorVec_u_i, reportFrequency, "
 ###################################################################################################################################################
 
 
-outTuple_u_ua = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns,  uniform_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn,tanh,
-                                                          dataSet, batchSize, reportFrequency)
+outTuple_u_ua = @time runSynapticAnnealingExperiment("Uniform - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "UniformVisit", "UniformAnisotropicity", "comparitive_simulated_annealing",
+                                                     numFolds, matrixConfig, synapticAnnealing,
+                                                     0.0, maxRuns,  uniform_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+                                                     getDataClassErr, getDataClassErr,
+                                                     initTemp, 1,
+                                                     synMatIn,tanh,
+                                                     dataSet, batchSize, reportFrequency)
 
 putdata(outTuple_u_ua, "outTuple_u_ua")
 # outTuple_u_ua = getdata("outTuple_u_ua")
@@ -451,12 +630,14 @@ plotAnnealResults(meanTrainErrorVec_u_ua, meanValErrorVec_u_ua, reportFrequency,
 ###################################################################################################################################################
 
 
-outTuple_u_va = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns,  uniform_VariablyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa_anisotropicity,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn, tanh,
-                                                          dataSet, batchSize, reportFrequency)
+outTuple_u_va = @time runSynapticAnnealingExperiment("Uniform - VariableAnisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "UniformVisit", "VariableAnisotropicity", "comparitive_simulated_annealing",
+                                                     numFolds, matrixConfig, synapticAnnealing,
+                                                     0.0, maxRuns,  uniform_VariablyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa_anisotropicity,
+                                                     getDataClassErr, getDataClassErr,
+                                                     initTemp, 1,
+                                                     synMatIn, tanh,
+                                                     dataSet, batchSize, reportFrequency)
 
 # putdata(outTuple_u_va, "outTuple_u_va")
 outTuple_u_va = getdata("outTuple_u_va")
@@ -480,12 +661,14 @@ plotAnnealResults(meanTrainErrorVec_u_va, meanValErrorVec_u_va, reportFrequency,
 ###################################################################################################################################################
 
 
-outTuple_c_i = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns, cauchy_Isotropic_SynapticPerturbation, AnnealingState.updateState_csa,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn, tanh,
-                                                          dataSet, batchSize, reportFrequency)
+outTuple_c_i = @time runSynapticAnnealingExperiment("Cauchy - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                    "CauchyVisit", "IsotropicAnisotropicity", "comparitive_simulated_annealing",
+                                                    numFolds, matrixConfig, synapticAnnealing,
+                                                    0.0, maxRuns, cauchy_Isotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+                                                    getDataClassErr, getDataClassErr,
+                                                    initTemp, 1,
+                                                    synMatIn, tanh,
+                                                    dataSet, batchSize, reportFrequency)
 
 # putdata(outTuple_c_i, "outTuple_c_i")
 outTuple_c_i = getdata("outTuple_c_i")
@@ -507,12 +690,14 @@ plotAnnealResults(meanTrainErrorVec_c_i, meanValErrorVec_c_i, reportFrequency, "
 ###################################################################################################################################################
 
 
-outTuple_c_ua = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns,  cauchy_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn,tanh,
-                                                          dataSet, batchSize, reportFrequency)
+outTuple_c_ua = @time runSynapticAnnealingExperiment("Cauchy - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "CauchyVisit", "UniformAnisotropicity", "comparitive_simulated_annealing",
+                                                     numFolds, matrixConfig, synapticAnnealing,
+                                                     0.0, maxRuns,  cauchy_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+                                                     getDataClassErr, getDataClassErr,
+                                                     initTemp, 1,
+                                                     synMatIn,tanh,
+                                                     dataSet, batchSize, reportFrequency)
 
 # putdata(outTuple_c_ua, "outTuple_c_ua")
 outTuple_c_ua = getdata("outTuple_c_ua")
@@ -534,12 +719,14 @@ plotAnnealResults(meanTrainErrorVec_c_ua, meanValErrorVec_c_ua, reportFrequency,
 ###################################################################################################################################################
 
 
-outTuple_c_va = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, synapticAnnealing,
-                                                          0.0, maxRuns,  cauchy_VariablyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa_anisotropicity,
-                                                          getDataClassErr, getDataClassErr,
-                                                          initTemp, 1,
-                                                          synMatIn, tanh,
-                                                          dataSet, batchSize, reportFrequency)
+outTuple_c_va = @time runSynapticAnnealingExperiment("Cauchy - Variable Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "CauchyVisit", "VariableAnisotropicity", "comparitive_simulated_annealing",
+                                                     numFolds, matrixConfig, synapticAnnealing,
+                                                     0.0, maxRuns,  cauchy_VariablyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa_anisotropicity,
+                                                     getDataClassErr, getDataClassErr,
+                                                     initTemp, 1,
+                                                     synMatIn, tanh,
+                                                     dataSet, batchSize, reportFrequency)
 
 # putdata(outTuple_c_va, "outTuple_c_va")
 outTuple_c_va = getdata("outTuple_c_va")

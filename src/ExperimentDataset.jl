@@ -13,8 +13,9 @@ module ExperimentDataset
 		data
 		inputCols
 		outputCols
+    name
 
-		function Dataset(datapath::String, inputCols, outputCols)
+		function Dataset(datapath::String, inputCols, outputCols, name)
 
 			data = readdlm(datapath, ',' , Any)
 			data = orthogonalizeDataClasses(data, outputCols)
@@ -25,13 +26,13 @@ module ExperimentDataset
 
 
 			outputCols = [outputCols[1]:((outputCols[1]-1)+(size(data, 2)-length(inputCols)))]
-			new (data, inputCols, outputCols)
+			new (data, inputCols, outputCols, name)
 		end
 
-		function Dataset(data, inputCols, outputCols)
+		function Dataset(data, inputCols, outputCols, name)
 
 			outputCols = [outputCols[1]:((outputCols[1]-1)+(size(data, 2)-length(inputCols)))]
-			new (data, inputCols, outputCols)
+			new (data, inputCols, outputCols, name)
 
 		end
 	end
