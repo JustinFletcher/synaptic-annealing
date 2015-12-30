@@ -1,19 +1,19 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  28 DEC 2015 14:31
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  30 DEC 2015 11:10
 entering extended mode
 **usethesis.tex
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.tex"
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
-vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
-an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
-romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
-sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
-senglishmax, welsh, loaded.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\afthesis.cls"
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\afthesis.cls"
 Document Class: afthesis 1996/12/14 v2.7 -- AFIT THESIS STYLE
 by Joel Young adapted from work by Mark Roth
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
@@ -35,7 +35,7 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption2.sty"
-Package: caption2 2008/07/01 v2.2c Customising captions (AS)
+Package: caption2 2013/02/03 v2.2-62 Customising captions (AR)
 
 
 Package caption2 Warning: ****************************************************
@@ -48,7 +48,8 @@ Package caption2 Warning: ****************************************************
 (caption2)                ****************************************************
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
@@ -57,51 +58,52 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \captionmargin=\dimen103
 \captionmargin@=\dimen104
 \captionwidth=\dimen105
-\caption@indent=\dimen106
-\caption@parindent=\dimen107
-\caption@hangindent=\dimen108
+\caption@tempdima=\dimen106
+\caption@indent=\dimen107
+\caption@parindent=\dimen108
+\caption@hangindent=\dimen109
 )
 Package caption2 Info: Running in caption2 v2.0 compatibility mode on input lin
-e 209.
-\captionlinewidth=\dimen109
-\realcaptionwidth=\dimen110
+e 215.
+\captionlinewidth=\dimen110
+\realcaptionwidth=\dimen111
 )
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\afthes11.sty"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
-Package: amsmath 2000/07/18 v2.13 AMS math features
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\afthes11.sty"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
-\ex@=\dimen111
+\ex@=\dimen112
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen112
+\pmbraise@=\dimen113
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count88
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count89
 \leftroot@=\count90
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count91
 \DOTSCASE@=\count92
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen113
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\big@size=\dimen114
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count93
 \c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
@@ -112,18 +114,18 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \column@=\count98
 \maxfields@=\count99
 \andhelp@=\toks17
-\eqnshift@=\dimen114
-\alignsep@=\dimen115
-\tagshift@=\dimen116
-\tagwidth@=\dimen117
-\totwidth@=\dimen118
-\lineht@=\dimen119
+\eqnshift@=\dimen115
+\alignsep@=\dimen116
+\tagshift@=\dimen117
+\tagwidth@=\dimen118
+\totwidth@=\dimen119
+\lineht@=\dimen120
 \@envbody=\toks18
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
@@ -143,14 +145,21 @@ File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/01/28 v0.05d Graphics/color for pdfTeX
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
 \Gread@gobject=\count100
 ))
-\Gin@req@height=\dimen120
-\Gin@req@width=\dimen121
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
 )
-\epsfxsize=\dimen122
-\epsfysize=\dimen123
+\epsfxsize=\dimen123
+\epsfysize=\dimen124
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
@@ -158,44 +167,47 @@ Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
-)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
-Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
-)
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2010/03/01 v1.9 Key value parser (HO)
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
-Package: etexcmds 2010/01/28 v1.3 Prefix for e-TeX command names (HO)
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2010/04/01 v0.9 Utility functions of pdfTeX for LuaTeX (HO)
-
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2010/04/26 v1.7 LaTeX kernel commands for general use (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
 )
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 436.
+(grfext)             \AppendGraphicsExtensions on input line 452.
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
@@ -226,13 +238,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@algorithm=\count106
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.aux")
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 190.
 LaTeX Font Info:    ... okay on input line 190.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 190.
@@ -251,14 +263,15 @@ Package caption Info: End \AtBeginDocument code.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count107
-\scratchdimen=\dimen124
+\scratchdimen=\dimen125
 \scratchbox=\box30
 \nofMPsegments=\count108
 \nofMParguments=\count109
 \everyMPshowfont=\toks23
 \MPscratchCnt=\count110
-\MPscratchDim=\dimen125
+\MPscratchDim=\dimen126
 \MPnumerator=\count111
+\makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks24
 )
 
@@ -283,16 +296,16 @@ Preface.
 ]
 
 Table of Contents.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.toc"
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.toc"
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [4
 
 ])
@@ -300,28 +313,28 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
  [5]
 
 List of Figures.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.lof")
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.lof")
 \tf@lof=\write4
  [6
 
 ]
 
 List of Tables.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.lot")
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.lot")
 \tf@lot=\write5
  [7
 
 ]
 
 List of Symbols.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.los")
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.los")
 \tf@los=\write6
  [8
 
 ]
 
 List of Abbreviations.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.loa")
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.loa")
 \tf@loa=\write7
  [9
 
@@ -341,51 +354,86 @@ Chapter 2.
 [1
 
 ] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 471.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 472.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 471.
-
-
-LaTeX Warning: Citation `szu1987fastsimulatedannealing' on page 2-12 undefined 
-on input line 482.
-
-
-LaTeX Warning: Citation `tsallis1996generalizedsimulatedannealing' on page 2-12
- undefined on input line 482.
-
-[12] [13]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 472.
+ [12] [13]
 Package epstopdf Info: Source file: <figures/tunneling_ex.eps>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 112596 bytes
 (epstopdf)             Output file: <figures/tunneling_ex-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 32004 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/tunneling_ex-eps-co
 nverted-to.pdf figures/tunneling_ex.eps>
-(epstopdf)             \includegraphics on input line 507.
+(epstopdf)             \includegraphics on input line 510.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/tunneling_ex-eps-converted-to.pdf, id=103, 836.12375pt x 777.90625pt>
 File: figures/tunneling_ex-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/tunneling_ex-eps-converted-to.pdf>
+Package pdftex.def Info: figures/tunneling_ex-eps-converted-to.pdf used on inpu
+t line 510.
+(pdftex.def)             Requested size: 231.26378pt x 215.15341pt.
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¶ in font cmr10!
 Missing character: There is no Ã in font cmr9!
 Missing character: There is no ¶ in font cmr9!
- [14 <C:/fletcher-thesis/thesis/doc/AFIT LaTeX/figures/tunneling_ex-eps-convert
-ed-to.pdf>] [15] [16]
+ [14 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/tunneling_ex-eps-converted-t
+o.pdf>] [15] [16]
 
 Chapter 3.
 [1
 
-] [2]
+]
+Package epstopdf Info: Source file: <figures/quantum_advantage_a.eps>
+(epstopdf)                    date: 2015-12-29 09:35:52
+(epstopdf)                    size: 146455 bytes
+(epstopdf)             Output file: <figures/quantum_advantage_a-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2015-12-29 09:35:52
+(epstopdf)                    size: 43103 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/quantum_advantage_a
+-eps-converted-to.pdf figures/quantum_advantage_a.eps>
+(epstopdf)             \includegraphics on input line 572.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/quantum_advantage_a-eps-converted-to.pdf, id=120, 932.48375pt x 863.22
+5pt>
+File: figures/quantum_advantage_a-eps-converted-to.pdf Graphic file (type pdf)
+ <use figures/quantum_advantage_a-eps-converted-to.pdf>
+Package pdftex.def Info: figures/quantum_advantage_a-eps-converted-to.pdf used 
+on input line 572.
+(pdftex.def)             Requested size: 199.16928pt x 184.37796pt.
+Package epstopdf Info: Source file: <figures/quantum_advantage_b.eps>
+(epstopdf)                    date: 2015-12-29 09:35:52
+(epstopdf)                    size: 1196369 bytes
+(epstopdf)             Output file: <figures/quantum_advantage_b-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2015-12-29 09:35:52
+(epstopdf)                    size: 69135 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/quantum_advantage_b
+-eps-converted-to.pdf figures/quantum_advantage_b.eps>
+(epstopdf)             \includegraphics on input line 579.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/quantum_advantage_b-eps-converted-to.pdf, id=121, 1166.3575pt x 940.51
+375pt>
+File: figures/quantum_advantage_b-eps-converted-to.pdf Graphic file (type pdf)
+ <use figures/quantum_advantage_b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/quantum_advantage_b-eps-converted-to.pdf used 
+on input line 579.
+(pdftex.def)             Requested size: 199.16928pt x 160.60277pt.
+ [2 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/quantum_advantage_a-eps-conve
+rted-to.pdf> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/quantum_advantage_b-
+eps-converted-to.pdf>] [3]
 
 Chapter 4.
 [1
@@ -398,7 +446,7 @@ Chapter 5.
 ]
 
 Appendix 1.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.bbl" [1
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.bbl" [1
 
 
 ]
@@ -423,43 +471,40 @@ n Neu-ro-science,'' \OT1/cmr/m/it/10.95 Syn-these\OT1/cmr/m/n/10.95 ,
 Vita.
 [1
 
-] ("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.aux")
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] ("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.aux") ) 
 Here is how much of TeX's memory you used:
- 3264 strings out of 494053
- 47173 string characters out of 3146188
- 110320 words of memory out of 3000000
- 6468 multiletter control sequences out of 15000+200000
+ 3465 strings out of 493921
+ 51000 string characters out of 3144847
+ 109997 words of memory out of 3000000
+ 6666 multiletter control sequences out of 15000+200000
  14752 words of font info for 55 fonts, out of 3000000 for 9000
- 715 hyphenation exceptions out of 8191
+ 841 hyphenation exceptions out of 8191
  43i,10n,40p,1544b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/symbols/msbm10.pfb>
-Output written on usethesis.pdf (37 pages, 338713 bytes).
+<C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+ti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt1
+0.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb>
+Output written on usethesis.pdf (38 pages, 448705 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
+ 222 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

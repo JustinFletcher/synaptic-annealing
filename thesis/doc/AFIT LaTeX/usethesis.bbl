@@ -45,9 +45,9 @@ Cybenko, G.
   Mathematics of Control, Signals and Systems\/}, {\em 2\/}(4):303--314 (1989).
 
 \bibitem{das2005qakcs}
-{Das}, A., et~al.
-\newblock ``{Quantum annealing in a kinetically constrained system},'' {\em
-  /}, {\em 72\/}(2):026701 (August 2005).
+Das, Arnab, et~al.
+\newblock ``Quantum annealing in a kinetically constrained system,'' {\em Phys.
+  Rev. E\/}, {\em 72\/}:026701 (Aug 2005).
 
 \bibitem{goffe1994globaloptimization}
 Goffe, William~L., et~al.
@@ -149,6 +149,16 @@ Rosenblatt, F.
 Rumelhart, D.E., et~al.
 \newblock {\em Learning Internal Representations by Error Propagation\/}.
 \newblock 1986.
+
+\bibitem{szu1987fastsimulatedannealing}
+Szu, Harold and Ralph Hartley.
+\newblock ``{Fast simulated annealing},'' {\em Physics Letters A\/}, {\em
+  122\/}(3-4):157--162 (June 1987).
+
+\bibitem{tsallis1996generalizedsimulatedannealing}
+Tsallis, Constantino and Daniel~A. Stariolo.
+\newblock ``Generalized simulated annealing,'' {\em Physica A: Statistical and
+  Theoretical Physics\/}, {\em 233\/}(1-2):395--406 (November 1996).
 
 \bibitem{vonderMalsburg1973selforganization}
 von~der Malsburg, Chr.

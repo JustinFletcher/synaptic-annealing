@@ -432,12 +432,12 @@
 	\mathcal{C} : \boldsymbol{\mathcal{S}} \rightarrow \mathbb{R}.
 	\end{equation*}
 	
-	\noindent During each iteration of the algorithm, a new solution, \begin{math}\boldsymbol{s}'  \end{math}, is generated using \begin{math}\boldsymbol{\mathcal{N}(\boldsymbol{s})} \end{math}, and the cost of that solution, \begin{math}\mathcal{C}(\boldsymbol{s}' ) \end{math}, is determined. The change in cost associated with moving from the current solution to the neighbor solution is given by 
+	\noindent Because \begin{math} \mathcal{C} \end{math} is a function on \begin{math} \boldsymbol{\mathcal{S}} \end{math}, it is said that the cost function forms a cost surface in the solution space. During each iteration of the algorithm, a new solution, \begin{math}\boldsymbol{s}'  \end{math}, is generated using \begin{math}\boldsymbol{\mathcal{N}(\boldsymbol{s})} \end{math}, and the cost of that solution, \begin{math}\mathcal{C}(\boldsymbol{s}' ) \end{math}, is determined. The change in cost associated with moving from the current solution to the neighbor solution is given by 
 	\begin{equation*} \label{eq:delta_cost}
 	\Delta C =  \mathcal{C}(\boldsymbol{s}')-\mathcal{C}(\boldsymbol{s}).
 	\end{equation*}
 	
-	\begin{math}\Delta C \end{math} is then used in conjunction with an artificial temperature parameter to determine if the newly-generated neighbor solution is to become the current solution. The artificial temperature parameter is specified by the temperature schedule, \begin{math}T(t)\end{math}, where \begin{math}t\end{math} is the number of simulation iterations completed. The temperature controls the probability of the system moving to a higher cost solution, and is what enables the algorithm to escape local minima. In the parlance of SA \cite{kirkpatrick1983} a system at its maximum temperature is said to be \textit{melted}. In the melted state, most neighbor solutions are accepted by the algorithm. Analogously, a system that has a temperature of zero, which indicates that the algorithm cannot move to any higher-error state, is said to be \textit{frozen}. Note that a frozen system may still be perturbed into a lower-energy state. The notions of freezing and melting enter the SA algorithm in the form of the acceptance criterion, which determines if a newly-generated solution is to become the current solution. The most commonly used acceptance criterion is the Metropolis criterion \cite{metropolis1953}, given by:
+	\begin{math}\Delta C \end{math} is then used in conjunction with an artificial temperature parameter to determine if the newly-generated neighbor solution is to become the current solution. The artificial temperature parameter is specified by the temperature schedule, \begin{math}T(t)\end{math}, where \begin{math}t\end{math} is the number of simulation iterations completed. The temperature controls the probability of the system moving to a higher cost solution, thereby enabling the algorithm to escape local minima on the cost surface. In the parlance of SA \cite{kirkpatrick1983} a system at its maximum temperature is said to be \textit{melted}. In the melted state, most neighbor solutions are accepted by the algorithm. Analogously, a system that has a temperature of zero, which indicates that the algorithm cannot move to any higher-error state, is said to be \textit{frozen}. Note that a frozen system may still be perturbed into a lower-energy state. The notions of freezing and melting enter the SA algorithm in the form of the acceptance criterion, which determines if a newly-generated solution is to become the current solution. The most commonly used acceptance criterion is the Metropolis criterion \cite{metropolis1953}, given by:
 	
 	\begin{equation} 
 	y_j = \begin{cases}
@@ -449,6 +449,7 @@
 	
 	The probability of moving to a solution which is higher in cost than the current solution is derived from the statistical mechanical probability of traversing a potential energy barrier by thermal fluctuations. When considering only the influence of classical thermal fluctuations in particle energy levels, the probability of a particle traversing a barrier of height \begin{math} \Delta V \end{math} at a temperature \begin{math} T \end{math} is on the order of: \begin{equation} 
 	\mathcal{P}_t = e^{-\frac{\Delta V}{T}} 
+	\label{eq:thermal_traversal_prob}
 	\end{equation}
 	
 	 The SA algorithm is presented in Algorithm~\ref{alg:simulated_annealing}. 
@@ -461,26 +462,26 @@
 		\caption{Simulated Annealing}
 		\label{alg:simulated_annealing}
 		\begin{algorithmic}
-			\STATE $\boldsymbol{\mathcal{W}} \leftarrow \boldsymbol{\mathcal{W}}_0$
+			\STATE $\boldsymbol{s} \leftarrow \boldsymbol{s}_0$
 			\STATE $t \leftarrow 0$
 			\WHILE{$T(t) > \epsilon$}
-			\STATE $\boldsymbol{\mathcal{W}}' \leftarrow \boldsymbol{\mathcal{W}} + \alpha g(u) \boldsymbol{\mathcal{A}} $
-			\STATE $\Delta C \leftarrow (\mathcal{C}(\boldsymbol{\mathcal{W}}')-\mathcal{C}(\boldsymbol{\mathcal{W}}))$
+			\STATE $\boldsymbol{s}' \leftarrow \boldsymbol{\mathcal{N}}(\boldsymbol{s}) $
+			\STATE $\Delta C \leftarrow (\mathcal{C}(\boldsymbol{s}')-\mathcal{C}(\boldsymbol{s}))$
 			\IF{$\Delta C \leq 0 $}
-			\STATE $\boldsymbol{\mathcal{W}} \leftarrow \boldsymbol{\mathcal{W}}'$
+			\STATE $\boldsymbol{s} \leftarrow \boldsymbol{s}'$
 			\ELSE [$ \exp(\Delta C/T(t) ) > U\left( 0,1\right)  $]
-			\STATE $\boldsymbol{\mathcal{W}} \leftarrow \boldsymbol{\mathcal{W}}'$
+			\STATE $\boldsymbol{s} \leftarrow \boldsymbol{s}'$
 			\ENDIF
 			\STATE $t \leftarrow t+1$
 			\ENDWHILE
-			\STATE $\boldsymbol{\mathcal{W}}_{opt} \leftarrow \boldsymbol{\mathcal{W}}$
-			\RETURN $(\boldsymbol{\mathcal{W}}_{opt})$
+			\STATE $\boldsymbol{s}_{opt} \leftarrow \boldsymbol{s}$
+			\RETURN $(\boldsymbol{s}_{opt})$
 		\end{algorithmic}
 	\end{algorithm}
 		
 	We need here a discussion regarding the asymptotic convergence.
 	
-	In \cite{szu1987fastsimulatedannealing} Szu and Hartley introduced the method of fast simulated annealing (FSA), which incorporates occasional, long jumps through the configuration space, These jumps are accomplished by using a heavy-tailed distribution, such as the Cauchy distribution, for the visiting distribution used in the neighborhood function. This provision allows for the possibility of escaping local minima, and reduces the total computational effort required to reach a global minimum. This modification yields a significant decrease in the amount of computation effort required to statistically guarantee that a global minimum is found. Specifically, the FSA decreased the required temperature decay from $1/\ln(t)$ to $1/t$, where $t$ is the simulation time. Later work by Tsallis and Stariolo \cite{tsallis1996generalizedsimulatedannealing}, generalized both CSA and FSA into a single framework: generalized simulated annealing (GSA), which was faster still.
+	In \cite{szu1987fastsimulatedannealing} Szu and Hartley introduced the method of fast simulated annealing (FSA), which incorporates occasional, long jumps through the configuration space, These jumps are accomplished by using a heavy-tailed distribution, such as the Cauchy distribution, for the visiting distribution used in the neighborhood function. This provision increases the likelihood of escaping local minima, and reduces the total computational effort required to reach a global minimum. This modification yields a significant decrease in the amount of computation effort required to guarantee that a global minimum is found. Specifically, the FSA decreased the required temperature decay from $1/\ln(t)$ to $1/t$, where $t$ is the simulation time. Later work by Tsallis and Stariolo \cite{tsallis1996generalizedsimulatedannealing}, generalized both CSA and FSA into a single framework: generalized simulated annealing (GSA), which was faster still.
 	
 	% Be sure to include some discussion of thermal fluctuations and their importance. Find a nice source...
 	\subsection{Reheating}
@@ -500,6 +501,7 @@
 	A particle with energy \begin{math} E \end{math} incident upon a potential energy barrier of height \begin{math} \Delta V > E  \end{math} has a non-zero probability of being found in, or past, the barrier. Classically, this behavior is forbidden. The probability of tunneling, \begin{math} \mathcal{P}_t \end{math}, through a step barrier of height \begin{math} \Delta V  \end{math} is described by: 
 	\begin{equation}
 	\mathcal{P}_t = e^{-\frac{w \sqrt{\Delta V}}{ \Gamma}} 
+	\label{eq:quantum_tunneling_prob}
 	\end{equation} where \begin{math} \Gamma \end{math} is the tunneling field strength \cite{mukherjee2015multivariatesearchqa}. Fig.~\ref{fig:quantum_tunneling} depicts a one-dimensional example of quantum tunneling.
 	
 	\begin{figure}[ht!]
@@ -545,30 +547,74 @@
 	
 	\chapter{Methodology}
 	
-	\section{Feed-Forward Neural Network Representation}
+	\section{Simulated Annealing}
 	
-	\section{Simulated Quantum Annealing}
+	\section{Neighborhood Functions: Traversing the Cost Surface}
 	
-	It is instructive to contrast equations 2.1 and 2.2. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of approximately \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}. This relationship is depicted graphically in Fig. 2 which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Therefore, physical models which considers quantum effects are much more likely predict penetration of tall, thin energy barriers than those which only include classical thermal effects.
+	The SA algorithm requires that a neighborhood function, \begin{math} \mathcal{N} \end{math}, be specified to produce new solutions from a given solution. The neighborhood function performs the search of the solution space, as it specifies new solutions which can be either accepted or rejected according to the acceptance criteria. Thus, \begin{math} \mathcal{N} \end{math} determines how the algorithm traverses the cost surface of the problem. A traversal action, or move, on a surface, may be decomposed into two components: the distance moved and the direction of the move. These components may be specified independently of one another. The distance of the move on the cost surface has been examined in previous work \cite{szu1987fastsimulatedannealing,tsallis1996generalizedsimulatedannealing}, and is often specified using a \textit{visiting distribution}, which is defined as a probability distribution over the move distance parameter. The visiting distribution specifies the magnitude of the move, but does not specify anything about the direction of the move. 
 	
-	[In both the simulated thermal and quantum annealing algorithms the Metropolis acceptance criterion is utilized, which is given by \begin{equation}
-	\mathcal{P}_t = e^{-\frac{w \sqrt{\Delta V}}{ \Gamma}} 
-	\end{equation}[goto page 78 in SA eq 5.1] 
+	The direction of a cost surface traversal is the allocation of the total move distance to each of the possible traversal dimensions. A traversal dimension, or degree of freedom, is a solution parameter which can be modified by the SA algorithm. In previous work [need several citations here]\cite{}, the move distance has been applied isotropically in all possible dimensions of travel. In physical science, isotropicity is phenomenological property of being uniformly applicable in all dimensions. In the context of neighborhood functions this means that the total distance moved in each of the possible travel dimensions is equal in magnitude, and random in sign. In the following sections a novel method is developed for applying the cost surface traversal distance anisotropically. 
 	
+	For the following sections, an arbitrary, simple problem will be used to demonstrate these concepts.
 	
-	[Graphic Stub: QSA/SA advantage curve.] 
-	
-	[Graphic Stub: arbitrary 2-parameter error space performance graph]
-	
-	\section{Neighborhood Functions: Traversing the Error Manifold}
+	In the following sections several realizations of a neighborhood function are presented. 
 	
 	\subsection{Visiting Distributions}
 	
+	[graphics stub: all of the visiting distributions considered in this paper.]
+	
+	To understand the origin of this advantage, it is instructive to contrast equations \ref{eq:thermal_traversal_prob} and \ref{eq:quantum_tunneling_prob}. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of approximately \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}. This relationship is depicted graphically in Fig.~\ref{fig:quantum_advantage} which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Therefore, physical models which considers quantum effects are much more likely to predict penetration of tall, thin energy barriers than those which only include classical thermal effects.
+	
+	\begin{figure}[ht!]
+		
+		\begin{minipage}[b]{0.48\linewidth}
+			\centering
+			\centerline{\epsfig{figure=figures/quantum_advantage_a.eps,width=7cm}}
+			%  \vspace{2.0cm}
+			\centerline{(a)}\medskip
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.48\linewidth}
+			\centering
+			\centerline{\epsfig{figure=figures/quantum_advantage_b.eps,width=7cm}}
+			%  \vspace{2.0cm}
+			\centerline{(b)}\medskip
+		\end{minipage}
+		%\vspace{-0.5cm}
+		\caption{
+			(a) A potential energy barrier on a one-dimensional potential energy surface.
+			(b) The tunneling probability relative to the probability of traversal due to thermal fluctuation for a step barrier plotted as a function of the height and width of the barrier.}
+		\label{fig:quantum_advantage}
+		%
+	\end{figure}
+	
+	
+	\subsubsection{Gaussian}
+	
+	
+	
+	An SA algorithm using a Gaussian visiting distribution is often called classical simulated annealing (CSA).
+	
+	
+	\subsubsection{Exponential}
+	
+	\subsubsection{Cauchy}
+	
+	\subsubsection{Uniform}
+	
 	\subsection{Anisotropicity}
 	
-	\subsection{Constrained Step-Size Omni-dimensional Weight Perturbation}
 	
-	\subsection{Quantum Weight Perturbation}
+	
+	\subsubsection{Isotropic Anisotropicity}
+	\subsubsection{Uniform Anisotropicity}
+	\subsubsection{Variable Anisotropicity}
+	
+	
+	
+	\section{Feed-Forward Neural Network Representation}
+	
+	With the feed-forward neural network problem representation described in sections \ref{eq:boltzmannDist}-\ref{eq:boltzmannDist}, and the description of SA 
 	
 	% http://math.stackexchange.com/questions/484395/how-to-generate-a-cauchy-random-variable
 	% https://en.wikipedia.org/wiki/Inverse_transform_sampling
@@ -576,12 +622,8 @@
 %	It is shown in Proof [n] that this algorithm is certain to eventually find the minimum possible
 	
 	%formal proof of the eventual optimality of the simulated quantum annealing algorithm
+
 	
-	\subsection{Stochastic-Anisotropic Quantum Weight Perturbation}
-	
-	
-	
-	\subsection{Quantum Annealing}
 	
 	
 	%[After discussing the way in which the algorithm is implemented] ...The net effect of this design is to allow the algorithm to move from a local minima configuration, to a different, lower-error configuration, without requiring the evaluation of intervening, higher-error configurations. This means that the probability of "tunneling" to a state
