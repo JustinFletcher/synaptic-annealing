@@ -514,13 +514,13 @@
 		\label{fig:quantum_tunneling}
 	\end{figure}
 	
-	\subsection{Quantum Annealing}
+	%\subsection{Quantum Annealing}
 	
-	Quantum annealing is the use of quantum, rather than thermal fluctuations to traverse the free energy landscape of a system. This is accomplished by introducing an additional Hamiltonian term that does not commute with the classical Hamiltonian. The term is introduced to account for the presence of a tunneling field which controls the frequency with which quantum fluctuations occur in the system. In effect, this term controls the relative importance of quantum effects on the behavior of the modeled system. This term, much like thermal energy in simulated annealing, is gradually reduced over the course of the simulation \cite{das2005qakcs}. The time dependent Schrödinger equation \footnote{Note that the presence of the Schrödinger equation in section does not imply that quantum annealing requires the annealed system must be an approximation to a wavefunction. It merely serves as an exposition of the properties of physical system which is modeled.} for such a system has the form \cite{mukherjee2015multivariatesearchqa}: \begin{equation}
-	[\lambda(t)H' + H_0]\psi = i\hbar \frac{\partial \psi}{\partial t}
-	\end{equation} where \begin{math} \lambda(t) \end{math} is the time-variance function of the tunneling field, \begin{math} H' \end{math} is the Hamiltonian term describing the tunneling field, and \begin{math} H_0 \end{math} is the classical Hamiltonian. 
+	%Quantum annealing is the use of quantum, rather than thermal fluctuations to traverse the free energy landscape of a system. This is accomplished by introducing an additional Hamiltonian term that does not commute with the classical Hamiltonian. The term is introduced to account for the presence of a tunneling field which controls the frequency with which quantum fluctuations occur in the system. In effect, this term controls the relative importance of quantum effects on the behavior of the modeled system. This term, much like thermal energy in simulated annealing, is gradually reduced over the course of the simulation \cite{das2005qakcs}. The time dependent Schrödinger equation \footnote{Note that the presence of the Schrödinger equation in section does not imply that quantum annealing requires the annealed system must be an approximation to a wavefunction. It merely serves as an exposition of the properties of physical system which is modeled.} for such a system has the form \cite{mukherjee2015multivariatesearchqa}: \begin{equation}
+	%[\lambda(t)H' + H_0]\psi = i\hbar \frac{\partial \psi}{\partial t}
+	%\end{equation} where \begin{math} \lambda(t) \end{math} is the time-variance function of the tunneling field, \begin{math} H' \end{math} is the Hamiltonian term describing the tunneling field, and \begin{math} H_0 \end{math} is the classical Hamiltonian. 
 	
-	The fluctuations induced by the tunneling field are tunneling events, which transition the system from one configuration to a different, lower-energy configuration directly, without assuming any of the higher energy configurations between the two. Said differently, the quantum tunneling field enables the penetration of energy barriers. The addition of these quantum fluctuations also ensures that each possible state of the system can be reached \cite{das2005qakcs}. 
+	%The fluctuations induced by the tunneling field are tunneling events, which transition the system from one configuration to a different, lower-energy configuration directly, without assuming any of the higher energy configurations between the two. Said differently, the quantum tunneling field enables the penetration of energy barriers. The addition of these quantum fluctuations also ensures that each possible state of the system can be reached \cite{das2005qakcs}. 
 	
 	% Strictly speaking, this document does not claim to describe a quantum annealing process as it is presented in the referenced literature. 
 	
@@ -547,6 +547,8 @@
 	
 	\chapter{Methodology}
 	
+	The application of SA to feed-forward neural network weight selection requires the development of several formalisms 
+	
 	\section{Simulated Annealing}
 	
 	\section{Neighborhood Functions: Traversing the Cost Surface}
@@ -555,15 +557,22 @@
 	
 	The direction of a cost surface traversal is the allocation of the total move distance to each of the possible traversal dimensions. A traversal dimension, or degree of freedom, is a solution parameter which can be modified by the SA algorithm. In previous work [need several citations here]\cite{}, the move distance has been applied isotropically in all possible dimensions of travel. In physical science, isotropicity is phenomenological property of being uniformly applicable in all dimensions. In the context of neighborhood functions this means that the total distance moved in each of the possible travel dimensions is equal in magnitude, and random in sign. In the following sections a novel method is developed for applying the cost surface traversal distance anisotropically. 
 	
-	For the following sections, an arbitrary, simple problem will be used to demonstrate these concepts.
-	
-	In the following sections several realizations of a neighborhood function are presented. 
 	
 	\subsection{Visiting Distributions}
 	
-	[graphics stub: all of the visiting distributions considered in this paper.]
+	The visiting distribution of a neighborhood function is a probability distribution function over all possible traversal distances. Once a visiting distribution is specified, samples can be drawn from the distribution using inverse transform sampling. During each iteration of the SA algorithm, a sample is drawn from the visiting distribution to determine the solution-space distance to be traversed during that iterations. In the following sections several visiting distributions, and the corresponding sample generation functions, will be discussed.
 	
-	To understand the origin of this advantage, it is instructive to contrast equations \ref{eq:thermal_traversal_prob} and \ref{eq:quantum_tunneling_prob}. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of approximately \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}. This relationship is depicted graphically in Fig.~\ref{fig:quantum_advantage} which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Therefore, physical models which considers quantum effects are much more likely to predict penetration of tall, thin energy barriers than those which only include classical thermal effects.
+	
+	\subsubsection{Gaussian Visiting Distributions}
+	\label{scn:classical_visiting}
+	
+	A Gaussian visiting distribution is commonly used in SA. Because it is a light-tailed distribution, and therefore indicates very low probability for all values far from the mean, Gaussian visiting distribution results in a search which is highly local about the mean. The mean of the visiting distribution is always the current solution location in solution space of the SA algorithm. An SA algorithm using a Gaussian visiting distribution is often called classical simulated annealing (CSA) \cite{tsallis1996generalizedsimulatedannealing}. 
+	
+	\subsubsection{Cauchy Visiting Distributions}
+	
+	Local search must occur in order to enable gradient descent, but it introduces a limitation. If the artificial temperature, which controls the probability of moving uphill on the cost surface, is lowered too quickly, the algorithm can be caught in a local, rather than global, minima; this is also known as the freezing problem. One way to alleviate this limitation is to construct a neighborhood function which enables the system to escape local minima by means other than hill-climbing. In quantum mechanics, a system which is trapped in a local minimum on a potential energy surface may escape that minima by tunneling through the potential energy surface to a lower energy state. It is possible to construct several visiting distributions which act analogously to quantum tunneling. This can be done by using a visiting distribution that has a non-negligible probability of generating large traversal distances. If the traversal distances generated are sufficiently large, it is possible that the arrived-at solution will be across the cost surface barrier surrounding the local minima, thus allowing the algorithm to escape the minima. The term \textit{quantum-inspired visiting distribution} will be used in this document to describe any distribution possessing this property.
+	
+	In \cite{szu1987fastsimulatedannealing} a Cauchy distribution is used to generate new solutions. Unlike the Gaussian distribution, the Cauchy distribution is heavy-tailed, meaning that it will occasionally produce values which are relatively far from the mean. This property of the distribution has the useful consequence of increasing the probability of escaping a local minima by allowing the algorithm to tunnel through the cost-surface barriers that surround it. This in turn allows for faster convergence relative to CSA. To understand the origin of this advantage, it is instructive to contrast equations \ref{eq:thermal_traversal_prob} and \ref{eq:quantum_tunneling_prob}. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of approximately \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}. This relationship is depicted graphically in Fig.~\ref{fig:quantum_advantage} which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Therefore, physical models which considers quantum effects are much more likely to predict penetration of tall, thin energy barriers than those which only include classical thermal effects. 
 	
 	\begin{figure}[ht!]
 		
@@ -587,34 +596,173 @@
 		\label{fig:quantum_advantage}
 		%
 	\end{figure}
+		
+	
+	\subsubsection{Exponential Visiting Distributions}
 	
 	
-	\subsubsection{Gaussian}
+	
+	\subsubsection{Uniform Visiting Distributions}
+	
+	As can be seen in Fig.~\ref{fig:quantum_tunneling} the probability of observing a particle past a classically-impenetrable potential barrier is uniform beyond the barrier. 
+
+	\subsection{Anisotropicity Policies}
 	
 	
 	
-	An SA algorithm using a Gaussian visiting distribution is often called classical simulated annealing (CSA).
-	
-	
-	\subsubsection{Exponential}
-	
-	\subsubsection{Cauchy}
-	
-	\subsubsection{Uniform}
-	
-	\subsection{Anisotropicity}
-	
-	
+	Anisotropic application policies are equivalent to drawing from a multidimensional sampling distribution, with each dimension having a tunable shape parameter. The anisotropicity term in effect transforms the distribution.
 	
 	\subsubsection{Isotropic Anisotropicity}
+	
+	
+	Applying an isotropic anisotropicity policy is equivalent to drawing the sample movement from an \begin{math}n\end{math}-dimensional visiting distribution over an \begin{math}n\end{math}-dimensional solution space.
+	
 	\subsubsection{Uniform Anisotropicity}
+	
+	The uniform anisotropicity policy draws the anisotropicity specification from a uniform distribution. The amount of the total traversal distance applied to each dimension is drawn from a uniform distribution over a constant range such as \begin{math}[0,1]\end{math}
+	
 	\subsubsection{Variable Anisotropicity}
 	
 	
 	
 	\section{Feed-Forward Neural Network Representation}
 	
+	\begin{figure}
+		
+		\begin{minipage}[b]{0.48\linewidth}
+			\centering
+			\centerline{\epsfig{figure=figures/concrete_matrix_rep_a.eps,width=7cm}}
+			%  \vspace{2.0cm}
+			\centerline{(a)}\medskip
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.48\linewidth}
+			\centering
+			\centerline{\epsfig{figure=figures/concrete_matrix_rep_b.eps,width=7cm}}
+			%  \vspace{2.0cm}
+			\centerline{(b)}\medskip
+		\end{minipage}
+		%\vspace{-0.5cm}
+		\caption{
+			(a) An arbitrary feed-forward ANN.
+			(b) The weight matrix representation of the feed-forward ANN in (a).}
+		\label{fig:nettomatmapping}
+		%
+	\end{figure}
+	
+	 The problem of feed-forward neural network synaptic weight selection must be formulated as a combinatorial optimization problem before any variation of SA can be applied to it. Each synaptic weight in a feed-forward neural network may be encoded as a real-valued element in a 3-dimensional relation matrix, denoted as $\mathit{W}_{ijk}$. In this encoding scheme, for a given layer, $k$, of the matrix the row and column indexes indicate the presynaptic and post-synaptic neurons, respectively. The absence of a synaptic connection is indicated by a value of $0$ in the matrix element corresponding to that synaptic connection. A nonexistent synapse can be caused by the absence of either the presynaptic or post-synaptic neuron, or by the absence of a connection between the neurons. This weight encoding scheme is depicted graphically in Fig.~\ref{fig:nettomatmapping}. The weight matrix, $\boldsymbol{\mathcal{W}}$, therefore encodes a configuration in the solution space of the problem, and can be visualized as:
+	 
+	 \begin{figure}[ht!]
+	 	\begin{center}
+	 		\includegraphics[width = 2.1in]{figures/abstract_matrix_rep.eps}
+	 		\label{fig:abstract_matrix_rep}
+	 	\end{center}
+	 \end{figure}
+	 
+	 The total solution space, $\boldsymbol{\mathcal{S}}$, may then be defined as the set of all possible configurations of $\boldsymbol{\mathcal{W}}$ for a given neural network. In the synaptic weight selection problem domain it is more evocative to call $\boldsymbol{\mathcal{S}}$ the weight space of the network, so this convention adopted throughout this thesis. Given $\boldsymbol{\mathcal{S}}$, we define a cost function $ \mathcal{C}$ to be the mapping
+	 
+	 \begin{equation*} \label{eq:cost_mapping}
+	 \mathcal{C} : \boldsymbol{\mathcal{S}} \rightarrow \mathbb{R}.
+	 \end{equation*}
+	 
+	 
+	 Each possible synaptic weight configuration of $\boldsymbol{\mathcal{W}}$ then corresponds to some cost value $\mathcal{C}(\boldsymbol{\mathcal{W}})$. Thus $\mathcal{C}(\boldsymbol{\mathcal{W}})$ defines a cost surface embedded  in the weight space. The objective is now to find a synaptic weight configuration, $\boldsymbol{\mathcal{W}_{opt}}$ such that 
+	 
+	 \begin{equation*} \label{eq:optimal_definition}
+	 \mathcal{C}(\boldsymbol{\mathcal{W}}_{opt}) \leq \mathcal{C}\left( \boldsymbol{\mathcal{W}}\right) , \forall\left(  \boldsymbol{\mathcal{W}} \in \boldsymbol{\mathcal{S}}\right) .
+	 \end{equation*}
+	 
+	 \noindent With this framework in place, the SA can be applied to transition from a randomly-selected initial state, $\boldsymbol{\mathcal{W}}_0$, to $\boldsymbol{\mathcal{W}}_{opt}$.
+	 
+
+	\section{Applying Anisotropic SA to Feed-Forward Neural Networks}
+	
 	With the feed-forward neural network problem representation described in sections \ref{eq:boltzmannDist}-\ref{eq:boltzmannDist}, and the description of SA 
+	
+	We can map the concept of a solution space, discussed in Sec.~\ref{}, to the weight space of the feed-forward neural network. It is also clear that the cost function is an error function defined using the correct output value and the predicted output value. 
+	
+	
+	\subsubsection{Classical Neighborhood Functions}
+	\label{scn:classical_neighborhood}
+	
+	We define \begin{math}\mathcal{N}_{c}\end{math} to be the classical neighborhood function for feed-forward neural network weights, which is defined as \begin{align}\label{eq:classical_anisotropic_neighborhood}
+	\mathcal{N}_{c} (\boldsymbol{\mathcal{W}}) = \boldsymbol{\mathcal{W}} + \alpha g_{G}(u) \boldsymbol{\mathcal{A}} 
+	\end{align}
+	\noindent where $\alpha$ is the learning rate, $g_{G}(u)$ is a Gaussian generating function, $u$ is a uniform random variable over the range $U[0,1]$, and $\boldsymbol{\mathcal{A}}$ is a matrix with dimensionality equal to that of $\boldsymbol{\mathcal{W}}$. Each element of $\boldsymbol{\mathcal{A}}$ is generated from a distribution over the range $[-1,1]$.  $\boldsymbol{\mathcal{A}}$ is restricted such that for each element of $\boldsymbol{\mathcal{W}}$ that is zero the corresponding element in $\boldsymbol{\mathcal{A}}$ is zero, and that $\boldsymbol{\mathcal{A}}$ must be normalized such that the magnitude of the matrix elements sum to $1$. These restrictions ensure two useful properties of the classical neighborhood function, that: 
+	
+	\begin{enumerate}
+		\item $\mathcal{N}_{c} (\boldsymbol{\mathcal{W}})$ will produce a weight matrix, $\boldsymbol{\mathcal{W}'}$, which will have an $L^2$ distance of exactly $\alpha g_{G}(u)$ from the original matrix, $\boldsymbol{\mathcal{W}}$, in the weight space. Said differently, no matter how the total change in the weight matrix is distributed among the weights, the total distance of the change is conserved.
+		\item This traversal distance will be distributed anisotropically over the weights, with the anisotropicity determined by the distribution used to generate $\boldsymbol{\mathcal{A}}$. (See Sec.~\ref{scn:anisotropicity} for more information.)
+	\end{enumerate}
+	These properties are useful in that they allow for strict control over the systems traversal of the cost surface, and the decouple the implementations of the visiting distribution and anisotropicity.
+	
+	The neighborhood function given in Eq.~\ref{eq:classical_anisotropic_neighborhood} is an application of the canonical form of simulated annealing to the problem of selecting a weight configuration for a feed-forward neural network. The term classical is used here because the underlying simulated annealing model can be described entirely in terms of classical statistical mechanics. To interpret this in terms of the analogy present in Sec.~\ref{scn:physical_interpretation_simulated_annealing}, the probability of the Gaussian visiting distribution used in CSA generating a weight space distance large enough to transition the system across a large energy barrier is effectively $0$. In the next section, a model which approximates quantum mechanical phenomena will be constructed.
+	
+	\subsubsection{Quantum-Inspired Neighborhood Functions}
+	\label{scn:quantum_neighborhood}
+	
+	The classical neighborhood function present in Sec.~\ref{scn:classical_neighborhood} is one of many which could be employed in CSA. In order to incorporate quantum tunneling into this model, we must have some mechanism which allows the neighborhood function to generate neighbor states which are across a cost surface barrier. Since it is impossible to know the cost function value of a configuration which has not yet been evaluated, we must construct a neighborhood function which is able to jump to these configurations. This mechanism is often called a trial jump. We define our quantum neighborhood function for feed-forward neural network weights to be
+	\begin{align}\label{eq:quantum_anisotropic_neighborhood}
+	\mathcal{N}_{q} (\boldsymbol{\mathcal{W}}) = \boldsymbol{\mathcal{W}} + \alpha g_{q}(u) \boldsymbol{\mathcal{A}} 
+	\end{align}
+	\noindent where $\alpha$, $u$, and $\boldsymbol{\mathcal{A}}$ are defined as they are in Eq.~\ref{eq:classical_anisotropic_neighborhood}, and $g_{q}(u)$ is a parameterized generation function used to produce a value from the visiting distribution. As in \cite{tsallis1996generalizedsimulatedannealing}, the visiting distribution is defined as the probability distribution function of the trial jump distance. 
+	
+	Several visiting distributions may be used used to approximate quantum tunneling in order to form a quantum neighborhood function, $g_{q}$. The most obvious choice is the exponential distribution, for which the generation function is given by
+	\begin{align}\label{eq:exp_generation_fcn}
+	g_{e}(u) =  \frac{-\ln(u)}{\gamma}
+	\end{align}
+	\noindent where $\gamma$, the scale parameter for the distribution, is defined as $\Gamma$. The exponential distribution closely aligns with physical reality, as the probability of penetrating a barrier decreases exponentially with the barriers width. This can be seen in Eq.~\ref{eq:quantum_transition_prob} and Fig.~\ref{fig:quantum_tunneling}. The barrier width in Eq.~\ref{eq:quantum_transition_prob} and Fig.~\ref{fig:quantum_tunneling} is analogous to the trial jump distance in the quantum neighborhood function. The introduced stochastic control parameter $\Gamma$ denotes the strength of the tunneling field as in \cite{mukherjee2015multivariatesearchqa}, and thus controls the likelihood of a long trial jump. $\Gamma$ is supported on $[0,1]$. A large value of $\Gamma$ corresponds to frequent, long range quantum trial jumps. It is the stochastic control parameter $\Gamma$ value that connects the quantum neighborhood function to quantum annealing. Much like FSA \cite{szu1987fastsimulatedannealing}, this provides mostly local search with occasional global-scale searches. Other generating functions corresponding to other visiting distributions may also be used to generate new states. 
+	
+	In FSA the Cauchy distribution is used as the visiting distribution. The generation function for the Cauchy distribution is
+	
+	\begin{align}\label{eq:cauchy_generation_fcn}
+	g_{C}(u) =  c \tan\left(u-\frac{1}{2}\right)
+	\end{align}
+	
+	\noindent where $c$ is the shape parameter of the Cauchy distribution used for the visiting distribution. We set $c$ to be $1/(1-\Gamma)$, which ensures that $g_{C}(u) \rightarrow u \left| \boldsymbol{\mathcal{S}}\right| $, where $\left| \boldsymbol{\mathcal{S}}\right|$ is the total size of the configuration space, in the $\Gamma \rightarrow 1$ limit. That is, as $\Gamma$, the stochastic control parameter for tunneling, goes to it's maximum value, $g_{C}(u)$ approaches the uniform distribution, thereby allowing tunneling of any distance.
+	
+	
+	Finally, we consider the case of the uniform visiting distribution, which has an equal probability of visiting any possible configuration in the solution space. Inspecting Fig.~\ref{fig:quantum_tunneling} we see that the probability of tunneling to any location past the step potential energy barrier is uniform\footnote{The quantum mechanical analogy is intentionally incomplete here. Strictly speaking, the probability is only uniform over the entire cost surface if no other barriers exist on the surface} . If we assume that every cost surface barrier encountered by the algorithms is small relative to the size of the complete cost surface, it is not unreasonable to approximate the probability of transition to any state as uniform. The generation function for this distribution is given by
+	
+	\begin{align}\label{eq:uniform_generation_fcn}
+	g_{U}(u) = (g_{G}(u) +  u \left| \boldsymbol{\mathcal{S}} \right| (\Gamma\geq u))
+	\end{align}
+	\noindent which results in a trial jump to any location in the configuration space, but only with probability equal to $\Gamma$. In the case where a uniform trial jump does not occur, $g_{U}(u)$ reduces to $g_{G}(u)$. In other words, in the $\Gamma \rightarrow 0$ limit, CSA is recovered.
+	
+	\subsubsection{Anisotropicity}
+	\label{scn:anisotropicity}
+	In the course of developing the synaptic weight selection system presented in this paper, it was observed that it is sometimes advantageous to move along an error surface in a relatively small subset of the total number of dimensions. Such a modification of the configuration corresponds to the modification of a single synaptic weight in a training epoch. Though it is possible that this could occur by chance, the likelihood of a single-weight modification is inversely proportional to the number of weights in the network. For large networks this probability becomes vanishingly small, so a mechanism is introduced to increase the frequency of occurrence of these fine-tuning events. In the physical science a directionally-dependent event, one that varies differently in some subset of its degrees of freedom, is called an anisotropy. Thus, an anisotropicity matrix, $\boldsymbol{\mathcal{A}}$, which indicates how much of a given configuration change will be applied to each of the weights, which are analogous to degrees of freedom in the neural network configuration. The restrictions described in Sec.~\ref{scn:classical_neighborhood} hold. In this section we turn our attention to the mechanism used to generate the distribution of values in $\boldsymbol{\mathcal{A}}$. 
+	
+	The simplest possible realization of $\boldsymbol{\mathcal{A}}$ is the isotropic limit. In this case the total $L^2$ distance traversed through the weight space is distributed evenly among the weights. We denote the anisotropicity matrix corresponding to this case as
+	\begin{align}\label{eq:isotropic_anisotropicity}
+	\boldsymbol{\mathcal{A}}_0 = \frac{1}{D}  \boldsymbol{J}_{\pm}
+	\end{align}
+	\noindent where $D$ is the number of non-zero elements in $\boldsymbol{\mathcal{W}}$, and $\boldsymbol{J}_{\pm}$ is a unit matrix of equal dimensionality to $\boldsymbol{\mathcal{W}}$ in which each element is randomly and with equal probability assigned a sign. This definition of anisotropicity scales the step size inversely with the number of synaptic connection in the matrix. In very large matrices, this is problematic because the change in each individual synaptic weight becomes so small that the change in weight value produces effectively no change in the cost function value, thus causing the cost surface to flatten. In practice, we observe that it is possible to counteract this gradient dilution by simply scaling the anisotropicity matrix by the number of synapses in the network. For the isotropic anisotropicity matrix, this scaling yields
+	\begin{align}\label{eq:isotropic_anisotropicity_scaled}
+	\boldsymbol{\mathcal{A}}_0 =  \boldsymbol{J}_{\pm}.
+	\end{align} 
+	
+	The isotropic weight space traversal implied by $\boldsymbol{\mathcal{A}}_0$ is equal in distance for all synaptic weights, with only the direction of the change varying among the weights. Though this weight modification policy is sufficient to train classification networks, there is relatively little diversity of ways in which the synaptic weights can change. A natural extension of $\boldsymbol{\mathcal{A}}$ which allows for greater diversity of synaptic weight modification, is to allow the portion of the total weight matrix change contributed by each synaptic weight to be randomly chosen. We define the anisotropicity matrix which implements this extension as
+	
+	\begin{align}
+	\boldsymbol{\mathcal{A}}_U =  \frac{\boldsymbol{U}}{D/2}
+	\end{align}
+	
+	\noindent where $\boldsymbol{U}$ is a matrix of dimensionality equivalent to $\boldsymbol{\mathcal{W}}$ for which each element is drawn from $U[0,1]$.  The denominator ensures statistical compliance with the restriction that the elements of any matrix used as a realization of $\boldsymbol{\mathcal{A}}$ sum to unity. This constrain is very likely to be satisfied by $\boldsymbol{\mathcal{A}}_U$ for large networks because $\left\langle  U[0,1] \right\rangle =1/2$. Therefore, because there are $D$ non-zero elements in $\boldsymbol{U}$ the expectation value of the sum of the elements in $\boldsymbol{U}$ is $D/2$. Applying the same dimensional scaling as in Eq.~\ref{eq:isotropic_anisotropicity_scaled} and simplifying, we find that
+	
+	\begin{align}
+	\boldsymbol{\mathcal{A}}_U =  2 \boldsymbol{U}.
+	\label{eq:uniform_anisotropicity}
+	\end{align}
+	
+	Using $\boldsymbol{\mathcal{A}}_U$ yields significantly more diversity of synaptic weight perturbations, but there is still a large class of possible perturbations which it is very unlikely to generate. These perturbations are those in which a large portion of the synaptic weights are left unchanged while some subset is changed significantly. In order to create a realization of $\boldsymbol{\mathcal{A}}$ which generates this type of perturbation we introduce a new stochastic control parameter, $\kappa$, which specifies the concentration of the total anisotropicity and is supported on the range $(0, 1/4)$. Thus, the anisotropicity of the matrix varies with the value of  $\kappa$. We define the variable anisotropicity matrix to be
+	
+	
+	\begin{align}
+	\boldsymbol{\mathcal{A}}_V =  2^{\frac{1}{1-\kappa}} \cdot power\left(\boldsymbol{U}, {\frac{1}{1-\kappa}}\right).
+	\end{align}
+	
+	\noindent where the $power$ function is the element-wise scalar exponentiation function. This definition is already scaled and simplified, as in Eq.~\ref{eq:uniform_anisotropicity}. It is clear that in the $\kappa \rightarrow 0$ limit $\boldsymbol{\mathcal{A}}_U$ is recovered. In the $\kappa \rightarrow 1/4$ limit, the matrix has only a few large elements, with the rest set nearly to zero. The upper bound of $\kappa$ was determined empirically to be the largest value that does not result in a matrix which violates any of the constraints.
 	
 	% http://math.stackexchange.com/questions/484395/how-to-generate-a-cauchy-random-variable
 	% https://en.wikipedia.org/wiki/Inverse_transform_sampling
