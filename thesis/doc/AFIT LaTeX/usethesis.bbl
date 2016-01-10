@@ -44,11 +44,6 @@ Cybenko, G.
 \newblock ``Approximation by superpositions of a sigmoidal function,'' {\em
   Mathematics of Control, Signals and Systems\/}, {\em 2\/}(4):303--314 (1989).
 
-\bibitem{das2005qakcs}
-Das, Arnab, et~al.
-\newblock ``Quantum annealing in a kinetically constrained system,'' {\em Phys.
-  Rev. E\/}, {\em 72\/}:026701 (Aug 2005).
-
 \bibitem{goffe1994globaloptimization}
 Goffe, William~L., et~al.
 \newblock ``Global Optimization of Statistical Functions with Simulated
@@ -70,6 +65,9 @@ Hopfield, J.~J.
 \newblock ``Neural networks and physical systems with emergent collective
   computational abilities,'' {\em Proceedings of the National Academy of
   Sciences of the United States of America\/}, {\em 79\/} (1982).
+
+\bibitem{ingber1989veryfastsimulatedreannealing}
+Ingber, Lester, ``Very Fast Simulated Re-Annealing,'' 1989.
 
 \bibitem{james1890principles}
 James, W.

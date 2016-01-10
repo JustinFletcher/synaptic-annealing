@@ -1,19 +1,19 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  31 DEC 2015 13:42
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  9 JAN 2016 11:39
 entering extended mode
 **usethesis.tex
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.tex"
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
-vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
-an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
-romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
-sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
-senglishmax, welsh, loaded.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\afthesis.cls"
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\afthesis.cls"
 Document Class: afthesis 1996/12/14 v2.7 -- AFIT THESIS STYLE
 by Joel Young adapted from work by Mark Roth
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
@@ -35,7 +35,7 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption2.sty"
-Package: caption2 2008/07/01 v2.2c Customising captions (AS)
+Package: caption2 2013/02/03 v2.2-62 Customising captions (AR)
 
 
 Package caption2 Warning: ****************************************************
@@ -48,7 +48,8 @@ Package caption2 Warning: ****************************************************
 (caption2)                ****************************************************
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2010/01/14 v3.1m caption3 kernel (AR)
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
@@ -57,51 +58,52 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \captionmargin=\dimen103
 \captionmargin@=\dimen104
 \captionwidth=\dimen105
-\caption@indent=\dimen106
-\caption@parindent=\dimen107
-\caption@hangindent=\dimen108
+\caption@tempdima=\dimen106
+\caption@indent=\dimen107
+\caption@parindent=\dimen108
+\caption@hangindent=\dimen109
 )
 Package caption2 Info: Running in caption2 v2.0 compatibility mode on input lin
-e 209.
-\captionlinewidth=\dimen109
-\realcaptionwidth=\dimen110
+e 215.
+\captionlinewidth=\dimen110
+\realcaptionwidth=\dimen111
 )
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\afthes11.sty"))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
-Package: amsmath 2000/07/18 v2.13 AMS math features
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\afthes11.sty"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks15
-\ex@=\dimen111
+\ex@=\dimen112
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen112
+\pmbraise@=\dimen113
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count88
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count89
 \leftroot@=\count90
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count91
 \DOTSCASE@=\count92
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
-\big@size=\dimen113
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\big@size=\dimen114
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count93
 \c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
@@ -112,18 +114,18 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \column@=\count98
 \maxfields@=\count99
 \andhelp@=\toks17
-\eqnshift@=\dimen114
-\alignsep@=\dimen115
-\tagshift@=\dimen116
-\tagwidth@=\dimen117
-\totwidth@=\dimen118
-\lineht@=\dimen119
+\eqnshift@=\dimen115
+\alignsep@=\dimen116
+\tagshift@=\dimen117
+\tagwidth@=\dimen118
+\totwidth@=\dimen119
+\lineht@=\dimen120
 \@envbody=\toks18
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\epsfig.sty"
 Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
@@ -143,14 +145,21 @@ File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/01/28 v0.05d Graphics/color for pdfTeX
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
 \Gread@gobject=\count100
 ))
-\Gin@req@height=\dimen120
-\Gin@req@width=\dimen121
+\Gin@req@height=\dimen121
+\Gin@req@width=\dimen122
 )
-\epsfxsize=\dimen122
-\epsfysize=\dimen123
+\epsfxsize=\dimen123
+\epsfysize=\dimen124
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf.sty"
 Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
@@ -158,44 +167,47 @@ Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
-)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
-Package: grfext 2007/09/30 v1.0 Managing graphics extensions (HO)
-)
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvdefinekeys.sty"
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2010/02/22 v3.7 Keyval support for LaTeX options (HO)
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2010/03/01 v1.9 Key value parser (HO)
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
-Package: etexcmds 2010/01/28 v1.3 Prefix for e-TeX command names (HO)
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 )))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2010/04/01 v0.9 Utility functions of pdfTeX for LuaTeX (HO)
-
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2010/04/26 v1.7 LaTeX kernel commands for general use (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
 )
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 436.
+(grfext)             \AppendGraphicsExtensions on input line 452.
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
@@ -226,15 +238,60 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@algorithm=\count106
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.aux"
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.aux"
 
-LaTeX Warning: Label `eq:cost_mapping' multiply defined.
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1a' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1c' multiply defined.
+
+
+LaTeX Warning: Label `block1d' multiply defined.
+
+
+LaTeX Warning: Label `block2a' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block2b' multiply defined.
+
+
+LaTeX Warning: Label `block3a' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block1b' multiply defined.
+
+
+LaTeX Warning: Label `block3b' multiply defined.
 
 )
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 190.
@@ -254,14 +311,15 @@ Package caption Info: End \AtBeginDocument code.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count107
-\scratchdimen=\dimen124
+\scratchdimen=\dimen125
 \scratchbox=\box30
 \nofMPsegments=\count108
 \nofMParguments=\count109
 \everyMPshowfont=\toks23
 \MPscratchCnt=\count110
-\MPscratchDim=\dimen125
+\MPscratchDim=\dimen126
 \MPnumerator=\count111
+\makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks24
 )
 
@@ -286,16 +344,16 @@ Preface.
 ]
 
 Table of Contents.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.toc"
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.toc"
 LaTeX Font Info:    Try loading font information for U+msa on input line 1.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [4
 
 ])
@@ -303,35 +361,81 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
  [5]
 
 List of Figures.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.lof")
-\tf@lof=\write4
- [6
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.lof"
+
+LaTeX Warning: Reference `fig:class_perf' on page 4-4 undefined on input line 9
+.
+
+
+LaTeX Warning: Reference `fig:perfect_class_time' on page 4-5 undefined on inpu
+t line 10.
+
+
+Overfull \hbox (0.99095pt too wide) in paragraph at lines 10--10
+ \OT1/cmr/m/n/10.95 a-bil-ity of achiev-ing per-fect clas-si-fi-ca-tion through
+ sim-u-la-tion time. This 
+ []
+
+
+LaTeX Warning: Reference `fig:perfect_class_time' on page 4-6 undefined on inpu
+t line 11.
+
+
+Overfull \hbox (0.99095pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/n/10.95 a-bil-ity of achiev-ing per-fect clas-si-fi-ca-tion through
+ sim-u-la-tion time. This 
+ []
+
+[6
 
 ]
+
+LaTeX Warning: Reference `fig:perfect_class_time' on page 4-6 undefined on inpu
+t line 12.
+
+
+Overfull \hbox (0.99095pt too wide) in paragraph at lines 12--12
+ \OT1/cmr/m/n/10.95 a-bil-ity of achiev-ing per-fect clas-si-fi-ca-tion through
+ sim-u-la-tion time. This 
+ []
+
+
+LaTeX Warning: Reference `fig:perfect_class_time' on page 4-7 undefined on inpu
+t line 13.
+
+
+Overfull \hbox (0.99095pt too wide) in paragraph at lines 13--13
+ \OT1/cmr/m/n/10.95 a-bil-ity of achiev-ing per-fect clas-si-fi-ca-tion through
+ sim-u-la-tion time. This 
+ []
+
+)
+\tf@lof=\write4
+ [7]
 
 List of Tables.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.lot")
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.lot")
 \tf@lot=\write5
- [7
-
-]
-
-List of Symbols.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.los")
-\tf@los=\write6
  [8
 
 ]
 
-List of Abbreviations.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.loa")
-\tf@loa=\write7
+List of Symbols.
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.los")
+\tf@los=\write6
  [9
 
 ]
 
+List of Abbreviations.
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.loa")
+\tf@loa=\write7
+ [10
+
+]
+
 Abstract.
-[10
+[11
 
 ]
 
@@ -344,195 +448,425 @@ Chapter 2.
 [1
 
 ] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 472.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 470.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 472.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 470.
  [12] [13]
 Package epstopdf Info: Source file: <figures/tunneling_ex.eps>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 112596 bytes
 (epstopdf)             Output file: <figures/tunneling_ex-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 32004 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/tunneling_ex-eps-co
 nverted-to.pdf figures/tunneling_ex.eps>
-(epstopdf)             \includegraphics on input line 510.
+(epstopdf)             \includegraphics on input line 508.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/tunneling_ex-eps-converted-to.pdf, id=103, 836.12375pt x 777.90625pt>
+<figures/tunneling_ex-eps-converted-to.pdf, id=106, 836.12375pt x 777.90625pt>
 File: figures/tunneling_ex-eps-converted-to.pdf Graphic file (type pdf)
 
-<use figures/tunneling_ex-eps-converted-to.pdf> [14 <C:/fletcher-thesis/thesis/
-doc/AFIT LaTeX/figures/tunneling_ex-eps-converted-to.pdf>] [15]
+<use figures/tunneling_ex-eps-converted-to.pdf>
+Package pdftex.def Info: figures/tunneling_ex-eps-converted-to.pdf used on inpu
+t line 508.
+(pdftex.def)             Requested size: 231.26378pt x 215.15341pt.
+ [14] [15 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/tunneling_ex-eps-conver
+ted-to.pdf>]
 
 Chapter 3.
 [1
 
 ] [2]
 Package epstopdf Info: Source file: <figures/quantum_advantage_a.eps>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 146455 bytes
 (epstopdf)             Output file: <figures/quantum_advantage_a-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 43103 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/quantum_advantage_a
 -eps-converted-to.pdf figures/quantum_advantage_a.eps>
-(epstopdf)             \includegraphics on input line 581.
+(epstopdf)             \includegraphics on input line 583.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/quantum_advantage_a-eps-converted-to.pdf, id=120, 932.48375pt x 863.22
+<figures/quantum_advantage_a-eps-converted-to.pdf, id=124, 932.48375pt x 863.22
 5pt>
 File: figures/quantum_advantage_a-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/quantum_advantage_a-eps-converted-to.pdf>
+Package pdftex.def Info: figures/quantum_advantage_a-eps-converted-to.pdf used 
+on input line 583.
+(pdftex.def)             Requested size: 199.16928pt x 184.37796pt.
 Package epstopdf Info: Source file: <figures/quantum_advantage_b.eps>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 1196369 bytes
 (epstopdf)             Output file: <figures/quantum_advantage_b-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 69135 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/quantum_advantage_b
 -eps-converted-to.pdf figures/quantum_advantage_b.eps>
-(epstopdf)             \includegraphics on input line 588.
+(epstopdf)             \includegraphics on input line 590.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/quantum_advantage_b-eps-converted-to.pdf, id=121, 1166.3575pt x 940.51
+<figures/quantum_advantage_b-eps-converted-to.pdf, id=125, 1166.3575pt x 940.51
 375pt>
 File: figures/quantum_advantage_b-eps-converted-to.pdf Graphic file (type pdf)
- <use figures/quantum_advantage_b-eps-converted-to.pdf> [3 <C:/fletcher-thesis/
-thesis/doc/AFIT LaTeX/figures/quantum_advantage_a-eps-converted-to.pdf> <C:/fle
-tcher-thesis/thesis/doc/AFIT LaTeX/figures/quantum_advantage_b-eps-converted-to
-.pdf>]
+ <use figures/quantum_advantage_b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/quantum_advantage_b-eps-converted-to.pdf used 
+on input line 590.
+(pdftex.def)             Requested size: 199.16928pt x 160.60277pt.
+ [3 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/quantum_advantage_a-eps-conve
+rted-to.pdf> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/quantum_advantage_b-
+eps-converted-to.pdf>] [4]
 Package epstopdf Info: Source file: <figures/concrete_matrix_rep_a.eps>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 151035 bytes
 (epstopdf)             Output file: <figures/concrete_matrix_rep_a-eps-converte
 d-to.pdf>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 52587 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/concrete_matrix_rep
 _a-eps-converted-to.pdf figures/concrete_matrix_rep_a.eps>
-(epstopdf)             \includegraphics on input line 634.
+(epstopdf)             \includegraphics on input line 638.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/concrete_matrix_rep_a-eps-converted-to.pdf, id=132, 604.2575pt x 480.7
+<figures/concrete_matrix_rep_a-eps-converted-to.pdf, id=138, 604.2575pt x 480.7
 9625pt>
 File: figures/concrete_matrix_rep_a-eps-converted-to.pdf Graphic file (type pdf
 )
  <use figures/concrete_matrix_rep_a-eps-converted-to.pdf>
+Package pdftex.def Info: figures/concrete_matrix_rep_a-eps-converted-to.pdf use
+d on input line 638.
+(pdftex.def)             Requested size: 199.16928pt x 158.4725pt.
 Package epstopdf Info: Source file: <figures/concrete_matrix_rep_b.eps>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 131979 bytes
 (epstopdf)             Output file: <figures/concrete_matrix_rep_b-eps-converte
 d-to.pdf>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 53243 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/concrete_matrix_rep
 _b-eps-converted-to.pdf figures/concrete_matrix_rep_b.eps>
-(epstopdf)             \includegraphics on input line 641.
+(epstopdf)             \includegraphics on input line 645.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/concrete_matrix_rep_b-eps-converted-to.pdf, id=133, 583.17876pt x 365.
+<figures/concrete_matrix_rep_b-eps-converted-to.pdf, id=139, 583.17876pt x 365.
 365pt>
 File: figures/concrete_matrix_rep_b-eps-converted-to.pdf Graphic file (type pdf
 )
- <use figures/concrete_matrix_rep_b-eps-converted-to.pdf> [4 <C:/fletcher-thesi
-s/thesis/doc/AFIT LaTeX/figures/concrete_matrix_rep_a-eps-converted-to.pdf> <C:
-/fletcher-thesis/thesis/doc/AFIT LaTeX/figures/concrete_matrix_rep_b-eps-conver
-ted-to.pdf>]
+ <use figures/concrete_matrix_rep_b-eps-converted-to.pdf>
+Package pdftex.def Info: figures/concrete_matrix_rep_b-eps-converted-to.pdf use
+d on input line 645.
+(pdftex.def)             Requested size: 199.16928pt x 124.77995pt.
+ [5 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/concrete_matrix_rep_a-eps-con
+verted-to.pdf> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/concrete_matrix_re
+p_b-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/abstract_matrix_rep.eps>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 192941 bytes
 (epstopdf)             Output file: <figures/abstract_matrix_rep-eps-converted-
 to.pdf>
-(epstopdf)                    date: 2015-12-26 10:39:20
+(epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 35080 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/abstract_matrix_rep
 -eps-converted-to.pdf figures/abstract_matrix_rep.eps>
-(epstopdf)             \includegraphics on input line 657.
+(epstopdf)             \includegraphics on input line 661.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/abstract_matrix_rep-eps-converted-to.pdf, id=143, 999.735pt x 507.8975
+<figures/abstract_matrix_rep-eps-converted-to.pdf, id=149, 999.735pt x 507.8975
 pt>
 File: figures/abstract_matrix_rep-eps-converted-to.pdf Graphic file (type pdf)
- <use figures/abstract_matrix_rep-eps-converted-to.pdf> [5 <C:/fletcher-thesis/
-thesis/doc/AFIT LaTeX/figures/abstract_matrix_rep-eps-converted-to.pdf>]
-
-LaTeX Warning: Reference `' on page 3-6 undefined on input line 682.
-
-
-LaTeX Warning: Reference `scn:anisotropicity' on page 3-6 undefined on input li
-ne 695.
-
-[6]
-
-LaTeX Warning: Reference `eq:classical_anisotropic_neighborhood' on page 3-7 un
-defined on input line 699.
-
-
-LaTeX Warning: Reference `scn:physical_interpretation_simulated_annealing' on p
-age 3-7 undefined on input line 699.
-
-
-LaTeX Warning: Reference `scn:classical_neighborhood' on page 3-7 undefined on 
-input line 704.
-
-
-LaTeX Warning: Reference `eq:classical_anisotropic_neighborhood' on page 3-7 un
-defined on input line 708.
-
-[7]
-
-LaTeX Warning: Reference `eq:quantum_transition_prob' on page 3-8 undefined on 
-input line 714.
-
-
-LaTeX Warning: Reference `eq:quantum_transition_prob' on page 3-8 undefined on 
-input line 714.
-
-[8]
-
-LaTeX Warning: Reference `scn:classical_neighborhood' on page 3-9 undefined on 
-input line 734.
-
-[9]
-
-LaTeX Warning: Reference `eq:isotropic_anisotropicity_scaled' on page 3-10 unde
-fined on input line 751.
-
-[10]
-
-LaTeX Warning: Reference `eq:uniform_anisotropicity' on page 3-11 undefined on 
-input line 765.
-
-[11]
+ <use figures/abstract_matrix_rep-eps-converted-to.pdf>
+Package pdftex.def Info: figures/abstract_matrix_rep-eps-converted-to.pdf used 
+on input line 661.
+(pdftex.def)             Requested size: 151.76744pt x 77.10356pt.
+ [6 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/abstract_matrix_rep-eps-conve
+rted-to.pdf>]
+[7] [8] [9] [10] [11] [12] [13]
 
 Chapter 4.
+<figures/classPerf/classPerf_g_i.png, id=180, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_g_i.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_g_i.png>
+Package pdftex.def Info: figures/classPerf/classPerf_g_i.png used on input line
+ 791.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
+
+<figures/classPerf/classPerf_e_i.png, id=183, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_e_i.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_e_i.png>
+Package pdftex.def Info: figures/classPerf/classPerf_e_i.png used on input line
+ 792.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_c_i.png, id=185, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_c_i.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_c_i.png>
+Package pdftex.def Info: figures/classPerf/classPerf_c_i.png used on input line
+ 793.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_u_i.png, id=187, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_u_i.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_u_i.png>
+Package pdftex.def Info: figures/classPerf/classPerf_u_i.png used on input line
+ 794.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_g_ua.png, id=189, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_g_ua.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_g_ua.png>
+Package pdftex.def Info: figures/classPerf/classPerf_g_ua.png used on input lin
+e 798.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
+
+<figures/classPerf/classPerf_e_ua.png, id=191, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_e_ua.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_e_ua.png>
+Package pdftex.def Info: figures/classPerf/classPerf_e_ua.png used on input lin
+e 799.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_c_ua.png, id=193, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_c_ua.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_c_ua.png>
+Package pdftex.def Info: figures/classPerf/classPerf_c_ua.png used on input lin
+e 800.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_u_ua.png, id=195, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_u_ua.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_u_ua.png>
+Package pdftex.def Info: figures/classPerf/classPerf_u_ua.png used on input lin
+e 801.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_g_va.png, id=197, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_g_va.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_g_va.png>
+Package pdftex.def Info: figures/classPerf/classPerf_g_va.png used on input lin
+e 804.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
+
+<figures/classPerf/classPerf_e_va.png, id=199, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_e_va.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_e_va.png>
+Package pdftex.def Info: figures/classPerf/classPerf_e_va.png used on input lin
+e 805.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_c_va.png, id=201, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_c_va.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_c_va.png>
+Package pdftex.def Info: figures/classPerf/classPerf_c_va.png used on input lin
+e 806.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/classPerf/classPerf_u_va.png, id=203, 578.16pt x 431.4519pt>
+File: figures/classPerf/classPerf_u_va.png Graphic file (type png)
+
+<use figures/classPerf/classPerf_u_va.png>
+Package pdftex.def Info: figures/classPerf/classPerf_u_va.png used on input lin
+e 807.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+Overfull \hbox (65.78346pt too wide) in paragraph at lines 787--810
+ [][] 
+ []
+
+
+LaTeX Warning: Reference `scn:problem_formulation' on page 4-1 undefined on inp
+ut line 817.
+
 [1
 
-]
+ <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/classPerf/classPerf_g_i.png> <C:
+/mscs-thesis/thesis/doc/AFIT LaTeX/figures/classPerf/classPerf_e_i.png> <C:/msc
+s-thesis/thesis/doc/AFIT LaTeX/figures/classPerf/classPerf_c_i.png> <C:/mscs-th
+esis/thesis/doc/AFIT LaTeX/figures/classPerf/classPerf_u_i.png> <C:/mscs-thesis
+/thesis/doc/AFIT LaTeX/figures/classPerf/classPerf_g_ua.png> <C:/mscs-thesis/th
+esis/doc/AFIT LaTeX/figures/classPerf/classPerf_e_ua.png> <C:/mscs-thesis/thesi
+s/doc/AFIT LaTeX/figures/classPerf/classPerf_c_ua.png> <C:/mscs-thesis/thesis/d
+oc/AFIT LaTeX/figures/classPerf/classPerf_u_ua.png> <C:/mscs-thesis/thesis/doc/
+AFIT LaTeX/figures/classPerf/classPerf_g_va.png> <C:/mscs-thesis/thesis/doc/AFI
+T LaTeX/figures/classPerf/classPerf_e_va.png> <C:/mscs-thesis/thesis/doc/AFIT L
+aTeX/figures/classPerf/classPerf_c_va.png> <C:/mscs-thesis/thesis/doc/AFIT LaTe
+X/figures/classPerf/classPerf_u_va.png>] [2]
+<figures/completeFrac/completeFrac_g_i.png, id=236, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_g_i.png Graphic file (type png)
 
-Chapter 5.
-[1
+<use figures/completeFrac/completeFrac_g_i.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_g_i.png used on inpu
+t line 845.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
 
-]
+<figures/completeFrac/completeFrac_e_i.png, id=238, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_e_i.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_e_i.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_e_i.png used on inpu
+t line 846.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_c_i.png, id=240, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_c_i.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_c_i.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_c_i.png used on inpu
+t line 847.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_u_i.png, id=242, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_u_i.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_u_i.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_u_i.png used on inpu
+t line 848.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_g_ua.png, id=244, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_g_ua.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_g_ua.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_g_ua.png used on inp
+ut line 852.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
+
+<figures/completeFrac/completeFrac_e_ua.png, id=246, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_e_ua.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_e_ua.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_e_ua.png used on inp
+ut line 853.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_c_ua.png, id=248, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_c_ua.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_c_ua.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_c_ua.png used on inp
+ut line 854.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_u_ua.png, id=250, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_u_ua.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_u_ua.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_u_ua.png used on inp
+ut line 855.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_g_va.png, id=252, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_g_va.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_g_va.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_g_va.png used on inp
+ut line 858.
+(pdftex.def)             Requested size: 130.08621pt x 100.89375pt.
+
+<figures/completeFrac/completeFrac_e_va.png, id=254, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_e_va.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_e_va.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_e_va.png used on inp
+ut line 859.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_c_va.png, id=256, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_c_va.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_c_va.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_c_va.png used on inp
+ut line 860.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+<figures/completeFrac/completeFrac_u_va.png, id=258, 578.16pt x 431.4519pt>
+File: figures/completeFrac/completeFrac_u_va.png Graphic file (type png)
+
+<use figures/completeFrac/completeFrac_u_va.png>
+Package pdftex.def Info: figures/completeFrac/completeFrac_u_va.png used on inp
+ut line 861.
+(pdftex.def)             Requested size: 115.63243pt x 100.84386pt.
+
+Overfull \hbox (65.78346pt too wide) in paragraph at lines 841--864
+ [][] 
+ []
+
+[3] [4 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/completeFrac_
+g_i.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/completeFra
+c_e_i.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/completeF
+rac_c_i.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/complet
+eFrac_u_i.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/compl
+eteFrac_g_ua.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/co
+mpleteFrac_e_ua.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac
+/completeFrac_c_ua.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeF
+rac/completeFrac_u_ua.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/comple
+teFrac/completeFrac_g_va.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/com
+pleteFrac/completeFrac_e_va.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/
+completeFrac/completeFrac_c_va.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figur
+es/completeFrac/completeFrac_u_va.png>]
+<figures/gammaDists/gamma_g.png, id=290, 578.16pt x 431.4519pt>
+File: figures/gammaDists/gamma_g.png Graphic file (type png)
+
+<use figures/gammaDists/gamma_g.png>
+Package pdftex.def Info: figures/gammaDists/gamma_g.png used on input line 876.
+
+(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
+
+<figures/gammaDists/gamma_e.png, id=292, 578.16pt x 431.4519pt>
+File: figures/gammaDists/gamma_e.png Graphic file (type png)
+
+<use figures/gammaDists/gamma_e.png>
+Package pdftex.def Info: figures/gammaDists/gamma_e.png used on input line 882.
+
+(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
+
+<figures/gammaDists/gamma_u.png, id=294, 578.16pt x 431.4519pt>
+File: figures/gammaDists/gamma_u.png Graphic file (type png)
+
+<use figures/gammaDists/gamma_u.png>
+Package pdftex.def Info: figures/gammaDists/gamma_u.png used on input line 888.
+
+(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
+
+<figures/gammaDists/gamma_c.png, id=296, 578.16pt x 431.4519pt>
+File: figures/gammaDists/gamma_c.png Graphic file (type png)
+
+<use figures/gammaDists/gamma_c.png>
+Package pdftex.def Info: figures/gammaDists/gamma_c.png used on input line 894.
+
+(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
+ [5 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/gammaDists/gamma_g.png>] [6 <
+C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/gammaDists/gamma_e.png> <C:/mscs-t
+hesis/thesis/doc/AFIT LaTeX/figures/gammaDists/gamma_u.png>] [7 <C:/mscs-thesis
+/thesis/doc/AFIT LaTeX/figures/gammaDists/gamma_c.png>]
 
 Appendix 1.
-("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.bbl" [1
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.bbl" [1
 
 
 ]
 
 Bibliography.
 
-Underfull \hbox (badness 2126) in paragraph at lines 81--84
+Underfull \hbox (badness 2126) in paragraph at lines 79--82
 []\OT1/cmr/m/n/10.95 Kirkpatrick, S., et al.  ``Op-ti-miza-tion by sim-u-lated 
 an-neal-ing,'' \OT1/cmr/m/it/10.95 SCI-ENCE\OT1/cmr/m/n/10.95 ,
  []
@@ -540,7 +874,7 @@ an-neal-ing,'' \OT1/cmr/m/it/10.95 SCI-ENCE\OT1/cmr/m/n/10.95 ,
 [1
 
 ]
-Underfull \hbox (badness 1005) in paragraph at lines 132--135
+Underfull \hbox (badness 1005) in paragraph at lines 130--133
 []\OT1/cmr/m/n/10.95 Piccinini, Gualtiero.  ``Com-pu-ta-tional Ex-pla-na-tion i
 n Neu-ro-science,'' \OT1/cmr/m/it/10.95 Syn-these\OT1/cmr/m/n/10.95 ,
  []
@@ -550,7 +884,7 @@ n Neu-ro-science,'' \OT1/cmr/m/it/10.95 Syn-these\OT1/cmr/m/n/10.95 ,
 Vita.
 [1
 
-] ("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.aux")
+] ("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.aux")
 
 LaTeX Warning: There were undefined references.
 
@@ -559,13 +893,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3315 strings out of 494053
- 48982 string characters out of 3146188
- 109456 words of memory out of 3000000
- 6512 multiletter control sequences out of 15000+200000
+ 3667 strings out of 493921
+ 57932 string characters out of 3144847
+ 111491 words of memory out of 3000000
+ 6831 multiletter control sequences out of 15000+200000
  15802 words of font info for 58 fonts, out of 3000000 for 9000
- 715 hyphenation exceptions out of 8191
- 43i,13n,40p,1597b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 841 hyphenation exceptions out of 8191
+ 43i,14n,40p,1814b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmbsy8.
 pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pf
@@ -589,9 +923,9 @@ nts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on usethesis.pdf (45 pages, 619994 bytes).
+Output written on usethesis.pdf (53 pages, 1977526 bytes).
 PDF statistics:
- 264 PDF objects out of 1000 (max. 8388607)
+ 402 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 339 words of extra memory for PDF output out of 10000 (max. 10000000)
 
