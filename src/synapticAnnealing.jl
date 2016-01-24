@@ -89,7 +89,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         # If this is not a downhill or neural move...
       else
         # Then with probability exp(-DeltaE/T), or if it's the result of a tunnelling event, reject the move.
-        if( (rand()>=exp(-(errorChange)/state.normTemperature)) )#|| (perturbationDistance>state.learnRate) )
+        if( (rand()>=exp(-(errorChange)/state.temperature)) )#|| (perturbationDistance>state.learnRate) )
           synapseMatrix -= synapsePerturbation
           # If the uphill move is not rejected, set the error.
         else

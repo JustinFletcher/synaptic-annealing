@@ -25,12 +25,11 @@
 \contentsline {subsection}{\numberline {3.2.1}Visiting Distributions}{3-2}
 \contentsline {subsubsection}{\numberline {3.2.1.1}Gaussian Visiting Distributions}{3-2}
 \contentsline {subsubsection}{\numberline {3.2.1.2}Cauchy Visiting Distributions}{3-3}
-\contentsline {subsubsection}{\numberline {3.2.1.3}Exponential Visiting Distributions}{3-4}
-\contentsline {subsubsection}{\numberline {3.2.1.4}Uniform Visiting Distributions}{3-4}
+\contentsline {subsubsection}{\numberline {3.2.1.3}Uniform Visiting Distributions}{3-4}
 \contentsline {subsection}{\numberline {3.2.2}Anisotropicity Policies}{3-5}
 \contentsline {subsubsection}{\numberline {3.2.2.1}Isotropic Anisotropicity}{3-5}
 \contentsline {subsubsection}{\numberline {3.2.2.2}Uniform Anisotropicity}{3-5}
-\contentsline {subsubsection}{\numberline {3.2.2.3}Variable Anisotropicity}{3-5}
+\contentsline {subsubsection}{\numberline {3.2.2.3}Normative Anisotropicity}{3-5}
 \contentsline {section}{\numberline {3.3}Feed-Forward Neural Network Representation}{3-5}
 \contentsline {section}{\numberline {3.4}Applying SA to Feed-Forward Neural Networks}{3-7}
 \contentsline {subsection}{\numberline {3.4.1}Classical Neighborhood Functions}{3-7}

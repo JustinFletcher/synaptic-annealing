@@ -412,8 +412,9 @@
 	
 	
 	\subsubsection{Simulated Annealing Training} 
-	Stub.
 	
+	
+	The first application of simulated annealing (SA) to the training of neural networks was accomplished by Engle in \cite{engel1988teachingfeedforwardnueralnetsbysa}, with limited success. Engle's work involved discrete
 	
 	
 	\section{Related Works in Simulated Annealing} \label{eq:simulatedAnnealing}
@@ -422,7 +423,7 @@
 	
 	% DO: Read (Haykin pg 560)
 	
-	Simulated annealing (SA) is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in by Kirkpatrick et al. in \cite{kirkpatrick1983} as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, simulated annealing is an extension of the Metropolis-Hastings \cite{metropolis1953} algorithm which can be used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Goffe \cite{goffe1994globaloptimization}, Corana et al. \cite{corana1987minimizingmultimodal}, and Lecchini-Visintini et. al. \cite{lecchinivisintini2007sacontinuousgaruntees} extended SA to the continuous domain.
+	Simulated annealing is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in by Kirkpatrick et al. in \cite{kirkpatrick1983} as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, simulated annealing is an extension of the Metropolis-Hastings \cite{metropolis1953} algorithm which can be used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Goffe \cite{goffe1994globaloptimization}, Corana et al. \cite{corana1987minimizingmultimodal}, and Lecchini-Visintini et. al. \cite{lecchinivisintini2007sacontinuousgaruntees} extended SA to the continuous domain.
 	
 	In the most general terms, SA is a local search algorithm through the problems solution space, \begin{math} \boldsymbol{\mathcal{S}} \end{math}, which is the set of all possible solutions, \begin{math}\boldsymbol{s}  \end{math}, of the problem. The search is conducted by generating new solutions to the problem by applying a neighborhood function, \begin{math}\boldsymbol{\mathcal{N}} \end{math} to the current solution; the neighborhood function specifies the way in which a solution is transformed to yield a new solution, or neighbor solution, and is generally problem dependent. To apply SA to an optimization problem it must be possible to characterize each possible solution of the problem using a cost function, \begin{math}\mathcal{C} \end{math}, where \begin{math}\mathcal{C} \end{math} is the mapping
 	
@@ -480,7 +481,7 @@
 	[We need here a discussion regarding the asymptotic convergence.]
 	% DO: At least a paragraph on asymptotic convergence is required here.
 	
-	In \cite{szu1987fastsimulatedannealing} Szu and Hartley introduced the method of fast simulated annealing (FSA), which incorporates occasional, long jumps through the configuration space, These jumps are accomplished by using a heavy-tailed distribution, such as the Cauchy distribution, for the visiting distribution used in the neighborhood function. This provision increases the likelihood of escaping local minima, and reduces the total computational effort required to reach a global minimum. This modification yields a significant decrease in the amount of computation effort required to guarantee that a global minimum is found. Specifically, the FSA decreased the required temperature decay from $1/\ln(t)$ to $1/t$, where $t$ is the simulation time. Later work by Tsallis and Stariolo \cite{tsallis1996generalizedsimulatedannealing}, generalized both CSA and FSA into a single framework: generalized simulated annealing (GSA), which was faster still.
+	In \cite{szu1987fastsimulatedannealing} Szu and Hartley introduced the method of fast simulated annealing (FSA), which incorporates occasional, long jumps through the configuration space, These jumps are accomplished by using a heavy-tailed distribution, such as the Cauchy distribution, for the visiting distribution used in the neighborhood function. This provision increases the likelihood of escaping local minima, and reduces the total computational effort required to reach a global minimum. This modification yields a significant decrease in the amount of computation effort required to guarantee that a global minimum is found. Specifically, the FSA decreased the required temperature decay from $1/\ln(t)$ to $1/t$, where $t$ is the simulation time. Later work by Tsallis and Stariolo \cite{tsallis1996generalizedsimulatedannealing}, generalized both CSA and FSA into a single framework: generalized simulated annealing (GSA), which is faster still.
 	
 	% Be sure to include some discussion of thermal fluctuations and their importance. Find a nice source...
 	\subsection{Reannealing}
@@ -550,7 +551,7 @@
 	\section{Simulated Annealing}
 	\label{scn:simulated_annealing}
 	
-	In this thesis, several variations the SA algorithm are developed and implemented. Each is applied to the problem of selecting synaptic weights for a feed-forward neural network in order to maximize the networks classification performance. This section contains an abstract discussion of the SA formulations to be applied to this task; later sections will expound the implementation details specific to the feed-forward neural network application of the these SA formulations. For all SA formulations examined in this thesis the Metropolis acceptance criterion will be used. The temperature schedule will be determined by the convergence properties of the constructed algorithm. Examining Alg.~\ref{alg:simulated_annealing} reveals that the preceding specifications leave only one component unspecified: the neighborhood function. In the following sections the neighborhood function is decomposed into two uncoupled components, the visiting distribution and anisotropicity policy, and several possible realizations of each are discussed.
+	In this thesis, several variations the SA algorithm are developed and implemented. Each is applied to the problem of selecting synaptic weights for a feed-forward neural network in order to maximize the networks classification performance. This section contains an abstract discussion of the SA formulations to be applied to this task; later sections will expound the implementation details specific to the feed-forward neural network application of the these SA formulations. For all SA formulations examined in this thesis the Metropolis acceptance criterion will be used. The temperature schedule will be determined by the convergence properties of the constructed algorithm. Examining Alg.~\ref{alg:simulated_annealing} reveals that the preceding specifications leave only one component unspecified: the neighborhood function. In the following sections the neighborhood function is decomposed into two decoupled components, the visiting distribution and anisotropicity policy, and several possible realizations of each are discussed.
 	
 	\section{Neighborhood Functions: Traversing the Cost Surface}
 	
@@ -602,31 +603,29 @@
 	 The significant performance gains exhibited by the FSA algorithm are the result of using a quantum-inspired visiting distribution. In \cite{szu1987fastsimulatedannealing}, which introduces the FSA algorithm, a Cauchy distribution is used to generate new solutions. Unlike the Gaussian distribution, the Cauchy distribution is heavy-tailed, meaning that it will occasionally produce values which are relatively far from the mean. This property of the distribution has the useful consequence of increasing the probability of escaping a local minima by allowing the algorithm to tunnel through the cost-surface barriers that surround it. This in turn allows for faster convergence relative to CSA. To understand the origin of this advantage, it is instructive to contrast equations \ref{eq:thermal_traversal_prob} and \ref{eq:quantum_tunneling_prob}. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of approximately \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}. This relationship is depicted graphically in Fig.~\ref{fig:quantum_advantage} which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Fig.~\ref{fig:quantum_advantage} illustrates the fact that physical models which considers quantum effects are much more likely to predict penetration of tall, thin energy barriers than those which only include classical thermal effects. 
 
 	
-	\subsubsection{Exponential Visiting Distributions}
-	
-	
+
+	\subsubsection{Generalized Simulated Annealing Visiting Distribution}
 	
 	\subsubsection{Uniform Visiting Distributions}
 	
-	As illustrated in Fig.~\ref{fig:quantum_tunneling} the probability of observing a particle beyond a classically-impenetrable potential barrier is uniform beyond the barrier\footnote{This observation only holds for potential energy surfaces containing a single barrier. The analogous cost surface over neural network weight space is likely to have many barriers corresponding to the superimposed convex spaces around competing conventions of weight configurations which encode similar functions. Thus the analogy used here is only an approximation of the behavior of quantum systems.}. An analogous visiting distribution can be constructed, which models all configuration space movement distances as equally-likely. 
-
+	As illustrated in Fig.~\ref{fig:quantum_tunneling} the probability of observing a particle beyond a classically-impenetrable potential barrier is uniform beyond the barrier\footnote{This observation only holds for potential energy surfaces containing a single barrier. The analogous cost surface over neural network weight space is likely to have many barriers corresponding to the superimposed convex spaces around competing conventions of weight configurations which encode similar functions. Thus the analogy used here is only an approximation of the behavior of quantum systems.}. An analogous visiting distribution can be constructed, which models all configuration space movement distances as equally-likely. The utility of this visiting distribution is that it makes the entire cost surface accessible each time the neighborhood function is applied to the current state; this property is useful, but prevents any local gradient descent. As such, the uniform visiting distribution serves as a useful upper bound in the trade-space between global and local search policies. 
+	
 	\subsection{Anisotropicity Policies}
 	
-	
-	
-	Anisotropic application policies are equivalent to drawing from a multidimensional sampling distribution, with each dimension having a tunable shape parameter. The anisotropicity term in effect transforms the distribution.
+	The visiting distribution provides a traversal distance, which is in effect the magnitude of the traversal vector through the configuration space of the problem. It does not, however, specify the direction of the vector. In previous work, an isotropic selection of the traversal vectors direction is employed \cite{tsallis1996generalizedsimulatedannealing}. A vector having isotropic direction is one for which each component vector is equal in magnitude. This limitation on the component magnitudes of the traversal vector limits the possible types of moves which can occur during the search. For example, an isotropic move is unable to encode 
 	
 	\subsubsection{Isotropic Anisotropicity}
 	
+	In the minimum 
 	
-	Applying an isotropic anisotropicity policy is equivalent to drawing the sample movement from an \begin{math}n\end{math}-dimensional visiting distribution over an \begin{math}n\end{math}-dimensional solution space.
 	
 	\subsubsection{Uniform Anisotropicity}
 	
-	The uniform anisotropicity policy draws the anisotropicity specification from a uniform distribution. The amount of the total traversal distance applied to each dimension is drawn from a uniform distribution over a constant range such as \begin{math}[0,1]\end{math}
+	The uniform anisotropicity policy draws the anisotropicity specification from a uniform distribution. The amount of the total traversal distance applied to each dimension is drawn from a uniform distribution over a constant range such as \begin{math}[0,1]\end{math}.
 	
-	\subsubsection{Variable Anisotropicity}
+	\subsubsection{Normative Anisotropicity}
 	
+	For some applications of simulated annealing, the encoding used for the problem parameters contains information about the interaction of those parameters. This property
 	
 	
 	\section{Feed-Forward Neural Network Representation}
@@ -681,9 +680,7 @@
 
 	\section{Applying SA to Feed-Forward Neural Networks}
 	
-	The formulations of SA described in Sec.~\ref{scn:simulated_annealing} may be applied to any properly formulated combinatorial optimization problem. The representation formalism for the weight parameters of a feed forward neural network presented in Sec.~\ref{scn:feed_forward_neural_network_representation} can serve as the parameter space in a combinatorial optimization function, and thus enables the application of SA to the problem of neural network weight selection. With a more concrete problem definition in place, it is now possible to precisely specify each of the SA neighborhood functions for the problem of neural network weight selection. In the following sections, several complete definitions of neighborhood functions are presented for the application of SA to feed-forward neural networks. 
-	
-	The term \textit{synaptic annealing} is introduced to represent any artificial neural network training algorithm which modifies synaptic weights using SA.
+	The formulations of SA described in Sec.~\ref{scn:simulated_annealing} may be applied to any properly formulated combinatorial optimization problem. The representation formalism for the weight parameters of a feed forward neural network presented in Sec.~\ref{scn:feed_forward_neural_network_representation} can serve as the parameter space in a combinatorial optimization function, and thus enables the application of SA to the problem of neural network weight selection. With a more concrete problem definition in place, it is now possible to precisely specify each of the SA neighborhood functions for the problem of neural network weight selection. In the following sections, several complete definitions of neighborhood functions are presented for the application of SA to feed-forward neural networks. The term \textit{synaptic annealing} is introduced to represent any artificial neural network training algorithm which modifies synaptic weights using SA.
 	
 	
 	\subsection{Classical Neighborhood Functions}
@@ -692,10 +689,10 @@
 	The classical neighborhood function for feed forward neural network, \begin{math}\mathcal{N}_{c}\end{math}, is defined as \begin{align}\label{eq:classical_anisotropic_neighborhood}
 	\mathcal{N}_{c} (\boldsymbol{\mathcal{W}}) = \boldsymbol{\mathcal{W}} + \alpha g_{G}(u) \boldsymbol{\mathcal{A}} 
 	\end{align}
-	\noindent where $\alpha$ is the learning rate, $g_{G}(u)$ is a Gaussian generating function, $u$ is a uniform random variable over the range $U[0,1]$, and $\boldsymbol{\mathcal{A}}$ is a matrix with dimensionality equal to that of $\boldsymbol{\mathcal{W}}$. Each element of $\boldsymbol{\mathcal{A}}$ is generated from a distribution over the range $[-1,1]$.  $\boldsymbol{\mathcal{A}}$ is restricted such that for each element of $\boldsymbol{\mathcal{W}}$ that is zero the corresponding element in $\boldsymbol{\mathcal{A}}$ is zero, and that $\boldsymbol{\mathcal{A}}$ must be normalized such that the magnitude of the matrix elements sum to $1$. These restrictions ensure two useful properties of the classical neighborhood function, that: 
+	\noindent where $\alpha$ is the learning rate, $g_{G}(u)$ is a Gaussian generating function, $u$ is a uniform random variable over the range $U[0,1]$, and $\boldsymbol{\mathcal{A}}$ is a matrix with dimensionality equal to that of $\boldsymbol{\mathcal{W}}$. Each element of $\boldsymbol{\mathcal{A}}$ is generated from a distribution over the range $[-1,1]$. $\boldsymbol{\mathcal{A}}$ is restricted such that for each element of $\boldsymbol{\mathcal{W}}$ that is zero the corresponding element in $\boldsymbol{\mathcal{A}}$ is zero, and that $\boldsymbol{\mathcal{A}}$ must be normalized such that the magnitude of the matrix elements sum to $1$. Alternatively, $\boldsymbol{\mathcal{A}}$ may be defined as a stochastic matrix with element-wise randomized sign. These restrictions ensure two useful properties of the classical neighborhood function, that: 
 	
 	\begin{enumerate}
-		\item $\mathcal{N}_{c} (\boldsymbol{\mathcal{W}})$ will produce a weight matrix, $\boldsymbol{\mathcal{W}'}$, which will have an $L^2$ distance of exactly $\alpha g_{G}(u)$ from the original matrix, $\boldsymbol{\mathcal{W}}$, in the weight space. Said differently, no matter how the total change in the weight matrix is distributed among the weights, the total distance of the traversal through the weight space is conserved.
+		\item $\mathcal{N}_{c} (\boldsymbol{\mathcal{W}})$ will produce a weight matrix, $\boldsymbol{\mathcal{W}'}$, which will have an $L^2$ distance of exactly $\alpha g_{G}(u)$ from the original matrix, $\boldsymbol{\mathcal{W}}$, in the weight space. Said differently, regardless of how the total change in the weight matrix is distributed among the weights, the total distance of the traversal through the weight space is conserved.
 		\item This traversal distance will be distributed anisotropically over the weights, with the anisotropicity determined by the distribution used to generate $\boldsymbol{\mathcal{A}}$. (See Sec.~\ref{scn:ffnn_anisotropicity} for more information.)
 	\end{enumerate}
 	These properties are useful in that they allow for strict control over the systems traversal of the cost surface, and the decouple the implementations of the visiting distribution and anisotropicity.
@@ -790,23 +787,23 @@
 			& Gaussian & Exponential & Cauchy & Uniform \\
 			
 			\rotatebox{90}{Isotropic }
-			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/classPerf/classPerf_g_i.png} \fixedlabel{block1a}{1a} 	
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_e_i.png} \fixedlabel{block1b}{1b} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_c_i.png} \fixedlabel{block1c}{1c} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_u_i.png} \fixedlabel{block1d}{1d} \\ \\[-10pt]
+			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/classPerf/classPerf_GaussianVisit_IsotropicAnisotropicity.png} \fixedlabel{block1a}{1a} 	
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_ExponentialVisit_IsotropicAnisotropicity.png} \fixedlabel{block1b}{1b} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_CauchyVisit_IsotropicAnisotropicity.png} \fixedlabel{block1c}{1c} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_UniformVisit_IsotropicAnisotropicity.png} \fixedlabel{block1d}{1d} \\ \\[-10pt]
 			
 			
 			\rotatebox{90}{	\begin{tabular}[x]{@{}c@{} }   Uniform \\ Anisotropicity \end{tabular} }
-			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/classPerf/classPerf_g_ua.png} \fixedlabel{block2a}{2a} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_e_ua.png} \fixedlabel{block1b}{2b} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_c_ua.png} \fixedlabel{block1b}{2c} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_u_ua.png} \fixedlabel{block2b}{2d} \\ \\[-10pt]
+			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/classPerf/classPerf_GaussianVisit_UniformAnisotropicity.png} \fixedlabel{block2a}{2a} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_ExponentialVisit_UniformAnisotropicity.png} \fixedlabel{block1b}{2b} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_CauchyVisit_UniformAnisotropicity.png} \fixedlabel{block1b}{2c} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_UniformVisit_UniformAnisotropicity.png} \fixedlabel{block2b}{2d} \\ \\[-10pt]
 			
 			\rotatebox{90}{	\begin{tabular}[x]{@{}c@{}} Variable \\ Anisotropicity \end{tabular}	}
-			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/classPerf/classPerf_g_va.png}\fixedlabel{block3a}{3a} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_e_va.png}\fixedlabel{block1b}{3b} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_c_va.png}\fixedlabel{block1b}{3c} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_u_va.png}\fixedlabel{block3b}{3d}
+			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/classPerf/classPerf_GaussianVisit_NormativeAnisotropicity.png}\fixedlabel{block3a}{3a} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_ExponentialVisit_NormativeAnisotropicity.png}\fixedlabel{block1b}{3b} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_CauchyVisit_NormativeAnisotropicity.png}\fixedlabel{block1b}{3c} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/classPerf/classPerf_UniformVisit_NormativeAnisotropicity.png}\fixedlabel{block3b}{3d}
 			
 		\end{tabular}
 		\caption{The simulation-time evolution of the 25-fold cross-validated classification error of a feed-forward neural network with 50 hidden units on Fishers iris data. Each column in this table depicts the results for an SA neighborhood function employing a single type of visiting distribution, which is indicated in the column header. Each row depicts a single type of anisotropicity strategy, which is indicated in the row header. The classification error is defined as the fraction of samples incorrectly classified.}
@@ -844,26 +841,26 @@
 			& Gaussian & Exponential & Cauchy & Uniform \\
 			
 			\rotatebox{90}{Isotropic }
-			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/completeFrac/completeFrac_g_i.png} \fixedlabel{block1a}{1a} 	
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_e_i.png} \fixedlabel{block1b}{1b} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_c_i.png} \fixedlabel{block1c}{1c} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_u_i.png} \fixedlabel{block1d}{1d} \\ \\[-10pt]
+			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/completeFrac/completeFrac_GaussianVisit_IsotropicAnisotropicity.png} \fixedlabel{block1a}{1a} 	
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_ExponentialVisit_IsotropicAnisotropicity.png} \fixedlabel{block1b}{1b} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_CauchyVisit_IsotropicAnisotropicity.png} \fixedlabel{block1c}{1c} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_UniformVisit_IsotropicAnisotropicity.png} \fixedlabel{block1d}{1d} \\ \\[-10pt]
 			
 			
 			\rotatebox{90}{	\begin{tabular}[x]{@{}c@{} }   Uniform \\ Anisotropicity \end{tabular} }
-			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/completeFrac/completeFrac_g_ua.png} \fixedlabel{block2a}{2a} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_e_ua.png} \fixedlabel{block1b}{2b} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_c_ua.png} \fixedlabel{block1b}{2c} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_u_ua.png} \fixedlabel{block2b}{2d} \\ \\[-10pt]
+			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/completeFrac/completeFrac_GaussianVisit_UniformAnisotropicity.png} \fixedlabel{block2a}{2a} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_ExponentialVisit_UniformAnisotropicity.png} \fixedlabel{block1b}{2b} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_CauchyVisit_UniformAnisotropicity.png} \fixedlabel{block1b}{2c} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_UniformVisit_UniformAnisotropicity.png} \fixedlabel{block2b}{2d} \\ \\[-10pt]
 			
 			\rotatebox{90}{	\begin{tabular}[x]{@{}c@{}} Variable \\ Anisotropicity \end{tabular}	}
-			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/completeFrac/completeFrac_g_va.png}\fixedlabel{block3a}{3a} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_e_va.png}\fixedlabel{block1b}{3b} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_c_va.png}\fixedlabel{block1b}{3c} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_u_va.png}\fixedlabel{block3b}{3d}
+			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/completeFrac/completeFrac_GaussianVisit_NormativeAnisotropicity.png}\fixedlabel{block3a}{3a} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_ExponentialVisit_NormativeAnisotropicity.png}\fixedlabel{block1b}{3b} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_CauchyVisit_NormativeAnisotropicity.png}\fixedlabel{block1b}{3c} 
+			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_UniformVisit_NormativeAnisotropicity.png}\fixedlabel{block3b}{3d}
 			
 		\end{tabular}
-		\caption{The simulation-time evolution of the fraction of 25 independent simulated annealing runs achieving perfect classification of Fishers iris data using a feed-forward neural network with 50 hidden units. Columns and rows are labeld as in Fig.~\ref{fig:class_perf}.}
+		\caption{The simulation-time evolution of the fraction of 25 independent simulated annealing runs achieving perfect classification of Fishers iris data using a feed-forward neural network with 50 hidden units. Columns and rows are labeled as in Fig.~\ref{fig:class_perf}.}
 	\end{figure*}
 	
 	

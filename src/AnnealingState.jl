@@ -75,12 +75,35 @@ module AnnealingState
 		# Decay the temperature by 1, stopping at 0.
 		state.temperature = state.initTemperature * (1/log(state.epochsComplete))
 
+
+
 		state.tunnelingField = 0
 
 		# Compute normalized value.
 		state.normTemperature = state.temperature/state.initTemperature
 
 	end
+
+	function updateState_csa_ra(state::State)
+
+		# Iterate epoch count.
+		state.epochsComplete += 1
+
+		# Decay the temperature by 1, stopping at 0.
+		state.temperature = state.initTemperature * (1/log(state.epochsComplete))
+
+    if ((state.epochsComplete % 200000) == 0)
+        state.temperature = state.initTemperature
+    end
+
+		state.tunnelingField = 0
+
+		# Compute normalized value.
+		state.normTemperature = state.temperature/state.initTemperature
+
+	end
+
+
 
 	function updateState_fsa(state::State)
 
@@ -89,6 +112,28 @@ module AnnealingState
 
 		# Decay the temperature by 1, stopping at 0.
 		state.temperature = state.initTemperature * (1/state.epochsComplete)
+
+		state.tunnelingField = state.initTunnelingField * (1/(state.epochsComplete))
+
+		# Compute normalized value.
+		state.normTunnelingField = (state.tunnelingField/state.initTunnelingField)
+
+		# Compute normalized value.
+		state.normTemperature = state.temperature/state.initTemperature
+
+	end
+
+	function updateState_fsa_ra(state::State)
+
+		# Iterate epoch count.
+		state.epochsComplete += 1
+
+		# Decay the temperature by 1, stopping at 0.
+		state.temperature = state.initTemperature * (1/state.epochsComplete)
+
+    if ((state.epochsComplete % 200000) == 0)
+        state.temperature = state.initTemperature
+    end
 
 		state.tunnelingField = state.initTunnelingField * (1/(state.epochsComplete))
 
