@@ -273,7 +273,7 @@ end
 function gsa_Isotropic_SynapticPerturbation(synapseMatrix, state)
 
 
-    synapsePerturbation = state.learnRate.*randgsa(2.25, 1, 0, size(synapseMatrix)).*int(bool(synapseMatrix))
+    synapsePerturbation = state.learnRate.*randgsa(1.75, 1, 0, size(synapseMatrix)).*int(bool(synapseMatrix))
 
     return(Any[synapsePerturbation, sum(synapsePerturbation)])
 end

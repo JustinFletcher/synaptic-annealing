@@ -99,7 +99,7 @@ end
 
 # displacmentLimit = 50
 # resolution = 0.001
-# qvRange = [2.25]
+# qvRange = [1.75]
 # #tqvRange = [t for t in [1,2.5,5,10]]
 # tqvRange = [t for t in [1]]
 # dRange = [0]
@@ -152,7 +152,6 @@ function randgsa(qv, tqv, d, sizeTuple=(1))
 
 end
 
-# @time randgsa(2.25, 1, 1, (50,50,2))
-
-# @time(rand((50,50,2)))
+# @time 0.01.*randgsa(2.25, 1, 1, (50,50,2))
+# @time(randn((50,50,2)))
 
