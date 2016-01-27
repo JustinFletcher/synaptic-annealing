@@ -44,6 +44,7 @@ pwd()
 @everywhere include("$(pwd())\\src\\"*"errorFunctions.jl")
 @everywhere include("$(pwd())\\src\\"*"getDataPredictions.jl")
 @everywhere include("$(pwd())\\src\\"*"nativeNetsToSynMats.jl")
+@everywhere include("$(pwd())\\src\\"*"gsa.jl")
 
 # Include cross val annealing libraries.
 @everywhere include("$(pwd())\\src\\"*"buildFolds.jl")
@@ -91,51 +92,51 @@ cancerDataset = ExperimentDataset.Dataset(cancerDatapath, dataInputDimensions, d
 
 
 
-###################################################################################################################################################
-using MNIST
+# ###################################################################################################################################################
+# using MNIST
 
-# Function to orthogonalize MNIST. Credit: github.com/yarlett
-function digits_to_indicators(digits)
-	digit_indicators = zeros(Float64, (10, length(digits)))
-	for j = 1:length(digits)
-		digit_indicators[int(digits[j])+1, j] = 1.0
-	end
-	digit_indicators
-end
+# # Function to orthogonalize MNIST. Credit: github.com/yarlett
+# function digits_to_indicators(digits)
+# 	digit_indicators = zeros(Float64, (10, length(digits)))
+# 	for j = 1:length(digits)
+# 		digit_indicators[int(digits[j])+1, j] = 1.0
+# 	end
+# 	digit_indicators
+# end
 
-# Load MNIST training and testing data.
-mnistTrainInput, mnistTrainClasses = traindata()
-mnistTrainInput ./= 255.0
-mnistTrainClasses = digits_to_indicators(mnistTrainClasses)
+# # Load MNIST training and testing data.
+# mnistTrainInput, mnistTrainClasses = traindata()
+# mnistTrainInput ./= 255.0
+# mnistTrainClasses = digits_to_indicators(mnistTrainClasses)
 
-# XTE, YTE = testdata()
-# XTE ./= 255.0
-# YTE = digits_to_indicators(YTE)
+# # XTE, YTE = testdata()
+# # XTE ./= 255.0
+# # YTE = digits_to_indicators(YTE)
 
-# Make the classes antisemetric for consistency.
-mnistTrainClassesAntisymmetric = (mnistTrainClasses)
+# # Make the classes antisemetric for consistency.
+# mnistTrainClassesAntisymmetric = (mnistTrainClasses)
 
-# Transpose the MNIST training data for consistency.
-mnistTrainInput = transpose(mnistTrainInput)
-mnistTrainClassesAntisymmetric = transpose(mnistTrainClassesAntisymmetric)
+# # Transpose the MNIST training data for consistency.
+# mnistTrainInput = transpose(mnistTrainInput)
+# mnistTrainClassesAntisymmetric = transpose(mnistTrainClassesAntisymmetric)
 
-mnistTrainData = [mnistTrainInput mnistTrainClassesAntisymmetric]
+# mnistTrainData = [mnistTrainInput mnistTrainClassesAntisymmetric]
 
-dataInputDimensions = [1:size(mnistTrainInput)[2]]
-dataOutputDimensions = size(mnistTrainInput)[2]+1
+# dataInputDimensions = [1:size(mnistTrainInput)[2]]
+# dataOutputDimensions = size(mnistTrainInput)[2]+1
 
-mnistDataset = ExperimentDataset.Dataset(mnistTrainData[1:50,:], dataInputDimensions, dataOutputDimensions, "MNIST")
+# mnistDataset = ExperimentDataset.Dataset(mnistTrainData[1:50,:], dataInputDimensions, dataOutputDimensions, "MNIST")
 
-mnistDataset.data[1,:]
-###################################################################################################################################################
+# mnistDataset.data[1,:]
+# ###################################################################################################################################################
 
-lcvfDatapath = "$(pwd())\\data\\lcvfData.csv"
-dataInputDimensions = [1:194]
-dataOutputDimensions = [195]
+# lcvfDatapath = "$(pwd())\\data\\lcvfData.csv"
+# dataInputDimensions = [1:194]
+# dataOutputDimensions = [195]
 
-lcvfDataset = ExperimentDataset.Dataset(lcvfDatapath, dataInputDimensions, dataOutputDimensions, "LCVF")
+# lcvfDataset = ExperimentDataset.Dataset(lcvfDatapath, dataInputDimensions, dataOutputDimensions, "LCVF")
 
-###################################################################################################################################################
+# ###################################################################################################################################################
 
 
 ###################################################################################################################################################
@@ -507,7 +508,7 @@ outTuple_c_i = @time runSynapticAnnealingExperiment("Cauchy - Isotropic", genera
 outTuple_c_i_ra = @time runSynapticAnnealingExperiment("Cauchy - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
                                                     "CauchyVisit", "IsotropicAnisotropicity_ra", "comparitive_simulated_annealing",
                                                     numFolds, matrixConfig, synapticAnnealing,
-                                                    0.0, maxRuns, cauchy_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa_ra,
+                                                    0.0, maxRuns,cauchy_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa_ra,
                                                     getDataClassErr, getDataClassErr,
                                                     initTemp, 0.1,
                                                     synMatIn, tanh,
@@ -540,11 +541,28 @@ outTuple_c_na = @time runSynapticAnnealingExperiment("Cauchy - Normative Anisotr
                                                      dataSet, batchSize, reportFrequency)
 
 
+###################################################################################################################################################
+
+
 
 outTuple_c_neurala = @time runSynapticAnnealingExperiment("Cauchy - Neural Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
                                                      "CauchyVisit", "NeuralAnisotropicity", "comparitive_simulated_annealing",
                                                      numFolds, matrixConfig, synapticAnnealing,
                                                      0.0, maxRuns,  cauchy_NeuralAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+                                                     getDataClassErr, getDataClassErr,
+                                                     initTemp, 0.1,
+                                                     synMatIn, tanh,
+                                                     dataSet, batchSize, reportFrequency)
+
+
+###################################################################################################################################################
+
+
+
+outTuple_gsa_i = @time runSynapticAnnealingExperiment("GSA - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "GSAVisit", "IsotropicAnisotropicity_alpha0p01_qv1p75_t1", "comparitive_simulated_annealing",
+                                                     numFolds, matrixConfig, synapticAnnealing,
+                                                     0.0, maxRuns,  gsa_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
                                                      getDataClassErr, getDataClassErr,
                                                      initTemp, 0.1,
                                                      synMatIn, tanh,

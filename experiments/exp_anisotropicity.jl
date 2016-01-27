@@ -132,6 +132,21 @@ function runAnisotropicExperiment(synapseMatrix)
     push!(anisotropicityMatrixList, anisotropicityMatrix)
     println((sum(anisotropicityMatrix)))
 
+      # ----- Row Weighted Uniform
+
+    (numRows, numCols, numLayers) = size(synapseMatrix)
+    centerX = rand(1:numRows)
+    centerZ = rand(1:numLayers)
+
+    centerY = 10
+    centerZ = 3
+
+    anisotropicityMatrix = [int((y==centerY)&&(z==centerZ)) for x=1:numRows, y=1:numCols, z=1:numLayers].*int(bool(synapseMatrix))
+    #anisotropicityMatrix =(anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+    #L1DistanceMatrix = [ (abs(x-centerX),abs(y-centerY),abs(z-centerZ)) for x=1:numRows, y=1:numCols, z=1:numLayers].*int(bool(synapseMatrix))
+    push!(anisotropicityMatrixList, anisotropicityMatrix)
+    println((sum(anisotropicityMatrix)))
+
     plotAnisotropicityMatrix_SameScale(anisotropicityMatrixList)
 
 
