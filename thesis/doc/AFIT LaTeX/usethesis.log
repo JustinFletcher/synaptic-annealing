@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  18 JAN 2016 15:29
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2014.8.25)  25 JAN 2016 23:46
 entering extended mode
 **usethesis.tex
 ("C:\fletcher-thesis\thesis\doc\AFIT LaTeX\usethesis.tex"
@@ -413,14 +413,14 @@ Chapter 2.
 [1
 
 ] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 470.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 473.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 470.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 473.
  [12] [13]
 Package epstopdf Info: Source file: <figures/tunneling_ex.eps>
 (epstopdf)                    date: 2015-12-26 10:39:20
@@ -431,7 +431,7 @@ Package epstopdf Info: Source file: <figures/tunneling_ex.eps>
 (epstopdf)                    size: 32004 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/tunneling_ex-eps-co
 nverted-to.pdf figures/tunneling_ex.eps>
-(epstopdf)             \includegraphics on input line 508.
+(epstopdf)             \includegraphics on input line 513.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/tunneling_ex-eps-converted-to.pdf, id=106, 836.12375pt x 777.90625pt>
@@ -453,7 +453,7 @@ to.pdf>
 (epstopdf)                    size: 43103 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/quantum_advantage_a
 -eps-converted-to.pdf figures/quantum_advantage_a.eps>
-(epstopdf)             \includegraphics on input line 583.
+(epstopdf)             \includegraphics on input line 592.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/quantum_advantage_a-eps-converted-to.pdf, id=124, 932.48375pt x 863.22
@@ -469,21 +469,16 @@ to.pdf>
 (epstopdf)                    size: 69135 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/quantum_advantage_b
 -eps-converted-to.pdf figures/quantum_advantage_b.eps>
-(epstopdf)             \includegraphics on input line 590.
+(epstopdf)             \includegraphics on input line 599.
 Package epstopdf Info: Output file is already uptodate.
 
 <figures/quantum_advantage_b-eps-converted-to.pdf, id=125, 1166.3575pt x 940.51
 375pt>
 File: figures/quantum_advantage_b-eps-converted-to.pdf Graphic file (type pdf)
- <use figures/quantum_advantage_b-eps-converted-to.pdf> [3 <C:/fletcher-thesis/
-thesis/doc/AFIT LaTeX/figures/quantum_advantage_a-eps-converted-to.pdf> <C:/fle
-tcher-thesis/thesis/doc/AFIT LaTeX/figures/quantum_advantage_b-eps-converted-to
-.pdf>] [4]
-Overfull \hbox (11.08917pt too wide) in paragraph at lines 616--617
-\OT1/cmr/m/n/10.95 sam-pling dis-tri-bu-tion, with each di-men-sion hav-ing a t
-un-able shape pa-ram-e-ter. The anisotrop-
- []
-
+ <use figures/quantum_advantage_b-eps-converted-to.pdf> [3] [4 <C:/fletcher-the
+sis/thesis/doc/AFIT LaTeX/figures/quantum_advantage_a-eps-converted-to.pdf> <C:
+/fletcher-thesis/thesis/doc/AFIT LaTeX/figures/quantum_advantage_b-eps-converte
+d-to.pdf>] [5]
 Package epstopdf Info: Source file: <figures/concrete_matrix_rep_a.eps>
 (epstopdf)                    date: 2015-12-26 10:39:20
 (epstopdf)                    size: 151035 bytes
@@ -493,10 +488,10 @@ d-to.pdf>
 (epstopdf)                    size: 52587 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/concrete_matrix_rep
 _a-eps-converted-to.pdf figures/concrete_matrix_rep_a.eps>
-(epstopdf)             \includegraphics on input line 637.
+(epstopdf)             \includegraphics on input line 660.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/concrete_matrix_rep_a-eps-converted-to.pdf, id=138, 604.2575pt x 480.7
+<figures/concrete_matrix_rep_a-eps-converted-to.pdf, id=141, 604.2575pt x 480.7
 9625pt>
 File: figures/concrete_matrix_rep_a-eps-converted-to.pdf Graphic file (type pdf
 )
@@ -510,14 +505,17 @@ d-to.pdf>
 (epstopdf)                    size: 53243 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/concrete_matrix_rep
 _b-eps-converted-to.pdf figures/concrete_matrix_rep_b.eps>
-(epstopdf)             \includegraphics on input line 644.
+(epstopdf)             \includegraphics on input line 667.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/concrete_matrix_rep_b-eps-converted-to.pdf, id=139, 583.17876pt x 365.
+<figures/concrete_matrix_rep_b-eps-converted-to.pdf, id=142, 583.17876pt x 365.
 365pt>
 File: figures/concrete_matrix_rep_b-eps-converted-to.pdf Graphic file (type pdf
 )
- <use figures/concrete_matrix_rep_b-eps-converted-to.pdf>
+ <use figures/concrete_matrix_rep_b-eps-converted-to.pdf> [6 <C:/fletcher-thesi
+s/thesis/doc/AFIT LaTeX/figures/concrete_matrix_rep_a-eps-converted-to.pdf> <C:
+/fletcher-thesis/thesis/doc/AFIT LaTeX/figures/concrete_matrix_rep_b-eps-conver
+ted-to.pdf>]
 Package epstopdf Info: Source file: <figures/abstract_matrix_rep.eps>
 (epstopdf)                    date: 2015-12-26 10:39:20
 (epstopdf)                    size: 192941 bytes
@@ -527,99 +525,97 @@ to.pdf>
 (epstopdf)                    size: 35080 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/abstract_matrix_rep
 -eps-converted-to.pdf figures/abstract_matrix_rep.eps>
-(epstopdf)             \includegraphics on input line 660.
+(epstopdf)             \includegraphics on input line 683.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/abstract_matrix_rep-eps-converted-to.pdf, id=140, 999.735pt x 507.8975
+<figures/abstract_matrix_rep-eps-converted-to.pdf, id=152, 999.735pt x 507.8975
 pt>
 File: figures/abstract_matrix_rep-eps-converted-to.pdf Graphic file (type pdf)
- <use figures/abstract_matrix_rep-eps-converted-to.pdf> [5] [6 <C:/fletcher-the
-sis/thesis/doc/AFIT LaTeX/figures/concrete_matrix_rep_a-eps-converted-to.pdf> <
-C:/fletcher-thesis/thesis/doc/AFIT LaTeX/figures/concrete_matrix_rep_b-eps-conv
-erted-to.pdf> <C:/fletcher-thesis/thesis/doc/AFIT LaTeX/figures/abstract_matrix
-_rep-eps-converted-to.pdf>] [7] [8] [9] [10] [11] [12] [13]
+ <use figures/abstract_matrix_rep-eps-converted-to.pdf> [7 <C:/fletcher-thesis/
+thesis/doc/AFIT LaTeX/figures/abstract_matrix_rep-eps-converted-to.pdf>]
+[8] [9] [10] [11] [12] [13] [14]
 
 Chapter 4.
 
-<figures/classPerf/classPerf_GaussianVisit_IsotropicAnisotropicity.png, id=180,
+<figures/classPerf/classPerf_GaussianVisit_IsotropicAnisotropicity.png, id=184,
  578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_GaussianVisit_IsotropicAnisotropicity.png Gra
 phic file (type png)
 
 <use figures/classPerf/classPerf_GaussianVisit_IsotropicAnisotropicity.png>
 <figures/classPerf/classPerf_ExponentialVisit_IsotropicAnisotropicity.png, id=1
-83, 578.16pt x 433.62pt>
+87, 578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_ExponentialVisit_IsotropicAnisotropicity.png 
 Graphic file (type png)
 
 <use figures/classPerf/classPerf_ExponentialVisit_IsotropicAnisotropicity.png>
-<figures/classPerf/classPerf_CauchyVisit_IsotropicAnisotropicity.png, id=185, 5
+<figures/classPerf/classPerf_CauchyVisit_IsotropicAnisotropicity.png, id=189, 5
 78.16pt x 433.62pt>
 File: figures/classPerf/classPerf_CauchyVisit_IsotropicAnisotropicity.png Graph
 ic file (type png)
 
 <use figures/classPerf/classPerf_CauchyVisit_IsotropicAnisotropicity.png>
-<figures/classPerf/classPerf_UniformVisit_IsotropicAnisotropicity.png, id=187, 
+<figures/classPerf/classPerf_UniformVisit_IsotropicAnisotropicity.png, id=191, 
 578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_UniformVisit_IsotropicAnisotropicity.png Grap
 hic file (type png)
 
 <use figures/classPerf/classPerf_UniformVisit_IsotropicAnisotropicity.png>
-<figures/classPerf/classPerf_GaussianVisit_UniformAnisotropicity.png, id=189, 5
+<figures/classPerf/classPerf_GaussianVisit_UniformAnisotropicity.png, id=193, 5
 78.16pt x 433.62pt>
 File: figures/classPerf/classPerf_GaussianVisit_UniformAnisotropicity.png Graph
 ic file (type png)
 
 <use figures/classPerf/classPerf_GaussianVisit_UniformAnisotropicity.png>
-<figures/classPerf/classPerf_ExponentialVisit_UniformAnisotropicity.png, id=191
+<figures/classPerf/classPerf_ExponentialVisit_UniformAnisotropicity.png, id=195
 , 578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_ExponentialVisit_UniformAnisotropicity.png Gr
 aphic file (type png)
 
 <use figures/classPerf/classPerf_ExponentialVisit_UniformAnisotropicity.png>
-<figures/classPerf/classPerf_CauchyVisit_UniformAnisotropicity.png, id=193, 578
+<figures/classPerf/classPerf_CauchyVisit_UniformAnisotropicity.png, id=197, 578
 .16pt x 433.62pt>
 File: figures/classPerf/classPerf_CauchyVisit_UniformAnisotropicity.png Graphic
  file (type png)
 
 <use figures/classPerf/classPerf_CauchyVisit_UniformAnisotropicity.png>
-<figures/classPerf/classPerf_UniformVisit_UniformAnisotropicity.png, id=195, 57
+<figures/classPerf/classPerf_UniformVisit_UniformAnisotropicity.png, id=199, 57
 8.16pt x 433.62pt>
 File: figures/classPerf/classPerf_UniformVisit_UniformAnisotropicity.png Graphi
 c file (type png)
 
 <use figures/classPerf/classPerf_UniformVisit_UniformAnisotropicity.png>
-<figures/classPerf/classPerf_GaussianVisit_NormativeAnisotropicity.png, id=197,
+<figures/classPerf/classPerf_GaussianVisit_NormativeAnisotropicity.png, id=201,
  578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_GaussianVisit_NormativeAnisotropicity.png Gra
 phic file (type png)
 
 <use figures/classPerf/classPerf_GaussianVisit_NormativeAnisotropicity.png>
-<figures/classPerf/classPerf_ExponentialVisit_NormativeAnisotropicity.png, id=1
-99, 578.16pt x 433.62pt>
+<figures/classPerf/classPerf_ExponentialVisit_NormativeAnisotropicity.png, id=2
+03, 578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_ExponentialVisit_NormativeAnisotropicity.png 
 Graphic file (type png)
 
 <use figures/classPerf/classPerf_ExponentialVisit_NormativeAnisotropicity.png>
-<figures/classPerf/classPerf_CauchyVisit_NormativeAnisotropicity.png, id=201, 5
+<figures/classPerf/classPerf_CauchyVisit_NormativeAnisotropicity.png, id=205, 5
 78.16pt x 433.62pt>
 File: figures/classPerf/classPerf_CauchyVisit_NormativeAnisotropicity.png Graph
 ic file (type png)
 
 <use figures/classPerf/classPerf_CauchyVisit_NormativeAnisotropicity.png>
-<figures/classPerf/classPerf_UniformVisit_NormativeAnisotropicity.png, id=203, 
+<figures/classPerf/classPerf_UniformVisit_NormativeAnisotropicity.png, id=207, 
 578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_UniformVisit_NormativeAnisotropicity.png Grap
 hic file (type png)
 
 <use figures/classPerf/classPerf_UniformVisit_NormativeAnisotropicity.png>
-Overfull \hbox (65.78346pt too wide) in paragraph at lines 788--811
+Overfull \hbox (65.78346pt too wide) in paragraph at lines 809--832
  [][] 
  []
 
 
 LaTeX Warning: Reference `scn:problem_formulation' on page 4-1 undefined on inp
-ut line 818.
+ut line 839.
 
 [1
 
@@ -642,88 +638,88 @@ Anisotropicity.png> <C:/fletcher-thesis/thesis/doc/AFIT LaTeX/figures/classPerf
 doc/AFIT LaTeX/figures/classPerf/classPerf_UniformVisit_NormativeAnisotropicity
 .png>] [2]
 <figures/completeFrac/completeFrac_GaussianVisit_IsotropicAnisotropicity.png, i
-d=236, 578.16pt x 433.62pt>
+d=239, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_GaussianVisit_IsotropicAnisotropicity.p
 ng Graphic file (type png)
 
 <use figures/completeFrac/completeFrac_GaussianVisit_IsotropicAnisotropicity.pn
 g>
 <figures/completeFrac/completeFrac_ExponentialVisit_IsotropicAnisotropicity.png
-, id=238, 578.16pt x 433.62pt>
+, id=241, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_ExponentialVisit_IsotropicAnisotropicit
 y.png Graphic file (type png)
 
 <use figures/completeFrac/completeFrac_ExponentialVisit_IsotropicAnisotropicity
 .png>
 <figures/completeFrac/completeFrac_CauchyVisit_IsotropicAnisotropicity.png, id=
-240, 578.16pt x 433.62pt>
+243, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_CauchyVisit_IsotropicAnisotropicity.png
  Graphic file (type png)
 
 <use figures/completeFrac/completeFrac_CauchyVisit_IsotropicAnisotropicity.png>
 
 <figures/completeFrac/completeFrac_UniformVisit_IsotropicAnisotropicity.png, id
-=242, 578.16pt x 433.62pt>
+=245, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_UniformVisit_IsotropicAnisotropicity.pn
 g Graphic file (type png)
 
 <use figures/completeFrac/completeFrac_UniformVisit_IsotropicAnisotropicity.png
 >
 <figures/completeFrac/completeFrac_GaussianVisit_UniformAnisotropicity.png, id=
-244, 578.16pt x 433.62pt>
+247, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_GaussianVisit_UniformAnisotropicity.png
  Graphic file (type png)
 
 <use figures/completeFrac/completeFrac_GaussianVisit_UniformAnisotropicity.png>
 
 <figures/completeFrac/completeFrac_ExponentialVisit_UniformAnisotropicity.png, 
-id=246, 578.16pt x 433.62pt>
+id=249, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_ExponentialVisit_UniformAnisotropicity.
 png Graphic file (type png)
 
 <use figures/completeFrac/completeFrac_ExponentialVisit_UniformAnisotropicity.p
 ng>
-<figures/completeFrac/completeFrac_CauchyVisit_UniformAnisotropicity.png, id=24
-8, 578.16pt x 433.62pt>
+<figures/completeFrac/completeFrac_CauchyVisit_UniformAnisotropicity.png, id=25
+1, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_CauchyVisit_UniformAnisotropicity.png G
 raphic file (type png)
 
 <use figures/completeFrac/completeFrac_CauchyVisit_UniformAnisotropicity.png>
 <figures/completeFrac/completeFrac_UniformVisit_UniformAnisotropicity.png, id=2
-50, 578.16pt x 433.62pt>
+53, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_UniformVisit_UniformAnisotropicity.png 
 Graphic file (type png)
 
 <use figures/completeFrac/completeFrac_UniformVisit_UniformAnisotropicity.png>
 <figures/completeFrac/completeFrac_GaussianVisit_NormativeAnisotropicity.png, i
-d=252, 578.16pt x 433.62pt>
+d=255, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_GaussianVisit_NormativeAnisotropicity.p
 ng Graphic file (type png)
 
 <use figures/completeFrac/completeFrac_GaussianVisit_NormativeAnisotropicity.pn
 g>
 <figures/completeFrac/completeFrac_ExponentialVisit_NormativeAnisotropicity.png
-, id=254, 578.16pt x 433.62pt>
+, id=257, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_ExponentialVisit_NormativeAnisotropicit
 y.png Graphic file (type png)
 
 <use figures/completeFrac/completeFrac_ExponentialVisit_NormativeAnisotropicity
 .png>
 <figures/completeFrac/completeFrac_CauchyVisit_NormativeAnisotropicity.png, id=
-256, 578.16pt x 433.62pt>
+259, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_CauchyVisit_NormativeAnisotropicity.png
  Graphic file (type png)
 
 <use figures/completeFrac/completeFrac_CauchyVisit_NormativeAnisotropicity.png>
 
 <figures/completeFrac/completeFrac_UniformVisit_NormativeAnisotropicity.png, id
-=258, 578.16pt x 433.62pt>
+=261, 578.16pt x 433.62pt>
 File: figures/completeFrac/completeFrac_UniformVisit_NormativeAnisotropicity.pn
 g Graphic file (type png)
 
 <use figures/completeFrac/completeFrac_UniformVisit_NormativeAnisotropicity.png
 >
-Overfull \hbox (65.78346pt too wide) in paragraph at lines 842--865
+Overfull \hbox (65.78346pt too wide) in paragraph at lines 863--886
  [][] 
  []
 
@@ -745,19 +741,19 @@ LaTeX/figures/completeFrac/completeFrac_ExponentialVisit_NormativeAnisotropicit
 y.png> <C:/fletcher-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/completeF
 rac_CauchyVisit_NormativeAnisotropicity.png> <C:/fletcher-thesis/thesis/doc/AFI
 T LaTeX/figures/completeFrac/completeFrac_UniformVisit_NormativeAnisotropicity.
-png>] <figures/gammaDists/gamma_g.png, id=290, 578.16pt x 431.4519pt>
+png>] <figures/gammaDists/gamma_g.png, id=293, 578.16pt x 431.4519pt>
 File: figures/gammaDists/gamma_g.png Graphic file (type png)
 
 <use figures/gammaDists/gamma_g.png>
-<figures/gammaDists/gamma_e.png, id=292, 578.16pt x 431.4519pt>
+<figures/gammaDists/gamma_e.png, id=295, 578.16pt x 431.4519pt>
 File: figures/gammaDists/gamma_e.png Graphic file (type png)
 
 <use figures/gammaDists/gamma_e.png>
-<figures/gammaDists/gamma_u.png, id=294, 578.16pt x 431.4519pt>
+<figures/gammaDists/gamma_u.png, id=297, 578.16pt x 431.4519pt>
 File: figures/gammaDists/gamma_u.png Graphic file (type png)
 
 <use figures/gammaDists/gamma_u.png>
-<figures/gammaDists/gamma_c.png, id=296, 578.16pt x 431.4519pt>
+<figures/gammaDists/gamma_c.png, id=299, 578.16pt x 431.4519pt>
 File: figures/gammaDists/gamma_c.png Graphic file (type png)
 
 <use figures/gammaDists/gamma_c.png> [5 <C:/fletcher-thesis/thesis/doc/AFIT LaT
@@ -774,7 +770,7 @@ Appendix 1.
 
 Bibliography.
 
-Underfull \hbox (badness 2126) in paragraph at lines 79--82
+Underfull \hbox (badness 2126) in paragraph at lines 84--87
 []\OT1/cmr/m/n/10.95 Kirkpatrick, S., et al.  ``Op-ti-miza-tion by sim-u-lated 
 an-neal-ing,'' \OT1/cmr/m/it/10.95 SCI-ENCE\OT1/cmr/m/n/10.95 ,
  []
@@ -782,7 +778,7 @@ an-neal-ing,'' \OT1/cmr/m/it/10.95 SCI-ENCE\OT1/cmr/m/n/10.95 ,
 [1
 
 ]
-Underfull \hbox (badness 1005) in paragraph at lines 130--133
+Underfull \hbox (badness 1005) in paragraph at lines 135--138
 []\OT1/cmr/m/n/10.95 Piccinini, Gualtiero.  ``Com-pu-ta-tional Ex-pla-na-tion i
 n Neu-ro-science,'' \OT1/cmr/m/it/10.95 Syn-these\OT1/cmr/m/n/10.95 ,
  []
@@ -801,13 +797,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3479 strings out of 494053
- 58570 string characters out of 3146188
- 110860 words of memory out of 3000000
- 6644 multiletter control sequences out of 15000+200000
+ 3481 strings out of 494053
+ 58629 string characters out of 3146188
+ 110877 words of memory out of 3000000
+ 6646 multiletter control sequences out of 15000+200000
  15802 words of font info for 58 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 43i,14n,40p,1814b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,14n,40p,1815b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmbsy8.
 pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pf
@@ -831,9 +827,9 @@ nts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
 s/type1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/symbols/msbm10.pfb>
-Output written on usethesis.pdf (53 pages, 1786196 bytes).
+Output written on usethesis.pdf (54 pages, 1790816 bytes).
 PDF statistics:
- 402 PDF objects out of 1000 (max. 8388607)
+ 405 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  339 words of extra memory for PDF output out of 10000 (max. 10000000)
 

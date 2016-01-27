@@ -44,6 +44,11 @@ Cybenko, G.
 \newblock ``Approximation by superpositions of a sigmoidal function,'' {\em
   Mathematics of Control, Signals and Systems\/}, {\em 2\/}(4):303--314 (1989).
 
+\bibitem{engel1988teachingfeedforwardnueralnetsbysa}
+Engel, Jonathan.
+\newblock ``Teaching Feed-forward Neural Networks by Simulated Annealing,''
+  {\em Complex Syst.\/}, {\em 2\/}(6):641--648 (December 1988).
+
 \bibitem{goffe1994globaloptimization}
 Goffe, William~L., et~al.
 \newblock ``Global Optimization of Statistical Functions with Simulated

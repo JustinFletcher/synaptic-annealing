@@ -144,7 +144,7 @@ dataSet = irisDataset
 
 ###################################################################################################################################################
 
-dataSet = lcvfDataset
+#dataSet = lcvfDataset
 
 ###################################################################################################################################################
 
@@ -152,13 +152,13 @@ dataSet = wineDataset
 
 ###################################################################################################################################################
 
-dataSet = mnistDataset
+#dataSet = mnistDataset
 
 ###################################################################################################################################################
 
 dataSetList = Any[wineDataset, irisDataset, cancerDataset]
-dataSetList = Any[mnistDataset]
-dataSetList = Any[lcvfDataset]
+#dataSetList = Any[mnistDataset]
+#dataSetList = Any[lcvfDataset]
 ###################################################################################################################################################
 
 
@@ -166,7 +166,7 @@ numFolds = 25
 
 maxRuns = 1000000
 
-initTemp = 10000
+initTemp = 100
 
 numHiddenLayers = 1
 
@@ -345,50 +345,16 @@ end
 
 
 
-
-###################################################################################################################################################
-
-# experimentList = Any[]
-
-# for experiment in experimentList
-
-#   cutoffError = 0.0
-#   (expTitle, visitDistTag, anisotropicityTag, experimentTag, annealingFunction) =
-#   experimentResults = runSynapticAnnealingExperiment(expTitle, generate, saveData, loadData, view, savePlots, windowSize, xmax, ymax,
-#                                                      visitDistTag, anisotropicityTag, experimentTag,
-#                                                      numFolds, matrixConfig, annealingFunction,
-#                                                      cutoffError, maxRuns, neighborhoodFunction, stateUpdate,
-#                                                      trainErrorFunction, reportErrorFunction,
-#                                                      initTemp, initLearnRate,
-#                                                      synMatIn, actFun,
-#                                                      dataSet, batchSize, reportFrequency)
-
-# end
-
-
 # ###################################################################################################################################################
 
 outTuple_g_i  = @time runSynapticAnnealingExperiment("Gaussian - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
                                                      "GaussianVisit", "IsotropicAnisotropicity", "comparitive_simulated_annealing",
                                                      numFolds, matrixConfig, synapticAnnealing,
-                                                     0.0, maxRuns, gaussian_Isotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+                                                     0.0, maxRuns, gaussian_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
                                                      getDataClassErr, getDataClassErr,
                                                      initTemp, 1,
                                                      synMatIn, tanh,
                                                      dataSet, batchSize, reportFrequency)
-
-# # putdata(outTuple_g_i, "outTuple_g_i")
-# # outTuple_g_i = getdata("outTuple_g_i")
-
-# (meanValErrorVec_g_i, meanTrainErrorVec_g_i, meanPerturbDistanceVec_g_i, minValErrorSynapseMatrix_g_i) = outTuple_g_i
-
-# plotCompleteRate(meanPerturbDistanceVec_g_i./numFolds, "Gaussian - Isotropic")
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_g_i, "Gaussian - Isotropic")
-
-# (toptExpVal_g_i, toptStd_g_i) = calcPerfectClassStats(meanPerturbDistanceVec_g_i)
-
-# plotAnnealResults(meanTrainErrorVec_g_i, meanValErrorVec_g_i, reportFrequency, "Gaussian - Isotropic")
 
 
 ###################################################################################################################################################
@@ -404,32 +370,6 @@ outTuple_g_ua = @time runSynapticAnnealingExperiment("Gaussian - Uniform Anisotr
                                                      synMatIn, tanh,
                                                      dataSetList, batchSize, reportFrequency)
 
-# putdata(outTuple_g_ua, "outTuple_g_ua")
-# # outTuple_g_ua = getdata("outTuple_g_ua")
-
-# (meanValErrorVec_g_ua, meanTrainErrorVec_g_ua, meanPerturbDistanceVec_g_ua, minValErrorSynapseMatrix_g_ua) = outTuple_g_ua
-
-# (meanValErrorVec, stdValErrorVec, meanTrainErrorVec, stdTrainErrorVec, meanPerturbDistanceVec, minValErrorSynapseMatrix) = outTuple_g_ua
-
-# (toptExpVal_g_ua, toptStd_g_ua) = calcPerfectClassStats(meanPerturbDistanceVec_g_ua)
-
-
-# subplot(2,2,1)
-
-# plotAnnealResults(meanTrainErrorVec_g_ua, meanValErrorVec_g_ua, reportFrequency, "Gaussian - Uniform Anisotropicity")
-
-# subplot(2,2,2)
-
-# plotCmaAnnealingResults(meanValErrorVec_g_ua, 9, reportFrequency, "Gaussian - Uniform Anisotropicity")
-
-# subplot(2,2,3)
-
-# plotCompleteRate(meanPerturbDistanceVec_g_ua./numFolds, "Gaussian - Uniform Anisotropicity")
-
-# subplot(2,2,4)
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_g_ua, "Gaussian - Uniform Anisotropicity")
-
 
 
 
@@ -444,20 +384,6 @@ outTuple_g_na  = @time runSynapticAnnealingExperiment("Gaussian - Normative Anis
                                                       initTemp, 1,
                                                       synMatIn, tanh,
                                                       dataSet, batchSize, reportFrequency)
-
-# putdata(outTuple_g_va, "outTuple_g_va")
-# outTuple_g_va = getdata("outTuple_g_va")
-
-# (meanValErrorVec_g_va, meanTrainErrorVec_g_va, meanPerturbDistanceVec_g_va, minValErrorSynapseMatrix_g_va) = outTuple_g_va
-
-# plotCompleteRate(meanPerturbDistanceVec_g_va./numFolds, "Gaussian - Variable Anisotropicity")
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_g_va, "Gaussian - Variable Anisotropicity")
-
-# (toptExpVal_g_va, toptStd_g_va) = calcPerfectClassStats(meanPerturbDistanceVec_g_va, numFolds)
-
-# plotAnnealResults(meanTrainErrorVec_g_va, meanValErrorVec_g_va, reportFrequency, "Gaussian - Variable Anisotropicity")
-
 
 
 ###################################################################################################################################################
@@ -476,21 +402,6 @@ outTuple_e_i = @time runSynapticAnnealingExperiment("Exponential - Isotropic", g
                                                     synMatIn, tanh,
                                                     dataSet, batchSize, reportFrequency)
 
-# putdata(outTuple_e_i, "outTuple_e_i")
-# # outTuple_e_i = getdata("outTuple_e_i")
-
-# (meanValErrorVec_e_i, meanTrainErrorVec_e_i, meanPerturbDistanceVec_e_i, minValErrorSynapseMatrix_e_i) = outTuple_e_i
-
-# plotCompleteRate(meanPerturbDistanceVec_e_i./numFolds, "Exponential - Isotropic")
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_e_i, "Exponential - Isotropic")
-
-# (toptExpVal_e_i, toptStd_e_i) = calcPerfectClassStats(meanPerturbDistanceVec_e_i, numFolds)
-
-
-# plotAnnealResults(meanTrainErrorVec_e_i, meanValErrorVec_e_i, reportFrequency, "Exponential - Isotropic")
-
-
 
 ###################################################################################################################################################
 
@@ -507,21 +418,6 @@ outTuple_e_uo = @time runSynapticAnnealingExperiment("Exponential - Uniform Anis
                                                       synMatIn,tanh,
                                                       dataSet, batchSize, reportFrequency)
 
-# putdata(outTuple_e_uo, "outTuple_e_uo")
-# # outTuple_e_uo = getdata("outTuple_e_uo")
-
-# (meanValErrorVec_e_uo, meanTrainErrorVec_e_uo, meanPerturbDistanceVec_e_uo, minValErrorSynapseMatrix_e_uo) = outTuple_e_uo
-
-# plotCompleteRate(meanPerturbDistanceVec_e_uo./numFolds, "Exponential - Uniform Anisotropicity")
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_e_uo, "Exponential - Uniform Anisotropicity")
-
-# (toptExpVal_e_uo, toptStd_e_uo) = calcPerfectClassStats(meanPerturbDistanceVec_e_uo, numFolds)
-
-
-# plotAnnealResults(meanTrainErrorVec_e_uo, meanValErrorVec_e_uo, reportFrequency, "Exponential - Uniform Anisotropicity")
-
-
 
 ###################################################################################################################################################
 
@@ -536,19 +432,6 @@ outTuple_e_da = @time runSynapticAnnealingExperiment("Exponential - Normative An
                                                      initTemp, 1,
                                                      synMatIn, tanh,
                                                      dataSet, batchSize, reportFrequency)
-
-# putdata(outTuple_e_va, "outTuple_e_va")
-# # outTuple_e_va = getdata("outTuple_e_va")
-
-# (meanValErrorVec_e_va, meanTrainErrorVec_e_va, meanPerturbDistanceVec_e_va, minValErrorSynapseMatrix_e_va) = outTuple_e_va
-
-# plotCompleteRate(meanPerturbDistanceVec_e_va./numFolds, "Exponential - Variable Anisotropicity")
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_e_va, "Exponential - Variable Anisotropicity")
-
-# (toptExpVal_e_va, toptStd_e_va) = calcPerfectClassStats(meanPerturbDistanceVec_e_va, numFolds)
-
-# plotAnnealResults(meanTrainErrorVec_e_va, meanValErrorVec_e_va, reportFrequency, "Exponential - Variable Anisotropicity")
 
 
 ###################################################################################################################################################
@@ -570,21 +453,6 @@ outTuple_u_i = @time runSynapticAnnealingExperiment("Uniform - Isotropic", gener
                                                     synMatIn, tanh,
                                                     dataSet, batchSize, reportFrequency)
 
-# putdata(outTuple_u_i, "outTuple_u_i")
-# # outTuple_u_i = getdata("outTuple_u_i")
-
-# (meanValErrorVec_u_i, meanTrainErrorVec_u_i, meanPerturbDistanceVec_u_i, minValErrorSynapseMatrix_u_i) = outTuple_u_i
-
-# plotCompleteRate(meanPerturbDistanceVec_u_i./numFolds, "Unifrom - Isotropic")
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_u_i, "Unifrom - Isotropic")
-
-# (toptExpVal_u_va, toptStd_u_va) = calcPerfectClassStats(meanPerturbDistanceVec_u_i, numFolds)
-
-
-# plotAnnealResults(meanTrainErrorVec_u_i, meanValErrorVec_u_i, reportFrequency, "Unifrom - Isotropic")
-
-
 
 ###################################################################################################################################################
 
@@ -602,21 +470,6 @@ outTuple_u_ua = @time runSynapticAnnealingExperiment("Uniform - Uniform Anisotro
                                                      synMatIn,tanh,
                                                      dataSet, batchSize, reportFrequency)
 
-# putdata(outTuple_u_ua, "outTuple_u_ua")
-# # outTuple_u_ua = getdata("outTuple_u_ua")
-
-# (meanValErrorVec_u_ua, meanTrainErrorVec_u_ua, meanPerturbDistanceVec_u_ua, minValErrorSynapseMatrix_u_ua) = outTuple_u_ua
-
-# plotCompleteRate(meanPerturbDistanceVec_u_ua./numFolds, "Uniform - Uniform Anisotropicity")
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_u_ua, "Uniform - Uniform Anisotropicity")
-
-# (toptExpVal_u_ua, toptStd_u_ua) = calcPerfectClassStats(meanPerturbDistanceVec_u_ua, numFolds)
-
-
-# plotAnnealResults(meanTrainErrorVec_u_ua, meanValErrorVec_u_ua, reportFrequency, "Uniform - Uniform Anisotropicity")
-
-
 
 ###################################################################################################################################################
 
@@ -630,20 +483,6 @@ outTuple_u_da = @time runSynapticAnnealingExperiment("Uniform - Normative Anisot
                                                      getDataClassErr, getDataClassErr,
                                                      initTemp, 1,
                                                      synMatIn, tanh,
-                                                     dataSet, batchSize, reportFrequency)
-
-# # putdata(outTuple_u_va, "outTuple_u_va")
-# outTuple_u_va = getdata("outTuple_u_va")
-
-# (meanValErrorVec_u_va, meanTrainErrorVec_u_va, meanPerturbDistanceVec_u_va, minValErrorSynapseMatrix_u_va) = outTuple_u_va
-
-# plotCompleteRate(meanPerturbDistanceVec_u_va./numFolds, "Uniform - Variable Anisotropicity")
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_u_va, "Uniform - Variable Anisotropicity")
-
-# (toptExpVal_u_va, toptStd_u_va) = calcPerfectClassStats(meanPerturbDistanceVec_u_va, numFolds
-
-# plotAnnealResults(meanTrainErrorVec_u_va, meanValErrorVec_u_va, reportFrequency, "Uniform - Variable Anisotropicity")
 
 ###################################################################################################################################################
 
@@ -655,7 +494,7 @@ outTuple_u_da = @time runSynapticAnnealingExperiment("Uniform - Normative Anisot
 
 
 outTuple_c_i = @time runSynapticAnnealingExperiment("Cauchy - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                    "CauchyVisit", "IsotropicAnisotropicity_lcvf", "comparitive_simulated_annealing",
+                                                    "CauchyVisit", "IsotropicAnisotropicity", "comparitive_simulated_annealing",
                                                     numFolds, matrixConfig, synapticAnnealing,
                                                     0.0, maxRuns, cauchy_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
                                                     getDataClassErr, getDataClassErr,
@@ -663,91 +502,51 @@ outTuple_c_i = @time runSynapticAnnealingExperiment("Cauchy - Isotropic", genera
                                                     synMatIn, tanh,
                                                     dataSet, batchSize, reportFrequency)
 
-# # putdata(outTuple_c_i, "outTuple_c_i")
-# outTuple_c_i = getdata("outTuple_c_i")
 
-# (meanValErrorVec_c_i, meanTrainErrorVec_c_i, meanPerturbDistanceVec_c_i, minValErrorSynapseMatrix_c_i) = outTuple_c_i
+###################################################################################################################################################
+outTuple_c_i_ra = @time runSynapticAnnealingExperiment("Cauchy - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                    "CauchyVisit", "IsotropicAnisotropicity_ra", "comparitive_simulated_annealing",
+                                                    numFolds, matrixConfig, synapticAnnealing,
+                                                    0.0, maxRuns, cauchy_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa_ra,
+                                                    getDataClassErr, getDataClassErr,
+                                                    initTemp, 0.1,
+                                                    synMatIn, tanh,
+                                                    dataSet, batchSize, reportFrequency)
 
-# plotCompleteRate(meanPerturbDistanceVec_c_i./numFolds, "Cauchy - Isotropic")
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_c_i, "Cauchy - Isotropic")
-
-# (toptExpVal_c_i, toptStd_c_i) = calcPerfectClassStats(meanPerturbDistanceVec_c_i, numFolds)
-
-# plotAnnealResults(meanTrainErrorVec_c_i, meanValErrorVec_c_i, reportFrequency, "Cauchy - Isotropic")
-
-
-
-###########################################################
 
 ###################################################################################################################################################
 
 
-outTuple_c_ua = @time runSynapticAnnealingExperiment("Cauchy - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                     "CauchyVisit", "UniformAnisotropicity", "comparitive_simulated_annealing",
-                                                     numFolds, matrixConfig, synapticAnnealing,
-                                                     0.0, maxRuns,  cauchy_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
-                                                     getDataClassErr, getDataClassErr,
-                                                     initTemp, 0.1,
-                                                     synMatIn,tanh,
-                                                     dataSet, batchSize, reportFrequency)
-
-# # putdata(outTuple_c_ua, "outTuple_c_ua")
-# outTuple_c_ua = getdata("outTuple_c_ua")
-
-# (meanValErrorVec_c_ua, meanTrainErrorVec_c_ua, meanPerturbDistanceVec_c_ua, minValErrorSynapseMatrix_c_ua) = outTuple_c_ua
-
-# plotCompleteRate(meanPerturbDistanceVec_c_ua./numFolds, "Cauchy - Uniform Anisotropicity")
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_c_ua, "Cauchy - Uniform Anisotropicity")
-
-# (toptExpVal_c_ua, toptStd_c_ua) = calcPerfectClassStats(meanPerturbDistanceVec_c_ua, numFolds)
-
-# plotAnnealResults(meanTrainErrorVec_c_ua, meanValErrorVec_c_ua, reportFrequency, "Cauchy - Uniform Anisotropicity")
-
+# outTuple_c_ua = @time runSynapticAnnealingExperiment("Cauchy - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+#                                                      "CauchyVisit", "UniformAnisotropicity", "comparitive_simulated_annealing",
+#                                                      numFolds, matrixConfig, synapticAnnealing,
+#                                                      0.0, maxRuns,  cauchy_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+#                                                      getDataClassErr, getDataClassErr,
+#                                                      initTemp, 0.1,
+#                                                      synMatIn,tanh,
+#                                                      dataSet, batchSize, reportFrequency)
 
 
 ###################################################################################################################################################
 
-###################################################################################################################################################
 
-
-outTuple_c_na = @time runSynapticAnnealingExperiment("Cauchy - Normative Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 0.1,
-                                                     "CauchyVisit", "NormativeAnisotropicity_fsa_t10000", "comparitive_simulated_annealing",
+outTuple_c_na = @time runSynapticAnnealingExperiment("Cauchy - Normative Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "CauchyVisit", "NormativeAnisotropicity_fsa_t1000", "comparitive_simulated_annealing",
                                                      numFolds, matrixConfig, synapticAnnealing,
                                                      0.0, maxRuns,  cauchy_NormativeAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
                                                      getDataClassErr, getDataClassErr,
-                                                     initTemp, 1,
+                                                     initTemp, 0.1,
                                                      synMatIn, tanh,
                                                      dataSet, batchSize, reportFrequency)
 
 
-# # putdata(outTuple_c_va, "outTuple_c_va")
-# outTuple_c_va = getdata("outTuple_c_va")
 
-# (meanValErrorVec_c_va, meanTrainErrorVec_c_va, meanPerturbDistanceVec_c_va, minValErrorSynapseMatrix_c_va) = outTuple_c_va
-
-# plotCompleteRate(meanPerturbDistanceVec_c_va./numFolds, "Cauchy - Variable Anistropicity")
-
-# plotGammaDistPDFfromVector(meanPerturbDistanceVec_u_va, "Cauchy - Variable Anistropicity")
-
-# (toptExpVal_u_va, toptStd_u_va) = calcPerfectClassStats(meanPerturbDistanceVec_u_va, numFolds)
-
-
-# plotAnnealResults(meanTrainErrorVec_c_va, meanValErrorVec_c_va, reportFrequency, "Cauchy - Variable Anistropicity")
-
-# Generate graphs of performance for each exp and save in folder
-# Generate graphs of each exps completed-at-epoch  and save each in folder. Empircally observed cumulative distribution functions of simulation epoch required to achieve perfect classification
-# Overlay all the graphs. Average
-###################################################################################################################################################
-
-
-outTuple_c_ma = @time runSynapticAnnealingExperiment("Cauchy - Max Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                     "CauchyVisit", "MaxAnisotropicity", "comparitive_simulated_annealing",
+outTuple_c_neurala = @time runSynapticAnnealingExperiment("Cauchy - Neural Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "CauchyVisit", "NeuralAnisotropicity", "comparitive_simulated_annealing",
                                                      numFolds, matrixConfig, synapticAnnealing,
-                                                     0.0, maxRuns,  cauchy_MaxAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+                                                     0.0, maxRuns,  cauchy_NeuralAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
                                                      getDataClassErr, getDataClassErr,
-                                                     initTemp, 1,
+                                                     initTemp, 0.1,
                                                      synMatIn, tanh,
                                                      dataSet, batchSize, reportFrequency)
 

@@ -416,6 +416,8 @@
 	
 	The first application of simulated annealing (SA) to the training of neural networks was accomplished by Engle in \cite{engel1988teachingfeedforwardnueralnetsbysa}, with limited success. Engle's work involved discrete
 	
+	% DO: Complete this section.
+	
 	
 	\section{Related Works in Simulated Annealing} \label{eq:simulatedAnnealing}
 	
@@ -478,10 +480,12 @@
 		\end{algorithmic}
 	\end{algorithm}
 		
-	[We need here a discussion regarding the asymptotic convergence.]
 	% DO: At least a paragraph on asymptotic convergence is required here.
 	
-	In \cite{szu1987fastsimulatedannealing} Szu and Hartley introduced the method of fast simulated annealing (FSA), which incorporates occasional, long jumps through the configuration space, These jumps are accomplished by using a heavy-tailed distribution, such as the Cauchy distribution, for the visiting distribution used in the neighborhood function. This provision increases the likelihood of escaping local minima, and reduces the total computational effort required to reach a global minimum. This modification yields a significant decrease in the amount of computation effort required to guarantee that a global minimum is found. Specifically, the FSA decreased the required temperature decay from $1/\ln(t)$ to $1/t$, where $t$ is the simulation time. Later work by Tsallis and Stariolo \cite{tsallis1996generalizedsimulatedannealing}, generalized both CSA and FSA into a single framework: generalized simulated annealing (GSA), which is faster still.
+	In \cite{szu1987fastsimulatedannealing} Szu and Hartley introduced the method of fast simulated annealing (FSA), which incorporates occasional, long jumps through the configuration space, These jumps are accomplished by using a heavy-tailed distribution, such as the Cauchy distribution, for the visiting distribution used in the neighborhood function. This provision increases the likelihood of escaping local minima, and reduces the total computational effort required to reach a global minimum. This modification yields a significant decrease in the amount of computation effort required to guarantee that a global minimum is found. Specifically, the FSA decreased the required temperature decay from $1/\ln(t)$ to $1/t$, where $t$ is the simulation time. 
+	
+	Later work by Tsallis and Stariolo \cite{tsallis1996generalizedsimulatedannealing}, generalized both CSA and FSA into a single framework: generalized simulated annealing (GSA). 
+	% DO: [discuss GSA here, and also SGSA and the many applications of GSA]
 	
 	% Be sure to include some discussion of thermal fluctuations and their importance. Find a nice source...
 	\subsection{Reannealing}
@@ -551,26 +555,30 @@
 	\section{Simulated Annealing}
 	\label{scn:simulated_annealing}
 	
-	In this thesis, several variations the SA algorithm are developed and implemented. Each is applied to the problem of selecting synaptic weights for a feed-forward neural network in order to maximize the networks classification performance. This section contains an abstract discussion of the SA formulations to be applied to this task; later sections will expound the implementation details specific to the feed-forward neural network application of the these SA formulations. For all SA formulations examined in this thesis the Metropolis acceptance criterion will be used. The temperature schedule will be determined by the convergence properties of the constructed algorithm. Examining Alg.~\ref{alg:simulated_annealing} reveals that the preceding specifications leave only one component unspecified: the neighborhood function. In the following sections the neighborhood function is decomposed into two decoupled components, the visiting distribution and anisotropicity policy, and several possible realizations of each are discussed.
+	In this thesis, several variations the SA algorithm are developed and implemented. Each is applied to the problem of selecting synaptic weights for a feed-forward neural network in order to maximize the networks classification performance. This section contains an abstract discussion of the SA formulations to be applied to this task; later sections will expound the implementation details specific to the feed-forward neural network application of the these SA formulations. For all SA formulations examined in this thesis the Metropolis acceptance criterion will be used. The temperature schedule will be determined by the convergence properties of the constructed algorithm. Examining Alg.~\ref{alg:simulated_annealing} reveals that the preceding specifications leave only one component unspecified: the neighborhood function, which determines how new trial solutions are generated form the current solution. In the following sections the neighborhood function is decomposed into two decoupled components, the visiting distribution and anisotropicity policy, and several possible realizations of each are discussed.
 	
 	\section{Neighborhood Functions: Traversing the Cost Surface}
 	
-	The SA algorithm requires that a neighborhood function, \begin{math} \mathcal{N} \end{math}, be specified to produce new solutions from a given solution. The neighborhood function performs the exploration of the solution space, as it specifies new solutions which can be either accepted or rejected according to the acceptance criteria. Thus, \begin{math} \mathcal{N} \end{math} determines how the algorithm traverses the cost surface of the problem. A traversal action, or move, on a surface, may be decomposed into two components: the distance moved and the direction of the move. These components may be specified independently of one another. The distance of the move on the cost surface has been examined in previous work \cite{szu1987fastsimulatedannealing,tsallis1996generalizedsimulatedannealing,ingber1989veryfastsimulatedreannealing}, and is often specified using a \textit{visiting distribution}, which is defined as a probability distribution over the move distance parameter. The visiting distribution specifies the magnitude of the move, but does not specify anything about the direction of the move. 
+	The SA algorithm requires that a neighborhood function, \begin{math} \mathcal{N} \end{math}, be specified to produce new solutions from a given solution. The neighborhood function performs the exploration of the solution space, as it specifies new solutions which can be either accepted or rejected according to the acceptance criteria. Thus, \begin{math} \mathcal{N} \end{math} determines how the algorithm traverses the cost surface of the problem. A traversal action, or move, on a surface, may be decomposed into two components: the distance moved and the direction of the move. These components may be specified independently of one another. The distance of the move on the cost surface has been examined in previous work \cite{szu1987fastsimulatedannealing,tsallis1996generalizedsimulatedannealing,ingber1989veryfastsimulatedreannealing}, and is often specified using a \textit{visiting distribution}, which is defined as a probability distribution of transition to a solution over the solution space of the problem. The visiting distribution specifies the magnitude and the direction of the move
 	
-	The direction of a cost surface traversal is the allocation of the total move distance to each of the possible traversal dimensions. A traversal dimension, or degree of freedom, is a solution parameter which can be modified by the SA algorithm. In previous work [need several citations here]\cite{}, the move distance has been applied isotropically in all possible dimensions of travel. In physical science, isotropicity is phenomenological property of being uniformly applicable in all dimensions. In the context of neighborhood functions this means that the total distance moved in each of the possible travel dimensions is equal in magnitude, and random in sign. In the following sections a novel method is developed for applying the cost surface traversal distance anisotropically. 
+	In previous work \cite{tsallis1996generalizedsimulatedannealing}, the move distance has been applied isotropically in all possible dimensions of travel. In physical science, isotropicity is phenomenological property of being uniformly applicable in all dimensions. In the context of neighborhood functions this means that the probability distribution over the solution space is symmetric; that is, that the probability distribution in each dimension is the same. In the following sections a method is developed for specifying an anisotropic visiting distribution.
 	
 	
 	\subsection{Visiting Distributions}
 
 	
-	The visiting distribution of a neighborhood function gives the probability density function over all possible traversal distances. Once a visiting distribution is specified, samples can be drawn from the distribution using inverse transform sampling. During each iteration of the SA algorithm, a sample is drawn from the visiting distribution to determine the solution-space distance to be traversed during that iterations. In the following sections several visiting distributions, and the corresponding sample generation functions, will be discussed.
+	The visiting distribution of a neighborhood function gives the probability density function over all possible solution states. Once a visiting distribution is specified, samples can be drawn from the distribution using inverse transform sampling. These samples may be either drawn from an $n$-dimensional distribution, where $n$ is the number of free parameters of the problem, or $n$ samples can be drawn and applied to each of the free parameters independently. In this thesis, all visiting distributions are implemented using the latter method. In the following sections several visiting distributions, and the corresponding sample generation functions, will be discussed.
 	
 	\label{scn:visiting_distributions}
 	
 	\subsubsection{Gaussian Visiting Distributions}
 	\label{scn:classical_visiting}
 	
-	A Gaussian visiting distribution is commonly used in SA. Because it is a light-tailed distribution, and therefore indicates very low probability for all values far from the mean, Gaussian visiting distribution results in a search which is highly local about the mean. The mean of the visiting distribution is always the current solution location in solution space of the SA algorithm. An SA algorithm using a Gaussian visiting distribution is often called classical simulated annealing (CSA) \cite{tsallis1996generalizedsimulatedannealing}. 
+	A Gaussian visiting distribution is commonly used in SA. Because it is a light-tailed distribution, and therefore indicates very low probability for all values far from the mean, Gaussian visiting distribution results in a search which is highly local about the mean. The mean of the visiting distribution is always the current solution location in solution space of the SA algorithm. An SA algorithm using a Gaussian visiting distribution is often called classical simulated annealing (CSA) \cite{tsallis1996generalizedsimulatedannealing}, both because it is the formulation of SA that was described first, and because the dynamics of the algorithm are isomorphic with those of classical thermodynamics. In this work, a standard normal distribution is used. The probability density function for this distribution is given by 
+	\begin{equation}
+	g_G = \frac{e^{-\frac{1}{2} x^2}}{\sqrt{2\pi}}
+	\label{eq:normal_pdf}
+	\end{equation}
 	
 	\subsubsection{Cauchy Visiting Distributions}
 	\label{visiting_distribution_abstract_cauchy}
@@ -600,11 +608,28 @@
 		%
 	\end{figure}
 		
-	 The significant performance gains exhibited by the FSA algorithm are the result of using a quantum-inspired visiting distribution. In \cite{szu1987fastsimulatedannealing}, which introduces the FSA algorithm, a Cauchy distribution is used to generate new solutions. Unlike the Gaussian distribution, the Cauchy distribution is heavy-tailed, meaning that it will occasionally produce values which are relatively far from the mean. This property of the distribution has the useful consequence of increasing the probability of escaping a local minima by allowing the algorithm to tunnel through the cost-surface barriers that surround it. This in turn allows for faster convergence relative to CSA. To understand the origin of this advantage, it is instructive to contrast equations \ref{eq:thermal_traversal_prob} and \ref{eq:quantum_tunneling_prob}. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of approximately \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}. This relationship is depicted graphically in Fig.~\ref{fig:quantum_advantage} which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Fig.~\ref{fig:quantum_advantage} illustrates the fact that physical models which considers quantum effects are much more likely to predict penetration of tall, thin energy barriers than those which only include classical thermal effects. 
+	 The significant performance gains exhibited by the FSA algorithm are the result of using a quantum-inspired visiting distribution. In \cite{szu1987fastsimulatedannealing}, which introduces the FSA algorithm, a Cauchy distribution is used to generate new solutions. Unlike the Gaussian distribution, the Cauchy distribution is heavy-tailed, meaning that it will occasionally produce values which are relatively far from the mean.  This property of the distribution has the useful consequence of increasing the probability of escaping a local minima by allowing the algorithm to tunnel through the cost-surface barriers that surround it. This in turn allows for faster convergence relative to CSA. To understand the origin of this advantage, it is instructive to contrast equations \ref{eq:thermal_traversal_prob} and \ref{eq:quantum_tunneling_prob}. Both describe the same value, but the importance of the width and height of the traversed barrier in the two equations is considerably different. For systems in which quantum tunneling is possible, the probability of penetrating a barrier of height \begin{math} \Delta V \end{math} is increased by a factor of approximately \begin{math} e^{\Delta V} \end{math}, for large values of \begin{math} \Delta V \end{math}. This relationship is depicted graphically in Fig.~\ref{fig:quantum_advantage} which shows the probability of barrier traversal for a system which allows quantum fluctuations, divided by the same probability for a system which only considers thermal fluctuations. Fig.~\ref{fig:quantum_advantage} illustrates the fact that physical models which considers quantum effects are much more likely to predict penetration of tall, thin energy barriers than those which only include classical thermal effects. 
+	 The probability density function for the Cauchy distribution is given by
+	 % DO: write the distribution and make a graph.
+	 
 
 	
 
 	\subsubsection{Generalized Simulated Annealing Visiting Distribution}
+	
+	The most sophisticated form of SA is GSA, described by Tsallis and [someone] in \cite{tsallis1996generalizedsimulatedannealing}. As the name implies, this SA implementation is a generalization of other forms of SA, specifically CSA and FSA, which can be recovered under certain conditions in the GSA formulation. As with FSA, GSA is essentially SA with a modified visiting distribution. The visiting distribution proposed in 
+	
+	As discussed in cite [the brazil and other email article] this distribution conveys several advantages. The longer tails enable homogeneous visitation of the entire solution space of the problem, and the tunable temperature parameter allows for the recovery of steepest-descent in the $T_{q_v} \rightarrow 0$ limit. 
+	
+	Eq.{} has no analytic solution. It is possible to take the indefinite integral, but this operation yields a hypergeometric function which can only be computed as a power series of increasingly complex terms. Previous work [cite the people from the Brazil article] has shown that this procedure is computationally expensive. Thus, Eq.~{} is unsuitable for the analytic inverse sampling transform method of generating random variables. In order to overcome this limitation, a distribution caching method was implemented. This method works by numerically approximating the integral of the distribution given by Eq.~whatevs, which yields a series of points which constitute a close approximation to the cumulative distribution function of the distribution. This series of points, and the displacement values to which they correspond are stored. To sample the distribution, a number is selected with uniform probability from the interval $[0,1]$. The numeric integration value which has the minimum-magnitude difference with the randomly selected value is identified, and the displacement value to which is corresponds is returned. This procedure is the numerical equivalent of inverse transform sampling. ... A large sample population can be drawn at random. If the sample population is sufficiently large, a random choice from the population is approximately equivalent to sampling the original distribution. 
+	
+	Fig.~whatevs display a comparison between the distributions produced by several variations of $q_V$ and $T_{q_V}$. As is shown in Fig.~whatevs $q_V$ primarily influence the behavior of the tails of the produced distribution. Values of $q_V$ which are near $1$ yield very light-tailed distributions, which are similar to Gaussians. It is clear that searches conducted using these distributions will highly-local, as nearly all of the probability values are close to $0$. As the value of $q_V$ increase to $1.5$ 
+	
+	The net effect is to produce a generating function which generally produces small values, but can occasionally produce very large values. The frequency with which these large displacements are generated is a function of the tunable parameters $q_V$ and $T_{q_V}$, as is the case in GSA. Thus, SGSA serves as an effective surrogate from the more computationally expensive GSA. 
+	
+	
+	[this procedure is not yet complete. All values generated by this procedure will be <<1, and will become increasingly so with increasing ]
+	[An initial literature review reveals no evidence indicating that GSA, or any variant thereof, has been used before for the selection of synaptic weights.]
 	
 	\subsubsection{Uniform Visiting Distributions}
 	
@@ -612,7 +637,7 @@
 	
 	\subsection{Anisotropicity Policies}
 	
-	The visiting distribution provides a traversal distance, which is in effect the magnitude of the traversal vector through the configuration space of the problem. It does not, however, specify the direction of the vector. In previous work, an isotropic selection of the traversal vectors direction is employed \cite{tsallis1996generalizedsimulatedannealing}. A vector having isotropic direction is one for which each component vector is equal in magnitude. This limitation on the component magnitudes of the traversal vector limits the possible types of moves which can occur during the search. For example, an isotropic move is unable to encode 
+	In previous work, the visiting distribution is applied isotropically over the free parameters, or dimensions, of the solution space. \cite{tsallis1996generalizedsimulatedannealing}. A vector having isotropic direction is one for which each component vector is equal in magnitude. This limitation on the component magnitudes of the traversal vector limits the possible types of moves which can occur during the search. For example, an isotropic move is unable to encode 
 	
 	\subsubsection{Isotropic Anisotropicity}
 	
@@ -899,6 +924,8 @@
 	\section{Conclusion}
 	
 	We have proposed anisotropicity as a new simulated annealing neighborhood function parameter, presented a framework for applying simulated annealing to feed forward neural network weight selection, and numerically analyzed the performance of annealing systems constructed according to this framework. We have demonstrated that the anisotropicity of a neighborhood function can have a significant impact on the classification performance of a feed forward neural network.  
+	
+	An exploratory study of oscillatory variation in the distribution temperature parameter of the SGSA distribution yielded encouraging preliminary results. Further study may yield additional insights into the benefits of alternating global and local distribution characteristics during a semi-local solution space search.
 	
 	\label{scn:conclusion}
 	\appendix		% Appendix begins here

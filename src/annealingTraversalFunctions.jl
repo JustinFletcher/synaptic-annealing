@@ -1,6 +1,7 @@
 # -------------- Nieghborhood Functions
 
 
+# @everywhere include("$(pwd())\\src\\"*"gsa.jl")
 
 
 
@@ -20,6 +21,8 @@ function gaussian_Isotropic_SynapticPerturbation(synapseMatrix, state)
 
     synapsePerturbation = stepSize.*anisotropicityMatrix
 #    synapsePerturbation = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
+
+    synapsePerturbation =  randn(size(synapseMatrix)).*int(bool(synapseMatrix))
 
     return(Any[synapsePerturbation, stepSize])
 end
@@ -89,126 +92,17 @@ function gaussian_NormativeAnisotropic_SynapticPerturbation(synapseMatrix, state
     return(Any[synapsePerturbation, stepSize])
 end
 
-# -------------- Exponential
 
-
-
-function exponential_Isotropic_SynapticPerturbation(synapseMatrix, state)
-
-    visitingDistibutionSample = (-log(rand())/(0.1)).*sum(int(bool(synapseMatrix)))
-
-
-    stepSize = state.learnRate.*visitingDistibutionSample
-
-    anisotropicityMatrix = ones(size(synapseMatrix)).*int(bool(synapseMatrix))
-    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-
-    synapsePerturbation = stepSize.*anisotropicityMatrix
-    return(Any[synapsePerturbation, stepSize])
-end
-
-function exponential_UniformlyAnisotropic_SynapticPerturbation(synapseMatrix, state)
-
-
-    visitingDistibutionSample = (-log(rand())/(0.1)).*sum(int(bool(synapseMatrix)))
-
-
-    stepSize =  state.learnRate*visitingDistibutionSample
-
-    anisotropicityMatrix = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
-    anisotropicityMatrix =(anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-
-    synapsePerturbation = stepSize.*anisotropicityMatrix
-
-    return(Any[synapsePerturbation, stepSize])
-end
-
-function exponential_VariablyAnisotropic_SynapticPerturbation(synapseMatrix, state)
-
-
-    visitingDistibutionSample = (-log(rand())/(0.1)).*sum(int(bool(synapseMatrix)))
-
-    stepSize =  state.learnRate*visitingDistibutionSample
-
-    anisotropicityMatrix = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
-    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix)))
-    anisotropicityMatrix = (anisotropicityMatrix.^(1/(1-(0.9*state.anisotropicField)))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-
-    synapsePerturbation = stepSize.*anisotropicityMatrix
-
-
-
-    return(Any[synapsePerturbation, stepSize])
-
-end
-
-function exponential_NormativeAnisotropic_SynapticPerturbation(synapseMatrix, state)
-
-
-    visitingDistibutionSample = (-log(rand())/(0.1)).*sum(int(bool(synapseMatrix)))
-
-    stepSize =  state.learnRate*visitingDistibutionSample
-
-    anisotropicityMatrix = rand(size(synapseMatrix)).*int(bool(synapseMatrix))
-    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix)))
-    anisotropicityMatrix = (anisotropicityMatrix.^(1/(1-(0.9*state.anisotropicField)))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-
-    synapsePerturbation = stepSize.*anisotropicityMatrix
-
-
-
-    return(Any[synapsePerturbation, stepSize])
-
-end
-
-function exponential_NormativeAnisotropic_SynapticPerturbation(synapseMatrix, state)
-
-
-    visitingDistibutionSample = (-log(rand())/(0.1)).*sum(int(bool(synapseMatrix)))
-
-    stepSize =  state.learnRate*visitingDistibutionSample
-
-
-    (numRows, numCols, numLayers) = size(synapseMatrix)
-    centerX = rand(1:numRows)
-    centerY = rand(1:numCols)
-    centerZ = rand(1:numLayers)
-    anisotropicityMatrix = rand(size(synapseMatrix)).*[ 1/((abs(x-centerX)+abs(y-centerY)+abs(z-centerZ+1/0.1))) for x=1:numRows, y=1:numCols, z=1:numLayers].*int(bool(synapseMatrix))
-    anisotropicityMatrix =(anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-
-
-    synapsePerturbation = stepSize.*anisotropicityMatrix
-
-
-
-    return(Any[synapsePerturbation, stepSize])
-
-end
 
 # -------------- Cauchy
 
 function cauchy_Isotropic_SynapticPerturbation(synapseMatrix, state)
 
 
-#     visitingDistibutionSample = minimum([state.maxConfigDist,abs((1/(1-(state.normTunnelingField)))*tan(pi*(rand()-0.5)))])
-#     visitingDistibutionSample = state.normTunnelingField * tan(pi*(rand()-0.5))
-
-    visitingDistibutionSample = 1*tan(pi*(rand()-0.5)).*sum(int(bool(synapseMatrix)))
-
-#     visitingDistibutionSample = minimum([(1/state.normTunnelingField)*tan(pi*(rand()-0.5))*sum(int(bool(synapseMatrix))), state.maxConfigDist])
-
-
-    stepSize = state.learnRate.*visitingDistibutionSample
-
-    anisotropicityMatrix = ones(size(synapseMatrix)).*int(bool(synapseMatrix))
-    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-
-    synapsePerturbation = stepSize.*anisotropicityMatrix
-
     ## OLD ^
-    synapsePerturbation = stepSize.*tan(pi.*(rand(size(synapseMatrix)).-0.5))
+    synapsePerturbation = state.learnRate.*tan(pi.*(rand(size(synapseMatrix)).-0.5)).*int(bool(synapseMatrix))
 
-    return(Any[synapsePerturbation, stepSize])
+    return(Any[synapsePerturbation, sum(synapsePerturbation)])
 end
 
 
@@ -260,14 +154,25 @@ end
 function cauchy_NormativeAnisotropic_SynapticPerturbation(synapseMatrix, state)
 
 
+    (numRows, numCols, numLayers) = size(synapseMatrix)
+    centerX = rand(1:numRows)
+    centerY = rand(1:numCols)
+    centerZ = rand(1:numLayers)
 
-#     visitingDistibutionSample = minimum([state.maxConfigDist,1/state.normTunnelingField])*tan(pi*(rand()-0.5))
 
-#     visitingDistibutionSample = minimum([state.maxConfigDist,abs((1/(1-(state.normTunnelingField)))*tan(pi*(rand()-0.5)))]).*sum(int(bool(synapseMatrix)))
+    ## OLD ^
+    visitingDistributionSampleMatrix = stepSize.*tan(pi.*(rand(size(synapseMatrix)).-0.5)).*int(bool(synapseMatrix))
 
-    visitingDistibutionSample = 1*tan(pi*(rand()-0.5))*sum(int(bool(synapseMatrix)))
 
-    stepSize =  state.learnRate*visitingDistibutionSample
+    anisotropicityMatrix = rand(size(synapseMatrix)).*[ 1/((abs(x-centerX)+abs(y-centerY)+abs(z-centerZ+1/100))) for x=1:numRows, y=1:numCols, z=1:numLayers].*int(bool(synapseMatrix))
+    anisotropicityMatrix =(anisotropicityMatrix./(sum(anisotropicityMatrix)))
+
+    synapsePerturbation = visitingDistributionSampleMatrix .* anisotropicityMatrix
+
+    return(Any[synapsePerturbation, stepSize])
+end
+
+function cauchy_NeuralAnisotropic_SynapticPerturbation(synapseMatrix, state)
 
 
     (numRows, numCols, numLayers) = size(synapseMatrix)
@@ -275,22 +180,14 @@ function cauchy_NormativeAnisotropic_SynapticPerturbation(synapseMatrix, state)
     centerY = rand(1:numCols)
     centerZ = rand(1:numLayers)
 
-    anisotropicityMatrix = rand(size(synapseMatrix)).*[ 1/((abs(x-centerX)+abs(y-centerY)+abs(z-centerZ+1/100))) for x=1:numRows, y=1:numCols, z=1:numLayers].*int(bool(synapseMatrix))
-    anisotropicityMatrix =(anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
-    synapsePerturbation = stepSize.*anisotropicityMatrix
 
+    visitingDistributionSampleMatrix = state.learnRate*tan(pi.*(rand(size(synapseMatrix)).-0.5)).*int(bool(synapseMatrix))
 
-
-    ## OLD ^
-    visitingDistributionSampleMatrix = stepSize.*tan(pi.*(rand(size(synapseMatrix)).-0.5))
-
-
-    anisotropicityMatrix = rand(size(synapseMatrix)).*[ 1/((abs(x-centerX)+abs(y-centerY)+abs(z-centerZ+1/100))) for x=1:numRows, y=1:numCols, z=1:numLayers].*int(bool(synapseMatrix))
-    anisotropicityMatrix =(anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+    anisotropicityMatrix = [int((y==centerY)&&(z==centerZ)) for x=1:numRows, y=1:numCols, z=1:numLayers].*int(bool(synapseMatrix))
 
     synapsePerturbation = visitingDistributionSampleMatrix .* anisotropicityMatrix
 
-    return(Any[synapsePerturbation, stepSize])
+    return(Any[synapsePerturbation, sum(synapsePerturbation)])
 end
 
 
@@ -303,7 +200,6 @@ function uniform_Isotropic_SynapticPerturbation(synapseMatrix, state)
 
 
     visitingDistibutionSample = ((state.maxConfigDist*(rand()))).*sum(int(bool(synapseMatrix)))
-
 
     stepSize = state.learnRate.*visitingDistibutionSample
 
@@ -372,6 +268,15 @@ function uniform_NormativeAnisotropic_SynapticPerturbation(synapseMatrix, state)
 end
 
 
+# -------------- GSA
+
+function gsa_Isotropic_SynapticPerturbation(synapseMatrix, state)
+
+
+    synapsePerturbation = state.learnRate.*randgsa(2.25, 1, 0, size(synapseMatrix)).*int(bool(synapseMatrix))
+
+    return(Any[synapsePerturbation, sum(synapsePerturbation)])
+end
 
 
 # -------------- Placeholders
