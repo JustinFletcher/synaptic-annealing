@@ -13,8 +13,11 @@ end
 
 
 function gsa(qv, t, d, x)
-
-    # This function returns the SGSA visiting distribution over the specified range, x.
+ # This function returns the SGSA visiting distribution over the specified range, x.
+    term1 = (((qv-1)./pi).^(d./2))
+    term2 = ((gamma((1./(qv-1))+((d-1)./2)))./(gamma((1./(qv-1))-(0.5))))
+    term3 = ((t.^(-d./(3-qv)))./((1+(qv-1).*((x.^2)./(t.^(2.*(3-qv))))).^((1./(qv-1))+((d-1)./2))))
+    return(term1.*term2.*term3)
 
 end
 
@@ -24,8 +27,8 @@ function computeGSACDF(displacmentLimit, resolution, qv, tqv, d)
     inputRange = -displacmentLimit:resolution:displacmentLimit
 
     # Invoke Tsallis Eq. 9 to generate a GSA distribution.
-#     gsaUnnormalizedDist = gsa(qv, t, d, inputRange)
-    gsaUnnormalizedDist = sgsa(qv, tqv, inputRange)
+    gsaUnnormalizedDist = gsa(qv, tqv, d, inputRange)
+#     gsaUnnormalizedDist = sgsa(qv, tqv, inputRange)
 
     # Numerically compute the integral of the GSA distribution.
     gsaUnnormalizedArea = ((sum(gsaUnnormalizedDist)*resolution))
@@ -78,7 +81,6 @@ function buildSampleLibrary(displacmentLimit, resolution, qv, tqv, d, nDesiredSa
 end
 
 
-# rm(".\\cache\\gsasamples\\gsasamples")
 
 function buildCompleteSampleLibrary (displacmentLimit, resolution, qvRange, tqvRange, dRange, nDesiredSamples)
 
@@ -99,10 +101,10 @@ end
 
 # displacmentLimit = 50
 # resolution = 0.001
-# qvRange = [1.75]
+# qvRange = [2.5]
 # #tqvRange = [t for t in [1,2.5,5,10]]
 # tqvRange = [t for t in [1]]
-# dRange = [0]
+# dRange = [1]
 # nDesiredSamples = 10000
 
 # @time buildCompleteSampleLibrary(displacmentLimit, resolution, qvRange, tqvRange, dRange, nDesiredSamples)

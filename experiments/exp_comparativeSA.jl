@@ -560,7 +560,7 @@ outTuple_c_neurala = @time runSynapticAnnealingExperiment("Cauchy - Neural Aniso
 
 
 outTuple_gsa_i = @time runSynapticAnnealingExperiment("GSA - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                     "GSAVisit", "IsotropicAnisotropicity_alpha0p01_qv1p75_t1", "comparitive_simulated_annealing",
+                                                     "GSAVisit", "IsotropicAnisotropicity_alpha0p1_qv2p5_t1_d1", "comparitive_simulated_annealing",
                                                      numFolds, matrixConfig, synapticAnnealing,
                                                      0.0, maxRuns,  gsa_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
                                                      getDataClassErr, getDataClassErr,
