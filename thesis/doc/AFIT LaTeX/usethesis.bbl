@@ -10,6 +10,12 @@ Anderson, James~A. and E.~Rosenfeld, editors.
 \newblock {\em Neurocomputing: {F}oundations of Research\/}.
 \newblock Cambridge, MA: MIT Press, 1988.
 
+\bibitem{andricioaei1996applicationgsatetrapide}
+Andricioaei, Ioan and John~E. Straub.
+\newblock ``Generalized simulated annealing algorithms using Tsallis
+  statistics: Application to conformational optimization of a tetrapeptide,''
+  {\em Phys. Rev. E\/}, {\em 53\/}:R3055--R3058 (Apr 1996).
+
 \bibitem{barto1983neuronlike}
 Barto, Andrew~G., et~al.
 \newblock ``Artificial Neural Networks.'' edited by Joachim Diederich, chapter
@@ -43,6 +49,12 @@ Corana, A., et~al.
 Cybenko, G.
 \newblock ``Approximation by superpositions of a sigmoidal function,'' {\em
   Mathematics of Control, Signals and Systems\/}, {\em 2\/}(4):303--314 (1989).
+
+\bibitem{dallinga2004performancegsa}
+Dall'Igna~J, Alcino, et~al.
+\newblock ``{Performance and parameterization of the algorithm Simplified
+  Generalized Simulated Annealing},'' {\em {Genetics and Molecular Biology}\/},
+  {\em 27\/}:616 -- 622 (00 2004).
 
 \bibitem{engel1988teachingfeedforwardnueralnetsbysa}
 Engel, Jonathan.
@@ -101,6 +113,13 @@ Lecun, Y.
 \newblock ``Une proc\'{e}dure d'apprentissage pour r\'{e}seau \`{a} seuil
   asym\'{e}trique,'' {\em Proceedings of Cognitiva 85, Paris\/},  599--604
   (1985).
+
+\bibitem{lee2007improvinggeneralizationcapabilitynnusingsa}
+Lee, Yeejin, et~al.
+\newblock ``Improving generalization capability of neural networks based on
+  simulated annealing..'' {\em IEEE Congress on Evolutionary Computation\/}.
+\newblock  3447--3453.
+\newblock IEEE, 2007.
 
 \bibitem{mcculloch1988}
 McCulloch, Warren~S. and Walter Pitts.

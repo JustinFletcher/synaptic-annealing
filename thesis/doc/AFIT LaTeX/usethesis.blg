@@ -8,7 +8,13 @@ You're missing a field name---line 253 of file synapticAnnealingBib.bib
 I'm skipping whatever remains of this entry
 A bad cross reference---entry "rumelhart1986internal"
 refers to entry "Rum86", which doesn't exist
+A bad cross reference---entry "dallinga2004performancegsa"
+refers to entry "10.1590/S1415-47572004000400024", which doesn't exist
+A bad cross reference---entry "lee2007improvinggeneralizationcapabilitynnusingsa"
+refers to entry "conf/cec/2007", which doesn't exist
 Warning--I didn't find a database entry for "Rum86"
+Warning--I didn't find a database entry for "conf/cec/2007"
+Warning--I didn't find a database entry for "10.1590/S1415-47572004000400024"
 Warning--empty booktitle in barto1983neuronlike
 Warning--empty booktitle in mcculloch1988
 Warning--empty journal in metropolis1953
@@ -16,4 +22,4 @@ Warning--empty chapter and pages in rumelhart1986internal
 Warning--empty publisher in rumelhart1986internal
 Warning--empty journal in vonderMalsburg1973selforganization
 Warning--empty year in vonderMalsburg1973selforganization
-(There were 2 error messages)
+(There were 4 error messages)

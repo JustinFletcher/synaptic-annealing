@@ -123,6 +123,27 @@ module AnnealingState
 
 	end
 
+	function updateState_fsa_lrd50k(state::State)
+
+		# Iterate epoch count.
+		state.epochsComplete += 1
+
+		# Decay the temperature by 1, stopping at 0.
+		state.temperature = state.initTemperature * (1/state.epochsComplete)
+
+		state.tunnelingField = state.initTunnelingField * (1/(state.epochsComplete))
+
+    state.learnRate = state.learnRate * (1-((state.epochsComplete%50000)==0))
+
+
+		# Compute normalized value.
+		state.normTunnelingField = (state.tunnelingField/state.initTunnelingField)
+
+		# Compute normalized value.
+		state.normTemperature = state.temperature/state.initTemperature
+
+	end
+
 	function updateState_fsa_ra(state::State)
 
 		# Iterate epoch count.

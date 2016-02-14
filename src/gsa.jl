@@ -1,5 +1,5 @@
 
-@everywhere cd("\\fletcher-thesis")
+@everywhere cd("\\mscs-thesis")
 
 @everywhere include("$(pwd())\\src\\"*"getput.jl")
 
@@ -11,9 +11,13 @@ function sgsa(qv, t, r)
 
 end
 
-
 function gsa(qv, t, d, x)
+<<<<<<< HEAD
  # This function returns the SGSA visiting distribution over the specified range, x.
+=======
+
+    # This function returns the SGSA visiting distribution over the specified range, x.
+>>>>>>> origin/master
     term1 = (((qv-1)./pi).^(d./2))
     term2 = ((gamma((1./(qv-1))+((d-1)./2)))./(gamma((1./(qv-1))-(0.5))))
     term3 = ((t.^(-d./(3-qv)))./((1+(qv-1).*((x.^2)./(t.^(2.*(3-qv))))).^((1./(qv-1))+((d-1)./2))))
@@ -99,9 +103,15 @@ function buildCompleteSampleLibrary (displacmentLimit, resolution, qvRange, tqvR
     end
 end
 
+<<<<<<< HEAD
 # displacmentLimit = 50
 # resolution = 0.001
 # qvRange = [2.5]
+=======
+# displacmentLimit = 1000
+# resolution = 0.01
+# qvRange = [2.6]
+>>>>>>> origin/master
 # #tqvRange = [t for t in [1,2.5,5,10]]
 # tqvRange = [t for t in [1]]
 # dRange = [1]
@@ -110,16 +120,16 @@ end
 # @time buildCompleteSampleLibrary(displacmentLimit, resolution, qvRange, tqvRange, dRange, nDesiredSamples)
 
 
+
 # This code runs when this file is included.
 gsaSampleLib = getdata("gsasamples\\gsasamples")
 
-gsdSampleMatrix = gsaSampleLib[1]
+gsaSampleMatrix = gsaSampleLib[1]
 for sampleRow in gsaSampleLib[2:end]
-    gsdSampleMatrix = hcat(gsdSampleMatrix, sampleRow)
+    gsaSampleMatrix = hcat(gsaSampleMatrix, sampleRow)
 end
 
-gsdSampleMatrix  = transpose(gsdSampleMatrix)
-
+gsaSampleMatrix  = transpose(gsaSampleMatrix)
 
 function randgsa(qv, tqv, d, sizeTuple=(1))
 
@@ -129,15 +139,15 @@ function randgsa(qv, tqv, d, sizeTuple=(1))
     #closestIndex = @time findmin(sum((gsdSampleMatrix[:,1:3].-repmat([2.2 1 0], size(gsdSampleMatrix[:,1:3])[1]))))[2]
 
     i=1
-    while (qv<gsdSampleMatrix[i,1])
+    while (qv<gsaSampleMatrix[i,1])
         i+=1
     end
 
-    while (tqv<gsdSampleMatrix[i,2])
+    while (tqv<gsaSampleMatrix[i,2])
         i+=1
     end
 
-    while (d<gsdSampleMatrix[i,3])
+    while (d<gsaSampleMatrix[i,3])
         i+=1
     end
 
@@ -146,14 +156,17 @@ function randgsa(qv, tqv, d, sizeTuple=(1))
     # Compute the desried number of samples.
     nSamples =  prod(sizeTuple)
     #sampleWindowStart = rand(1:(length(gsdSampleMatrix[i, 4:end])-nSamples))
-    sampleWindowStart = int(rand()*(length(gsdSampleMatrix[i, 4:end])-nSamples))
-    populationSample = gsdSampleMatrix[i, [4+sampleWindowStart:3+sampleWindowStart+nSamples]]
-
+    sampleWindowStart = int(rand()*(length(gsaSampleMatrix[i, 4:end])-nSamples))
+    populationSample = gsaSampleMatrix[i, [4+sampleWindowStart:3+sampleWindowStart+nSamples]]
     # Reshape the sample to the desired size.
     return(reshape(populationSample, sizeTuple))
 
 end
 
-# @time 0.01.*randgsa(2.25, 1, 1, (50,50,2))
+@time randgsa(2.6, 1, 1, (2,1,1))
+
 # @time(randn((50,50,2)))
+# @time  tan(pi.*(rand((50,50,2)).-0.5))
+
+
 

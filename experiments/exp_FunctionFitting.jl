@@ -42,6 +42,7 @@ pwd()
 # Include cross val annealing libraries.
 @everywhere include("$(pwd())\\src\\"*"backpropTraining.jl")
 @everywhere include("$(pwd())\\src\\"*"nFoldCrossValidateBackprop.jl")
+@everywhere include("$(pwd())\\src\\"*"gsa.jl")
 
 ion()
 
@@ -107,7 +108,7 @@ function viewRegressionResults(inSurf, outSurf, xRange, yRange)
 
     surf(xRange, yRange, outSurf, alpha=.5)
 
-  surf(xRange, yRange, (inSurf./maximum(abs(inSurf))), alpha=.5, color="red")
+    surf(xRange, yRange, (inSurf./maximum(abs(inSurf))), alpha=.5, color="red")
 
 end
 
@@ -120,7 +121,7 @@ function constructModelPrediction(annealingOutput, xRange, yRange)
         yIndex = 0
         for y in yRange
             yIndex += 1
-            outArray[xIndex, yIndex] = net_eval(annealingOutput[6][4], [x, y])[1]
+            outArray[xIndex, yIndex] = net_eval(annealingOutput[6][2], [x, y])[1]
         end
     end
 
@@ -128,6 +129,40 @@ function constructModelPrediction(annealingOutput, xRange, yRange)
 
 end
 
+function viewRegressionResultImages(inSurf, outSurf, xRange, yRange)
+
+    colorLimits = (-1,1)
+    figure()
+    normInSurf = inSurf./maximum(abs(inSurf))
+    subplot(1,3,1)
+    imshow(normInSurf, clim=colorLimits)
+#     colorbar()
+    subplot(1,3,2)
+    imshow(outSurf, clim=colorLimits)
+#     colorbar()
+    subplot(1,3,3)
+    imshow(normInSurf.-outSurf, clim=colorLimits)
+#     colorbar()
+
+
+end
+
+function constructModelPrediction(annealingOutput, xRange, yRange)
+
+    outArray = zeros((length(xRange), length(yRange)))
+    xIndex = 0
+    for x in xRange
+        xIndex += 1
+        yIndex = 0
+        for y in yRange
+            yIndex += 1
+            outArray[xIndex, yIndex] = net_eval(annealingOutput[6][2], [x, y])[1]
+        end
+    end
+
+  return(outArray)
+
+end
 
 ###################################################################################################################################################
 
@@ -146,7 +181,7 @@ functionSample = sampleFunction(complicatedInteraction, 100, xRange, yRange)
 
 ###################################################################################################################################################
 
-compInteractionDataset = ExperimentDataset.Dataset(functionSample./maximum(abs(functionSample)), dataInputDimensions, dataOutputDimensions, "Complicated Interaction")
+compInteractionDataset = ExperimentDataset.Dataset(functionSample./maximum(abs(functionSample)), [1:2], [3], "Complicated Interaction")
 
 dataSet = compInteractionDataset
 
@@ -155,7 +190,7 @@ dataSet = compInteractionDataset
 
 numFolds = 5
 
-maxRuns = 100000
+maxRuns = 10000
 
 initTemp = 1
 
@@ -172,42 +207,89 @@ reportFrequency = 1000
 
 ###################################################################################################################################################
 
-annealingFunction = synapticAnnealing
-
-cutoffError = 0.0
-
-neighborhoodFunction = cauchy_Isotropic_SynapticPerturbation
-
-stateUpdate = AnnealingState.updateState_fsa
-
-trainErrorFunction = getDataRegErr
-
-reportErrorFunction = getDataRegErr
-
-initLearnRate = 0.01
+initLearnRate = 0.001
 
 actFun = tanh
 
 ###################################################################################################################################################
 
-# plot(annealingOutput[1])
-# plot(annealingOutput[3])
 
-# mesh(xRange, yRange, outArray)
-# mesh(xRange, yRange, (complicatedInteractionFuncArray./maximum(abs(complicatedInteractionFuncArray))), color="red")
-# scatter3D(functionSample[:,1],functionSample[:,2],functionSample[:,3]./maximum(abs(functionSample[:,3])), color="red")
-
-# net_eval(annealingOutput[6][1], [0.1, 0.1])
-
-
-annealingOutput = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig, annealingFunction,
-                                                               cutoffError, maxRuns, neighborhoodFunction, stateUpdate,
-                                                               trainErrorFunction, reportErrorFunction,
+annealingOutput_gaussian = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig,  synapticAnnealing,
+                                                               0.0, maxRuns,
+                                                               gaussian_Isotropic_SynapticPerturbation,
+                                                               AnnealingState.updateState_csa,
+                                                               getDataRegErr, getDataRegErr,
                                                                initTemp, initLearnRate,
                                                                synMatIn, actFun,
                                                                dataSet, batchSize, reportFrequency)
 
 
 # scatter3D(functionSample[:,1],functionSample[:,2],functionSample[:,3]./maximum(abs(functionSample[:,3])), color="red")
-viewRegressionResults(complicatedInteractionFuncArray, constructModelPrediction(annealingOutput, xRange, yRange), xRange, yRange)
+# viewRegressionResults(complicatedInteractionFuncArray, constructModelPrediction(imshowannealingOutput_gaussianannealingOutput_gaussian, xRange, yRange), xRange, yRange)
+viewRegressionResultImages(complicatedInteractionFuncArray, constructModelPrediction(annealingOutput_gaussian, xRange, yRange), xRange, yRange)
+
+###################################################################################################################################################
+
+
+annealingOutput_cauchy = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig,  synapticAnnealing,
+                                                               0.0, maxRuns,
+                                                               cauchy_Isotropic_SynapticPerturbation,
+                                                               AnnealingState.updateState_fsa,
+                                                               getDataRegErr, getDataRegErr,
+                                                               initTemp, initLearnRate,
+                                                               synMatIn, actFun,
+                                                               dataSet, batchSize, reportFrequency)
+
+
+
+# scatter3D(functionSample[:,1],functionSample[:,2],functionSample[:,3]./maximum(abs(functionSample[:,3])), color="red")
+# viewRegressionResults(complicatedInteractionFuncArray, constructModelPrediction(annealingOutput_cauchy, xRange, yRange), xRange, yRange)
+viewRegressionResultImages(complicatedInteractionFuncArray, constructModelPrediction(annealingOutput_cauchy, xRange, yRange), xRange, yRange)
+
+
+###################################################################################################################################################
+
+
+annealingOutput_gsa = @time nFoldCrossValidateSynapticAnnealingPar(numFolds, matrixConfig,  synapticAnnealing,
+                                                               0.0, maxRuns,
+                                                               gsa_Isotropic_SynapticPerturbation,
+                                                               AnnealingState.updateState_fsa,
+                                                               getDataRegErr, getDataRegErr,
+                                                               0.001, initLearnRate,
+                                                               synMatIn, actFun,
+                                                               dataSet, batchSize, reportFrequency)
+
+
+# scatter3D(functionSample[:,1],functionSample[:,2],functionSample[:,3]./maximum(abs(functionSample[:,3])), color="red")
+viewRegressionResults(complicatedInteractionFuncArray, constructModelPrediction(annealingOutput_gsa, xRange, yRange), xRange, yRange)
+viewRegressionResultImages(complicatedInteractionFuncArray, constructModelPrediction(annealingOutput_gsa, xRange, yRange), xRange, yRange)
+
+###################################################################################################################################################
+
+
+regAnnealingOutputList = Any[[annealingOutput_gaussian, "Gaussian"],
+                          [annealingOutput_cauchy, "Cauchy"],
+                          [annealingOutput_gsa, "GSA"]]
+
+###################################################################################################################################################
+
+xmax = 10000
+ymax = 1
+titleStr = "Validation Set Mean Squared Error"
+for annealingOutputVec in regAnnealingOutputList
+
+  annealingOutput = annealingOutputVec[1]
+  dataSetName = annealingOutputVec[2]
+
+  plotCentralMovingAverageValError(annealingOutput[1], annealingOutput[2], 3, reportFrequency, titleStr, dataSetName, xmax, ymax, "blue")
+
+end
+plotCentralMovingAverageValError(annealingOutput_gaussian[1], annealingOutput_gaussian[2], 3,
+                                 reportFrequency, "Gaussian", "Gaussian",
+                                 10000, 1, "blue")
+
+plot(annealingOutput_gaussian[1], label="Gaussian")
+plot(annealingOutput_cauchy[1], label="Cauchy")
+plot(annealingOutput_gsa[1], label="GSA")'
+legend(loc=1)
 

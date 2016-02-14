@@ -22,18 +22,6 @@ function gsa(qv, t, d, x)
 
 end
 
-function fletcherDist(qv, t, d, x)
-
-    # This function returns the SGSA visiting distribution over the specified range, x.
-    term1 = (((qv-1)./pi).^(d./2))
-    term2 = ((gamma((1./(qv-1))+((d-1)./2)))./(gamma((1./(qv-1))-(0.5))))
-    term3 = ((t.^(-d./(3-qv)))./((1+(qv-1).*((x.^2)./(t.^(2.*(3-qv))))).^((1./(qv-1))+((d-1)./2))))
-    gsa = (term1.*term2.*term3)
-    customDist = gsa
-    return(customDist)
-
-end
-
 
 
 inputRangeRes = 0.01
@@ -44,7 +32,7 @@ inputRange = -inputLimit:inputRangeRes:inputLimit
 
 temperatureRange = [t for t in [1,2.5,5,10]]
 
-qvRange = [1.25 ,1.75, 2, 2.5]
+qvRange = [1.25 ,1.75, 2, 2.25, 2.75]
 
 qvTempSurface = zeros((length(temperatureRange), length(inputRange)))
 
@@ -98,7 +86,6 @@ function generateSGSAData (inputRangeRes, inputLimit, inputRange, temperatureRan
 
     xlim(-inputLimit,inputLimit)
     ylim(0,0.001)
-    legend(loc=1)
 
   end
 
@@ -107,15 +94,10 @@ end
 
 normalizedIsotempDist =  generateSGSAData (inputRangeRes, inputLimit, inputRange, temperatureRange)
 
-thecmap = ColorMap("gnuplot")
-
 function generateGSAData (inputRangeRes, inputLimit, inputRange, temperatureRange)
   retvaltemp = []
-  tcolors = ["c","b","y","r"]
-  ColorMap("gnuplot")
   qvTempSurface = zeros((length(temperatureRange), length(inputRange)))
   qvIndex = 0
-#   figure(figsize=(40,10))
   for qv in qvRange
 
     qvIndex+=1
@@ -126,51 +108,42 @@ function generateGSAData (inputRangeRes, inputLimit, inputRange, temperatureRang
     end
 
 
-    subplot(length(qvRange), 2, qvIndex + (qvIndex - 1))
-    title("\$\ {q_V}="*string(qv)*"\$")
+    subplot(2, length(qvRange), qvIndex)
+
+    title("Qv = " *string(qv))
     #imshow(qvTempSurface,origin="lower")
     #contour(qvTempSurface)
 
     normalizedCauchyDist = (1./(pi.*(1.+inputRange.^2)))
-    plot(inputRange, normalizedCauchyDist, label="Cauchy", ls="-.", color="black", lw=2)
+    plot(inputRange, normalizedCauchyDist, label="Cauchy", ls="-.")
 
 
     tIndex = 0
     for t in temperatureRange
+
       normConstant = (1/(sum(vec(qvTempSurface[tIndex+=1,:]))*inputRangeRes))
       normalizedIsotempDist = vec(qvTempSurface[tIndex,:]).*normConstant
-      plot(inputRange, normalizedIsotempDist, label="\$\ T_{q_V}="*string(t)*"\$", lw=2, alpha=0.8)
+      plot(inputRange, normalizedIsotempDist, label="Tq= "*string(t))
 
     end
-    xlabel(" \$\ x \$\ ")
-    ylabel(" \$\ g_{GSA}(x) \$\ ")
+
     xlim(-10,10)
     legend(loc=1)
 
-    subplots_adjust(hspace=0.4)
 
-    subplot(length(qvRange), 2, 2*qvIndex)
+    subplot(2, length(qvRange), length(qvRange)+qvIndex)
 
-    plot(inputRange, normalizedCauchyDist, label="Cauchy", ls="-.", color="black", lw=2)
+    plot(inputRange, normalizedCauchyDist, label="Cauchy", ls="-.")
     tIndex = 0
     for t in temperatureRange
       # Numerically compute the integral approximation and scale the integral to 1.
       normConstant = (1/(sum(vec(qvTempSurface[tIndex+=1,:]))*inputRangeRes))
       retvaltemp = normalizedIsotempDist = vec(qvTempSurface[tIndex,:]).*normConstant
-      plot(inputRange, normalizedIsotempDist, label="\$\ T_{q_V}="*string(t)*"\$", lw=2, alpha=0.8)
+      plot(inputRange, normalizedIsotempDist, label="Temperature = "*string(t))
     end
 
     xlim(-inputLimit,inputLimit)
     ylim(0,0.001)
-
-    xlabel(" \$\ x \$\ ")
-    ylabel(" \$\ g_{GSA}(x) \$\ ")
-    title("\$\ {q_V}"*string(qv)*"\$")
-    legend(loc=1)
-
-    subplots_adjust(hspace=0.35)
-
-
 
   end
 
@@ -193,10 +166,8 @@ for qv in qvRange
     qvTempSurface[tIndex+=1,:] = sgsa(qv, t, inputRange)
   end
 
-  figure()
-
   # Invoke a subplot, top row.
-  subplot(1, length(qvRange), qvIndex)
+  subplot(2, length(qvRange), qvIndex)
 
   #imshow(qvTempSurface,origin="lower")
   #contour(qvTempSurface)
