@@ -120,7 +120,7 @@ function getDataRegErr(net, dataset, state, batchSize)
     for sampleRow in (1:size(dataset.data)[1])[(vec(1:size(dataset.data)[1])[randperm(length(1:size(dataset.data)[1]))[1:min(batchSize, length(1:size(dataset.data)[1]))]])]
 
 		    #err += sum(abs(dataset.data[sampleRow, dataset.outputCols].-transpose(net_eval(net, vec(dataset.data[sampleRow, dataset.inputCols])))))
-        err += sqrt(sum(((net_eval(net, vec(dataset.data[sampleRow, dataset.inputCols])))-(dataset.data[sampleRow, dataset.outputCols])).^2)).^2
+        err += sqrt(sum(((net_eval(net, vec(dataset.data[sampleRow, dataset.inputCols])))-transpose(dataset.data[sampleRow, dataset.outputCols])).^2)).^2
     end
 
     # Return the average error.

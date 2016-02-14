@@ -8,7 +8,7 @@
 # state.temperature
 # state.normTemperature
 
-function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateState,
+function synapticAnnealing_fullRecord(convCriterion, cutoffEpochs, perturbSynapses, updateState,
 						   errorFunction, reportErrorFunction, initTemperature, initLearnRate,
 						   netIn, actFun, trainData, valData,
 						   batchSize, reportFrequency)
@@ -22,8 +22,11 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
     # Initialize the error vectors.
     trainingErrorVector = Float64[]
     validationErrorVector = Float64[]
+    onlineErrorVector = Float64[]
     perfectClassificationVector = Float64[]
     minValErrSynapseMatrix = Any[]
+    synapseMatrixVector = Any[]
+    moveAcceptanceVector = Any[]
 
 	  # Initialize the state.
     maxConfigDist = 2*sum(getNetworkSynapseMatrix(network).!=0)
@@ -37,7 +40,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 
     while !converged
 
-      if ((state.epochsComplete%reportFrequency)==0)
+      if ((state.epochsComplete%1)==0)
 
         # Push the most recent error onto the error vector.
         state.trainError = reportErrorFunction(network, trainData, state, size(trainData.data)[1])
@@ -46,8 +49,10 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
         # Push the validation error set onto the vector.
         state.valError = reportErrorFunction(network, valData, state, size(valData.data)[1])
         push!(validationErrorVector, state.valError./size(valData.data)[1])
+        if ((state.epochsComplete%reportFrequency)==0)
+            println("E @" * string(state.epochsComplete) * ": " * string(state.trainError./size(trainData.data)[1])  * " | " * string(state.valError./size(valData.data)[1]) )
+        end
 
-        println("E @" * string(state.epochsComplete) * ": " * string(state.trainError./size(trainData.data)[1])  * " | " * string(state.valError./size(valData.data)[1]) )
       end
 
       # State capture: if this is the best net so far, save it to the disk.
@@ -73,10 +78,14 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
 
       # Modify the synapse matrix using the perturbation matrix.
       synapseMatrix += synapsePerturbation
+      push!(synapseMatrixVector, synapseMatrix)
+
 
       # Compute the resultant error.
       perturbedError = errorFunction(setNetworkSynapseMatrix(network, synapseMatrix), trainData, state, batchSize)
 
+      # Push a record of this online error to the storage vector.
+      push!(onlineErrorVector, perturbedError./size(trainData.data)[1])
 
       # Computer the change in error.
       errorChange = perturbedError-lastError
@@ -85,14 +94,17 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
       # If this is a downhill move, take it.
       if (perturbedError<=lastError)
         lastError = perturbedError
-
+        push!(moveAcceptanceVector,1)
         # If this is not a downhill or neural move...
       else
         # Then with probability exp(-DeltaE/T), or if it's the result of a tunnelling event, reject the move.
         if( (rand()>=exp(-(errorChange)/state.temperature)) )#|| (perturbationDistance>state.learnRate) )
           synapseMatrix -= synapsePerturbation
+
+          push!(moveAcceptanceVector,0)
           # If the uphill move is not rejected, set the error.
         else
+          push!(moveAcceptanceVector,1)
           lastError = perturbedError
         end
 
@@ -119,8 +131,7 @@ function synapticAnnealing(convCriterion, cutoffEpochs, perturbSynapses, updateS
     # TODO: Make this a data frame return.
 
     # Construct and return the output tuple.
-    outputTuple = Any[minValErrSynapseMatrix, validationErrorVector, trainingErrorVector, perfectClassificationVector]
-
+    outputTuple = Any[minValErrSynapseMatrix, validationErrorVector, trainingErrorVector, perfectClassificationVector, onlineErrorVector, synapseMatrixVector, moveAcceptanceVector]
     return(outputTuple)
 
 end

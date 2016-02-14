@@ -1,7 +1,7 @@
 # -------------- Nieghborhood Functions
 
 
-# @everywhere include("$(pwd())\\src\\"*"gsa.jl")
+@everywhere include("$(pwd())\\src\\"*"gsa.jl")
 
 
 
@@ -22,7 +22,7 @@ function gaussian_Isotropic_SynapticPerturbation(synapseMatrix, state)
     synapsePerturbation = stepSize.*anisotropicityMatrix
 #    synapsePerturbation = stepSize.*((randMat./(sum(randMat))).*((2*int(rand(size(synapseMatrix)).>0.5))-1))
 
-    synapsePerturbation =  randn(size(synapseMatrix)).*int(bool(synapseMatrix))
+    synapsePerturbation =  state.learnRate.*randn(size(synapseMatrix)).*int(bool(synapseMatrix))
 
     return(Any[synapsePerturbation, stepSize])
 end
@@ -94,6 +94,12 @@ end
 
 
 
+
+function capValues(v, cap)
+  return(v-(v.*(abs(v).>cap))+(sign(v).*cap.*(abs(v).>cap)))
+end
+
+
 # -------------- Cauchy
 
 function cauchy_Isotropic_SynapticPerturbation(synapseMatrix, state)
@@ -102,7 +108,8 @@ function cauchy_Isotropic_SynapticPerturbation(synapseMatrix, state)
     ## OLD ^
     synapsePerturbation = state.learnRate.*tan(pi.*(rand(size(synapseMatrix)).-0.5)).*int(bool(synapseMatrix))
 
-    return(Any[synapsePerturbation, sum(synapsePerturbation)])
+    synapsePerturbation = capValues(synapsePerturbation, 50)
+     return(Any[synapsePerturbation, sum(synapsePerturbation)])
 end
 
 
@@ -273,11 +280,23 @@ end
 function gsa_Isotropic_SynapticPerturbation(synapseMatrix, state)
 
 
-    synapsePerturbation = state.learnRate.*randgsa(1.75, 1, 0, size(synapseMatrix)).*int(bool(synapseMatrix))
+    synapsePerturbation = state.learnRate.*randgsa(2.6, 1, 1, size(synapseMatrix)).*int(bool(synapseMatrix))
 
     return(Any[synapsePerturbation, sum(synapsePerturbation)])
 end
 
+w = 10randn(100,100)
+
+int(abs(w).>10) .* w
+
+function gsa_WeightAnisotropic_SynapticPerturbation(synapseMatrix, state)
+
+    anisotropicity = int(abs(synapseMatrix).>2) .* (rand(size(synapseMatrix)).*synapseMatrix)
+
+    synapsePerturbation = state.learnRate.*randgsa(2.6, 1, 1, size(synapseMatrix)).*int(bool(synapseMatrix))-anisotropicity
+
+    return(Any[synapsePerturbation, sum(synapsePerturbation)])
+end
 
 # -------------- Placeholders
 
