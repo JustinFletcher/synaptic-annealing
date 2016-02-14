@@ -11,7 +11,7 @@
 using PyPlot
 
 rmprocs(workers())
-addprocs(25)
+addprocs(10)
 # @everywhere using Devectorize
 
 @everywhere using BackpropNeuralNet
@@ -163,9 +163,9 @@ dataSetList = Any[wineDataset, irisDataset, cancerDataset]
 ###################################################################################################################################################
 
 
-numFolds = 25
+numFolds = 10
 
-maxRuns = 1000000
+maxRuns = 500000
 
 initTemp = 100
 
@@ -228,7 +228,7 @@ function runSynapticAnnealingExperiment(expTitle, generate, saveData, loadData, 
 
         # TODO: need to paramerize by hidden layer generation function.
         # Create a matrix configuration for this dataset.
-        matrixConfig = [length(dataSet.inputCols), 50, length(dataSet.outputCols)]
+        matrixConfig = [length(dataSet.inputCols), 20, length(dataSet.outputCols)]
 
 
         # If we've been asked to generate new data for this experiment.
@@ -345,46 +345,83 @@ function calcPerfectClassStats(v)
 end
 
 
+println("Done loading.")
+
+
+
+
+##### CLASS, ISOTROPIC, NONREANNEALING
 
 # ###################################################################################################################################################
 
 outTuple_g_i  = @time runSynapticAnnealingExperiment("Gaussian - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                     "GaussianVisit", "IsotropicAnisotropicity", "comparitive_simulated_annealing",
+                                                     "GaussianVisit", "IsotropicAnisotropicity_Reg_alpha0p1_fsa_hl20", "comparitive_simulated_annealing",
                                                      numFolds, matrixConfig, synapticAnnealing,
                                                      0.0, maxRuns, gaussian_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
-                                                     getDataClassErr, getDataClassErr,
-                                                     initTemp, 1,
+                                                     getDataRegErr, getDataClassErr,
+                                                     initTemp, 0.1,
+                                                     synMatIn, tanh,
+                                                     dataSet, batchSize, reportFrequency)
+
+outTuple_c_i = @time runSynapticAnnealingExperiment("Cauchy - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                    "CauchyVisit", "IsotropicAnisotropicity_Reg_alpha0p1_fsa_hl20", "comparitive_simulated_annealing",
+                                                    numFolds, matrixConfig, synapticAnnealing,
+                                                    0.0, maxRuns, cauchy_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+                                                    getDataRegErr, getDataClassErr,
+                                                    initTemp, 0.1,
+                                                    synMatIn, tanh,
+                                                    dataSet, batchSize, reportFrequency)
+
+
+outTuple_u_i = @time runSynapticAnnealingExperiment("Uniform - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                    "UniformVisit", "IsotropicAnisotropicity_Reg_alpha0p1_fsa_hl20", "comparitive_simulated_annealing",
+                                                    numFolds, matrixConfig, synapticAnnealing,
+                                                    0.0, maxRuns, uniform_Isotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+                                                    getDataRegErr, getDataClassErr,
+                                                    initTemp, 1,
+                                                    synMatIn, tanh,
+                                                    dataSet, batchSize, reportFrequency)
+
+
+outTuple_gsa_i = @time runSynapticAnnealingExperiment("GSA - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "GSAVisit", "IsotropicAnisotropicity_Reg_alpha0p1_fsa_hl20_qv2p5_t1_d1", "comparitive_simulated_annealing",
+                                                     numFolds, matrixConfig, synapticAnnealing,
+                                                     0.0, maxRuns,  gsa_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+                                                     getDataRegErr, getDataClassErr,
+                                                     initTemp, 0.1,
                                                      synMatIn, tanh,
                                                      dataSet, batchSize, reportFrequency)
 
 
-###################################################################################################################################################
-
-
-
-outTuple_g_ua = @time runSynapticAnnealingExperiment("Gaussian - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                     "GaussianVisit", "UniformAnisotropicity", "comparitive_simulated_annealing",
-                                                     numFolds, matrixConfig, synapticAnnealing,
-                                                     0.0, maxRuns, gaussian_uniformAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
-                                                     getDataClassErr, getDataClassErr,
-                                                     initTemp, 1,
-                                                     synMatIn, tanh,
-                                                     dataSetList, batchSize, reportFrequency)
-
-
-
 
 
 ###################################################################################################################################################
 
-outTuple_g_na  = @time runSynapticAnnealingExperiment("Gaussian - Normative Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                      "GaussianVisit", "NormativeAnisotropicity", "comparitive_simulated_annealing",
-                                                      numFolds, matrixConfig, synapticAnnealing,
-                                                      0.0, maxRuns, gaussian_NormativeAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
-                                                      getDataClassErr, getDataClassErr,
-                                                      initTemp, 1,
-                                                      synMatIn, tanh,
-                                                      dataSet, batchSize, reportFrequency)
+
+
+# outTuple_g_ua = @time runSynapticAnnealingExperiment("Gaussian - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+#                                                      "GaussianVisit", "UniformAnisotropicity", "comparitive_simulated_annealing",
+#                                                      numFolds, matrixConfig, synapticAnnealing,
+#                                                      0.0, maxRuns, gaussian_uniformAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+#                                                      getDataClassErr, getDataClassErr,
+#                                                      initTemp, 1,
+#                                                      synMatIn, tanh,
+#                                                      dataSetList, batchSize, reportFrequency)
+
+
+
+
+
+# ###################################################################################################################################################
+
+# outTuple_g_na  = @time runSynapticAnnealingExperiment("Gaussian - Normative Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+#                                                       "GaussianVisit", "NormativeAnisotropicity", "comparitive_simulated_annealing",
+#                                                       numFolds, matrixConfig, synapticAnnealing,
+#                                                       0.0, maxRuns, gaussian_NormativeAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+#                                                       getDataClassErr, getDataClassErr,
+#                                                       initTemp, 1,
+#                                                       synMatIn, tanh,
+#                                                       dataSet, batchSize, reportFrequency)
 
 
 ###################################################################################################################################################
@@ -394,45 +431,45 @@ outTuple_g_na  = @time runSynapticAnnealingExperiment("Gaussian - Normative Anis
 ###################################################################################################################################################
 
 
-outTuple_e_i = @time runSynapticAnnealingExperiment("Exponential - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                    "ExponentialVisit", "IsotropicAnisotropicity", "comparitive_simulated_annealing",
-                                                    numFolds, matrixConfig, synapticAnnealing,
-                                                    0.0, maxRuns, exponential_Isotropic_SynapticPerturbation, AnnealingState.updateState_csa,
-                                                    getDataClassErr, getDataClassErr,
-                                                    initTemp, 1,
-                                                    synMatIn, tanh,
-                                                    dataSet, batchSize, reportFrequency)
+# outTuple_e_i = @time runSynapticAnnealingExperiment("Exponential - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+#                                                     "ExponentialVisit", "IsotropicAnisotropicity", "comparitive_simulated_annealing",
+#                                                     numFolds, matrixConfig, synapticAnnealing,
+#                                                     0.0, maxRuns, exponential_Isotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+#                                                     getDataClassErr, getDataClassErr,
+#                                                     initTemp, 1,
+#                                                     synMatIn, tanh,
+#                                                     dataSet, batchSize, reportFrequency)
 
 
-###################################################################################################################################################
+# ###################################################################################################################################################
 
 
-###################################################################################################################################################
+# ###################################################################################################################################################
 
 
-outTuple_e_uo = @time runSynapticAnnealingExperiment("Exponential - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                     "ExponentialVisit", "UniformAnisotropicity", "comparitive_simulated_annealing",
-                                                     numFolds, matrixConfig, synapticAnnealing,
-                                                      0.0, maxRuns,  exponential_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
-                                                      getDataClassErr, getDataClassErr,
-                                                      initTemp, 1,
-                                                      synMatIn,tanh,
-                                                      dataSet, batchSize, reportFrequency)
+# outTuple_e_uo = @time runSynapticAnnealingExperiment("Exponential - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+#                                                      "ExponentialVisit", "UniformAnisotropicity", "comparitive_simulated_annealing",
+#                                                      numFolds, matrixConfig, synapticAnnealing,
+#                                                       0.0, maxRuns,  exponential_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+#                                                       getDataClassErr, getDataClassErr,
+#                                                       initTemp, 1,
+#                                                       synMatIn,tanh,
+#                                                       dataSet, batchSize, reportFrequency)
 
 
-###################################################################################################################################################
+# ###################################################################################################################################################
 
-###################################################################################################################################################
+# ###################################################################################################################################################
 
 
-outTuple_e_da = @time runSynapticAnnealingExperiment("Exponential - Normative Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                     "ExponentialVisit", "NormativeAnisotropicity", "comparitive_simulated_annealing",
-                                                     numFolds, matrixConfig, synapticAnnealing,
-                                                     0.0, maxRuns,  exponential_NormativeAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
-                                                     getDataClassErr, getDataClassErr,
-                                                     initTemp, 1,
-                                                     synMatIn, tanh,
-                                                     dataSet, batchSize, reportFrequency)
+# outTuple_e_da = @time runSynapticAnnealingExperiment("Exponential - Normative Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+#                                                      "ExponentialVisit", "NormativeAnisotropicity", "comparitive_simulated_annealing",
+#                                                      numFolds, matrixConfig, synapticAnnealing,
+#                                                      0.0, maxRuns,  exponential_NormativeAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+#                                                      getDataClassErr, getDataClassErr,
+#                                                      initTemp, 1,
+#                                                      synMatIn, tanh,
+#                                                      dataSet, batchSize, reportFrequency)
 
 
 ###################################################################################################################################################
@@ -462,14 +499,14 @@ outTuple_u_i = @time runSynapticAnnealingExperiment("Uniform - Isotropic", gener
 
 
 
-outTuple_u_ua = @time runSynapticAnnealingExperiment("Uniform - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                     "UniformVisit", "UniformAnisotropicity", "comparitive_simulated_annealing",
-                                                     numFolds, matrixConfig, synapticAnnealing,
-                                                     0.0, maxRuns,  uniform_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
-                                                     getDataClassErr, getDataClassErr,
-                                                     initTemp, 1,
-                                                     synMatIn,tanh,
-                                                     dataSet, batchSize, reportFrequency)
+# outTuple_u_ua = @time runSynapticAnnealingExperiment("Uniform - Uniform Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+#                                                      "UniformVisit", "UniformAnisotropicity_alpha0p1", "comparitive_simulated_annealing",
+#                                                      numFolds, matrixConfig, synapticAnnealing,
+#                                                      0.0, maxRuns,  uniform_UniformlyAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+#                                                      getDataClassErr, getDataClassErr,
+#                                                      initTemp, 0.1,
+#                                                      synMatIn,tanh,
+#                                                      dataSet, batchSize, reportFrequency)
 
 
 ###################################################################################################################################################
@@ -477,13 +514,13 @@ outTuple_u_ua = @time runSynapticAnnealingExperiment("Uniform - Uniform Anisotro
 ###################################################################################################################################################
 
 
-outTuple_u_da = @time runSynapticAnnealingExperiment("Uniform - Normative Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                     "UniformVisit", "NormativeAnisotropicity", "comparitive_simulated_annealing",
-                                                     numFolds, matrixConfig, synapticAnnealing,
-                                                     0.0, maxRuns, uniform_NormativeAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
-                                                     getDataClassErr, getDataClassErr,
-                                                     initTemp, 1,
-                                                     synMatIn, tanh,
+# outTuple_u_da = @time runSynapticAnnealingExperiment("Uniform - Normative Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+#                                                      "UniformVisit", "NormativeAnisotropicity", "comparitive_simulated_annealing",
+#                                                      numFolds, matrixConfig, synapticAnnealing,
+#                                                      0.0, maxRuns, uniform_NormativeAnisotropic_SynapticPerturbation, AnnealingState.updateState_csa,
+#                                                      getDataClassErr, getDataClassErr,
+#                                                      initTemp, 1,
+#                                                      synMatIn, tanh,
 
 ###################################################################################################################################################
 
@@ -495,10 +532,10 @@ outTuple_u_da = @time runSynapticAnnealingExperiment("Uniform - Normative Anisot
 
 
 outTuple_c_i = @time runSynapticAnnealingExperiment("Cauchy - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                    "CauchyVisit", "IsotropicAnisotropicity", "comparitive_simulated_annealing",
+                                                    "CauchyVisit", "IsotropicAnisotropicity_Reg_alpha0p1_fsa", "comparitive_simulated_annealing",
                                                     numFolds, matrixConfig, synapticAnnealing,
                                                     0.0, maxRuns, cauchy_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
-                                                    getDataClassErr, getDataClassErr,
+                                                    getDataRegErr, getDataClassErr,
                                                     initTemp, 0.1,
                                                     synMatIn, tanh,
                                                     dataSet, batchSize, reportFrequency)
@@ -531,14 +568,14 @@ outTuple_c_i_ra = @time runSynapticAnnealingExperiment("Cauchy - Isotropic", gen
 ###################################################################################################################################################
 
 
-outTuple_c_na = @time runSynapticAnnealingExperiment("Cauchy - Normative Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                     "CauchyVisit", "NormativeAnisotropicity_fsa_t1000", "comparitive_simulated_annealing",
-                                                     numFolds, matrixConfig, synapticAnnealing,
-                                                     0.0, maxRuns,  cauchy_NormativeAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
-                                                     getDataClassErr, getDataClassErr,
-                                                     initTemp, 0.1,
-                                                     synMatIn, tanh,
-                                                     dataSet, batchSize, reportFrequency)
+# outTuple_c_na = @time runSynapticAnnealingExperiment("Cauchy - Normative Anisotropicity", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+#                                                      "CauchyVisit", "NormativeAnisotropicity_fsa_t1000", "comparitive_simulated_annealing",
+#                                                      numFolds, matrixConfig, synapticAnnealing,
+#                                                      0.0, maxRuns,  cauchy_NormativeAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+#                                                      getDataClassErr, getDataClassErr,
+#                                                      initTemp, 0.1,
+#                                                      synMatIn, tanh,
+#                                                      dataSet, batchSize, reportFrequency)
 
 
 ###################################################################################################################################################
@@ -549,8 +586,8 @@ outTuple_c_neurala = @time runSynapticAnnealingExperiment("Cauchy - Neural Aniso
                                                      "CauchyVisit", "NeuralAnisotropicity", "comparitive_simulated_annealing",
                                                      numFolds, matrixConfig, synapticAnnealing,
                                                      0.0, maxRuns,  cauchy_NeuralAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
-                                                     getDataClassErr, getDataClassErr,
-                                                     initTemp, 0.1,
+                                                     getDataRegErr, getDataClassErr,
+                                                     initTemp, 0.01,
                                                      synMatIn, tanh,
                                                      dataSet, batchSize, reportFrequency)
 
@@ -563,7 +600,7 @@ outTuple_gsa_i = @time runSynapticAnnealingExperiment("GSA - Isotropic", generat
                                                      "GSAVisit", "IsotropicAnisotropicity_alpha0p1_qv2p5_t1_d1", "comparitive_simulated_annealing",
                                                      numFolds, matrixConfig, synapticAnnealing,
                                                      0.0, maxRuns,  gsa_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
-                                                     getDataClassErr, getDataClassErr,
+                                                     getDataRegErr, getDataClassErr,
                                                      initTemp, 0.1,
                                                      synMatIn, tanh,
                                                      dataSet, batchSize, reportFrequency)
