@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  13 FEB 2016 14:23
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2015.4.9)  20 FEB 2016 20:59
 entering extended mode
 **usethesis.tex
 ("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.tex"
@@ -244,6 +244,343 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mathtools\mathtools.sty"
+Package: mathtools 2015/05/11 v1.16 mathematical typesetting tools
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count107
+\calc@Bcount=\count108
+\calc@Adimen=\dimen125
+\calc@Bdimen=\dimen126
+\calc@Askip=\skip48
+\calc@Bskip=\skip49
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count109
+\calc@Cskip=\skip50
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mathtools\mhsetup.sty"
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count110
+\l_MT_multwidth_dim=\dimen127
+\origjot=\skip51
+\l_MT_shortvdotswithinadjustabove_dim=\dimen128
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen129
+\l_MT_above_intertext_sep=\dimen130
+\l_MT_below_intertext_sep=\dimen131
+\l_MT_above_shortintertext_sep=\dimen132
+\l_MT_below_shortintertext_sep=\dimen133
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\was\upgreek.sty"
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrcs.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common.te
+x"
+\pgfutil@everybye=\toks23
+\pgfutil@tempdima=\dimen134
+\pgfutil@tempdimb=\dimen135
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common-li
+sts.tex"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-latex.def
+"
+\pgfutil@abb=\box30
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfrcs.code.tex"
+Package: pgfrcs 2013/12/20 v3.0.0 (rcs-revision 1.28)
+))
+Package: pgf 2013/12/18 v3.0.0 (rcs-revision 1.14)
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgfcore.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\systemlayer\pgfsys.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys.code.tex
+"
+Package: pgfsys 2013/11/30 v3.0.0 (rcs-revision 1.47)
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex
+"
+\pgfkeys@pathtoks=\toks24
+\pgfkeys@temptoks=\toks25
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeysfiltered.c
+ode.tex"
+\pgfkeys@tmptoks=\toks26
+))
+\pgf@x=\dimen136
+\pgf@y=\dimen137
+\pgf@xa=\dimen138
+\pgf@ya=\dimen139
+\pgf@xb=\dimen140
+\pgf@yb=\dimen141
+\pgf@xc=\dimen142
+\pgf@yc=\dimen143
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count111
+\c@pgf@countb=\count112
+\c@pgf@countc=\count113
+\c@pgf@countd=\count114
+\t@pgf@toka=\toks27
+\t@pgf@tokb=\toks28
+\t@pgf@tokc=\toks29
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgf.cfg"
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-pdftex.d
+ef"
+File: pgfsys-pdftex.def 2013/07/18  (rcs-revision 1.33)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-common-p
+df.def"
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.
+code.tex"
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count115
+\pgfsyssoftpath@bigbuffer@items=\count116
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.
+code.tex"
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcore.code.tex
+"
+Package: pgfcore 2010/04/11 v3.0.0 (rcs-revision 1.7)
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathcalc.code.tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathutil.code.tex")
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathparser.code.tex
+"
+\pgfmath@dimen=\dimen144
+\pgfmath@count=\count117
+\pgfmath@box=\box31
+\pgfmath@toks=\toks30
+\pgfmath@stack@operand=\toks31
+\pgfmath@stack@operation=\toks32
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.code.
+tex"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.basic
+.code.tex")
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.trigo
+nometric.code.tex")
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.rando
+m.code.tex")
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.compa
+rison.code.tex")
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.base.
+code.tex")
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.round
+.code.tex")
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.misc.
+code.tex")
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.integ
+erarithmetics.code.tex")))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count118
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepoints.co
+de.tex"
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen145
+\pgf@picmaxx=\dimen146
+\pgf@picminy=\dimen147
+\pgf@picmaxy=\dimen148
+\pgf@pathminx=\dimen149
+\pgf@pathmaxx=\dimen150
+\pgf@pathminy=\dimen151
+\pgf@pathmaxy=\dimen152
+\pgf@xx=\dimen153
+\pgf@xy=\dimen154
+\pgf@yx=\dimen155
+\pgf@yy=\dimen156
+\pgf@zx=\dimen157
+\pgf@zy=\dimen158
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathconst
+ruct.code.tex"
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen159
+\pgf@path@lasty=\dimen160
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathusage
+.code.tex"
+File: pgfcorepathusage.code.tex 2013/12/13  (rcs-revision 1.23)
+\pgf@shorten@end@additional=\dimen161
+\pgf@shorten@start@additional=\dimen162
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorescopes.co
+de.tex"
+File: pgfcorescopes.code.tex 2013/10/09  (rcs-revision 1.44)
+\pgfpic=\box32
+\pgf@hbox=\box33
+\pgf@layerbox@main=\box34
+\pgf@picture@serial@count=\count119
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoregraphicst
+ate.code.tex"
+File: pgfcoregraphicstate.code.tex 2013/09/19  (rcs-revision 1.11)
+\pgflinewidth=\dimen163
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransform
+ations.code.tex"
+File: pgfcoretransformations.code.tex 2013/10/10  (rcs-revision 1.17)
+\pgf@pt@x=\dimen164
+\pgf@pt@y=\dimen165
+\pgf@pt@temp=\dimen166
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorequick.cod
+e.tex"
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreobjects.c
+ode.tex"
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathproce
+ssing.code.tex"
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorearrows.co
+de.tex"
+File: pgfcorearrows.code.tex 2013/11/07  (rcs-revision 1.40)
+\pgfarrowsep=\dimen167
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreshade.cod
+e.tex"
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen168
+\pgf@sys@shading@range@num=\count120
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreimage.cod
+e.tex"
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreexternal.
+code.tex"
+File: pgfcoreexternal.code.tex 2013/07/15  (rcs-revision 1.20)
+\pgfexternal@startupbox=\box35
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorelayers.co
+de.tex"
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretranspare
+ncy.code.tex"
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepatterns.
+code.tex"
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleshapes.cod
+e.tex"
+File: pgfmoduleshapes.code.tex 2013/10/31  (rcs-revision 1.34)
+\pgfnodeparttextbox=\box36
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleplot.code.
+tex"
+File: pgfmoduleplot.code.tex 2013/07/31  (rcs-revision 1.12)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version
+-0-65.sty"
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.0 (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen169
+\pgf@nodesepend=\dimen170
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version
+-1-18.sty"
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.0 (rcs-revision 1.1)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\utilities\pgffor.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\utilities\pgfkeys.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"
+)) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pgf\math\pgfmath.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\utilities\pgffor.code.tex"
+Package: pgffor 2013/12/13 v3.0.0 (rcs-revision 1.25)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex")
+\pgffor@iter=\dimen171
+\pgffor@skip=\dimen172
+\pgffor@stack=\toks33
+\pgffor@toks=\toks34
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\tikz.cod
+e.tex"
+Package: tikz 2013/12/13 v3.0.0 (rcs-revision 1.142)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplothan
+dlers.code.tex"
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.0 (rcs-revision 1.20)
+\pgf@plot@mark@count=\count121
+\pgfplotmarksize=\dimen173
+)
+\tikz@lastx=\dimen174
+\tikz@lasty=\dimen175
+\tikz@lastxsaved=\dimen176
+\tikz@lastysaved=\dimen177
+\tikzleveldistance=\dimen178
+\tikzsiblingdistance=\dimen179
+\tikz@figbox=\box37
+\tikz@figbox@bg=\box38
+\tikz@tempbox=\box39
+\tikz@tempbox@bg=\box40
+\tikztreelevel=\count122
+\tikznumberofchildren=\count123
+\tikznumberofcurrentchild=\count124
+\tikz@fig@count=\count125
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\modules\pgfmodulematrix.cod
+e.tex"
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count126
+\pgfmatrixcurrentcolumn=\count127
+\pgf@matrix@numberofcolumns=\count128
+)
+\tikz@expandcount=\count129
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\librarie
+s\tikzlibrarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
+)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\verbatim.sty"
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks35
+\verbatim@line=\toks36
+\verbatim@in@stream=\read2
+)
 ("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.aux"
 
 LaTeX Warning: Label `block1b' multiply defined.
@@ -257,71 +594,35 @@ LaTeX Warning: Label `block1b' multiply defined.
 
 LaTeX Warning: Label `block1b' multiply defined.
 
-
-LaTeX Warning: Label `block1a' multiply defined.
-
-
-LaTeX Warning: Label `block1b' multiply defined.
-
-
-LaTeX Warning: Label `block1c' multiply defined.
-
-
-LaTeX Warning: Label `block1d' multiply defined.
-
-
-LaTeX Warning: Label `block2a' multiply defined.
-
-
-LaTeX Warning: Label `block1b' multiply defined.
-
-
-LaTeX Warning: Label `block1b' multiply defined.
-
-
-LaTeX Warning: Label `block2b' multiply defined.
-
-
-LaTeX Warning: Label `block3a' multiply defined.
-
-
-LaTeX Warning: Label `block1b' multiply defined.
-
-
-LaTeX Warning: Label `block1b' multiply defined.
-
-
-LaTeX Warning: Label `block3b' multiply defined.
-
 )
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 190.
-LaTeX Font Info:    ... okay on input line 190.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 202.
+LaTeX Font Info:    ... okay on input line 202.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count107
-\scratchdimen=\dimen125
-\scratchbox=\box30
-\nofMPsegments=\count108
-\nofMParguments=\count109
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count110
-\MPscratchDim=\dimen126
-\MPnumerator=\count111
-\makeMPintoPDFobject=\count112
-\everyMPtoPDFconversion=\toks24
-)
+\scratchcounter=\count130
+\scratchdimen=\dimen180
+\scratchbox=\box41
+\nofMPsegments=\count131
+\nofMParguments=\count132
+\everyMPshowfont=\toks37
+\MPscratchCnt=\count133
+\MPscratchDim=\dimen181
+\MPnumerator=\count134
+\makeMPintoPDFobject=\count135
+\everyMPtoPDFconversion=\toks38
+) ABD: EveryShipout initializing macros
 
 Fly Leaf.
 [1
@@ -357,69 +658,51 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [4
 
 ]
-Overfull \hbox (3.72333pt too wide) in paragraph at lines 42--42
+Overfull \hbox (3.72333pt too wide) in paragraph at lines 43--43
  [][] []\OT1/cmr/m/n/10.95 Gaussian Neigh-bor-hood Func-tion Weight Space Trave
 r- 
  []
 
-)
-\tf@toc=\write3
- [5]
+
+Overfull \hbox (11.23508pt too wide) in paragraph at lines 46--46
+ [][] []\OT1/cmr/m/n/10.95 Weight-Anisotropic GSA Neigh-bor-hood Func-tion Weig
+ht 
+ []
+
+[5])
+\tf@toc=\write4
+ [6]
 
 List of Figures.
-("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.lof" [6
+("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.lof" [7
 
-] [7] [8]
-Overfull \hbox (0.99095pt too wide) in paragraph at lines 16--16
- \OT1/cmr/m/n/10.95 a-bil-ity of achiev-ing per-fect clas-si-fi-ca-tion through
- sim-u-la-tion time. This 
- []
-
-
-Overfull \hbox (0.99095pt too wide) in paragraph at lines 17--17
- \OT1/cmr/m/n/10.95 a-bil-ity of achiev-ing per-fect clas-si-fi-ca-tion through
- sim-u-la-tion time. This 
- []
-
-
-Overfull \hbox (0.99095pt too wide) in paragraph at lines 18--18
- \OT1/cmr/m/n/10.95 a-bil-ity of achiev-ing per-fect clas-si-fi-ca-tion through
- sim-u-la-tion time. This 
- []
-
-
-Overfull \hbox (0.99095pt too wide) in paragraph at lines 19--19
- \OT1/cmr/m/n/10.95 a-bil-ity of achiev-ing per-fect clas-si-fi-ca-tion through
- sim-u-la-tion time. This 
- []
-
-)
-\tf@lof=\write4
- [9]
+] [8] [9])
+\tf@lof=\write5
+ [10]
 
 List of Tables.
 ("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.lot")
-\tf@lot=\write5
- [10
+\tf@lot=\write6
+ [11
 
 ]
 
 List of Symbols.
 ("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.los")
-\tf@los=\write6
- [11
+\tf@los=\write7
+ [12
 
 ]
 
 List of Abbreviations.
 ("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.loa")
-\tf@loa=\write7
- [12
+\tf@loa=\write8
+ [13
 
 ]
 
 Abstract.
-[13
+[14
 
 ]
 
@@ -431,16 +714,20 @@ Chapter 1.
 Chapter 2.
 [1
 
-] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 473.
+] [2]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 522.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 473.
- [12] [13]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 522.
+ [13]
 Package epstopdf Info: Source file: <figures/tunneling_ex.eps>
 (epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 112596 bytes
@@ -450,15 +737,15 @@ Package epstopdf Info: Source file: <figures/tunneling_ex.eps>
 (epstopdf)                    size: 32004 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/tunneling_ex-eps-co
 nverted-to.pdf figures/tunneling_ex.eps>
-(epstopdf)             \includegraphics on input line 514.
+(epstopdf)             \includegraphics on input line 563.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/tunneling_ex-eps-converted-to.pdf, id=112, 836.12375pt x 777.90625pt>
+<figures/tunneling_ex-eps-converted-to.pdf, id=118, 836.12375pt x 777.90625pt>
 File: figures/tunneling_ex-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/tunneling_ex-eps-converted-to.pdf>
 Package pdftex.def Info: figures/tunneling_ex-eps-converted-to.pdf used on inpu
-t line 514.
+t line 563.
 (pdftex.def)             Requested size: 231.26378pt x 215.15341pt.
  [14] [15 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/tunneling_ex-eps-conver
 ted-to.pdf>]
@@ -476,15 +763,15 @@ to.pdf>
 (epstopdf)                    size: 43103 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/quantum_advantage_a
 -eps-converted-to.pdf figures/quantum_advantage_a.eps>
-(epstopdf)             \includegraphics on input line 593.
+(epstopdf)             \includegraphics on input line 642.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/quantum_advantage_a-eps-converted-to.pdf, id=130, 932.48375pt x 863.22
+<figures/quantum_advantage_a-eps-converted-to.pdf, id=136, 932.48375pt x 863.22
 5pt>
 File: figures/quantum_advantage_a-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/quantum_advantage_a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/quantum_advantage_a-eps-converted-to.pdf used 
-on input line 593.
+on input line 642.
 (pdftex.def)             Requested size: 199.16928pt x 184.37796pt.
 Package epstopdf Info: Source file: <figures/quantum_advantage_b.eps>
 (epstopdf)                    date: 2015-12-29 09:35:52
@@ -495,32 +782,32 @@ to.pdf>
 (epstopdf)                    size: 69135 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/quantum_advantage_b
 -eps-converted-to.pdf figures/quantum_advantage_b.eps>
-(epstopdf)             \includegraphics on input line 600.
+(epstopdf)             \includegraphics on input line 649.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/quantum_advantage_b-eps-converted-to.pdf, id=131, 1166.3575pt x 940.51
+<figures/quantum_advantage_b-eps-converted-to.pdf, id=137, 1166.3575pt x 940.51
 375pt>
 File: figures/quantum_advantage_b-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/quantum_advantage_b-eps-converted-to.pdf>
 Package pdftex.def Info: figures/quantum_advantage_b-eps-converted-to.pdf used 
-on input line 600.
+on input line 649.
 (pdftex.def)             Requested size: 199.16928pt x 160.60277pt.
  [3] [4 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/quantum_advantage_a-eps-c
 onverted-to.pdf> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/quantum_advantag
-e_b-eps-converted-to.pdf>] <figures/gsa_distributions.png, id=144, 716.6775pt x
+e_b-eps-converted-to.pdf>] <figures/gsa_distributions.png, id=150, 716.6775pt x
  825.0825pt>
 File: figures/gsa_distributions.png Graphic file (type png)
 
 <use figures/gsa_distributions.png>
-Package pdftex.def Info: figures/gsa_distributions.png used on input line 648.
+Package pdftex.def Info: figures/gsa_distributions.png used on input line 697.
 (pdftex.def)             Requested size: 361.34999pt x 416.015pt.
  [5] [6 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/gsa_distributions.png>]
-<figures/gsa_distribution_wing_detail.png, id=155, 737.75626pt x 849.1725pt>
+<figures/gsa_distribution_wing_detail.png, id=161, 737.75626pt x 849.1725pt>
 File: figures/gsa_distribution_wing_detail.png Graphic file (type png)
 
 <use figures/gsa_distribution_wing_detail.png>
 Package pdftex.def Info: figures/gsa_distribution_wing_detail.png used on input
- line 659.
+ line 708.
 (pdftex.def)             Requested size: 361.34999pt x 415.91676pt.
  [7] [8 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/gsa_distribution_wing_det
 ail.png>] [9]
@@ -533,16 +820,16 @@ d-to.pdf>
 (epstopdf)                    size: 52587 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/concrete_matrix_rep
 _a-eps-converted-to.pdf figures/concrete_matrix_rep_a.eps>
-(epstopdf)             \includegraphics on input line 699.
+(epstopdf)             \includegraphics on input line 751.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/concrete_matrix_rep_a-eps-converted-to.pdf, id=166, 604.2575pt x 480.7
+<figures/concrete_matrix_rep_a-eps-converted-to.pdf, id=172, 604.2575pt x 480.7
 9625pt>
 File: figures/concrete_matrix_rep_a-eps-converted-to.pdf Graphic file (type pdf
 )
  <use figures/concrete_matrix_rep_a-eps-converted-to.pdf>
 Package pdftex.def Info: figures/concrete_matrix_rep_a-eps-converted-to.pdf use
-d on input line 699.
+d on input line 751.
 (pdftex.def)             Requested size: 199.16928pt x 158.4725pt.
 Package epstopdf Info: Source file: <figures/concrete_matrix_rep_b.eps>
 (epstopdf)                    date: 2015-12-29 09:35:52
@@ -553,17 +840,18 @@ d-to.pdf>
 (epstopdf)                    size: 53243 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/concrete_matrix_rep
 _b-eps-converted-to.pdf figures/concrete_matrix_rep_b.eps>
-(epstopdf)             \includegraphics on input line 706.
+(epstopdf)             \includegraphics on input line 758.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/concrete_matrix_rep_b-eps-converted-to.pdf, id=167, 583.17876pt x 365.
+<figures/concrete_matrix_rep_b-eps-converted-to.pdf, id=173, 583.17876pt x 365.
 365pt>
 File: figures/concrete_matrix_rep_b-eps-converted-to.pdf Graphic file (type pdf
 )
  <use figures/concrete_matrix_rep_b-eps-converted-to.pdf>
 Package pdftex.def Info: figures/concrete_matrix_rep_b-eps-converted-to.pdf use
-d on input line 706.
+d on input line 758.
 (pdftex.def)             Requested size: 199.16928pt x 124.77995pt.
+ [10]
 Package epstopdf Info: Source file: <figures/abstract_matrix_rep.eps>
 (epstopdf)                    date: 2015-12-29 09:35:52
 (epstopdf)                    size: 192941 bytes
@@ -573,267 +861,300 @@ to.pdf>
 (epstopdf)                    size: 35080 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/abstract_matrix_rep
 -eps-converted-to.pdf figures/abstract_matrix_rep.eps>
-(epstopdf)             \includegraphics on input line 722.
+(epstopdf)             \includegraphics on input line 774.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/abstract_matrix_rep-eps-converted-to.pdf, id=168, 999.735pt x 507.8975
+<figures/abstract_matrix_rep-eps-converted-to.pdf, id=177, 999.735pt x 507.8975
 pt>
 File: figures/abstract_matrix_rep-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/abstract_matrix_rep-eps-converted-to.pdf>
 Package pdftex.def Info: figures/abstract_matrix_rep-eps-converted-to.pdf used 
-on input line 722.
+on input line 774.
 (pdftex.def)             Requested size: 151.76744pt x 77.10356pt.
- [10] [11 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/concrete_matrix_rep_a-e
-ps-converted-to.pdf> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/concrete_mat
-rix_rep_b-eps-converted-to.pdf> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/a
-bstract_matrix_rep-eps-converted-to.pdf>] [12] [13]
+ [11 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/concrete_matrix_rep_a-eps-co
+nverted-to.pdf> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/concrete_matrix_r
+ep_b-eps-converted-to.pdf> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/abstra
+ct_matrix_rep-eps-converted-to.pdf>] [12] [13] [14]
 Missing character: There is no Â in font cmr10!
 Missing character: There is no · in font cmr10!
 Missing character: There is no â in font cmr8!
 Missing character: There is no ˆ in font cmr8!
 Missing character: There is no ’ in font cmr8!
- [14]
-Overfull \hbox (15.91876pt too wide) in paragraph at lines 800--801
- \OT1/cmr/m/it/10.95 3.5.1 Gaus-sian Neigh-bor-hood Func-tion Weight Space Trav
-er-sal.  [] \OT1/cmr/m/n/10.95 0.1817206687082039
- []
-
-<figures/weight_space_gaussian.png, id=196, 578.16pt x 431.4519pt>
+ [15]
+<figures/weight_space_gaussian.png, id=204, 578.16pt x 431.4519pt>
 File: figures/weight_space_gaussian.png Graphic file (type png)
 
 <use figures/weight_space_gaussian.png>
 Package pdftex.def Info: figures/weight_space_gaussian.png used on input line 8
-07.
+80.
 (pdftex.def)             Requested size: 234.87749pt x 175.2769pt.
 
-<figures/weight_space_gaussian_perf.png, id=197, 578.16pt x 431.4519pt>
+<figures/weight_space_gaussian_perf.png, id=205, 578.16pt x 431.4519pt>
 File: figures/weight_space_gaussian_perf.png Graphic file (type png)
 
 <use figures/weight_space_gaussian_perf.png>
 Package pdftex.def Info: figures/weight_space_gaussian_perf.png used on input l
-ine 814.
+ine 887.
 (pdftex.def)             Requested size: 234.87749pt x 175.2769pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 805--821
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 878--894
 [][]  [] 
  []
 
-
-Overfull \hbox (7.16791pt too wide) in paragraph at lines 827--828
- \OT1/cmr/m/it/10.95 3.5.2 Cauchy Neigh-bor-hood Func-tion Weight Space Traver-
-sal.  [] \OT1/cmr/m/n/10.95 0.1530194184840675
- []
-
-<figures/weight_space_cauchy.png, id=198, 578.16pt x 431.4519pt>
+[16] [17 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_gaussian.pn
+g> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_gaussian_perf.png
+>] <figures/weight_space_cauchy.png, id=215, 578.16pt x 431.4519pt>
 File: figures/weight_space_cauchy.png Graphic file (type png)
 
 <use figures/weight_space_cauchy.png>
-Package pdftex.def Info: figures/weight_space_cauchy.png used on input line 834
+Package pdftex.def Info: figures/weight_space_cauchy.png used on input line 916
 .
 (pdftex.def)             Requested size: 234.87749pt x 175.2769pt.
 
-<figures/weight_space_cauchy_perf.png, id=199, 578.16pt x 431.4519pt>
+<figures/weight_space_cauchy_perf.png, id=216, 578.16pt x 431.4519pt>
 File: figures/weight_space_cauchy_perf.png Graphic file (type png)
 
 <use figures/weight_space_cauchy_perf.png>
 Package pdftex.def Info: figures/weight_space_cauchy_perf.png used on input lin
-e 841.
+e 923.
 (pdftex.def)             Requested size: 234.87749pt x 175.2769pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 832--848
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 914--930
 [][]  [] 
  []
 
-
-Overfull \hbox (5.62479pt too wide) in paragraph at lines 854--856
- \OT1/cmr/m/it/10.95 3.5.3 GSA Neigh-bor-hood Func-tion Weight Space Traver-sal
-.  [] \OT1/cmr/m/n/10.95 0.047256769936850254
- []
-
-<figures/weight_space_gsa_i.png, id=200, 578.16pt x 431.4519pt>
+[18 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_cauchy.png> <C:/
+mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_cauchy_perf.png>]
+<figures/weight_space_gsa_i.png, id=222, 578.16pt x 431.4519pt>
 File: figures/weight_space_gsa_i.png Graphic file (type png)
 
 <use figures/weight_space_gsa_i.png>
-Package pdftex.def Info: figures/weight_space_gsa_i.png used on input line 862.
+Package pdftex.def Info: figures/weight_space_gsa_i.png used on input line 947.
 
 (pdftex.def)             Requested size: 234.87749pt x 175.2769pt.
 
-<figures/weight_space_gsa_i_perf.png, id=201, 578.16pt x 431.4519pt>
+<figures/weight_space_gsa_i_perf.png, id=223, 578.16pt x 431.4519pt>
 File: figures/weight_space_gsa_i_perf.png Graphic file (type png)
 
 <use figures/weight_space_gsa_i_perf.png>
 Package pdftex.def Info: figures/weight_space_gsa_i_perf.png used on input line
- 869.
+ 954.
 (pdftex.def)             Requested size: 234.87749pt x 175.2769pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 860--876
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 945--961
 [][]  [] 
  []
 
+[19] [20 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_gsa_i.png> 
+<C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_gsa_i_perf.png>]
+<figures/weight_space_gsa_wa.png, id=232, 578.16pt x 431.4519pt>
+File: figures/weight_space_gsa_wa.png Graphic file (type png)
 
-Overfull \hbox (17.56432pt too wide) in paragraph at lines 884--885
- \OT1/cmr/m/it/10.95 3.5.4 Uni-form Neigh-bor-hood Func-tion Weight Space Trave
-r-sal.  [] \OT1/cmr/m/n/10.95 0.06475156493279362
+<use figures/weight_space_gsa_wa.png>
+Package pdftex.def Info: figures/weight_space_gsa_wa.png used on input line 980
+.
+(pdftex.def)             Requested size: 234.87749pt x 175.2769pt.
+
+<figures/weight_space_gsa_wa_perf.png, id=233, 578.16pt x 431.4519pt>
+File: figures/weight_space_gsa_wa_perf.png Graphic file (type png)
+
+<use figures/weight_space_gsa_wa_perf.png>
+Package pdftex.def Info: figures/weight_space_gsa_wa_perf.png used on input lin
+e 987.
+(pdftex.def)             Requested size: 234.87749pt x 175.2769pt.
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 978--994
+[][]  [] 
  []
 
-<figures/weight_space_uniform.png, id=202, 578.16pt x 431.4519pt>
+[21 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_gsa_wa.png> <C:/
+mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_gsa_wa_perf.png>]
+<figures/weight_space_uniform.png, id=239, 578.16pt x 431.4519pt>
 File: figures/weight_space_uniform.png Graphic file (type png)
 
 <use figures/weight_space_uniform.png>
-Package pdftex.def Info: figures/weight_space_uniform.png used on input line 89
-1.
+Package pdftex.def Info: figures/weight_space_uniform.png used on input line 10
+09.
 (pdftex.def)             Requested size: 234.87749pt x 175.2769pt.
 
-<figures/weight_space_uniform_perf.png, id=203, 578.16pt x 431.4519pt>
+<figures/weight_space_uniform_perf.png, id=240, 578.16pt x 431.4519pt>
 File: figures/weight_space_uniform_perf.png Graphic file (type png)
 
 <use figures/weight_space_uniform_perf.png>
 Package pdftex.def Info: figures/weight_space_uniform_perf.png used on input li
-ne 898.
+ne 1016.
 (pdftex.def)             Requested size: 234.87749pt x 175.2769pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 889--903
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 1007--1021
 [][]  [] 
  []
 
-[15] [16 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_gaussian.pn
-g> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_gaussian_perf.png
->] [17 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_cauchy.png> <
-C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_cauchy_perf.png>]
-[18 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_gsa_i.png> <C:/m
-scs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_gsa_i_perf.png>] [19 <C:/
-mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_uniform.png> <C:/mscs-th
-esis/thesis/doc/AFIT LaTeX/figures/weight_space_uniform_perf.png>]
+[22] <figures/wieght_space_comparative.png, id=244, 578.16pt x 431.4519pt>
+File: figures/wieght_space_comparative.png Graphic file (type png)
+
+<use figures/wieght_space_comparative.png>
+Package pdftex.def Info: figures/wieght_space_comparative.png used on input lin
+e 1042.
+(pdftex.def)             Requested size: 433.62pt x 323.58813pt.
+ [23 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_uniform.png> <C
+:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/weight_space_uniform_perf.png>] [24
+ <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/wieght_space_comparative.png>] [
+25]
+Missing character: There is no Â in font cmr10!
+Missing character: There is no · in font cmr10!
+Missing character: There is no â in font cmr8!
+Missing character: There is no ˆ in font cmr8!
+Missing character: There is no ’ in font cmr8!
+
+<figures/complicated_interaction.png, id=258, 578.16pt x 431.4519pt>
+File: figures/complicated_interaction.png Graphic file (type png)
+
+<use figures/complicated_interaction.png>
+Package pdftex.def Info: figures/complicated_interaction.png used on input line
+ 1145.
+(pdftex.def)             Requested size: 216.81pt x 161.79407pt.
+
+<figures/complicated_interaction_imshow.png, id=259, 578.16pt x 431.4519pt>
+File: figures/complicated_interaction_imshow.png Graphic file (type png)
+
+<use figures/complicated_interaction_imshow.png>
+Package pdftex.def Info: figures/complicated_interaction_imshow.png used on inp
+ut line 1152.
+(pdftex.def)             Requested size: 216.81pt x 161.79407pt.
+
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 1143--1156
+[][]  [] 
+ []
+
+[26] [27 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/complicated_interaction.
+png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/complicated_interaction_imsh
+ow.png>]
 
 Chapter 4.
 
-<figures/classPerf/classPerf_GaussianVisit_IsotropicAnisotropicity.png, id=228,
+<figures/classPerf/classPerf_GaussianVisit_IsotropicAnisotropicity.png, id=268,
  578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_GaussianVisit_IsotropicAnisotropicity.png Gra
 phic file (type png)
 
 <use figures/classPerf/classPerf_GaussianVisit_IsotropicAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_GaussianVisit_IsotropicAni
-sotropicity.png used on input line 951.
+sotropicity.png used on input line 1194.
 (pdftex.def)             Requested size: 130.08621pt x 101.42899pt.
 
 <figures/classPerf/classPerf_ExponentialVisit_IsotropicAnisotropicity.png, id=2
-30, 578.16pt x 433.62pt>
+70, 578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_ExponentialVisit_IsotropicAnisotropicity.png 
 Graphic file (type png)
 
 <use figures/classPerf/classPerf_ExponentialVisit_IsotropicAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_ExponentialVisit_Isotropic
-Anisotropicity.png used on input line 952.
+Anisotropicity.png used on input line 1195.
 (pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
 
-<figures/classPerf/classPerf_CauchyVisit_IsotropicAnisotropicity.png, id=232, 5
+<figures/classPerf/classPerf_CauchyVisit_IsotropicAnisotropicity.png, id=272, 5
 78.16pt x 433.62pt>
 File: figures/classPerf/classPerf_CauchyVisit_IsotropicAnisotropicity.png Graph
 ic file (type png)
 
 <use figures/classPerf/classPerf_CauchyVisit_IsotropicAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_CauchyVisit_IsotropicAniso
-tropicity.png used on input line 953.
+tropicity.png used on input line 1196.
 (pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
 
-<figures/classPerf/classPerf_UniformVisit_IsotropicAnisotropicity.png, id=234, 
+<figures/classPerf/classPerf_UniformVisit_IsotropicAnisotropicity.png, id=274, 
 578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_UniformVisit_IsotropicAnisotropicity.png Grap
 hic file (type png)
 
 <use figures/classPerf/classPerf_UniformVisit_IsotropicAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_UniformVisit_IsotropicAnis
-otropicity.png used on input line 954.
+otropicity.png used on input line 1197.
 (pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
 
-<figures/classPerf/classPerf_GaussianVisit_UniformAnisotropicity.png, id=236, 5
+<figures/classPerf/classPerf_GaussianVisit_UniformAnisotropicity.png, id=276, 5
 78.16pt x 433.62pt>
 File: figures/classPerf/classPerf_GaussianVisit_UniformAnisotropicity.png Graph
 ic file (type png)
 
 <use figures/classPerf/classPerf_GaussianVisit_UniformAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_GaussianVisit_UniformAniso
-tropicity.png used on input line 958.
+tropicity.png used on input line 1201.
 (pdftex.def)             Requested size: 130.08621pt x 101.42899pt.
 
-<figures/classPerf/classPerf_ExponentialVisit_UniformAnisotropicity.png, id=238
+<figures/classPerf/classPerf_ExponentialVisit_UniformAnisotropicity.png, id=278
 , 578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_ExponentialVisit_UniformAnisotropicity.png Gr
 aphic file (type png)
 
 <use figures/classPerf/classPerf_ExponentialVisit_UniformAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_ExponentialVisit_UniformAn
-isotropicity.png used on input line 959.
+isotropicity.png used on input line 1202.
 (pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
 
-<figures/classPerf/classPerf_CauchyVisit_UniformAnisotropicity.png, id=240, 578
+<figures/classPerf/classPerf_CauchyVisit_UniformAnisotropicity.png, id=280, 578
 .16pt x 433.62pt>
 File: figures/classPerf/classPerf_CauchyVisit_UniformAnisotropicity.png Graphic
  file (type png)
 
 <use figures/classPerf/classPerf_CauchyVisit_UniformAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_CauchyVisit_UniformAnisotr
-opicity.png used on input line 960.
+opicity.png used on input line 1203.
 (pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
 
-<figures/classPerf/classPerf_UniformVisit_UniformAnisotropicity.png, id=242, 57
+<figures/classPerf/classPerf_UniformVisit_UniformAnisotropicity.png, id=282, 57
 8.16pt x 433.62pt>
 File: figures/classPerf/classPerf_UniformVisit_UniformAnisotropicity.png Graphi
 c file (type png)
 
 <use figures/classPerf/classPerf_UniformVisit_UniformAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_UniformVisit_UniformAnisot
-ropicity.png used on input line 961.
+ropicity.png used on input line 1204.
 (pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
 
-<figures/classPerf/classPerf_GaussianVisit_NormativeAnisotropicity.png, id=244,
+<figures/classPerf/classPerf_GaussianVisit_NormativeAnisotropicity.png, id=284,
  578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_GaussianVisit_NormativeAnisotropicity.png Gra
 phic file (type png)
 
 <use figures/classPerf/classPerf_GaussianVisit_NormativeAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_GaussianVisit_NormativeAni
-sotropicity.png used on input line 964.
+sotropicity.png used on input line 1207.
 (pdftex.def)             Requested size: 130.08621pt x 101.42899pt.
 
 <figures/classPerf/classPerf_ExponentialVisit_NormativeAnisotropicity.png, id=2
-46, 578.16pt x 433.62pt>
+86, 578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_ExponentialVisit_NormativeAnisotropicity.png 
 Graphic file (type png)
 
 <use figures/classPerf/classPerf_ExponentialVisit_NormativeAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_ExponentialVisit_Normative
-Anisotropicity.png used on input line 965.
+Anisotropicity.png used on input line 1208.
 (pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
 
-<figures/classPerf/classPerf_CauchyVisit_NormativeAnisotropicity.png, id=248, 5
+<figures/classPerf/classPerf_CauchyVisit_NormativeAnisotropicity.png, id=288, 5
 78.16pt x 433.62pt>
 File: figures/classPerf/classPerf_CauchyVisit_NormativeAnisotropicity.png Graph
 ic file (type png)
 
 <use figures/classPerf/classPerf_CauchyVisit_NormativeAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_CauchyVisit_NormativeAniso
-tropicity.png used on input line 966.
+tropicity.png used on input line 1209.
 (pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
 
-<figures/classPerf/classPerf_UniformVisit_NormativeAnisotropicity.png, id=250, 
+<figures/classPerf/classPerf_UniformVisit_NormativeAnisotropicity.png, id=290, 
 578.16pt x 433.62pt>
 File: figures/classPerf/classPerf_UniformVisit_NormativeAnisotropicity.png Grap
 hic file (type png)
 
 <use figures/classPerf/classPerf_UniformVisit_NormativeAnisotropicity.png>
 Package pdftex.def Info: figures/classPerf/classPerf_UniformVisit_NormativeAnis
-otropicity.png used on input line 967.
+otropicity.png used on input line 1210.
 (pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
 
-Overfull \hbox (65.78346pt too wide) in paragraph at lines 947--970
+Overfull \hbox (65.78346pt too wide) in paragraph at lines 1190--1213
  [][] 
  []
-
-
-LaTeX Warning: Reference `scn:problem_formulation' on page 4-1 undefined on inp
-ut line 977.
 
 [1
 
@@ -853,191 +1174,12 @@ mativeAnisotropicity.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/classPe
 rf/classPerf_ExponentialVisit_NormativeAnisotropicity.png> <C:/mscs-thesis/thes
 is/doc/AFIT LaTeX/figures/classPerf/classPerf_CauchyVisit_NormativeAnisotropici
 ty.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/classPerf/classPerf_Unifo
-rmVisit_NormativeAnisotropicity.png>] [2]
-<figures/completeFrac/completeFrac_GaussianVisit_IsotropicAnisotropicity.png, i
-d=282, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_GaussianVisit_IsotropicAnisotropicity.p
-ng Graphic file (type png)
+rmVisit_NormativeAnisotropicity.png>]
 
-<use figures/completeFrac/completeFrac_GaussianVisit_IsotropicAnisotropicity.pn
-g>
-Package pdftex.def Info: figures/completeFrac/completeFrac_GaussianVisit_Isotro
-picAnisotropicity.png used on input line 1005.
-(pdftex.def)             Requested size: 130.08621pt x 101.42899pt.
+Chapter 5.
+[1
 
-<figures/completeFrac/completeFrac_ExponentialVisit_IsotropicAnisotropicity.png
-, id=284, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_ExponentialVisit_IsotropicAnisotropicit
-y.png Graphic file (type png)
-
-<use figures/completeFrac/completeFrac_ExponentialVisit_IsotropicAnisotropicity
-.png>
-Package pdftex.def Info: figures/completeFrac/completeFrac_ExponentialVisit_Iso
-tropicAnisotropicity.png used on input line 1006.
-(pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
-
-<figures/completeFrac/completeFrac_CauchyVisit_IsotropicAnisotropicity.png, id=
-286, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_CauchyVisit_IsotropicAnisotropicity.png
- Graphic file (type png)
-
-<use figures/completeFrac/completeFrac_CauchyVisit_IsotropicAnisotropicity.png>
-Package pdftex.def Info: figures/completeFrac/completeFrac_CauchyVisit_Isotropi
-cAnisotropicity.png used on input line 1007.
-(pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
-
-<figures/completeFrac/completeFrac_UniformVisit_IsotropicAnisotropicity.png, id
-=288, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_UniformVisit_IsotropicAnisotropicity.pn
-g Graphic file (type png)
-
-<use figures/completeFrac/completeFrac_UniformVisit_IsotropicAnisotropicity.png
->
-Package pdftex.def Info: figures/completeFrac/completeFrac_UniformVisit_Isotrop
-icAnisotropicity.png used on input line 1008.
-(pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
-
-<figures/completeFrac/completeFrac_GaussianVisit_UniformAnisotropicity.png, id=
-290, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_GaussianVisit_UniformAnisotropicity.png
- Graphic file (type png)
-
-<use figures/completeFrac/completeFrac_GaussianVisit_UniformAnisotropicity.png>
-Package pdftex.def Info: figures/completeFrac/completeFrac_GaussianVisit_Unifor
-mAnisotropicity.png used on input line 1012.
-(pdftex.def)             Requested size: 130.08621pt x 101.42899pt.
-
-<figures/completeFrac/completeFrac_ExponentialVisit_UniformAnisotropicity.png, 
-id=292, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_ExponentialVisit_UniformAnisotropicity.
-png Graphic file (type png)
-
-<use figures/completeFrac/completeFrac_ExponentialVisit_UniformAnisotropicity.p
-ng>
-Package pdftex.def Info: figures/completeFrac/completeFrac_ExponentialVisit_Uni
-formAnisotropicity.png used on input line 1013.
-(pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
-
-<figures/completeFrac/completeFrac_CauchyVisit_UniformAnisotropicity.png, id=29
-4, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_CauchyVisit_UniformAnisotropicity.png G
-raphic file (type png)
-
-<use figures/completeFrac/completeFrac_CauchyVisit_UniformAnisotropicity.png>
-Package pdftex.def Info: figures/completeFrac/completeFrac_CauchyVisit_UniformA
-nisotropicity.png used on input line 1014.
-(pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
-
-<figures/completeFrac/completeFrac_UniformVisit_UniformAnisotropicity.png, id=2
-96, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_UniformVisit_UniformAnisotropicity.png 
-Graphic file (type png)
-
-<use figures/completeFrac/completeFrac_UniformVisit_UniformAnisotropicity.png>
-Package pdftex.def Info: figures/completeFrac/completeFrac_UniformVisit_Uniform
-Anisotropicity.png used on input line 1015.
-(pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
-
-<figures/completeFrac/completeFrac_GaussianVisit_NormativeAnisotropicity.png, i
-d=298, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_GaussianVisit_NormativeAnisotropicity.p
-ng Graphic file (type png)
-
-<use figures/completeFrac/completeFrac_GaussianVisit_NormativeAnisotropicity.pn
-g>
-Package pdftex.def Info: figures/completeFrac/completeFrac_GaussianVisit_Normat
-iveAnisotropicity.png used on input line 1018.
-(pdftex.def)             Requested size: 130.08621pt x 101.42899pt.
-
-<figures/completeFrac/completeFrac_ExponentialVisit_NormativeAnisotropicity.png
-, id=300, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_ExponentialVisit_NormativeAnisotropicit
-y.png Graphic file (type png)
-
-<use figures/completeFrac/completeFrac_ExponentialVisit_NormativeAnisotropicity
-.png>
-Package pdftex.def Info: figures/completeFrac/completeFrac_ExponentialVisit_Nor
-mativeAnisotropicity.png used on input line 1019.
-(pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
-
-<figures/completeFrac/completeFrac_CauchyVisit_NormativeAnisotropicity.png, id=
-302, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_CauchyVisit_NormativeAnisotropicity.png
- Graphic file (type png)
-
-<use figures/completeFrac/completeFrac_CauchyVisit_NormativeAnisotropicity.png>
-Package pdftex.def Info: figures/completeFrac/completeFrac_CauchyVisit_Normativ
-eAnisotropicity.png used on input line 1020.
-(pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
-
-<figures/completeFrac/completeFrac_UniformVisit_NormativeAnisotropicity.png, id
-=304, 578.16pt x 433.62pt>
-File: figures/completeFrac/completeFrac_UniformVisit_NormativeAnisotropicity.pn
-g Graphic file (type png)
-
-<use figures/completeFrac/completeFrac_UniformVisit_NormativeAnisotropicity.png
->
-Package pdftex.def Info: figures/completeFrac/completeFrac_UniformVisit_Normati
-veAnisotropicity.png used on input line 1021.
-(pdftex.def)             Requested size: 115.63243pt x 101.37883pt.
-
-Overfull \hbox (65.78346pt too wide) in paragraph at lines 1001--1024
- [][] 
- []
-
-[3] [4 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/completeFrac_
-GaussianVisit_IsotropicAnisotropicity.png> <C:/mscs-thesis/thesis/doc/AFIT LaTe
-X/figures/completeFrac/completeFrac_ExponentialVisit_IsotropicAnisotropicity.pn
-g> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/completeFrac_Cauc
-hyVisit_IsotropicAnisotropicity.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figu
-res/completeFrac/completeFrac_UniformVisit_IsotropicAnisotropicity.png> <C:/msc
-s-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/completeFrac_GaussianVisit_
-UniformAnisotropicity.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/comple
-teFrac/completeFrac_ExponentialVisit_UniformAnisotropicity.png> <C:/mscs-thesis
-/thesis/doc/AFIT LaTeX/figures/completeFrac/completeFrac_CauchyVisit_UniformAni
-sotropicity.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/com
-pleteFrac_UniformVisit_UniformAnisotropicity.png> <C:/mscs-thesis/thesis/doc/AF
-IT LaTeX/figures/completeFrac/completeFrac_GaussianVisit_NormativeAnisotropicit
-y.png> <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/completeFrac_
-ExponentialVisit_NormativeAnisotropicity.png> <C:/mscs-thesis/thesis/doc/AFIT L
-aTeX/figures/completeFrac/completeFrac_CauchyVisit_NormativeAnisotropicity.png>
- <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/completeFrac/completeFrac_Unifor
-mVisit_NormativeAnisotropicity.png>]
-<figures/gammaDists/gamma_g.png, id=336, 578.16pt x 431.4519pt>
-File: figures/gammaDists/gamma_g.png Graphic file (type png)
-
-<use figures/gammaDists/gamma_g.png>
-Package pdftex.def Info: figures/gammaDists/gamma_g.png used on input line 1036
-.
-(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
-
-<figures/gammaDists/gamma_e.png, id=338, 578.16pt x 431.4519pt>
-File: figures/gammaDists/gamma_e.png Graphic file (type png)
-
-<use figures/gammaDists/gamma_e.png>
-Package pdftex.def Info: figures/gammaDists/gamma_e.png used on input line 1042
-.
-(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
-
-<figures/gammaDists/gamma_u.png, id=340, 578.16pt x 431.4519pt>
-File: figures/gammaDists/gamma_u.png Graphic file (type png)
-
-<use figures/gammaDists/gamma_u.png>
-Package pdftex.def Info: figures/gammaDists/gamma_u.png used on input line 1048
-.
-(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
-
-<figures/gammaDists/gamma_c.png, id=342, 578.16pt x 431.4519pt>
-File: figures/gammaDists/gamma_c.png Graphic file (type png)
-
-<use figures/gammaDists/gamma_c.png>
-Package pdftex.def Info: figures/gammaDists/gamma_c.png used on input line 1054
-.
-(pdftex.def)             Requested size: 238.49121pt x 194.22398pt.
- [5 <C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/gammaDists/gamma_g.png>] [6 <
-C:/mscs-thesis/thesis/doc/AFIT LaTeX/figures/gammaDists/gamma_e.png> <C:/mscs-t
-hesis/thesis/doc/AFIT LaTeX/figures/gammaDists/gamma_u.png>] [7 <C:/mscs-thesis
-/thesis/doc/AFIT LaTeX/figures/gammaDists/gamma_c.png>]
+]
 
 Appendix 1.
 ("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.bbl" [1
@@ -1067,20 +1209,17 @@ Vita.
 
 ] ("C:\mscs-thesis\thesis\doc\AFIT LaTeX\usethesis.aux")
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3726 strings out of 493921
- 63914 string characters out of 3144847
- 115348 words of memory out of 3000000
- 6880 multiletter control sequences out of 15000+200000
- 15802 words of font info for 58 fonts, out of 3000000 for 9000
+ 14272 strings out of 493921
+ 283116 string characters out of 3144847
+ 309657 words of memory out of 3000000
+ 17209 multiletter control sequences out of 15000+200000
+ 18051 words of font info for 66 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 43i,14n,40p,1815b,488s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 55i,15n,68p,1815b,1016s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbsy10.pfb
 ><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:
@@ -1090,24 +1229,23 @@ C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:
 ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/public/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/symbols/msbm10.pfb>
-Output written on usethesis.pdf (62 pages, 2710821 bytes).
+iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmti9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmtt10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb>
+Output written on usethesis.pdf (66 pages, 2405009 bytes).
 PDF statistics:
- 455 PDF objects out of 1000 (max. 8388607)
+ 412 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 389 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

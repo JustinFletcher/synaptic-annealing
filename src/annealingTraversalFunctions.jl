@@ -108,7 +108,7 @@ function cauchy_Isotropic_SynapticPerturbation(synapseMatrix, state)
     ## OLD ^
     synapsePerturbation = state.learnRate.*tan(pi.*(rand(size(synapseMatrix)).-0.5)).*int(bool(synapseMatrix))
 
-    synapsePerturbation = capValues(synapsePerturbation, 50)
+    #synapsePerturbation = capValues(synapsePerturbation, 50)
      return(Any[synapsePerturbation, sum(synapsePerturbation)])
 end
 
@@ -206,15 +206,15 @@ end
 function uniform_Isotropic_SynapticPerturbation(synapseMatrix, state)
 
 
-    visitingDistibutionSample = ((state.maxConfigDist*(rand()))).*sum(int(bool(synapseMatrix)))
+#     visitingDistibutionSample = ((state.maxConfigDist*(rand()))).*sum(int(bool(synapseMatrix)))
 
-    stepSize = state.learnRate.*visitingDistibutionSample
+#     stepSize = state.learnRate.*visitingDistibutionSample
 
-    anisotropicityMatrix = ones(size(synapseMatrix)).*int(bool(synapseMatrix))
-    anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
+#     anisotropicityMatrix = ones(size(synapseMatrix)).*int(bool(synapseMatrix))
+#     anisotropicityMatrix = (anisotropicityMatrix./(sum(anisotropicityMatrix))).*((2*int(rand(size(synapseMatrix)).>0.5))-1)
 
-    synapsePerturbation = stepSize.*anisotropicityMatrix
-    return(Any[synapsePerturbation, stepSize])
+    synapsePerturbation = state.learnRate.*(rand(size(synapseMatrix))-0.5).*int(bool(synapseMatrix))
+    return(Any[synapsePerturbation, sum(synapsePerturbation)])
 
 end
 
@@ -285,15 +285,14 @@ function gsa_Isotropic_SynapticPerturbation(synapseMatrix, state)
     return(Any[synapsePerturbation, sum(synapsePerturbation)])
 end
 
-w = 10randn(100,100)
-
-int(abs(w).>10) .* w
 
 function gsa_WeightAnisotropic_SynapticPerturbation(synapseMatrix, state)
 
     anisotropicity = int(abs(synapseMatrix).>2) .* (rand(size(synapseMatrix)).*synapseMatrix)
 
-    synapsePerturbation = state.learnRate.*randgsa(2.6, 1, 1, size(synapseMatrix)).*int(bool(synapseMatrix))-anisotropicity
+    #anisotropicity = int(abs(synapseMatrix).>5) .* (0.5.*synapseMatrix)
+    anisotropicity = abs(tanh(synapseMatrix)) .* 0.5.*(synapseMatrix)
+    synapsePerturbation = state.learnRate.*(randgsa(2.6, 1, 1, size(synapseMatrix)).*int(bool(synapseMatrix)))-anisotropicity
 
     return(Any[synapsePerturbation, sum(synapsePerturbation)])
 end

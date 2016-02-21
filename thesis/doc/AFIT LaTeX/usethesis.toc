@@ -1,56 +1,62 @@
 \contentsline {chapter}{Preface}{iii}
-\contentsline {chapter}{List of Figures}{vi}
-\contentsline {chapter}{List of Tables}{x}
-\contentsline {chapter}{List of Symbols}{xi}
-\contentsline {chapter}{List of Abbreviations}{xii}
-\contentsline {chapter}{Abstract}{xiii}
+\contentsline {chapter}{List of Figures}{vii}
+\contentsline {chapter}{List of Tables}{xi}
+\contentsline {chapter}{List of Symbols}{xii}
+\contentsline {chapter}{List of Abbreviations}{xiii}
+\contentsline {chapter}{Abstract}{xiv}
 \contentsline {chapter}{\numberline {I.}Introduction}{1-1}
 \contentsline {chapter}{\numberline {II.}Background}{2-1}
 \contentsline {section}{\numberline {2.1}Artificial Neural Networks}{2-1}
 \contentsline {subsection}{\numberline {2.1.1}Biological Inspiration}{2-1}
 \contentsline {subsection}{\numberline {2.1.2}Historical Overview}{2-2}
-\contentsline {subsection}{\numberline {2.1.3}Network Topology}{2-10}
-\contentsline {subsection}{\numberline {2.1.4}Activation Functions}{2-10}
+\contentsline {subsection}{\numberline {2.1.3}Network Topology}{2-11}
+\contentsline {subsection}{\numberline {2.1.4}Activation Functions}{2-11}
 \contentsline {subsection}{\numberline {2.1.5}Learning Strategies}{2-11}
 \contentsline {subsubsection}{\numberline {2.1.5.1}Back Propagation Training}{2-11}
 \contentsline {subsubsection}{\numberline {2.1.5.2}Simulated Annealing Training}{2-11}
 \contentsline {section}{\numberline {2.2}Related Works in Simulated Annealing}{2-11}
-\contentsline {subsection}{\numberline {2.2.1}Reannealing}{2-13}
+\contentsline {subsection}{\numberline {2.2.1}Reannealing}{2-14}
 \contentsline {section}{\numberline {2.3}Related Works in Quantum Mechanics}{2-14}
 \contentsline {subsection}{\numberline {2.3.1}Quantum Tunneling}{2-14}
-\contentsline {section}{\numberline {2.4}Notation and Terminology Conventions}{2-14}
+\contentsline {section}{\numberline {2.4}Notation and Terminology Conventions}{2-15}
 \contentsline {chapter}{\numberline {III.}Methodology}{3-1}
 \contentsline {section}{\numberline {3.1}Simulated Annealing}{3-1}
-\contentsline {section}{\numberline {3.2}Neighborhood Functions: Traversing the Cost Surface}{3-1}
-\contentsline {subsection}{\numberline {3.2.1}Visiting Distributions}{3-2}
-\contentsline {subsubsection}{\numberline {3.2.1.1}Gaussian Visiting Distributions}{3-2}
-\contentsline {subsubsection}{\numberline {3.2.1.2}Cauchy Visiting Distributions}{3-3}
-\contentsline {subsubsection}{\numberline {3.2.1.3}Generalized Simulated Annealing Visiting Distribution}{3-5}
-\contentsline {subsubsection}{\numberline {3.2.1.4}Uniform Visiting Distributions}{3-9}
-\contentsline {subsection}{\numberline {3.2.2}Anisotropicity Policies}{3-9}
-\contentsline {subsubsection}{\numberline {3.2.2.1}Isotropic Anisotropicity}{3-10}
-\contentsline {subsubsection}{\numberline {3.2.2.2}State-Based Anisotropicity}{3-10}
-\contentsline {section}{\numberline {3.3}Feed-Forward Neural Network Representation}{3-10}
-\contentsline {section}{\numberline {3.4}Applying Simulated Annealing to Feed-Forward Neural Network Weight Modification}{3-12}
-\contentsline {subsection}{\numberline {3.4.1}Synaptic Annealing Neighborhood Functions}{3-12}
-\contentsline {subsubsection}{\numberline {3.4.1.1}Gaussian (CSA) Synaptic Annealing Neighborhood}{3-13}
-\contentsline {subsubsection}{\numberline {3.4.1.2}Cauchy (FSA) Synaptic Annealing Neighborhood}{3-14}
-\contentsline {subsubsection}{\numberline {3.4.1.3}Tsallis (GSA) Synaptic Annealing Neighborhood}{3-14}
-\contentsline {subsubsection}{\numberline {3.4.1.4}Uniform Synaptic Annealing Neighborhood}{3-14}
-\contentsline {subsection}{\numberline {3.4.2}Feed-Forward Neural Network Anisotropicity Policies}{3-14}
-\contentsline {section}{\numberline {3.5}Weight Space Traversal}{3-14}
-\contentsline {subsection}{\numberline {3.5.1}Gaussian Neighborhood Function Weight Space Traversal}{3-15}
-\contentsline {subsection}{\numberline {3.5.2}Cauchy Neighborhood Function Weight Space Traversal}{3-15}
-\contentsline {subsection}{\numberline {3.5.3}GSA Neighborhood Function Weight Space Traversal}{3-15}
-\contentsline {subsection}{\numberline {3.5.4}Uniform Neighborhood Function Weight Space Traversal}{3-15}
-\contentsline {section}{\numberline {3.6}Cost Functions}{3-16}
-\contentsline {section}{\numberline {3.7}Design of Experiments}{3-16}
+\contentsline {subsection}{\numberline {3.1.1}Neighborhood Functions: Traversing the Cost Surface}{3-1}
+\contentsline {subsubsection}{\numberline {3.1.1.1}Visiting Distributions}{3-2}
+\contentsline {paragraph}{Gaussian Visiting Distributions}{3-2}
+\contentsline {paragraph}{Cauchy Visiting Distributions}{3-3}
+\contentsline {paragraph}{Generalized Simulated Annealing Visiting Distribution}{3-5}
+\contentsline {paragraph}{Uniform Visiting Distributions}{3-9}
+\contentsline {subsubsection}{\numberline {3.1.1.2}Anisotropicity Policies}{3-9}
+\contentsline {paragraph}{Isotropic Anisotropicity}{3-10}
+\contentsline {paragraph}{Adjacency-Based Anisotropicity}{3-10}
+\contentsline {paragraph}{State-Based Anisotropicity}{3-10}
+\contentsline {section}{\numberline {3.2}Feed-Forward Neural Network Representation}{3-10}
+\contentsline {section}{\numberline {3.3}Applying Simulated Annealing to Feed-Forward Neural Network Weight Modification}{3-13}
+\contentsline {subsection}{\numberline {3.3.1}Synaptic Annealing Neighborhood Functions}{3-13}
+\contentsline {subsubsection}{\numberline {3.3.1.1}Gaussian (CSA) Synaptic Annealing Neighborhood}{3-14}
+\contentsline {subsubsection}{\numberline {3.3.1.2}Cauchy (FSA) Synaptic Annealing Neighborhood}{3-14}
+\contentsline {subsubsection}{\numberline {3.3.1.3}Tsallis (GSA) Synaptic Annealing Neighborhood}{3-14}
+\contentsline {subsubsection}{\numberline {3.3.1.4}Uniform Synaptic Annealing Neighborhood}{3-15}
+\contentsline {subsection}{\numberline {3.3.2}Feed-Forward Neural Network Anisotropicity Policies}{3-15}
+\contentsline {section}{\numberline {3.4}Weight Space Traversal}{3-15}
+\contentsline {subsection}{\numberline {3.4.1}Gaussian Neighborhood Function Weight Space Traversal}{3-16}
+\contentsline {subsection}{\numberline {3.4.2}Cauchy Neighborhood Function Weight Space Traversal}{3-17}
+\contentsline {subsection}{\numberline {3.4.3}Isotropic GSA Neighborhood Function Weight Space Traversal}{3-19}
+\contentsline {subsection}{\numberline {3.4.4}Weight-Anisotropic GSA Neighborhood Function Weight Space Traversal}{3-20}
+\contentsline {subsection}{\numberline {3.4.5}Uniform Neighborhood Function Weight Space Traversal}{3-22}
+\contentsline {subsection}{\numberline {3.4.6}Comparative Weight Space Traversal}{3-22}
+\contentsline {section}{\numberline {3.5}Cost Functions}{3-25}
+\contentsline {subsection}{\numberline {3.5.1}Regression Error Cost Function}{3-25}
+\contentsline {subsection}{\numberline {3.5.2}Classification Error Cost Function}{3-26}
+\contentsline {section}{\numberline {3.6}Data}{3-26}
+\contentsline {subsection}{\numberline {3.6.1}Classification Data Sets}{3-26}
+\contentsline {subsection}{\numberline {3.6.2}Function Approximation Data Sets}{3-26}
+\contentsline {section}{\numberline {3.7}Design of Experiments}{3-27}
 \contentsline {chapter}{\numberline {IV.}Results}{4-1}
 \contentsline {subsection}{\numberline {4.0.1}Classification Performance}{4-1}
-\contentsline {subsubsection}{\numberline {4.0.1.1}Visiting Distribution Analysis}{4-2}
-\contentsline {subsubsection}{\numberline {4.0.1.2}Anisotropicity Analysis}{4-2}
-\contentsline {subsubsection}{\numberline {4.0.1.3}Perfect Classification Rate Analysis}{4-3}
-\contentsline {section}{\numberline {4.1}Conclusion}{4-7}
+\contentsline {subsection}{\numberline {4.0.2}Function Approximation Performance}{4-1}
+\contentsline {chapter}{\numberline {V.}Conclusion}{5-1}
 \contentsline {appendix}{\numberline {Appendix A.}First appendix title}{A-1}
 \contentsline {section}{\numberline {A.1}In an appendix}{A-1}
 \contentsline {chapter}{Bibliography}{BIB-1}

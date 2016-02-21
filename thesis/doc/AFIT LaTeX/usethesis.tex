@@ -39,7 +39,19 @@
 \usepackage{algorithmic}
 \usepackage{algorithm}
 \usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{upgreek}
+\usepackage{tikz}
+\usepackage{verbatim}
 
+
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
+
+
+\DeclareRobustCommand{\rchi}{{\mathpalette\irchi\relax}}
+\newcommand{\irchi}[2]{\raisebox{\depth}{$#1\chi$}} 
 %\documentclass[10pt]{afthesis}  %if you want 10pt instead of 11
 %\documentclass[12pt]{afthesis}  %if you want 12pt instead of 11
 
@@ -294,12 +306,52 @@
 	
 	Though McCulloch and Pitts made mention of learning in their 1943 paper, thirteen years would pass before the learning concept was formalized into a mathematical and computational model. In 1956 Rochester, Holland et. al. \cite{rochester1956} presented the first attempt at using a physiologically-inspired learning rule to update the synaptic weights of a neural network. This model was based on the correlation learning rule postulated in 1949 by Hebb\footnote{It should be mentioned that, while Hebb was the first to postulate the correlation learning rule as it relates to neurons and synaptic connection strength, the abstract rule was foreshadowed as early as 1890 by William James \cite{james1890principles} in Chapter XVI of \textit{Psychology (Briefer Course)}.}. In his book \textit{The Organization of Behavior}, Hebb suggested that synaptic plasticity, that is the capacity of synaptic strengths to change, is driven by metabolic and structural changes in the both neurons near the synaptic cleft \cite{hebb1967} such that if two cells often fired simultaneously the efficiency with which they cause one another to fire will increase. This efficiency is now called a synaptic weight. Rochester et. al. showed that the addition of variable synaptic weights alone was not sufficient to produce a network capable of learning; the weights must also be capable of assuming inhibitory values.
 	
-	% DO: is this paragraph too detailed, or not detailed enough? 
 	% DO: Quick graphic of the perceptron.
+	
+	
+	\begin{figure}
+
+		\def\layersep{2cm}
+		
+		\centering\begin{tikzpicture}[shorten >=1pt,->,draw=black!50, node distance=\layersep]
+		
+		\tikzstyle{every pin edge}=[<-,shorten <=1pt]
+		\tikzstyle{neuron}=[circle,fill=black!25,minimum size=15pt,inner sep=0pt]
+		\tikzstyle{input neuron}=[neuron, fill=blue!50];
+		\tikzstyle{output neuron}=[neuron, fill=blue!50];
+		\tikzstyle{hidden neuron}=[neuron, fill=blue!50];
+		\tikzstyle{annot} = [text width=4em, text centered]
+		
+		% Draw the input layer nodes
+		\foreach \name / \y in {1,...,4}
+		% This is the same as writing \foreach \name / \y in {1/1,2/2,3/3,4/4}
+		\node[input neuron, pin=left:Input Data \y] (I-\name) at (0,-\y) {};
+		
+		% Draw the hidden layer nodes
+		\foreach \name / \y in {2,...,4}
+		\path[yshift=0.5cm]
+		node[hidden neuron,pin={[pin edge={->}]right:Output - \y}, right of=H-3] (H-\name) at (\layersep,-\y cm) {};
+		
+		
+		% Connect every node in the input layer with every node in the
+		% hidden layer.
+		\foreach \source in {1,...,4}
+		\foreach \dest in {2,...,4}
+		\path (I-\source) edge (H-\dest);
+		
+	
+		
+		% Annotate the layers
+		\node[annot,above of=H-2, node distance=1.5cm] (ol) {Output Layer};
+		\node[annot,left of=ol,  node distance=4cm] {Input Layer};
+		\end{tikzpicture}
+	\caption{A simple perceptron.}
+	\label{fig:simple_perceptron}
+	\end{figure}
 	
 	[Graphic Stub: simple perceptron terminology, figure.]
 	
-	The next major contribution to the field would come in 1958 with Rosenblatt's introduction of the simple perceptron \cite{rosenblatt1958perceptron}. The perceptron was the first \cite{anderson1988neurocomputing} well formed, computationally oriented neural network. Crucially, and unlike most preceding neural models, the model Rosenblatt presented in his  1958 paper was associative. That is, the model learned to associate stimuli with a response. This learning is accomplished by modifying the synaptic weights of the model such that the difference between an input pattern and the desired output pattern is minimized. The responsibility for the error, or difference between the correct and computed output patterns, is divided among the weights in proportion to their magnitude. Thus, large synaptic weights will be reduced more than small synaptic weights for a large, positive error. This weight update strategy is represented mathematically as: \begin{equation} 
+	The next major contribution to the field would come in 1958 with Rosenblatt's introduction of the simple perceptron \cite{rosenblatt1958perceptron}. The perceptron was the first \cite{anderson1988neurocomputing} well-formed, computationally-oriented neural network. Crucially, and unlike most preceding neural models, the model Rosenblatt presented in his 1958 paper was associative. That is, the model learned to associate stimuli with a response. This learning is accomplished by modifying the synaptic weights of the model such that the difference between an input pattern and the desired output pattern is minimized. The responsibility for the error, or difference between the correct and computed output patterns, is divided among the weights in proportion to their magnitude. Thus, large synaptic weights will be reduced more than small synaptic weights for a large, positive error. This weight update strategy is represented mathematically as: \begin{equation} 
 	w_i(t+1) = w_i(t) + \alpha(d_j - y_j)x_{j,i}
 	\end{equation} where \begin{math} w_i(t) \end{math} the synaptic weight for feature \begin{math} i \end{math} at discrete time \begin{math} t \end{math}, \begin{math} \alpha \end{math} is the tunable learning rate parameter, \begin{math} d_j \end{math} is the desired output, \begin{math} y_j \end{math} is the computed output, and \begin{math} x_{j,i} \end{math} is the input pattern. This method constitutes a from of reinforcement learning.
 	
@@ -322,7 +374,7 @@
 	The decade also saw the advent of self-organized maps, which are a type of competitive learning neural network. Self-organization in neural networks was first demonstrated by van der Malsburg in a paper \cite{vonderMalsburg1973selforganization} published in 1973. This paper analyzed the response of simulated cortical cells to a simulated visual stimulus. The paper is interesting both for the complexity of the neural model developed, and because it contained the first direct comparison between computer simulation and physiological data \cite{anderson1988neurocomputing}. 
 	
 	% DO: I'm not exactly sure  how to handle this data. It seems to contradict the claim of the essenital nonlinear nature of neural nets.
-	Throughout the decade progress was also made in the understanding of the physiology of biological neural networks. Of particular interest are those papers describing the lateral retinal system of \textit{Limulus polyphemus}, the horseshoe crab. Chosen for the easy with which experiments may be conducted on its compound lateral eye, \textit{Limulus} features prominently in the neurophysiological research. Several works were published on the \textit{Limulus}, perhaps the most significant of which came near the end of the decade with the 1978 publication of a paper describing the dynamics of the retina of a \textit{Limulus} when exposed to moving stimuli. In this paper,  the \textit{Limulus} eye was analyzed as a linear system, and the results of this analysis were compared to the actual response of the system to input pattern. The agreement between the linear\footnote{Linear, in this context of this system, means that the output of the system when presented with the sum of a set of inputs is equivalent to the sum of the outputs of the system when presented with each input individually.} model and the biological output signals was found to be in excellent agreement \cite{brodie78limulus}. This finding was interesting for the purposes of perceptron simulation, but was ultimately found not not to hold for larger collections of neurons. %(NEED SOURCE...)
+	Throughout the decade progress was also made in the understanding of the physiology of biological neural networks. Of particular interest are those papers describing the lateral retinal system of \textit{Limulus polyphemus}, the horseshoe crab. Chosen for the easy with which experiments may be conducted on its compound lateral eye, \textit{Limulus} features prominently in the neurophysiological research. Several works were published on the \textit{Limulus}, perhaps the most significant of which came near the end of the decade with the 1978 publication of a paper describing the dynamics of the retina of a \textit{Limulus} when exposed to moving stimuli. In this paper,  the \textit{Limulus} eye was analyzed as a linear system, and the results of this analysis were compared to the actual response of the system to input pattern. The agreement between the linear\footnote{Linear, in this context of this system, means that the output of the system when presented with the sum of a set of inputs is equivalent to the sum of the outputs of the system when presented with each input individually.} model and the biological output signals was found to be in excellent agreement \cite{brodie78limulus}. This finding was interesting for the purposes of perceptron simulation, but was ultimately found not not to hold for larger collections of neurons. % DO: (NEED SOURCE...)
 	% post-1980
 	
 	%"Likelyhood of escpae graph"
@@ -332,6 +384,7 @@
 	% Simultaneously anneal topology, weights, and activation functions. How do you define distance in this configuration space which includes both discretes and reals?
 	
 	Several events conspired to create a reinvigoration of neural network research in the early 1980s. Theoretical advances in the physiology of biological neural networks. processor manufacturing technology had advanced sufficiently to allow for much larger-scale simulations.  simulation capability...
+	% DO: what goes here?
 	
 	In 1982, John Hopfield published \textit{Neural networks and physical systems with emergent collective computational abilities}. This momentous work is regarded by many to be the beginning of the renaissance of neural network research \cite{anderson1988neurocomputing}, and contains many novel insights. Hopfield begins the paper differently than past researchers. Rather than proposing a learning rule or network topology and then evaluating the results of this proposition, Hopfield begins by considering an alternative purpose for a neural network. Hopfield suggests that the network be thought of as a means to develop locally stable points, or attractors, in a state space. The state space comprises the set of states which are the activation value of each neuron. Thus, learning should be the process of modifying the synaptic weights such that they cause the system to flow into local attractors which represent the desired output. In such a model, a noisy or incomplete input would result in an activation pattern which resides on a gradient in the state space. The neural network would then change the activation pattern in such a way as to move the system down the gradient into the attractor state. Hopfield suggests that this process is a general physical description of the concept of content-addressable memory.
 	
@@ -359,7 +412,7 @@
 	% DO: Could use a better source here
 	With a procedure for finding the global minimum of a space state in place, the authors proceeded to construct state spaces for which the global minimum was of interest. One way to construct such a state space is to include hidden units in the neural network. Hidden units are neural units which are neither input nor output units. These hidden units allow the network to solve interesting problems that are out of reach of simple associative neural networks\cite{anderson1988neurocomputing}. However, like all neurons in any neural network, the connection weights of these neurons must be modified in order for the network to learn. It is not immediately clear how hidden unit synaptic weights can be modified to account for the performance of the network. This deficiency is often called the credit assignment problem\cite{barto1983neuronlike}. The application of simulated annealing in Boltzmann machines avoids the problem of assigning credit to hidden units, thereby enabling their inclusion in the model. This is historically significant because it was the first successfully-implemented multi-layered neural network \cite{haykin1999}.
 
-	The next major development in neural networks came in 1986 with the introduction of the back-propagation algorithm. Though the formalisms required involved in this algorithm had been developed earlier \cite{bryson1969optimalcontrol} \cite{werbos1974beyondregression}, and the method was simultaneously discovered independently by two other groups \cite{parker1985logic} \cite{lecun1985}, it was Rumelhart et. al. that applied the algorithm to machine learning \cite{rumelhart1986internal}. Back-propagation can be thought of as a generalization of the gradient descent\footnote{The gradient descended in this context is the gradient of the error surface in the space of states of synaptic weights, not the gradient of the activation state surface, as with a Hopfield network.} algorithm presented by Widrow and Hoff \cite{widrow1960asc}, which includes the errors associated with connection strength of hidden units, or internal representation units. A detailed discussion and derivation of the back-propagation algorithm is included in Section \ref{sec:backpropTraining}. Though back-propagation in multilayered perceptrons cannot be guaranteed to find an exactly correct solution, the algorithm is demonstrably capable of solving difficult and interesting problems, thus disproving the speculation of Minsky and Papert in \cite{minsky1969perceptrons}.
+	The next major development in neural networks came in 1986 with the introduction of the back-propagation algorithm. Though the formalisms required involved in this algorithm had been developed earlier \cite{bryson1969optimalcontrol, werbos1974beyondregression}, and the method was simultaneously discovered independently by two other groups \cite{parker1985logic, lecun1985}, it was Rumelhart et. al. that applied the algorithm to machine learning \cite{rumelhart1986internal}. Back-propagation can be thought of as a generalization of the gradient descent\footnote{The gradient descended in this context is the gradient of the error surface in the space of states of synaptic weights, not the gradient of the activation state surface, as with a Hopfield network.} algorithm presented by Widrow and Hoff \cite{widrow1960asc}, which includes the errors associated with connection strength of hidden units, or internal representation units. A detailed discussion and derivation of the back-propagation algorithm is included in Section \ref{sec:backpropTraining}. Though back-propagation in multilayered perceptrons cannot be guaranteed to find an exactly correct solution, the algorithm is demonstrably capable of solving difficult and interesting problems, thus disproving the speculation of Minsky and Papert in \cite{minsky1969perceptrons}.
 	
 	% ...The utility of back propigation lies in its relative computational effeciency; though both back-propigation and simulated annealing can be used to select the synaptic weights for a neural network, back-propigation generally converges to a solution several orders of magnitude faster ()
 	
@@ -386,6 +439,7 @@
 	
 	Stub.
 	% DO: Proof of the necessity of non-linearity.
+	
 	% DO: Any work on variable activation functions?
 	
 	\subsection{Learning Strategies}
@@ -407,10 +461,7 @@
 	% DO: Derive back prop. (Haykin, pg 161)
 	
 	% DO: Discuss the implication of local minima.
-	
-	% DO: Fig[Error surface with backprop]
-	
-	
+
 	\subsubsection{Simulated Annealing Training} 
 	
 	
@@ -421,9 +472,7 @@
 	
 	\section{Related Works in Simulated Annealing} \label{eq:simulatedAnnealing}
 	
-	% DO: Read (Haykin pg 556)
-	
-	% DO: Read (Haykin pg 560)
+	% DO: Read (Haykin pg 556) (Haykin pg 560)
 	
 	Simulated annealing is a stochastic optimization algorithm which can be used to find the global minimum of a cost function mapped from the configurations of a combinatorial optimization problem. The concept of simulated annealing was introduced in by Kirkpatrick et al. in \cite{kirkpatrick1983} as an application of the methods of statistical mechanics to the problem of discrete combinatorial optimization. Specifically, simulated annealing is an extension of the Metropolis-Hastings \cite{metropolis1953} algorithm which can be used to estimate the ground energy state of a many-body systems at thermal equilibrium. Kirkpatrick et al. applied the Metropolis-Hastings algorithm sequentially, with decreasing temperature values in order to approximate a solid slowly cooling to low temperatures. Later work by Goffe \cite{goffe1994globaloptimization}, Corana et al. \cite{corana1987minimizingmultimodal}, and Lecchini-Visintini et. al. \cite{lecchinivisintini2007sacontinuousgaruntees} extended SA to the continuous domain.
 	
@@ -556,23 +605,23 @@
 	\section{Simulated Annealing}
 	\label{scn:simulated_annealing}
 	
-	In this thesis, several variations the SA algorithm are developed and implemented. Each is applied to the problem of selecting synaptic weights for a feed-forward neural network in order to maximize the networks classification performance. This section contains an abstract discussion of the SA formulations to be applied to this task; later sections will expound the implementation details specific to the feed-forward neural network application of the these SA formulations. For all SA formulations examined in this thesis the Metropolis acceptance criterion will be used. The temperature schedule will be determined by the convergence properties of the constructed algorithm. Examining Alg.~\ref{alg:simulated_annealing} reveals that the preceding specifications leave only one component unspecified: the neighborhood function, which determines how new trial solutions are generated form the current solution. In the following sections the neighborhood function is decomposed into two decoupled components, the visiting distribution and anisotropicity policy, and several possible realizations of each are discussed.
+	In this thesis, several variations the SA algorithm are developed and implemented. Each is applied to the problem of selecting synaptic weights for a feed-forward neural network in order to maximize the performance of the network; exactly what is meant by performance of the network is discussed in section \ref{scn:cost_functions}. This section contains an abstract discussion of the SA formulations to be applied to this task; later sections will expound the implementation details specific to the feed-forward neural network application of the these SA formulations. For all SA formulations examined in this thesis the Metropolis acceptance criterion will be used. The temperature schedule will be determined by the convergence properties of the constructed algorithm. Examining Alg.~\ref{alg:simulated_annealing} reveals that the preceding specifications leave only one component unspecified: the neighborhood function, which determines how new trial solutions are generated form the current solution. In the following sections the neighborhood function is decomposed into two decoupled components, the visiting distribution and anisotropicity policy, and several possible realizations of each are discussed.
 	
-	\section{Neighborhood Functions: Traversing the Cost Surface}
+	\subsection{Neighborhood Functions: Traversing the Cost Surface}
 	
 	The SA algorithm requires that a neighborhood function, \begin{math} \mathcal{N} \end{math}, be specified to produce new solutions from a given solution. The neighborhood function performs the exploration of the solution space, as it specifies new solutions which can be either accepted or rejected according to the acceptance criteria. Thus, \begin{math} \mathcal{N} \end{math} determines how the algorithm traverses the cost surface of the problem. A traversal action, or move, on a surface, may be decomposed into two components: the distance moved and the direction of the move. These components may be specified independently of one another. The distance of the move on the cost surface has been examined in previous work \cite{szu1987fastsimulatedannealing,tsallis1996generalizedsimulatedannealing,ingber1989veryfastsimulatedreannealing}, and is often specified using a \textit{visiting distribution}, which is defined as a probability distribution of transition to a solution over the solution space of the problem. The visiting distribution specifies the magnitude and the direction of the move
 	
 	In previous work \cite{tsallis1996generalizedsimulatedannealing}, the move distance has been applied isotropically in all possible dimensions of travel. In physical science, isotropicity is phenomenological property of being uniformly applicable in all dimensions. In the context of neighborhood functions this means that the probability distribution over the solution space is symmetric; that is, that the probability distribution in each dimension is the same. In the following sections a method is developed for specifying an anisotropic visiting distribution.
 	
 	
-	\subsection{Visiting Distributions}
+	\subsubsection{Visiting Distributions}
 
 	
 	The visiting distribution of a neighborhood function is probability density function over all possible solution states, which gives the probability of transitioning from the current state of the system to each other state. Once a visiting distribution is specified, samples can be drawn from the distribution using inverse transform sampling. These samples may be either drawn from an $n$-dimensional distribution, where $n$ is the number of free parameters of the problem, or $n$ samples can be drawn and applied to each of the free parameters independently. In this thesis, all visiting distributions are implemented using the latter method. In the following sections several visiting distributions will be discussed.
 	
 	\label{scn:visiting_distributions}
 	
-	\subsubsection{Gaussian Visiting Distributions}
+	\paragraph{Gaussian Visiting Distributions}
 	\label{scn:classical_visiting}
 	
 	A Gaussian visiting distribution is commonly used in SA. Because it is a light-tailed distribution, and therefore indicates very low probability for all values far from the mean, Gaussian visiting distribution results in a search which is highly local about the mean. The mean of the visiting distribution is always the current solution location in solution space of the SA algorithm. An SA algorithm using a Gaussian visiting distribution is often called classical simulated annealing (CSA) \cite{tsallis1996generalizedsimulatedannealing}, both because it is the formulation of SA that was described first, and because the dynamics of the algorithm are isomorphic with those of classical thermodynamics. In this work, a standard normal distribution is used. The probability density function for this distribution is given by 
@@ -581,7 +630,7 @@
 	\label{eq:normal_pdf}
 	\end{equation}
 	
-	\subsubsection{Cauchy Visiting Distributions}
+	\paragraph{Cauchy Visiting Distributions}
 	\label{visiting_distribution_abstract_cauchy}
 	
 	Local search must occur in order to enable gradient descent, but it introduces a limitation. If the artificial temperature, which controls the probability of moving uphill on the cost surface, is lowered too quickly the algorithm can be caught in a local, rather than global, minima; this is also known as the freezing problem. One way to alleviate this limitation is to construct a neighborhood function which enables the system to escape local minima by means other than hill-climbing. In quantum mechanics, a system which is trapped in a local minimum on a potential energy surface may escape that minima by tunneling through the potential energy surface to a lower energy state. It is possible to construct several visiting distributions which act analogously to quantum tunneling. This can be done by using a visiting distribution that has a non-negligible probability of generating large traversal distances. If the traversal distances generated are sufficiently large, it is possible that the arrived-at solution will be across the cost surface barrier surrounding the local minima, thus allowing the algorithm to escape the minima. The term \textit{quantum-inspired visiting distribution} will be used in this thesis to describe any distribution possessing this property.
@@ -628,7 +677,7 @@
 
 	
 
-	\subsubsection{Generalized Simulated Annealing Visiting Distribution}
+	\paragraph{Generalized Simulated Annealing Visiting Distribution}
 	
 	The most sophisticated form of SA is GSA, described by Tsallis and Stariolo in \cite{tsallis1996generalizedsimulatedannealing}. As the name implies, this SA implementation is a generalization of other forms of SA, specifically CSA and FSA, which can be recovered under certain conditions in the GSA formulation. As with FSA, GSA is essentially SA with a modified visiting distribution. The visiting distribution proposed in \cite{tsallis1996generalizedsimulatedannealing} is given by 
 	
@@ -669,28 +718,28 @@
 	An arbitrarily-large set of samples can be constructed using this method; If the sample set is sufficiently large, a random choice from the sample set is approximately equivalent to sampling the original distribution. A large set of samples for each combination of $q_V$, $T_{q_v}$, and $D$ can be stored for later access, thus enabling fast numerically-approximate sampling of Eq.~\ref{eq:gsa_visiting_distribution}. A system fitting this description was constructed in support of this thesis. A thorough search of the publicly-available resources indicates that there are few systems available for the generation of GSA random variables, despite the popularity and utility of GSA. As such, the GSA sample generation system constructed in support of this thesis will be made publicly-available upon publication of this thesis.
 	
 	
-	\subsubsection{Uniform Visiting Distributions}
+	\paragraph{Uniform Visiting Distributions}
 	
 	As illustrated in Fig.~\ref{fig:quantum_tunneling} the probability of observing a particle beyond a classically-impenetrable potential barrier is uniform beyond the barrier\footnote{This observation only holds for potential energy surfaces containing a single barrier. The analogous cost surface over neural network weight space is likely to have many barriers corresponding to the superimposed convex spaces around competing conventions of weight configurations which encode similar functions. Thus the analogy used here is only an approximation of the behavior of quantum systems.}. An analogous visiting distribution can be constructed, which models all configuration space movement distances as equally likely. The utility of this visiting distribution is that it makes the entire cost surface accessible each time the neighborhood function is applied to the current state; this property is useful, but prevents any local gradient descent. As such, the uniform visiting distribution serves as a useful upper bound in the trade-space between global and local search policies. 
 	
 
 	
-	\subsection{Anisotropicity Policies}
+	\subsubsection{Anisotropicity Policies}
 	
 	In previous work, the visiting distribution is applied isotropically over the free parameters, or dimensions, of the solution space \cite{tsallis1996generalizedsimulatedannealing,dallinga2004performancegsa}. In the context of SA, isotropic application of the visiting distribution means the next state for each free parameter is a sample from a common, identical distribution. 
 	
 	
-	\subsubsection{Isotropic Anisotropicity}
+	\paragraph{Isotropic Anisotropicity}
 	
 	
-	\subsubsection{Adjacency-Based Anisotropicity}
+	\paragraph{Adjacency-Based Anisotropicity}
 	
 	Neural networks may be views as a collection of interacting subgraphs. Each subgraph in a complete feed-forward neural network produces a 
 	
 	
-	\subsubsection{State-Based Anisotropicity}
+	\paragraph{State-Based Anisotropicity}
 	
-	When evaluating the traversal characteristics of the synaptic annealing algorithms constructed in the this thesis, it was observed that the sum of squared weight values grew considerably during training. Previous work \cite{} has show that large weight magnitudes result in networks with high bias, and correspondingly high generalization error. It is intuitively clear that, when using a sigmoidal activation function, a very high-magnitude weight value effectively converts the afferent neuron, relative to that synapse, into a bias. Unless an equally large-magnitude magnitude weight of opposite sign is introduced, or the weight value fluctuates to a smaller value, the afferent neuron will remain a bias. One of these contingencies may occur, but it is unlikely that such an event would reduce the total training error of the network, and is therefore likely to be rejected. In \cite{lee2007improvinggeneralizationcapabilitynnusingsa}, Lee et al. propose a method called multiobjective hybrid greedy simulated annealing (MOHGSA), which uses SA to minimize both the cost function and the sum of squared weights. By doing so, Lee et al. were able to reduce the the generalization error of a neural network trained by SA. The MOHGSA approach works by exerting a selection pressure which lowers the likelihood of the SA algorithm accepting move which reduce the cost function if they increase the sum of squared weights. 
+	When evaluating the traversal characteristics of the synaptic annealing algorithms constructed in the this thesis, it was observed that the sum of squared weight values grew considerably during training. Previous work \cite{} has show that large weight magnitudes result in networks with high bias, and correspondingly high generalization error. It is intuitively clear that, when using a sigmoidal activation function, a very high-magnitude weight value effectively converts the afferent neuron, relative to that synapse, into a bias. Unless an equally large-magnitude magnitude weight of opposite sign is introduced, or the weight value fluctuates to a smaller value, the afferent neuron will remain a bias. One of these contingencies may occur, but it is unlikely that such an event would reduce the total training error of the network, and is therefore likely to be rejected. In \cite{lee2007improvinggeneralizationcapabilitynnusingsa}, Lee et al. propose a method called multiobjective hybrid greedy simulated annealing (MOHGSA), which uses SA to minimize both the cost function and the sum of squared weights. By doing so, Lee et al. were able to reduce the the generalization error of a neural network trained by SA. The MOHGSA approach works by exerting a selection pressure which lowers the likelihood of the SA algorithm accepting moves which reduce the cost function if they increase the sum of squared weights. 
 	
 	
 	\section{Feed-Forward Neural Network Representation}
@@ -727,20 +776,36 @@
 	 	\end{center}
 	 \end{figure}
 	 
-	 \noindent The total solution space, $\boldsymbol{\mathcal{S}}$, may then be defined as the set of all possible configurations of $\boldsymbol{\mathcal{W}}$ for a given neural network. $\boldsymbol{\mathcal{W}}$ is, in effect, the phase space of the feed-forward neural network system. In the synaptic weight selection problem domain it is more evocative to call $\boldsymbol{\mathcal{S}}$ the weight space of the network, so this convention adopted throughout this thesis. Given $\boldsymbol{\mathcal{S}}$, we define a cost function $ \mathcal{C}$ to be the mapping
+	 \noindent The total solution space, $\boldsymbol{\mathcal{S}}$, may then be defined as the set of all possible configurations of $\boldsymbol{\mathcal{W}}$ for a given neural network. $\boldsymbol{\mathcal{W}}$ is, in effect, the phase space of the feed-forward neural network system. In the synaptic weight selection problem domain it is more evocative to call $\boldsymbol{\mathcal{S}}$ the weight space of the network, so this convention adopted throughout this thesis. 
 	 
-	 \begin{equation*} \label{eq:cost_mapping_ffnn}
-	 \mathcal{C} : \boldsymbol{\mathcal{S}} \rightarrow \mathbb{R}.
+	 
+	 A network representation has now been specified, but a formal description of the data on which the network is to operate remains to be constructed. Feed forward neural networks associate a set of numeric input data elements with a set of numeric output data elements. Thus the formalism which is used to represent data should capture this directional association. In this thesis, a set of ordered pairs is used to represent this association. Formally, a set $\mathcal{X}$ is defined such that each element of $\mathcal{X}$ is an ordered pair of the form 
+	
+	 \begin{equation*} \label{eq:data_ordered_pairs}
+	 \{\rchi, \{ \rchi, \lambda \}\}
 	 \end{equation*}
 	 
+	 \noindent where $\rchi$ and $\lambda$ are independent sets of real numbers. In this formalism $\rchi$ is the input data, and $\lambda$ is the desired output data. $\mathcal{X}$ is therefore a specific set of ordered pairs mapping input data to output data. Extending this notion, the notation $\boldsymbol{\mathcal{X}}$ is introduced to represent the infinite set of all possible realizations of $\mathcal{X}$.
+	 	 
+	 	 
 	 
-	 Each possible synaptic weight configuration of $\boldsymbol{\mathcal{W}}$ then corresponds to some cost value $\mathcal{C}(\boldsymbol{\mathcal{W}})$. Thus $\mathcal{C}(\boldsymbol{\mathcal{W}})$ defines a cost surface embedded in the weight space. The objective is now to find a synaptic weight configuration, $\boldsymbol{\mathcal{W}_{opt}}$ such that 
+	 In the interest of concise notation, a function $\Phi(\boldsymbol{\mathcal{W}}, \rchi)$, which represents set of numeric data produced by propagating the set $\chi$ through a feed forward neural network with weights specified by $\boldsymbol{\mathcal{W}}$, is introduced. Unless otherwise specified, all neural networks discussed in this thesis use a hyperbolic tangent activation function.
+	 
+	 
+	 Given the formalism $\boldsymbol{\mathcal{S}}$, for the weight space, and $\boldsymbol{X}$ for the set of all possible data sets, we define a cost function $ \mathcal{C}$ to be the mapping
+	 
+	 % DO: Validate notation here.
+	 \begin{equation*} \label{eq:cost_mapping_ffnn}
+	 \mathcal{C} : \boldsymbol{\mathcal{S}},\boldsymbol{\mathcal{X}} \rightarrow \mathbb{R}.
+	 \end{equation*}
+	 
+	 \noindent For every data set $\mathcal{X}$, each possible synaptic weight configuration, $\boldsymbol{\mathcal{W}}$, then corresponds to some cost value $\mathcal{C}(\boldsymbol{\mathcal{W}},\mathcal{X})$. Thus $\mathcal{C}(\boldsymbol{\mathcal{W}},\mathcal{X})$ defines a cost surface embedded in the weight space. The objective is now to find a synaptic weight configuration, $\boldsymbol{\mathcal{W}}_{opt}$ such that 
 	 
 	 \begin{equation*} \label{eq:optimal_definition}
-	 \mathcal{C}(\boldsymbol{\mathcal{W}}_{opt}) \leq \mathcal{C}\left( \boldsymbol{\mathcal{W}}\right) , \forall\left(  \boldsymbol{\mathcal{W}} \in \boldsymbol{\mathcal{S}}\right) .
+	 \mathcal{C}(\boldsymbol{\mathcal{W}}_{opt},\mathcal{X}) \leq \mathcal{C}\left( \boldsymbol{\mathcal{W}},\mathcal{X}\right) , \forall\left(  \boldsymbol{\mathcal{W}} \in \boldsymbol{\mathcal{S}}\right) .
 	 \end{equation*}
 	 
-	 \noindent With this framework in place, the SA can be applied to transition from a randomly-selected initial state, $\boldsymbol{\mathcal{W}}_0$, to $\boldsymbol{\mathcal{W}}_{opt}$. In this thesis all weights were initialized to a value drawn from a uniform distribution over the range $[-0.1,0.1]$.
+	 \noindent With this framework in place, the SA can be applied to transition from a randomly-selected initial state, $\boldsymbol{\mathcal{W}}_0$, to $\boldsymbol{\mathcal{W}}_{opt}$. In this thesis all weights were initialized to a value drawn from a uniform distribution over the range $[-0.1,0.1]$. 
 	 
 
 	\section{Applying Simulated Annealing to Feed-Forward Neural Network Weight Modification}
@@ -750,6 +815,8 @@
 	
 	\subsection{Synaptic Annealing Neighborhood Functions}
 	\label{scn:classical_neighborhood}
+	
+%$	\textit{\^{A}} = 1-\frac{1}{2}\mathcal{W}_{ijk}$
 	
 	A generic synaptic annealing neighborhood function may be defined as
 	\begin{align}\label{eq:generic_anisotropic_neighborhood}
@@ -761,6 +828,7 @@
 	\noindent The constraint specified in Eq.~\ref{eq:perturbation_temp_matrix_constraints} ensures that synaptic connections which are not specified to exist, and are therefore set to exactly $0$, are not inadvertently created by the neighborhood function.\footnote{Strictly speaking, it is possible for a weight to be set to exactly $0$ in the normal operation of the SA algorthim. If this were to occur, the constraint specified in Eq.~\ref{eq:perturbation_temp_matrix_constraints} would prevent that weight from ever being modified again. This scenario was never observed in the course of this work, and is very unlikely, but is not explicitly forbidden by the implementation of synaptic annealing proposed in this work.} The term $\alpha (\boldsymbol{G} \circ\boldsymbol{\mathcal{A}})$ in Eq.~\ref{eq:generic_anisotropic_neighborhood} is added to the current weight matrix to produce a new weight matrix, and can therefore be thought of as a perturbation of the current state. In the following sections several realizations of this general form, each corresponding to a different form of SA, are presented.
 	
 	\subsubsection{Gaussian (CSA) Synaptic Annealing Neighborhood}
+	% DO: Represent the A as an operator
 	
 	The original description of SA employed a Gaussian visiting distribution \cite{kirkpatrick1983}. The Gaussian neighborhood function for feed-forward neural networks, \begin{math}\mathcal{N}_{g}\end{math}, is defined as \begin{align}\label{eq:gaussian_neighborhood}
 	\mathcal{N}_{G} (\boldsymbol{\mathcal{W}}) =  \boldsymbol{\mathcal{W}} + \alpha (\boldsymbol{G}_G  \circ\boldsymbol{\mathcal{A}})
@@ -772,14 +840,15 @@
 	
 	\subsubsection{Cauchy (FSA) Synaptic Annealing Neighborhood}
 	
+	% DO: ALL THIS....
 	\subsubsection{Tsallis (GSA) Synaptic Annealing Neighborhood}
 	
 	
+	% DO: ALL THIS....
 	... The generation of samples from this distribution is troublesome because it involves the inversion of a power series. Thus in support of this thesis, a novel library was developed from efficiently generating numeric approximations of GSA distribution samples.
 	
 	\subsubsection{Uniform Synaptic Annealing Neighborhood}
 
-	Imagine simulated annealing as a genetic algorithm with a generation size of one. It is clear that the neighborhood function corresponds to the mutation function in this analogy. 
 	
 	
 	
@@ -788,47 +857,57 @@
 	In the course of developing the synaptic weight selection system presented in this thesis, it was observed that it is sometimes advantageous to apply different distributions to different synaptic weights. 
 	
 	
+	% DO: ALL THIS....
+	
+	
 	\section{Weight Space Traversal}
 	
-	In SA, the purpose of the neighborhood function is to control the traversal of the solution space of the problem. For synaptic annealing the solution space is the synaptic weight space, thus synaptic annealing neighborhood functions control the algorithms traversal of the weight space. The performance of a neighborhood function is entirely dictated by the weight space traversal, or walk, that it produces. In order to characterize the traversal properties of each neighborhood function, a traversal through a two-dimensional subset of the weight space will be analyzed for each neighborhood function. A small feed-forward neural network, with two input neurons, two hidden layer neurons, and a single output layer neuron, will be trained using synaptic annealing to solve a simple functional approximation problem. The function to be approximated is the complex-interaction function used in \cite{lee2007improvinggeneralizationcapabilitynnusingsa}, which is given by \begin{equation}
+	In SA, the purpose of the neighborhood function is to control the traversal of the solution space of the problem. For synaptic annealing the solution space is the synaptic weight space, thus synaptic annealing neighborhood functions control the algorithms traversal of the weight space. The performance of a neighborhood function is entirely dictated by the weight space traversal, or walk, that it produces. In order to characterize the traversal properties of each neighborhood function, a traversal through a two-dimensional subset of the weight space will be analyzed for each neighborhood function. A small feed-forward neural network, with two input neurons, two hidden layer neurons, and a single output layer neuron, will be trained using synaptic annealing to solve a simple functional approximation problem. The network uses a $\tanh(\cdot)$ activation function, an initial annealing temperature of $10$, and an $\alpha$ of $0.001$. The function to be approximated is the complex-interaction function used in \cite{lee2007improvinggeneralizationcapabilitynnusingsa}, which is given by \begin{equation}
 	f_{CI}(u_1,u_2) = 1.9(1.35 + e^{0.5(u_1+1)} \sin ( 13 (0.5 u_1 - 0.1 )^2 ) · e^{−0.5(u_2+1)} \sin(3.5u_2 + 3.5)).
 	\end{equation}
-	The synaptic annealing algorithm will attempt to minimize the mean-squared error (MSE) cost function, as defined in section \ref{scn:cost_functions}, on $100$ randomly-drawn samples of $f_{CI}$. The validation error of the syanatic annealing algorithm will also be evaluated using an addition $100$ randomly drawn samples, which are not presented to the algorithm during training. The same validation and training samples will be used for the analysis of each neighborhood functions traversal.  This section contains an analysis of the the weight space traversal properties of synaptic annealing during a relatively short training period. A more thorough analysis of the performance of synaptic annealing on this problem is presented in Chapter \ref{ch:results}. For each neighborhood function, the traversal through the $W_{1,1,1}$-$W_{2,2,1}$ space is analyzed. $W_{1,1,1}$ is the synaptic weight from input neuron $1$ to hidden neuron $1$, while $W_{2,2,1}$ is the synaptic weight from input neuron $2$ to hidden neuron $2$. The weight space traversal behavior of the algorithm was empirically found to be independent of the specific choice of weights.
-	
-	
-	
+	The synaptic annealing algorithm will attempt to minimize the mean-squared error (MSE) cost function, as defined in section \ref{scn:cost_functions}, on $100$ randomly-drawn samples of $f_{CI}$. The validation error of the synaptic annealing algorithm will also be evaluated using an addition $100$ randomly drawn samples, which are not presented to the algorithm during training. The same validation and training samples will be used for the analysis of each neighborhood functions traversal.  This section contains an analysis of the the weight space traversal properties of synaptic annealing during a relatively short training period. A more thorough analysis of the performance of synaptic annealing on this problem is presented in Chapter \ref{ch:results}. For each neighborhood function, the traversal through the $W_{1,1,1}$-$W_{2,2,1}$ space is analyzed. $W_{1,1,1}$ is the synaptic weight from input neuron $1$ to hidden neuron $1$, while $W_{2,2,1}$ is the synaptic weight from input neuron $2$ to hidden layer neuron $2$. The weight space traversal behavior of the algorithm was empirically found to be independent of the specific choice of weights. In the interest expedience and conciseness, in this section a traversal produced by a synaptic annealing algorithm using a neighborhood function for which the visiting distribution is $x$, will be called a \textit{$x$ traversal}. 
 
 	\subsection{Gaussian Neighborhood Function Weight Space Traversal} 
+	% Gaussian 0.05549415103276719 0.0774336033036348
 	
-	0.1817206687082039 0.2350612776255982
+	% DO: Update this section.
+	The weight space traversal exhibited by the Gaussian visiting distribution is consistent with a Gaussian random walk, as shown in Fig.~\ref{fig:weight_space_gaussian}(a). A single exemplary traversal is shown in Fig.~\ref{fig:weight_space_gaussian}; while the figure contains only one traversal, several identical experiments were conducted to ensure that the exemplar shown in the figure, as well as in figures \ref{fig:weight_space_cauchy}, \ref{fig:weight_space_gsa_i}, \ref{fig:weight_space_gsa_wa}, and \ref{fig:weight_space_uniform}, are typical of the execution of the algorithm.
 	
-	The weight 
- 	\begin{figure}[ht!]
- 		
- 		\begin{minipage}[b]{0.5\linewidth}
- 			\centering
- 			\centerline{\includegraphics[width = 3.25in]{figures/weight_space_gaussian.png}}
- 			%  \vspace{2.0cm}
- 			\centerline{(a)}\medskip
- 		\end{minipage}
- 		\hfill
- 		\begin{minipage}[b]{0.5\linewidth}
- 			\centering
- 			\centerline{\includegraphics[width = 3.25in]{figures/weight_space_gaussian_perf.png}}
- 			%  \vspace{2.0cm}
- 			\centerline{(b)}\medskip
- 		\end{minipage}
- 		%\vspace{-0.5cm}
- 		\caption{
- 			(a) A plot showing the traversal of the $w_1,w_2$ subspace of the weight space over the course of $3,000$ epochs produced by a synaptic annealing algorithm employing a Gaussian visiting distribution. A solid line indicates a move which was accepted by the simulate annealing algorithm, while a dashed line indicates a move which was rejected. In this figure, only a few rejected moves are visible. The word $start$ indicates the initial value of $(w_1,w_2)$, while the word $end$ denotes the final value. 
- 			(b) (upper) A plot showing the both the training and validation MSE of the results produced by the neural network in each epoch. This is the post-perturbation error, meaning that the error associated with moves that were rejected is shown. (lower) A plot showing the sum of squared weights of the neural network during each training epoch.}
- 		\label{fig:weight_space_gaussian}
- 		
- 	\end{figure}
+	 	\begin{figure}[ht!]
+	 		
+	 		\begin{minipage}[b]{0.5\linewidth}
+	 			\centering
+	 			\centerline{\includegraphics[width = 3.25in]{figures/weight_space_gaussian.png}}
+	 			%  \vspace{2.0cm}
+	 			\centerline{(a)}\medskip
+	 		\end{minipage}
+	 		\hfill
+	 		\begin{minipage}[b]{0.5\linewidth}
+	 			\centering
+	 			\centerline{\includegraphics[width = 3.25in]{figures/weight_space_gaussian_perf.png}}
+	 			%  \vspace{2.0cm}
+	 			\centerline{(b)}\medskip
+	 		\end{minipage}
+	 		%\vspace{-0.5cm}
+	 		\caption{
+	 			(a) A plot showing the traversal of the $w_1,w_2$ subspace of the weight space over the course of $5,000$ epochs produced by a synaptic annealing algorithm employing a Gaussian visiting distribution. A solid line indicates a move which was accepted by the simulate annealing algorithm, while a dashed line indicates a move which was rejected. In this figure, only a few rejected moves are visible. The word $start$ indicates the initial value of $(w_1,w_2)$, while the word $end$ denotes the final value. 
+	 			(b) (upper) A plot showing the both the training and validation MSE of the results produced by the neural network in each epoch, smoothed using a central moving window average with a width of $21$. This is the post-perturbation error, meaning that the error associated with moves that were rejected is shown. (lower) A plot showing the sum of squared weights of the neural network during each training epoch.}
+	 		\label{fig:weight_space_gaussian}
+	 		
+	 	\end{figure}
+	 	
+	
+	 	
+	Fig.~\ref{fig:weight_space_gaussian}(a) indicates that the traversal begins near the origin of the weight space and proceeds outward. The initial location is dictated by the values to which the weights in the feed-forward neural network are initialized, which are always random and small in magnitude in this work. The traversal proceeds to higher-magnitude weights as it follows the local cost surface of the training data set. Initially, most moves are accepted, indicated by a solid line in the figure, because the temperature is high during the first several training epochs. As the traversal proceeds and the temperature is lowered, the number of rejected moves, indicated by a dotted line, increases. The algorithm settles in a minima at $w_1=0.075$ $w_2=0.83$. Examining Fig.~\ref{fig:weight_space_gaussian}(b), a clear downward trend in training error, and upward trend in sum of squared weights, is present. It is also clear that there is no trend in the validation error, after an initial period of decline. Because large synaptic weights tend to cause their afferent neurons to behave like biases, these trends can be interpreted as the network memorizing the training data through the construction of fine-tuned biases. Thus, given sufficient time and sufficiently-many free parameters, the training error will become arbitrary low, while the validation error will remain relatively large.
+	 
+	 
+
 	 
 	\subsection{Cauchy Neighborhood Function Weight Space Traversal} 
-	0.1530194184840675 0.947064498907736
+	\label{sec:weight_traversal_cauchy}
+	% Cauchy 0.030280849450190724 0.08877804870481233
 
+	A neighborhood function based on a Cauchy visiting distribution produces a very different traversal pattern than one which uses a Gaussian visiting distribution. Inspection of Fig.~\ref{fig:weight_space_cauchy}(a) shows that a Cauchy visiting distribution causes a traversal which is prone to very long jumps through single dimensional of the weight space; note the difference in scale on the $w_1$ axis, relative to that of the traversal plot displayed in Fig.~\ref{fig:weight_space_gaussian}(a). This long-jump exploration behavior can be explained as a consequence of the shape of the Cauchy distribution. As can be seen in figures \ref{fig:gsa_distribution} and \ref{fig:gsa_distribution_wing_detail}, the tails of the Cauchy distribution are longer than those of the Gaussian distribution. This tail characteristic translates to a low, but non-zero probability of producing a long jump in a given dimension, thus enabling long jumps. However, because the probability of a long jump is low, it is unlikely to occur in both of the examined dimensions simultaneously, thereby producing the distinctive single-dimensional search pattern exhibited by the Cauchy visiting distribution. A closer inspection of the Fig.~\ref{fig:weight_space_cauchy}(a) reveals that the Cauchy visiting distribution produces a traversal which is similar to that of Gaussian distribution when the generated traversal distances remain near the mean.
 	 
   	\begin{figure}[ht!]
   		
@@ -847,16 +926,19 @@
   		\end{minipage}
   		%\vspace{-0.5cm}
   		\caption{
-  			(a) A plot showing the traversal of the $w_1,w_2$ subspace of the weight space over the course of $3,000$ epochs produced by a synaptic annealing algorithm employing a Cauchy visiting distribution. A solid line indicates a move which was accepted by the simulate annealing algorithm, while a dashed line indicates a move which was rejected. In this figure, only a few rejected moves are visible. The word $start$ indicates the initial value of $(w_1,w_2)$, while the word $end$ denotes the final value. 
-  			(b) (upper) A plot showing the both the training and validation MSE of the results produced by the neural network in each epoch. This is the post-perturbation error, meaning that the error associated with moves that were rejected is shown. (lower) A plot showing the sum of squared weights of the neural network during each training epoch.}
+  			(a) A plot showing the traversal of the $w_1,w_2$ subspace of the weight space over the course of $5,000$ epochs produced by a synaptic annealing algorithm employing a Cauchy visiting distribution. A solid line indicates a move which was accepted by the simulate annealing algorithm, while a dashed line indicates a move which was rejected. In this figure, only a few rejected moves are visible. The word $start$ indicates the initial value of $(w_1,w_2)$, while the word $end$ denotes the final value. 
+  			(b) (upper) A plot showing the both the training and validation MSE of the results produced by the neural network in each epoch, smoothed using a central moving window average with a width of $21$. This is the post-perturbation error, meaning that the error associated with moves that were rejected is shown. (lower) A plot showing the sum of squared weights of the neural network during each training epoch.}
   		\label{fig:weight_space_cauchy}
   		
   	\end{figure}
+  	
+  	% DO: Clean up the language here a bit.
+  	One can see how the traversal characteristics of a Cauchy visiting distribution effect the performance of a synaptic annealing algorithm by examining Fig.~\ref{fig:weight_space_cauchy}(b). Unlike the results generated by the Gaussian visiting distribution, the results in the upper plot of Fig.~\ref{fig:weight_space_cauchy}(b) show a clear downward trend in both training and validation error.	A complications associated with the use of a Cauchy visiting distribution for synaptic annealing is visible in Fig.~\ref{fig:weight_space_cauchy}(b) at approximately epoch $500$. At this epoch a large increase in the sum of squared weights occurs, indicating that a significant change in the network occurred on this epoch. However, this change in the network configuration did not translate into a significant increase in the training error, likely because the afferent neuron to the modified synapse was already saturated, and thus was accepted by the algorithm. This change was, however, of great consequence to the validation error, which increased nearly threefold as a result. 
 
-	\subsection{GSA Neighborhood Function Weight Space Traversal} 
-	0.047256769936850254 0.2327393711292716
-	Observation reveals that these simultaneous training error decreases and validation error increases coincide with la
+	\subsection{Isotropic GSA Neighborhood Function Weight Space Traversal} 
+	% Isotrpoic GSA 0.00738739514988359 0.07202298506557742]
 
+	The weight space traversal produced by a neighborhood function using an isotropically applied GSA visiting distribution is displayed in Fig.~\ref{fig:weight_space_gsa_i}(a). This traversal reproduces a homogeneous pseudo-global search pattern indicative of GSA. As with the Cauchy visiting distribution neighborhood function, the traversal produced by the GSA distribution neighborhood function can be explained as a consequence of the distributions tail characteristics. The GSA distribution used to construct the traversal in Fig.~\ref{fig:weight_space_gsa_i}(a) had the parameters $q_V=2.5$, $T_{q_V}$, and $D=1$. As can be seen in the lower plot of figures \ref{fig:gsa_distribution} and \ref{fig:gsa_distribution_wing_detail}, the GSA distribution, using the parameters indicated, has significantly heavier and longer tails than the Cauchy distribution. This translates to a traversal which exhibits jumps that are longer and considerably more frequent, relative to a Cauchy traversal.   
 	 
    	\begin{figure}[ht!]
    		
@@ -875,18 +957,51 @@
    		\end{minipage}
    		%\vspace{-0.5cm}
    		\caption{
-   			(a) A plot showing the traversal of the $w_1,w_2$ subspace of the weight space over the course of $3,000$ epochs produced by a synaptic annealing algorithm employing an isotropic GSA visiting distribution. A solid line indicates a move which was accepted by the simulate annealing algorithm, while a dashed line indicates a move which was rejected. In this figure, only a few rejected moves are visible. The word $start$ indicates the initial value of $(w_1,w_2)$, while the word $end$ denotes the final value. 
-   			(b) (upper) A plot showing the both the training and validation MSE of the results produced by the neural network in each epoch. This is the post-perturbation error, meaning that the error associated with moves that were rejected is shown. (lower) A plot showing the sum of squared weights of the neural network during each training epoch.}
+   			(a) A plot showing the traversal of the $w_1,w_2$ subspace of the weight space over the course of $5,000$ epochs produced by a synaptic annealing algorithm employing an isotropic GSA visiting distribution. A solid line indicates a move which was accepted by the simulate annealing algorithm, while a dashed line indicates a move which was rejected. In this figure, only a few rejected moves are visible. The word $start$ indicates the initial value of $(w_1,w_2)$, while the word $end$ denotes the final value. 
+   			(b) (upper) A plot showing the both the training and validation MSE of the results produced by the neural network in each epoch, smoothed using a central moving window average with a width of $21$. This is the post-perturbation error, meaning that the error associated with moves that were rejected is shown. (lower) A plot showing the sum of squared weights of the neural network during each training epoch.}
    		\label{fig:weight_space_gsa_i}
    		
    	\end{figure}
 	   	
+	   	
+   	Given the observation, made in Sec.~\ref{sec:weight_traversal_cauchy}, that large jumps through the weight space have a tendency to create synaptic weights which cause their afferent neurons to behave as biases, it should be expected that the GSA traversal will readily produce such bias-like neurons. Fig.~\ref{fig:weight_space_gsa_i}(b) provides evidence that this prediction is correct. The lower plot of Fig.~\ref{fig:weight_space_gsa_i}(b) indicates that the sum of squared weights created by the GSA traversal surpasses the largest value observed in the Cauchy traversal at epoch $250$. It should therefore be expected that a subsequent steep decrease in training error occurs; this is indeed what is observed in the upper plot of Fig.~\ref{fig:weight_space_gsa_i}(b). Further, it should be expected that the validation error will decrease as well, in so far as the training set is representative of the entire data set, but not to the same extent as the training error; additionally, the validation error should gradually diverge from the training error as the sum of squared weight increases. These predicted characteristics, too, are present in Fig.~\ref{fig:weight_space_gsa_i}(b). In order to reduce the generalization error introduced by these features of the GSA neighborhood function when applied to synaptic annealing, and anisotropic modification of the distribution is examined in the following section.
+	   	
+	\subsection{Weight-Anisotropic GSA Neighborhood Function Weight Space Traversal} 
+	\label{scn:weight_space_gsa_wa}
+	%Weight Anisotropic GSA 0.06947405505369861 0.07228811218176742
+		
+	Fig.~\ref{fig:weight_space_gsa_wa}(a) is an example weight space traversal produced by a neighborhood function which uses a GSA distribution with weight anisotropicity. As defined in Sec.~\ref{scn:ffnn_anisotropicity}, the weight anisotropicity is an operator which is applied to the weight perturbation matrix. For each weight in the network, the operator shifts the mean of the visiting distribution for that weight closer to the origin in proportion to the magnitude of the weight. Thus, the further a synaptic weight is from zero, the more the mean of its visiting distribution will be shifted toward zero. The effect of the weight anisotropicity operator is to reduce the likelihood of weight space jumps which would result in a state which is far from the origin of the weight space. Contrasting Fig.~\ref{fig:weight_space_gsa_wa}(a) and Fig.~\ref{fig:weight_space_gsa_i}(a), it is clear that the former depicts a traversal which has the homogeneous search characteristics of a GSA traversal, while simultaneously avoiding protracted traversals into large weight space values.
+	
+
+	\begin{figure}[ht!]
+		
+		\begin{minipage}[b]{0.5\linewidth}
+			\centering
+			\centerline{\includegraphics[width = 3.25in]{figures/weight_space_gsa_wa.png}}
+			%  \vspace{2.0cm}
+			\centerline{(a)}\medskip
+		\end{minipage}
+		\hfill
+		\begin{minipage}[b]{0.5\linewidth}
+			\centering
+			\centerline{\includegraphics[width = 3.25in]{figures/weight_space_gsa_wa_perf.png}}
+			%  \vspace{2.0cm}
+			\centerline{(b)}\medskip
+		\end{minipage}
+		%\vspace{-0.5cm}
+		\caption{
+			(a) A plot showing the traversal of the $w_1,w_2$ subspace of the weight space over the course of $5,000$ epochs produced by a synaptic annealing algorithm employing a GSA visiting distribution with synaptic weight-based anisotropicity. A solid line indicates a move which was accepted by the simulate annealing algorithm, while a dashed line indicates a move which was rejected. In this figure, only a few rejected moves are visible. The word $start$ indicates the initial value of $(w_1,w_2)$, while the word $end$ denotes the final value. 
+			(b) (upper) A plot showing the both the training and validation MSE of the results produced by the neural network in each epoch, smoothed using a central moving window average with a width of $21$. This is the post-perturbation error, meaning that the error associated with moves that were rejected is shown. (lower) A plot showing the sum of squared weights of the neural network during each training epoch.}
+		\label{fig:weight_space_gsa_wa}
+		
+	\end{figure}
+	
+	If properly constructed the weight anisotropicity mechanism prevents weights from becoming large enough to saturate neurons in the network. Theoretically, this is a desirable characteristic for a neighborhood function as it will prevent any very large weights from arising in the network, which prevents the creation of saturated neurons. A network with less saturated neurons acting as biases will be less biased, by definition. A synaptic annealing algorithm using a weight anisotropic GSA neighborhood function should therefore be expected to yield lower validation set errors, relative to an algorithm which uses an isotropic GSA neighborhood function. In the upper plot of Fig.~\ref{fig:weight_space_gsa_wa}(b) the validation and training error for the traversal shown in Fig.~\ref{fig:weight_space_gsa_wa}(a) are displayed. In contrast to the preceding weight space traversal performance plots, the training and validation error of the weight anisotropic GSA traversal are found to be in close agreement. Additionally, the lower plot of Fig.~\ref{fig:weight_space_gsa_wa}(b) indicates that there is no significant trend the the sum of squared weight values for the network, which is also a property unique to the weight anisotropic GSA neighborhood function. These results indicate that weight anisotropicity may serve as an alternative weight minimization technique to the multiobjective simulated annealing approach described in \cite{lee2007improvinggeneralizationcapabilitynnusingsa}.
 	
 	\subsection{Uniform Neighborhood Function Weight Space Traversal} 
 	
-	0.06475156493279362 0.3967557372842911
-
-	 
+	%Uniform 0.0036465791201677213 0.08054352554015067
+	The weight space traversal produced by a uniform neighborhood distribution, show in Fig.~\ref{fig:weight_space_uniform}(a), is very similar to that of a Gaussian neighborhood function. The most significant difference between the traversals is total area of the weight space explored. The Gaussian traversal covers considerably more area than the Uniform traversal. This behavioral difference is the result of the fact that the uniform distribution is over the range $\left[ -\frac{1}{2},\frac{1}{2}\right]$, which is much smaller than the domain of the standard normal distribution used in the Gaussian distribution. 
    	\begin{figure}[ht!]
    		
    		\begin{minipage}[b]{0.5\linewidth}
@@ -903,30 +1018,148 @@
    			\centerline{(b)}\medskip
    		\end{minipage}
    		%\vspace{-0.5cm}
-   		\caption{(a) A plot showing the traversal of the $(w_1,w_2)$ subspace of the weight space over the course of $3,000$ epochs produced by a synaptic annealing algorithm employing a visiting distribution which is uniform over the rang $[-2,2]$. A solid line indicates a move which was accepted by the simulate annealing algorithm, while a dashed line indicates a move which was rejected. In this figure, only a few rejected moves are visible. The word $start$ indicates the initial value of $(w_1,w_2)$, while the word $end$ denotes the final value. (b) (upper) A plot showing the both the training and validation MSE of the results produced by the neural network in each epoch. This is the post-perturbation error, meaning that the error associated with moves that were rejected is shown. (lower) A plot showing the sum of squared weights of the neural network during each training epoch.}
+   		\caption{(a) A plot showing the traversal of the $(w_1,w_2)$ subspace of the weight space over the course of $5,000$ epochs produced by a synaptic annealing algorithm employing a visiting distribution which is uniform over the range $\left[-\frac{1}{2},\frac{1}{2}\right]$. A solid line indicates a move which was accepted by the simulate annealing algorithm, while a dashed line indicates a move which was rejected. In this figure, only a few rejected moves are visible. The word $start$ indicates the initial value of $(w_1,w_2)$, while the word $end$ denotes the final value. (b) (upper) A plot showing the both the training and validation MSE of the results produced by the neural network in each epoch, smoothed using a central moving window average with a width of $21$. This is the post-perturbation error, meaning that the error associated with moves that were rejected is shown. (lower) A plot showing the sum of squared weights of the neural network during each training epoch.}
    		\label{fig:weight_space_uniform}
+   		
    		
    	\end{figure}
    	
 	
 	
-	%[Plot: squared sum of weighs along X, training and validation error along Y]
-	%[Plot: Training Epoch along X, sum of squared weights the neighborhood function sa on Y]
+	Examining the training error performance shown in Fig.~\ref{fig:weight_space_uniform}(b), it is clear that the exemplar uniform neighborhood function significantly under-performed, with respect to the Gaussian neighborhood function. This deficiency can be explained primarily as a consequence of the relatively limited range of the uniform distribution. The restricted search range combined with the learning rate used in these traversal experiments yield very little change in the state of the network, as illustrated in the sum of squared weights plot displayed in the lower pane of Fig.~\ref{fig:weight_space_uniform}(b).
 	
-	%[The GSA neighborhood function outperforms the gaussian and cauchy distribution in training error, but under performs in generalization error. This performance dynamic may be explained by the fact that ]
+	\subsection{Comparative Weight Space Traversal} 
 	
+	% Table
+	It is instructive to directly compare the traversals produced by the various distributions considered in the preceding sections. Fig.~\ref{fig:weight_space_comparitive} displays these traversals on a common weight space; several interesting traversal characteristics are present in the figure. The impact of the weight anisotropicity on the traversal characteristics of the synaptic annealing algorithm are demonstrated by the difference in the weight-space location in which the respective searches occur: The weight anisotropic traversal is limited to a range near the origin, while the isotropic traversal searches a higher magnitude region of the weight space. The relatively diminutive total traversal length of both the Gaussian and uniform neighborhood functions are also apparent when compared to the range of the traversals produced by the other visiting distributions.
 	
 
+	
+
+   	\begin{figure}[ht!]
+   		
+		\centering
+		\centerline{\includegraphics[width = 6in]{figures/wieght_space_comparative.png}}
+		%  \vspace{2.0cm}
+		\centerline{(a)}\medskip
+
+   		%\vspace{-0.5cm}
+   		\caption{(a) A plot juxtaposing the weight space traversals of produced by a synaptic annealing algorithm employing several different visiting distributions.}
+   		\label{fig:weight_space_comparitive}
+   		
+   		
+   	\end{figure}
+   	
+	The preceding examination of weight space traversals is intended to serve as a exposition of the characteristics of the synaptic annealing algorithm when coupled with various visiting distributions, and is not explicitly concerned with a rigorous statistical examination of the performance of the algorithm. It is, however, instructive to explicitly compare the performance of each of the exemplar traversals discussed in this section to ensure consistency with behavior expectations. The regression error performance of the each neighborhood function is displayed in Table~\ref{table:weight_space_perf}. 
+
+	\begin{table}[ht]
+		\caption{Training and Validation Set Mean Squared Error at Epoch $5,000$} % title of Table
+		\centering % used for centering table
+		\begin{tabular}{ c || c | c } 
+
+			\hline \hline 
+			Neighborhood Function Visiting Distribution & Training Error &  Validation Error \\ [0.5ex] 
+			\hline \hline 
+			Gaussian & 0.05549 & 0.07743 \\ 
+			Cauchy & 0.03028 & 0.08878 \\ 
+			Isotropic GSA & 0.00739 & 0.07202 \\ 
+			Weight Anisotropic GSA & 0.06947 & 0.07229 \\
+			Uniform  & 0.16111 & 0.14773\\ 
+			\hline %inserts single line
+		\end{tabular}
+		\label{table:weight_space_perf}
+	\end{table}
+
+	Examining Table~\ref{table:weight_space_perf} suggests a few trends. As would be expected, the training set MSE of GSA is considerably lower than that of FSA (Cauchy visiting distribution), which is in turn better than CSA (Gaussian visiting distribution). These findings are consistent with previous findings \cite{tsallis1996generalizedsimulatedannealing,dallinga2004performancegsa} regarding the efficiency of various SA implementations. Interestingly, the validation set MSE, which in this case is specific to the problem of feed-forward neural network synaptic weight selection, does not follow this trend. While it may seem that introducing weight anisotropicity only served to increase the final training set MSE of the synaptic annealing algorithm, the mechanism that produced this increase in error is actually advantageous, as discussed in Sec.~\ref{scn:weight_space_gsa_wa}.
+	
+	
 	\section{Cost Functions}
 	\label{scn:cost_functions}
-	All variations of SA require the specification of a heuristic cost function. 
+	All variations of synaptic annealing require the specification of a heuristic cost function, which conforms to the specification given in section \ref{scn:feed_forward_neural_network_representation}. In this thesis, the synaptic annealing algorithm will be applied to two broad problem classes: function approximation and classification. To apply synaptic annealing to both of these problem classes, two cost functions must be constructed.
 	
-	In synaptic annealing, unlike back-propigation, there is no explicit gradient-following. As such, there is no 
+
+	\subsection{Regression Error Cost Function}
 	
-	%[still need to explore STUN cost function with new ly-corrected regression error.]
-	%[Still need to evaluate the performance using a smaller network... do this when at home]
-	%[might depend on cost function... Try making it smaller first with regression]
-	%[if classification error is really good with a large network be not with a small network, that's a paragraph in results.]
+	\label{scn:cost_functions_reg}
+	% DO: The wording here needs some attention.
+	The cost function chosen to serve as a heuristic of minimum regression error in this thesis is given by
+		
+	\begin{equation} \label{eq:cost_function_reg}
+	\mathcal{C}_r(\boldsymbol{\mathcal{W}},X) = \frac{\sqrt{\sum \left[\lambda - \Phi(\boldsymbol{\mathcal{W}},\rchi) \right]^{\circ 2}}}{|X|}
+	\end{equation}
+	\label{scn:cost_function_regression}
+	\noindent where $\boldsymbol{\mathcal{W}}$ is a weight matrix, $\Phi$ is the propagation function, and $X$ is the set of ordered pairs mapping a set of input data $\chi$ to a set of output values $\lambda$, in which $\chi$ is the first entry and $\lambda$ is the second entry. This cost funciton yields the mean Euclidean between the desired output set $\lambda$ and the output of the forward propagation, $\Phi(\boldsymbol{\mathcal{W}},\rchi)$.
+	
+	\subsection{Classification Error Cost Function}
+	\label{scn:cost_function_class}
+	%Though SA does descend the cost surface created by the cost function on the configuration space over the course of the execution of the algor	ithm, it does not explicitly use the derivative of the cost surface. Thus it is 
+	%In synaptic annealing, unlike back-propagation, there is no explicit gradient-following. As such, there is no 
+	
+	%	\begin{equation} \label{eq:forward_prop_base}
+	%	\mathcal{F}_0(\boldsymbol{\mathcal{W}},x) = x
+	%	\end{equation}
+	%	\begin{equation} \label{eq:forward_prop_recursion}
+	%	\mathcal{F}_{i}(\boldsymbol{\mathcal{W}},x) = f_A(\boldsymbol{\mathcal{W}}_i \cdot \mathcal{F}_{i-1}(\boldsymbol{\mathcal{W}},x))
+	%	\end{equation}
+	
+	%	\begin{equation} \label{eq:forward_prop_base}
+	%	\ket{\xi_0} = x
+	%	\end{equation}
+	%	\begin{equation} \label{eq:forward_prop_recursion}
+	%	\ket{\xi_{l}} = f_A\left(\omega_l \ket{\xi_{l-1}}\right)
+	%	\end{equation}
+		
+		%$\upomega$
+		%$\textomega$
+	In this thesis, the classification cost function, $\mathcal{C}_c$, yields the number of incorrectly classified observations in a given data set, which is given mathematically by 
+	\begin{equation} \label{eq:cost_function_class}
+	\mathcal{C}_c(\boldsymbol{\mathcal{W}},X) = \sum \left( \lambda \neq \Phi(\boldsymbol{\mathcal{W}},\rchi) \right).
+	\end{equation}
+	\noindent where $\boldsymbol{\mathcal{W}}$ is a weight matrix, $\Phi$ is the propagation function, and $X$ is the set of ordered pairs mapping a set of input data $\chi$ to a set of output values $\lambda$, in which $\chi$ is the first entry and $\lambda$ is the second entry. This function will be used to evaluate the performance of a network configuration, for a given set of data, when that data consists of categorical, or labeled, data. Though the classification cost function will always be used to report the performance of a network configuration when applied to classification data, it may or may not be used as the cost function which informs the synaptic annealing algorithm. Often, it is advantageous to train a neural network using the regression error function \cite{haykin1999} presented in section \ref{scn:cost_function_class}, and then report the performance of that network using the classification error. 
+	
+	% Cost as an observable???
+
+	
+	\section{Data}
+	\label{scn:data}
+	
+	The performance of the synaptic annealing methodology described in this chapter will be evaluated in the following chapter. In order to ensure that the methodology is generally applicable, it will be applied to several different data sets which vary in complexity and organization. 
+	
+	\subsection{Classification Data Sets}
+	Three classification data sets will be used in this thesis: 
+	
+	\subsection{Function Approximation Data Sets}
+	Function approximation performance will be evaluated using the complicated interaction function, which is given mathematically by the formula \begin{equation}
+	f_{CI}(u_1,u_2) = 1.9(1.35 + e^{0.5(u_1+1)} \sin ( 13 (0.5 u_1 - 0.1 )^2 ) · e^{−0.5(u_2+1)} \sin(3.5u_2 + 3.5)),
+	\end{equation} 
+	\noindent and is shown in Fig.~\ref{fig:complicated_interaction}
+	
+	
+	
+	\begin{figure}
+		
+
+		
+   		\begin{minipage}[b]{0.5\linewidth}
+   			\centering
+   			\centerline{\includegraphics[width = 3in]{figures/complicated_interaction.png}}
+   			%  \vspace{2.0cm}
+   			\centerline{(a)}\medskip
+   		\end{minipage}
+   		\hfill
+   		\begin{minipage}[b]{0.5\linewidth}
+   			\centering
+   			\centerline{\includegraphics[width = 3in]{figures/complicated_interaction_imshow.png}}
+   			%  \vspace{2.0cm}
+   			\centerline{(b)}\medskip
+   		\end{minipage}
+		
+		%\vspace{-0.5cm}
+		\caption{(a) A plot displaying the surface produced by the complicated interaction function, $f_{CI}$, in two dimensions, $u_1$ and $u_2$ (b) A color contour plot of the complicated interaction function.}
+		\label{fig:complicated_interaction}
+		
+		
+	\end{figure}
 	
 	\section{Design of Experiments}
 	
@@ -934,6 +1167,13 @@
 	
 	\chapter{Results}
 	\label{ch:results}
+	%[if classification error is really good with a large network be not with a small network, that's a paragraph in results.]
+	
+	\subsection{Classification Performance}
+	
+	
+	\subsection{Function Approximation Performance}
+	
 	
 %	Is my algorithm computationally efficient as in Haykin, pg 229?
 	\makeatletter
@@ -977,94 +1217,13 @@
 	\end{figure*}
 	
 	
-	In this section several experiments are presented to evaluate the performance of the annealing procedures defined in the Sec.~\ref{scn:problem_formulation}.
-	
-	
-	\subsection{Classification Performance}
-	
-	We begin by evaluating the impact of neighborhood function choice on the classification performance of a feed-forward neural network trained by SA. Fig.~\ref{fig:class_perf} contains the simulation-time evolution of classification performance for a feed-forward neural network with 50 hidden units in a single hidden layer. This performance data was generated by a neural network trained to classify Fishers iris data, which comprises $150$ samples with input dimensions and $3$ class labels. Before training on the data, it is normalized, shuffled and the mean is removed.
-	
-	Each experiment, which consists of the evaluation of a single neighborhood function, is performed using 25-fold cross validation. The results presented in Fig.~\ref{fig:class_perf} are the time evolution of the mean training and validation set classification error. All results are presented up to the $500,000$\textsuperscript{th} training epoch. Each training epoch evaluates the entire training and validation set when producing the classification error.
-	
-	
-	\subsubsection{Visiting Distribution Analysis}
-	
-	The classification performance of CSA, which is defined by an isotropic application of a Gaussian generating function, is displayed in the top-left tile of \ref{fig:class_perf}. We see that 25-fold cross validated perfect classification is achieved at approximate $400,000$ epochs. That is, all 25 of the independent SA trials had achieved perfect classification at or before epoch $400,000$. Comparing the only the performance of the isotropic anisotropicity neighborhood functions we find that the Cauchy visiting distribution converged slightly faster than the Gaussian on the training set, but takes slightly longer to correctly generalize to the validation set. This is somewhat unexpected, as FSA is generally much faster than CSA. The exponential visiting distribution performs poorly relative to both CSA and FSA, but this is not surprising. Though the exponential distribution is in close analogy to the physics of quantum tunneling it is a very light-tailed function, and as such is unlikely to produce neighbors far from the current configuration. As such, it appears to be unable traverse the error surface as quickly. Finally, we find that the worst performing visiting distribution is the uniform distribution. The uniform visiting distribution amounts to a random global search of the weight space; the weight space for this problem is $350$-dimensional, so finding the global minimum of the space by chance is unlikely. These performance relationships between visiting distribution hold for all anisotropicity strategies, with the notable exception of uniform visiting distributions with variable annealing, which is discussed in Sec.~\ref{scn:anisotropicity_analysis}
-	
-	\subsubsection{Anisotropicity Analysis}
-	\label{scn:anisotropicity_analysis}
-	
-	Observing figs.~\ref{fig:class_perf} and \ref{fig:perfect_class_time} we see that neighborhood functions implementing uniform anisotropicity consistently outperform those which use isotropic weight change assignment. Further, we find that while variable anisotropicity confers no advantage on either CSA or FSA, it significantly improves the performance of the two non-canonical simulated annealing visiting distributions. With variable anisotropicity, both the exponential and uniform distribution outperform CSA and FSA. One of the most striking results depicted in Fig.~\ref{fig:perfect_class_time} is the interaction effect of a uniform visiting distribution and a variable anisotropicity matrix, visible in the bottom-right corner of the figure. While both the uniform visiting distribution and the variable anisotropicity under-perform relative to their alternatives, when combined the make for the most effective neighborhood function considered in this paper. This interaction effect is likely due to the specificity of modification afforded by the combination of a highly anisotropic modification and a global search reach. We should expect that for very large networks this advantage would diminish somewhat, as the global search space would be much larger. Further study is needed to evaluate the potential general applicability of this neighborhood function.
-	
-	
-	\begin{figure*}
-		\label{fig:perfect_class_time}
-		\centering
-		\setlength{\tabcolsep}{-3pt}
-		\begin{tabular}{c@{}cccc}
-			& Gaussian & Exponential & Cauchy & Uniform \\
-			
-			\rotatebox{90}{Isotropic }
-			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/completeFrac/completeFrac_GaussianVisit_IsotropicAnisotropicity.png} \fixedlabel{block1a}{1a} 	
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_ExponentialVisit_IsotropicAnisotropicity.png} \fixedlabel{block1b}{1b} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_CauchyVisit_IsotropicAnisotropicity.png} \fixedlabel{block1c}{1c} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_UniformVisit_IsotropicAnisotropicity.png} \fixedlabel{block1d}{1d} \\ \\[-10pt]
-			
-			
-			\rotatebox{90}{	\begin{tabular}[x]{@{}c@{} }   Uniform \\ Anisotropicity \end{tabular} }
-			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/completeFrac/completeFrac_GaussianVisit_UniformAnisotropicity.png} \fixedlabel{block2a}{2a} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_ExponentialVisit_UniformAnisotropicity.png} \fixedlabel{block1b}{2b} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_CauchyVisit_UniformAnisotropicity.png} \fixedlabel{block1b}{2c} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_UniformVisit_UniformAnisotropicity.png} \fixedlabel{block2b}{2d} \\ \\[-10pt]
-			
-			\rotatebox{90}{	\begin{tabular}[x]{@{}c@{}} Variable \\ Anisotropicity \end{tabular}	}
-			& \includegraphics[width = 1.8in, trim={0.5cm 0 1.3cm 0.8cm},clip]{figures/completeFrac/completeFrac_GaussianVisit_NormativeAnisotropicity.png}\fixedlabel{block3a}{3a} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_ExponentialVisit_NormativeAnisotropicity.png}\fixedlabel{block1b}{3b} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_CauchyVisit_NormativeAnisotropicity.png}\fixedlabel{block1b}{3c} 
-			& \includegraphics[width = 1.6in, trim={2.35cm 0 1.5cm 0.8cm},clip]{figures/completeFrac/completeFrac_UniformVisit_NormativeAnisotropicity.png}\fixedlabel{block3b}{3d}
-			
-		\end{tabular}
-		\caption{The simulation-time evolution of the fraction of 25 independent simulated annealing runs achieving perfect classification of Fishers iris data using a feed-forward neural network with 50 hidden units. Columns and rows are labeled as in Fig.~\ref{fig:class_perf}.}
-	\end{figure*}
-	
-	
-	\subsubsection{Perfect Classification Rate Analysis}
-	
-	It is not possible to analyze the classification performance of individual SA trials in Fig.~\ref{fig:class_perf} because the classification performance is averaged. In order to analyze the performance of the individual trials more thoroughly Fig.~\ref{fig:perfect_class_time} shows the fraction of the 25 independent SA trails that have completed at each training epoch. The relative performance of the neighborhood functions are similar when compared using this metric, but we can gain additional insight from the new data. The fractional-completion data shows us that for almost all of the neighborhood functions the relationship between the simulation time and the fraction of trials achieving perfect classification is not linear. Instead, the relationship resembles a Gamma distribution cumulative distribution function. As such, we take the expectation value and standard deviation of the time required to reach a cost surface global minimum and use these values to complete the shape and scale parameters of the Gamma distribution. With the shape and scale parameters, it is possible to reconstruct the probability density function which approximates the PDF of the time to perfect classification.
-	
-	
-	These PDFs are useful because they can inform an important annealing technique: reannealing. As an annealing network traverses a cost surface it is possible for the system to become temporarily trapped in a basin which is far, in weight space distance, from the global minimum. As such, it is occasionally useful to increase, or rescale, the stochastic control parameters. It is suggested in \cite{ingber1989veryfastsimulatedreannealing} that the temperature be rescaled at approximately every hundred successful jumps. Though no reannealing schedule is presented in this paper, Figs.~\ref{fig:gaussian_gamma}, \ref{fig:exp_gamma}, \ref{fig:uniform_gamma}, and \ref{fig:cauchy_gamma} provide information regarding the optimal rescaling frequency for this classification problem. We suggest that the temperature rescaling interval which minimizes the average time required to reach a global minimum is the time at which the first inflection point of the perfect classification time PDF occurs. This choice of rescaling interval would ensure that the system constantly remains in the phase of the annealing process during which it has the greatest probability per unit time to reach a global minimum of the cost surface. This point corresponds to the expected value of the time to find the global minimum.
-	
-	\begin{figure} 
-		\includegraphics[width = 3.3in, trim={0.5cm 0 1.2cm 0.0cm},clip]{figures/gammaDists/gamma_g.png}
-		\caption{This figure shows the gamma distribution approximations of the probability of achieving perfect classification through simulation time. This figure depicts the approximations for all Gaussian visiting distributions, and thus corresponds to the first column of Fig.~\ref{fig:perfect_class_time}}
-		\label{fig:gaussian_gamma}
-	\end{figure}
-	
-	\begin{figure} 
-		\includegraphics[width = 3.3in, trim={0.5cm 0 1.2cm 0.0cm},clip]{figures/gammaDists/gamma_e.png}
-		\caption{This figure shows the gamma distribution approximations of the probability of achieving perfect classification through simulation time. This figure depicts the approximations for all  exponential visiting distributions, and thus corresponds to the second column of Fig.~\ref{fig:perfect_class_time}}
-		\label{fig:exp_gamma}
-	\end{figure}
-	
-	\begin{figure} 
-		\includegraphics[width = 3.3in, trim={0.5cm 0 1.2cm 0.0cm},clip]{figures/gammaDists/gamma_u.png}
-		\caption{This figure shows the gamma distribution approximations of the probability of achieving perfect classification through simulation time. This figure depicts the approximations for all uniform visiting distributions, and thus corresponds to the third column of Fig.~\ref{fig:perfect_class_time}}
-		\label{fig:uniform_gamma}
-	\end{figure}
-	
-	\begin{figure} 
-		\includegraphics[width = 3.3in, trim={0.5cm 0 1.2cm 0.0cm},clip]{figures/gammaDists/gamma_c.png}
-		\caption{This figure shows the gamma distribution approximations of the probability of achieving perfect classification through simulation time. This figure depicts the approximations for all Cauchy visiting distributions, and thus corresponds to the fourth column of Fig.~\ref{fig:perfect_class_time}}
-		\label{fig:cauchy_gamma}
-	\end{figure}
-	
-	
-	\section{Conclusion}
+	\chapter{Conclusion}
 	
 	We have proposed anisotropicity as a new simulated annealing neighborhood function parameter, presented a framework for applying simulated annealing to feed forward neural network weight selection, and numerically analyzed the performance of annealing systems constructed according to this framework. We have demonstrated that the anisotropicity of a neighborhood function can have a significant impact on the classification performance of a feed forward neural network.  
 	
 	An exploratory study of oscillatory variation in the distribution temperature parameter of the SGSA distribution yielded encouraging preliminary results. Further study may yield additional insights into the benefits of alternating global and local distribution characteristics during a semi-local solution space search.
+	
+	Introducing a greedy local optimization algorithm 
 	
 	\label{scn:conclusion}
 	\appendix		% Appendix begins here

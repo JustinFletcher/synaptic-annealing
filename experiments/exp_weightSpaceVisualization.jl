@@ -65,7 +65,7 @@ function plotAnnealingJumps2d(w1, w2, colorChoice, labelText)
           transparency=1
         else
           style=":"
-          transparency=0.25
+          transparency=0.5
         end
 
         if step == length(w1)-1
@@ -83,6 +83,12 @@ function plotAnnealingJumps2d(w1, w2, colorChoice, labelText)
     scatter(currentPoint[1], currentPoint[2], color=colorChoice, marker="  \$\ end \$\  ", s=500)
     legend(loc=1)
     grid("on")
+
+    xlabel(" \$\ w_1 \$\ ")
+
+    ylabel(" \$\ w_2 \$\ ")
+
+    title(labelText*" Weight Space Traversal")
 
 end
 
@@ -116,8 +122,63 @@ function plotAnnealingJumpsError3d(w1, w2, err, colorChoice, labelText)
     legend(loc=1)
     grid("on")
 
+
 end
 
+
+function plotAnnealingResults(meanTrainErrorVec, meanValErrorVec, reportFrequency, titleStr, dataSetName)
+   	plotHandle = plot(reportFrequency.*(0:length(meanTrainErrorVec)-1), meanTrainErrorVec, label="Training Error", alpha=0.7, color="b")
+    plotHandle = plot(reportFrequency.*(0:length(meanValErrorVec)-1), meanValErrorVec, label="Validation Error", alpha=0.7, color="g")
+#     ylim(0,1)
+    xlim(0,length(meanValErrorVec))
+
+#     if(minimum(meanValErrorVec)<0 || maximum(meanValErrorVec)>1)
+#       ylim(minimum(meanValErrorVec), maximum(meanValErrorVec))
+#     end
+
+    ax = gca()
+    ylabel("MSE")
+    legend(loc=1)
+    grid("on")
+    title(dataSetName*" - "*titleStr)
+
+
+#     finalValErr = string(meanValErrorVec[end])[1:6]
+#     scatter(length(meanValErrorVec)-100, finalValErr, marker="  \$\ "*finalValErr*" \$\  ", s=300 ,color= "g")
+#     finalTrainErr = string(meanTrainErrorVec[end])[1:6]
+#     scatter(length(meanTrainErrorVec)-100, finalTrainErr, marker="  \$\ "*finalTrainErr*" \$\  ", s=300, color="b")
+
+
+    return(plotHandle)
+end
+
+function showWeightSpaceTraversalFigures(outputTuple, expTitleString, plotColor, windowSize)
+    w1 = [w[2,1,1] for w in outputTuple[6]]
+    w2 = [w[3,1,1] for w in outputTuple[6]]
+
+    figure(1)
+    plotAnnealingJumps2d(w1, w2, plotColor, expTitleString)
+
+    # plotAnnealingJumpsError3d(w1, w2, outputTuple[5], "r", "GSA")
+
+    figure(2)
+    subplot(2,1,1)
+    meanTrainErrorVec = outputTuple[3]
+    meanValErrorVec = outputTuple[2]
+    plotAnnealingResults(movingWindowAverage(meanTrainErrorVec, windowSize), movingWindowAverage(meanValErrorVec, windowSize), 1, "Error During Training", expTitleString)
+    ylim(0,0.3)
+
+    println([meanTrainErrorVec[end] meanValErrorVec[end]])
+
+    subplot(2,1,2)
+    ssw = [sum(w.^2) for w in outputTuple[6]]
+    plot(movingWindowAverage(ssw, windowSize))
+    title("Sum of Squared Weights During Training")
+    xlabel("Training Epoch")
+    ylabel("Sum of Squared Weights")
+    grid()
+    ylim(0,maximum(ssw))
+end
 ###################################################################################################################################################
 
 function complicatedInteraction(x,y)
@@ -193,12 +254,12 @@ dataSet = compInteractionDataset
 ###################################################################################################################################################
 
 reportFrequency = 100
-maxRuns = 3000
+maxRuns = 5000
 actFun = tanh
 initTemperature = 10
-initLearnRate = 0.1
+initLearnRate = 0.001
 
-matrixConfig = [length(dataSet.inputCols), 1, length(dataSet.outputCols)]
+matrixConfig = [length(dataSet.inputCols), 2, length(dataSet.outputCols)]
 
 synMatIn = null
 batchSize = size(dataSet.data)[1]
@@ -229,27 +290,22 @@ end
 
 ###################################################################################################################################################
 
-outputTuple = synapticAnnealing_fullRecord(0.0, maxRuns,
+outputTuple_g = synapticAnnealing_fullRecord(0.0, maxRuns,
                              gaussian_Isotropic_SynapticPerturbation,
-                             AnnealingState.updateState_csa,
+                             AnnealingState.updateState_fsa,
                              getDataRegErr, getDataRegErr,
-                             initTemperature, initLearnRate,
+                             initTemperature, 0.001,
                              newNet(synMatConfigVec), actFun,
                              trainData, valData,
                              batchSize, reportFrequency)
 
-outputTuple
-outputTuple
-outputTuple[6]
 
-w1 = [w[1,1,1] for w in outputTuple[6]]
-w2 = [w[3,1,1] for w in outputTuple[6]]
-plotAnnealingJumps2d(w1, w2, "c", "Gaussian")
-
+showWeightSpaceTraversalFigures(outputTuple_g,"Gaussian", "c", 21)
 
 ###################################################################################################################################################
 
-outputTuple = synapticAnnealing_fullRecord(0.0, maxRuns,
+@everywhere include("$(pwd())\\src\\"*"annealingTraversalFunctions.jl")
+outputTuple_c = synapticAnnealing_fullRecord(0.0, maxRuns,
                              cauchy_Isotropic_SynapticPerturbation,
                              AnnealingState.updateState_fsa,
                              getDataRegErr, getDataRegErr,
@@ -258,19 +314,15 @@ outputTuple = synapticAnnealing_fullRecord(0.0, maxRuns,
                              trainData, valData,
                              batchSize, reportFrequency)
 
-outputTuple
-outputTuple
-outputTuple[6]
 
-w1 = [w[2,1,1] for w in outputTuple[6]]
-w2 = [w[3,1,1] for w in outputTuple[6]]
+showWeightSpaceTraversalFigures(outputTuple_c,"Cauchy", "b", 21)
 
-plotAnnealingJumps2d(w1, w2, "b", "Cauchy")
 
 ###################################################################################################################################################
 
-outputTuple = synapticAnnealing_fullRecord(0.0, maxRuns,
-                             uniform_UniformlyAnisotropic_SynapticPerturbation,
+@everywhere include("$(pwd())\\src\\"*"annealingTraversalFunctions.jl")
+outputTuple_u = synapticAnnealing_fullRecord(0.0, maxRuns,
+                             uniform_Isotropic_SynapticPerturbation,
                              AnnealingState.updateState_fsa,
                              getDataRegErr, getDataRegErr,
                              initTemperature, initLearnRate,
@@ -278,21 +330,13 @@ outputTuple = synapticAnnealing_fullRecord(0.0, maxRuns,
                              trainData, valData,
                              batchSize, reportFrequency)
 
-outputTuple
-outputTuple
-outputTuple[6]
 
-w1 = [w[1,1,1] for w in outputTuple[6]]
-w2 = [w[3,1,1] for w in outputTuple[6]]
-
-plotAnnealingJumps2d(w1, w2, "g", "Uniform")
-
-
+showWeightSpaceTraversalFigures(outputTuple_u,"Uniform", "purple", 21)
 
 
 ###################################################################################################################################################
 
-outputTuple = synapticAnnealing_fullRecord(0.0, maxRuns,
+outputTuple_gsa_i = synapticAnnealing_fullRecord(0.0, maxRuns,
                              gsa_Isotropic_SynapticPerturbation,
                              AnnealingState.updateState_fsa,
                              getDataRegErr, getDataRegErr,
@@ -301,24 +345,14 @@ outputTuple = synapticAnnealing_fullRecord(0.0, maxRuns,
                              trainData, valData,
                              batchSize, reportFrequency)
 
-outputTuple[7]
-outputTuple[]
-outputTuple[5]
 
-w1 = [w[1,1,1] for w in outputTuple[6]]
-w2 = [w[3,1,1] for w in outputTuple[6]]
-
-plotAnnealingJumps2d(w1, w2, "r", "GSA - Isotropic")
-# plotAnnealingJumpsError3d(w1, w2, outputTuple[5], "r", "GSA")
-
-log( 1)
-
+showWeightSpaceTraversalFigures(outputTuple_gsa_i,"GSA - Isotropic", "r", 21)
 
 ###################################################################################################################################################
 
 @everywhere include("$(pwd())\\src\\"*"annealingTraversalFunctions.jl")
 
-outputTuple = synapticAnnealing_fullRecord(0.0, maxRuns,
+outputTuple_gsa_wa = synapticAnnealing_fullRecord(0.0, maxRuns,
                              gsa_WeightAnisotropic_SynapticPerturbation,
                              AnnealingState.updateState_fsa,
                              getDataRegErr, getDataRegErr,
@@ -327,18 +361,10 @@ outputTuple = synapticAnnealing_fullRecord(0.0, maxRuns,
                              trainData, valData,
                              batchSize, reportFrequency)
 
-outputTuple[7]
-outputTuple[]
-outputTuple[5]
 
-w1 = [w[1,1,1] for w in outputTuple[6]]
-w2 = [w[3,1,1] for w in outputTuple[6]]
+showWeightSpaceTraversalFigures(outputTuple_gsa_wa, "GSA - Weight Anisotropic", "g", 21)
 
-plotAnnealingJumps2d(w1, w2, "g", "GSA - Weight Anisotropic")
-
-# plotAnnealingJumpsError3d(w1, w2, outputTuple[5], "r", "GSA")
-
-
+##############################################################
 function plotTanhDerivative(xRange,yRange)
 
     set_cmap("gray")

@@ -1,10 +1,10 @@
 using PyPlot
 @everywhere using BackpropNeuralNet
-@everywhere cd("\\fletcher-thesis")
+@everywhere cd("\\mscs-thesis")
 
 @everywhere include("$(pwd())\\src\\"*"nativeNetsToSynMats.jl")
 
-netIn = init_network([15,50,50,50,50,10])
+netIn = init_network([10,5,5,2])
 netIn.learning_rate = 1
 netIn.propagation_function = tanh
 synapseMatrix = getNetworkSynapseMatrix(netIn)
@@ -180,4 +180,51 @@ function runNormativeAnisotorpicityTunableExperiment(synapseMatrix)
 end
 
 runNormativeAnisotorpicityTunableExperiment(synapseMatrix)
+
+
+
+function plotNeuralNet(weightMatrix)
+
+    # Iterate over each layer.
+    for layerIndex in 1:size(weightMatrix)[3]
+
+        for colIndex in 1:size(weightMatrix)[2]
+
+            for rowIndex in 1:size(weightMatrix)[1]
+
+                x = [layerIndex, layerIndex+1]
+
+                y = [rowIndex,colIndex]
+
+                scatter(x,y)
+
+                weight = weightMatrix[rowIndex, colIndex, layerIndex]
+
+                if weight>0
+                    c="red"
+                else
+                    c="blue"
+
+                end
+
+                if weight!=0
+                    plot(x,y, alpha=abs(weight), color=c)
+                end
+
+
+            end
+
+        end
+
+    end
+
+end
+
+synapseMatrix
+synapseMatrix[2,3,1]
+
+plotNeuralNet(synapseMatrix)
+
+get_cmap()
+
 
