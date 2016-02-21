@@ -12,8 +12,12 @@ function sgsa(qv, t, r)
 end
 
 function gsa(qv, t, d, x)
+<<<<<<< HEAD
+ # This function returns the SGSA visiting distribution over the specified range, x.
+=======
 
     # This function returns the SGSA visiting distribution over the specified range, x.
+>>>>>>> origin/master
     term1 = (((qv-1)./pi).^(d./2))
     term2 = ((gamma((1./(qv-1))+((d-1)./2)))./(gamma((1./(qv-1))-(0.5))))
     term3 = ((t.^(-d./(3-qv)))./((1+(qv-1).*((x.^2)./(t.^(2.*(3-qv))))).^((1./(qv-1))+((d-1)./2))))
@@ -81,7 +85,6 @@ function buildSampleLibrary(displacmentLimit, resolution, qv, tqv, d, nDesiredSa
 end
 
 
-# rm(".\\cache\\gsasamples\\gsasamples")
 
 function buildCompleteSampleLibrary (displacmentLimit, resolution, qvRange, tqvRange, dRange, nDesiredSamples)
 
@@ -100,9 +103,15 @@ function buildCompleteSampleLibrary (displacmentLimit, resolution, qvRange, tqvR
     end
 end
 
+<<<<<<< HEAD
+# displacmentLimit = 50
+# resolution = 0.001
+# qvRange = [2.5]
+=======
 # displacmentLimit = 1000
 # resolution = 0.01
 # qvRange = [2.6]
+>>>>>>> origin/master
 # #tqvRange = [t for t in [1,2.5,5,10]]
 # tqvRange = [t for t in [1]]
 # dRange = [1]

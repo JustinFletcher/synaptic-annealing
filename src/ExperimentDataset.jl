@@ -31,10 +31,6 @@ module ExperimentDataset
 
 		function Dataset(data, inputCols, outputCols, name)
 
-			data = normalizeData(data)
-			data = removeDataMean(data, inputCols)
-			data = shuffleData(data)
-
 
 			outputCols = [outputCols[1]:((outputCols[1]-1)+(size(data, 2)-length(inputCols)))]
 			new (data, inputCols, outputCols, name)
@@ -48,3 +44,5 @@ module ExperimentDataset
 	end
 
 end
+
+
