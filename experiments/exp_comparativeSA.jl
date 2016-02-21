@@ -350,9 +350,10 @@ println("Done loading.")
 
 
 
-##### CLASS, ISOTROPIC, NONREANNEALING
+##### REG, ISOTROPIC, NONREANNEALING
 
 # ###################################################################################################################################################
+
 
 outTuple_g_i  = @time runSynapticAnnealingExperiment("Gaussian - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
                                                      "GaussianVisit", "IsotropicAnisotropicity_Reg_alpha0p1_fsa_hl20", "comparitive_simulated_annealing",
@@ -364,31 +365,39 @@ outTuple_g_i  = @time runSynapticAnnealingExperiment("Gaussian - Isotropic", gen
                                                      dataSet, batchSize, reportFrequency)
 
 outTuple_c_i = @time runSynapticAnnealingExperiment("Cauchy - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                    "CauchyVisit", "IsotropicAnisotropicity_Reg_alpha0p1_fsa_hl20", "comparitive_simulated_annealing",
+                                                    "CauchyVisit", "IsotropicAnisotropicity_Reg_alpha0p001_fsa_hl20", "comparitive_simulated_annealing",
                                                     numFolds, matrixConfig, synapticAnnealing,
                                                     0.0, maxRuns, cauchy_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
                                                     getDataRegErr, getDataClassErr,
-                                                    initTemp, 0.1,
+                                                    initTemp, 0.001,
                                                     synMatIn, tanh,
                                                     dataSet, batchSize, reportFrequency)
 
-
 outTuple_u_i = @time runSynapticAnnealingExperiment("Uniform - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                    "UniformVisit", "IsotropicAnisotropicity_Reg_alpha0p1_fsa_hl20", "comparitive_simulated_annealing",
+                                                    "UniformVisit", "IsotropicAnisotropicity_Reg_alpha0p001_fsa_hl20", "comparitive_simulated_annealing",
                                                     numFolds, matrixConfig, synapticAnnealing,
                                                     0.0, maxRuns, uniform_Isotropic_SynapticPerturbation, AnnealingState.updateState_csa,
                                                     getDataRegErr, getDataClassErr,
-                                                    initTemp, 1,
+                                                    initTemp, 0.001,
                                                     synMatIn, tanh,
                                                     dataSet, batchSize, reportFrequency)
 
 
 outTuple_gsa_i = @time runSynapticAnnealingExperiment("GSA - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
-                                                     "GSAVisit", "IsotropicAnisotropicity_Reg_alpha0p1_fsa_hl20_qv2p5_t1_d1", "comparitive_simulated_annealing",
+                                                     "GSAVisit", "IsotropicAnisotropicity_Reg_alpha0p001_fsa_hl20_qv2p5_t1_d1", "comparitive_simulated_annealing",
                                                      numFolds, matrixConfig, synapticAnnealing,
                                                      0.0, maxRuns,  gsa_Isotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
                                                      getDataRegErr, getDataClassErr,
-                                                     initTemp, 0.1,
+                                                     initTemp, 0.001,
+                                                     synMatIn, tanh,
+                                                     dataSet, batchSize, reportFrequency)
+
+outTuple_gsa_w = @time runSynapticAnnealingExperiment("GSA - Isotropic", generate, saveData, loadData, savePlots, view, 3, maxRuns, 1,
+                                                     "GSAVisit", "WeightAnisotropicity_Reg_alpha0p001_fsa_hl20_qv2p5_t1_d1", "comparitive_simulated_annealing",
+                                                     numFolds, matrixConfig, synapticAnnealing,
+                                                     0.0, maxRuns,  gsa_WeightAnisotropic_SynapticPerturbation, AnnealingState.updateState_fsa,
+                                                     getDataRegErr, getDataClassErr,
+                                                     initTemp, 0.001,
                                                      synMatIn, tanh,
                                                      dataSet, batchSize, reportFrequency)
 
